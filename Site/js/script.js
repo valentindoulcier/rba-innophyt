@@ -11,7 +11,38 @@ $(document).ready(function() {
 	//loadTestContent();
 
 	loadAllPulgins(); // Charge les différents plugins
+	
+	bindLoginAction();
 });
+
+
+function bindLoginAction()
+{
+	$("#connexionForm").submit( function() {	// à la soumission du formulaire						 
+		$.ajax({ // fonction permettant de faire de l'ajax
+		   type: "POST", // methode de transmission des données au fichier php
+		   url: "pages/login.php", // url du fichier php
+		   data: "login="+$("#login").val()+"&pass="+$("#pass").val(), // données à transmettre
+		   success: function(msg){ // si l'appel a bien fonctionné
+				if(msg=="1") // si la connexion en php a fonctionnée
+				{
+					printDebug("Tu es bien connecté !!");
+					// on désactive l'affichage du formulaire et on affiche un message de bienvenue à la place
+				}
+				else // si la connexion en php n'a pas fonctionnée
+				{
+					printDebug("<span class='error'>Erreur d'authentification</span>");
+					// on affiche un message d'erreur dans le span prévu à cet effet
+				}
+		  },
+		  error: function(jqXHR, textStatus, errorThrown) {
+		  	console.error("Connexion fail : " + textStatus + " - " + errorThrown)
+		  }
+		});
+		event.preventDefault();
+		return false; // permet de rester sur la même page à la soumission du formulaire
+	});
+}
 
 /****** LOAD PLUGINS *****/
 /*

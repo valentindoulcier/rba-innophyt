@@ -19,6 +19,27 @@
 			<!--[Debug text]-->
 		</div>
 	</div>
+	
+	
+	<div id="loginFrame">
+		<div id="debugText">			
+			<form name="connexionForm" id="connexionForm" action="#"><!-- début du formulaire de connexion -->
+ 
+				<label for="login">Nom d'utilisateur :</label>
+        		<input type="text" name="login" id="login" /><!-- champ pour le login -->
+ 
+				<label for="pass">Mot de passe :</label>
+				<input type="password" name="pass" id="pass" /><!-- champ pour le mot de passe -->
+ 
+				 <br />
+        		<input type="submit" value="Je me connecte" class="bouton" /><!-- bouton de connexion -->
+			</form><!-- fin du formulaire -->
+		</div>
+	</div>
+
+
+
+
 
 	<div id="questionFrame" class="myContainer">
 		<div id="questionTextDivContainer">
