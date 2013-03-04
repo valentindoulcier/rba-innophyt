@@ -1,7 +1,7 @@
 <?php
 //echo '<!--';
 
-define('XML_FILEPATH', '../structure_xml.xml');
+define('XML_FILEPATH', './structure_xml.xml');
 
 $responseId = isset($_POST['responseid']) ? $_POST['responseid'] : '';
 $questionId = isset($_POST['questionid']) ? $_POST['questionid'] : '';

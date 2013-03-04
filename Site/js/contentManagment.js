@@ -36,6 +36,7 @@
 var BREADCRUM_ID = '#breadcrumb';
 
 var DEBUG_FRAME_ID = '#debugFrame';
+var DEBUG_TEXT_ID = '#debugText';
 
 var QUESTION_FRAME_ID = '#questionFrame';
 var QUESTIONBAR_ID = '#questionTextDiv';
@@ -348,17 +349,27 @@ function addResponseWindow(myResponse)
 	Ajoute de texte dans la div de debug
 */
 function appendDebug(value){
-	setElementDisplay($(DEBUG_FRAME_ID), true);
-	$(DEBUG_FRAME_ID).append(value);
+	setElementDisplay($(DEBUG_FRAME_ID), true, 500);
+	$(DEBUG_TEXT_ID).append(value);
 	activateFloatableQuestionBar();
+	
+	setTimeout(
+		function(){
+			setElementDisplay($(DEBUG_FRAME_ID), false, 500);
+		}, 3000);
 }
 /*
 	Ecrit du texte dans la div de debug
 */
 function printDebug(value){
-	setElementDisplay($(DEBUG_FRAME_ID), true);
-	$(DEBUG_FRAME_ID).html(value);
+	setElementDisplay($(DEBUG_FRAME_ID), true, 500);
+	$(DEBUG_TEXT_ID).html(value);
 	activateFloatableQuestionBar();
+	
+	setTimeout(
+		function(){
+			setElementDisplay($(DEBUG_FRAME_ID), false, 500);
+		}, 3000);
 }
 
 
@@ -449,12 +460,20 @@ function generateCarouselItem(shadowboxGallery, carouselElement)
 	@in element - Element à cacher. Il s'agit d'un élément de l'arbre DOM que l'on séléctionne avec jQuery (Ex : $('#idElment'))
 	@in bool value - true pour afficher, false pour caché
 */
-function setElementDisplay(element, value)
+function setElementDisplay(element, value, time)
 {
 	if(value){
-		element.css('display', 'block');
+		if (time) {
+			element.fadeIn(time);
+		} else {
+			element.css('display', 'block');
+		}
 	}
-	else{	
-		element.css('display', 'none');
+	else{
+		if (time) {
+			element.fadeOut(time);
+		} else {
+			element.css('display', 'none');
+		}
 	}
 }

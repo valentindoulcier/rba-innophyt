@@ -345,3 +345,21 @@ ul.resultInfo li {
 	font-weight: bold;
 	text-decoration: underline;
 }
+
+/* DEBUG BAR */
+#debugFrame {
+	line-height: 18px;
+	background-color: #F9F9F9;
+	border-radius: 6px 6px 6px 6px;
+	border: solid 1px #DDDDDD;
+	border: rgba(0, 0, 0, 0.1);
+	margin-bottom: 10px;
+}
+#debugText {
+	margin-top: 10px;
+	margin-left: 15px;
+	margin-bottom: 10px;
+}
+.error {
+	color: red;
+}

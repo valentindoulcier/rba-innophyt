@@ -74,11 +74,11 @@ function selectFirstQuestion(questionId)
 	var DATA = 'questionid=' + questionId;
     $.ajax({
         type: "POST",
-        url: "php/xmlparser.php",
+        url: "arbres/xmlparser.php",
         dataType: "text",
         data: DATA,
         cache: false,
-         statusCode: {
+        statusCode: {
 			404: function() {
 				alert("Page introuvable !");
 			}
@@ -109,7 +109,7 @@ function selectQuestion(questionId){
 	var DATA = 'questionid=' + questionId;
     $.ajax({
         type: "POST",
-        url: "php/xmlparser.php",
+        url: "arbres/xmlparser.php",
         dataType: "text",
         data: DATA,
         cache: false,
@@ -143,7 +143,7 @@ function selectResponse(responseId, mode){
 	var DATA = 'responseid=' + responseId;
     $.ajax({
         type: "POST",
-        url: "php/xmlparser.php",
+        url: "arbres/xmlparser.php",
         dataType: "xml",
         data: DATA,
         cache: false,
