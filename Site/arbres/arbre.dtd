@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!ELEMENT arbre (branche)>
+
+<!ELEMENT branche (question)>
+<!ATTLIST branche id ID #REQUIRED>
+<!ATTLIST branche type CDATA #IMPLIED>
+<!ATTLIST branche date CDATA #IMPLIED>
+
+<!ELEMENT question (reponse+, media*)>
+<!ATTLIST question id ID #REQUIRED>
+<!ATTLIST question texte CDATA #REQUIRED>
+
+<!ELEMENT reponse ((branche|resultat), media*)>
+<!ATTLIST reponse id ID #REQUIRED>
+<!ATTLIST reponse texte CDATA #REQUIRED>
+
+<!ELEMENT resultat (nom, type, regimeAlimentaire, informations, media*)>
+<!ELEMENT nom (#PCDATA)>
+<!ELEMENT type (#PCDATA)>
+<!ELEMENT regimeAlimentaire (#PCDATA)>
+<!ELEMENT informations (#PCDATA)>
+<!ATTLIST resultat id ID #REQUIRED>
+
+<!ELEMENT media ((img?, sound?, video?)+, legende+)>
+<!ELEMENT img EMPTY>
+<!ATTLIST img id ID #REQUIRED>
+<!ATTLIST img src CDATA #REQUIRED>
+<!ELEMENT sound EMPTY>
+<!ATTLIST sound id ID #REQUIRED>
+<!ATTLIST sound src CDATA #REQUIRED>
+<!ELEMENT video EMPTY>
+<!ATTLIST video id ID #REQUIRED>
+<!ATTLIST video src CDATA #REQUIRED>
+<!ELEMENT legende (#PCDATA)>
