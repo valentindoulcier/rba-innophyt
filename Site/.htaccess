@@ -1,0 +1,7 @@
+AuthUserFile /Library/WebServer/Documents/RBA-INNOPHYT/n8g779hf9hdcx9/.htpasswd
+AuthGroupFile /dev/null
+AuthName "Acces restreint"
+AuthType Basic
+<limit GET>
+	require valid-user
+</Limit> 
