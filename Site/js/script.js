@@ -11,14 +11,104 @@ $(document).ready(function() {
 	//loadTestContent();
 
 	loadAllPulgins(); // Charge les différents plugins
+
+	$(function(){
 	
-	bindLoginAction();
+	// Checking for CSS 3D transformation support
+	$.support.css3d = supportsCSS3D();
+	
+	var formContainer = $('#formContainer');
+	
+	// Listening for clicks on the ribbon links
+	$('.flipLink').click(function(e){
+		
+		// Flipping the forms
+		formContainer.toggleClass('flipped');
+		
+		// If there is no CSS3 3D support, simply
+		// hide the login form (exposing the recover one)
+		if(!$.support.css3d){
+			$('#login').toggle();
+		}
+		e.preventDefault();
+	});
+	
+	formContainer.find('form').submit(function(e){
+		// Preventing form submissions. If you implement
+		// a backend, you might want to remove this code
+		e.preventDefault();
+	});
+	
+	
+	// A helper function that checks for the 
+	// support of the 3D CSS3 transformations.
+	function supportsCSS3D() {
+		var props = [
+			'perspectiveProperty', 'WebkitPerspective', 'MozPerspective'
+		], testDom = document.createElement('a');
+		  
+		for(var i=0; i<props.length; i++){
+			if(props[i] in testDom.style){
+				return true;
+			}
+		}
+		
+		return false;
+	}
+});
+	
+	//bindLoginAction();
 });
 
 
 function bindLoginAction()
 {
-	$("#connexionForm").submit( function() {	// à la soumission du formulaire						 
+	$("#connexionForm").submit( function(){
+
+	// Checking for CSS 3D transformation support
+	$.support.css3d = supportsCSS3D();
+
+	var formContainer = $('#formContainer');
+
+	// Listening for clicks on the ribbon links
+	$('.flipLink').click(function(e){
+
+		// Flipping the forms
+		formContainer.toggleClass('flipped');
+
+		// If there is no CSS3 3D support, simply
+		// hide the login form (exposing the recover one)
+		if(!$.support.css3d){
+			$('#login').toggle();
+		}
+		e.preventDefault();
+	});
+
+	formContainer.find('form').submit(function(e){
+		// Preventing form submissions. If you implement
+		// a backend, you will want to remove this code
+		e.preventDefault();
+	});
+
+	// A helper function that checks for the
+	// support of the 3D CSS3 transformations.
+	function supportsCSS3D() {
+		var props = [
+			'perspectiveProperty', 'WebkitPerspective', 'MozPerspective'
+		], testDom = document.createElement('a');
+
+		for(var i=0; i<props.length; i++){
+			if(props[i] in testDom.style){
+				return true;
+			}
+		}
+
+		return false;
+	}
+});
+		
+		
+		/*function() {	// à la soumission du formulaire						 
 		$.ajax({ // fonction permettant de faire de l'ajax
 		   type: "POST", // methode de transmission des données au fichier php
 		   url: "pages/login.php", // url du fichier php
@@ -42,6 +132,7 @@ function bindLoginAction()
 		event.preventDefault();
 		return false; // permet de rester sur la même page à la soumission du formulaire
 	});
+	*/
 }
 
 /****** LOAD PLUGINS *****/

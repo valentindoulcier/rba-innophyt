@@ -21,23 +21,40 @@
 	</div>
 	
 	
-	<div id="loginFrame">
-		<div id="debugText">			
-			<form name="connexionForm" id="connexionForm" action="#"><!-- début du formulaire de connexion -->
- 
-				<label for="login">Nom d'utilisateur :</label>
-        		<input type="text" name="login" id="login" /><!-- champ pour le login -->
- 
-				<label for="pass">Mot de passe :</label>
-				<input type="password" name="pass" id="pass" /><!-- champ pour le mot de passe -->
- 
-				 <br />
-        		<input type="submit" value="Je me connecte" class="bouton" /><!-- bouton de connexion -->
-			</form><!-- fin du formulaire -->
-		</div>
+	<div id="formContainer">
+		<form id="login" method="post" action="./">
+			<a href="#" id="flipToRecover" class="flipLink">Forgot?</a>
+			<input type="text" name="loginEmail" id="loginEmail" placeholder="Email" />
+			<input type="password" name="loginPass" id="loginPass" placeholder="Password" />
+			<input type="submit" name="submit" value="Login" />
+		</form>
+	
+		<form id="recover" method="post" action="./">
+			<a href="#" id="flipToLogin" class="flipLink">Forgot?</a>
+			<input type="text" name="recoverEmail" id="recoverEmail" placeholder="Your Email" />
+			<input type="submit" name="submit" value="Recover" />
+		</form>
 	</div>
 
-
+	<br />
+	<br />
+<!--
+	<div id="loginFrame">
+		<div id="debugText">			
+			<form name="connexionForm" id="connexionForm" action="#"><!-- début du formulaire de connexion ->
+ 
+				<label for="login">Nom d'utilisateur :</label>
+        		<input type="text" name="login" id="login" /><!-- champ pour le login ->
+ 
+				<label for="pass">Mot de passe :</label>
+				<input type="password" name="pass" id="pass" /><!-- champ pour le mot de passe ->
+ 
+				 <br />
+        		<input type="submit" value="Je me connecte" class="bouton" /><!-- bouton de connexion ->
+			</form><!-- fin du formulaire ->
+		</div>
+	</div>
+-->
 
 
 
