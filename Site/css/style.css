@@ -531,6 +531,7 @@ section, footer{
 
 input[type=text],input[type=password]{
 	/* The text fields */
+	/*
 	font: 15px 'Segoe UI',Arial,sans-serif;
 	border: none;
 	background:none;
@@ -543,6 +544,7 @@ input[type=text],input[type=password]{
 	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
 	color:#eee;
 	outline:none;
+	*/
 }
 
 #loginPass{
@@ -594,4 +596,39 @@ input[type=submit]:hover{
 
 input::-webkit-input-placeholder {
     color:#eee;
+}
+
+
+/*----------------------------
+	Écran d'Accueil + Connection
+-----------------------------*/
+#menu {
+	margin: 25px 0 25px 0;
+	padding-left: 25px;
+}
+.cell {
+	margin-top: 15px;
+	margin-bottom: 15px;
+	
+}
+.ico-accueil {
+	width: 200px;
+	height: auto;
+	margin-left: auto;
+	margin-right: auto;
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	border-radius: 20px;
+}
+#connection-form {
+	margin: 75px auto 75px auto;
+	padding: 50px 60px 25px 60px;
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+	background-color: #F9F9F9;
+	width: 550px;
+}
+#rba-innophyt-connection {
+	padding-left: 25px;
 }
