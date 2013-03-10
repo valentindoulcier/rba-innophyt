@@ -402,7 +402,7 @@ function generateCarouselItem(shadowboxGallery, carouselElement)
 	// Type: video
 	else if(mediaType == 'video'){
 		if(!thumbSrc)
-			thumbSrc = 'images/movie-clap.png';
+			thumbSrc = '../images/movie-clap.png';
 
 		if(!caption){
 			caption = 'Cliquez pour lire la vidéo';
@@ -415,7 +415,7 @@ function generateCarouselItem(shadowboxGallery, carouselElement)
 	// Type: sound
 	else if(mediaType == 'sound'){
 		if(!thumbSrc)
-			thumbSrc = 'images/speaker.png';
+			thumbSrc = '../images/speaker.png';
 
 		if(!caption){
 			caption = 'Cliquez pour écouter';

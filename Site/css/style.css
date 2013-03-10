@@ -253,10 +253,10 @@ i.permalink-icon {
 	background-position: -3px 0px;
 }
 .carouselQuestion .soundIcon{
-	background-image: url('../images/speaker-icon-medium.png');
+	background-image: url('../../images/speaker-icon-medium.png');
 }
 .carouselQuestion .videoIcon{
-	background-image: url('../images/movie-clap-icon-medium.png');
+	background-image: url('../../images/movie-clap-icon-medium.png');
 }
 
 /* RESPONSES */

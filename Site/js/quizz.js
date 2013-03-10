@@ -16,7 +16,7 @@ function selectFirstQuestion(questionId) {
 	var DATA = 'questionid=' + questionId;
 	$.ajax({
 		type : "POST",
-		url : "arbres/xmlparser.php",
+		url : "../arbres/xmlparser.php",
 		dataType : "text",
 		data : DATA,
 		cache : false,
@@ -51,7 +51,7 @@ function selectQuestion(questionId) {
 	var DATA = 'questionid=' + questionId;
 	$.ajax({
 		type : "POST",
-		url : "arbres/xmlparser.php",
+		url : "../arbres/xmlparser.php",
 		dataType : "text",
 		data : DATA,
 		cache : false,
@@ -85,7 +85,7 @@ function selectResponse(responseId, mode) {
 	var DATA = 'responseid=' + responseId;
 	$.ajax({
 		type : "POST",
-		url : "arbres/xmlparser.php",
+		url : "../arbres/xmlparser.php",
 		dataType : "xml",
 		data : DATA,
 		cache : false,

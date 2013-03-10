@@ -23,7 +23,7 @@ echo $value;
 function getBranchOrResultFromResponse($responseId)
 {
 	// Chargement du fichier XML d'origine
-	if(($xmlDoc = createDOMFromXML("../structure_xml.xml")) == null)
+	if(($xmlDoc = createDOMFromXML("./structure_xml.xml")) == null)
 		return generateErrorXML("Ce document n'est pas valide !");
 	
 	// Recherche de la branche contenant la question passée en argument
@@ -52,7 +52,7 @@ function getBranchFromQuestion($questionId)
 {
 
 	// Chargement du fichier XML d'origine
-	if(($xmlDoc = createDOMFromXML("../structure_xml.xml")) == null)
+	if(($xmlDoc = createDOMFromXML("./structure_xml.xml")) == null)
 		return generateErrorXML("Ce document n'est pas valide !");
 	
 	// Recherche de la branche contenant la question passée en argument

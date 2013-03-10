@@ -1,5 +1,6 @@
 <?php
 	$JS_PATH   = "../js";
+	$LIB_PATH   = "../lib";
 	$CSS_PATH  = "../css";
 	$IMG_PATH  = "../images";
 	$PHP_PATH  = "./parts";
@@ -88,7 +89,7 @@ function openLogin() {
 		<div id="questionTextDivContainer">
 			<div id="questionTextDivSubNav">
 				 <div id="questionTextDiv" class="myContainer">
-			    	<div id="questionTextIcon"><img src="images/question-mark.png" alt="icone question"></div>
+			    	<div id="questionTextIcon"><img src="<?php echo($IMG_PATH); ?>/question-mark.png" alt="icone question"></div>
 			    	<h1><!--[Question]--><br><small><!--[Legend]--></small></h1>
 			    	<div class="clearer"></div>
 			    </div>
@@ -118,7 +119,7 @@ function openLogin() {
 				    		<h3><i class="icon-eye-open"></i>Web-cam</h3>
 				    	</li>
 				    	<li>
-							<object type="application/x-shockwave-flash" data="lib/webcam/webcamvid.swf"  width="434" height="300">
+							<object type="application/x-shockwave-flash" data="<?php echo($LIB_PATH); ?>/webcam/webcamvid.swf" width="434" height="300">
 								<param name="webcam" value="webcamvid.swf">
 							</object>
 			     		 </li>
