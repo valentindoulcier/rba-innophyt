@@ -385,9 +385,9 @@ function generateCarouselItem(shadowboxGallery, carouselElement)
 {
 	var mediaType = carouselElement.mediaType;
 	var thumbSrc = carouselElement.mediaThumb;
-	var mediaSrc = carouselElement.mediaSrc;
+	var mediaSrc = arbre_media_url + "/" + carouselElement.mediaSrc;
 	var caption = carouselElement.mediaCaption;
-	var title = caption
+	var title = caption;
 
 	var mediaTypeIconClass = '';
 
@@ -402,7 +402,7 @@ function generateCarouselItem(shadowboxGallery, carouselElement)
 	// Type: video
 	else if(mediaType == 'video'){
 		if(!thumbSrc)
-			thumbSrc = '../images/movie-clap.png';
+			thumbSrc = images_url + "/" + 'movie-clap.png';
 
 		if(!caption){
 			caption = 'Cliquez pour lire la vidéo';
@@ -415,7 +415,7 @@ function generateCarouselItem(shadowboxGallery, carouselElement)
 	// Type: sound
 	else if(mediaType == 'sound'){
 		if(!thumbSrc)
-			thumbSrc = '../images/speaker.png';
+			thumbSrc = images_url + "/" + 'speaker.png';
 
 		if(!caption){
 			caption = 'Cliquez pour écouter';
@@ -438,7 +438,7 @@ function generateCarouselItem(shadowboxGallery, carouselElement)
   	}
 
   	carouselItem +=
-    		'<a href="'+mediaSrc+'" target="_blank" rel="shadowbox['+shadowboxGallery+']" title="'+title+'"><img src="'+thumbSrc+'" alt=""></a>';
+    		'<a href="'+mediaSrc+'" target="_blank" rel="shadowbox['+shadowboxGallery+']" title="'+title+'"><img src="' + thumbSrc+'" alt=""></a>';
 
     if(caption)
     {

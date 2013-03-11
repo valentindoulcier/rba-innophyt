@@ -1,4 +1,15 @@
 		<script type="text/javascript">
+			function logout() {
+				if (sessionStorage.getItem(session_login_name)) {
+					sessionStorage.removeItem(session_login_name);
+				} else if (localStorage.getItem(session_login_name)) {
+					localStorage.removeItem(session_login_name);
+				} else {
+					console.error("Non connecté !");
+				}
+				location = "<?php echo $LOGIN_URL ?>";
+			}
+			
 			var authInfo = null;
 			if (sessionStorage.getItem(session_login_name)) {
 				authInfo = sessionStorage.getItem(session_login_name);
@@ -24,25 +35,14 @@
 							}
 						} else {
 							console.error(msg);
-							location = "<?php echo $LOGIN_URL ?>";
+							logout();
 						}
 					},
 					error : function(jqXHR, textStatus, errorThrown) {
 						console.error("Connexion fail : " + textStatus + " - " + errorThrown);
-						location = "<?php echo $BASE_URL ?>";
+						logout();
 					}
 				});
 			}
 			
-			
-			function logout() {
-				if (sessionStorage.getItem(session_login_name)) {
-					sessionStorage.removeItem(session_login_name);
-				} else if (localStorage.getItem(session_login_name)) {
-					localStorage.removeItem(session_login_name);
-				} else {
-					console.error("Non connecté !");
-				}
-				location = "<?php echo $LOGIN_URL ?>";
-			}
 		</script>
