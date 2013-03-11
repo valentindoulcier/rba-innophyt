@@ -1,47 +1,73 @@
-<?php
-	// connexion avec la base de données
-	//$link = mysql_connect("localhost", "root", "") or die("Impossible de se connecter : " . mysql_error());
-	//mysql_select_db("nomDeMaBase");
- 
-	// on exécute maintenant la requete sql pour tester si les parametres de connexion sont ok
-	//$result = mysql_query("SELECT login, pass, id FROM membres WHERE login = '$_POST[login]' AND pass = '$_POST[pass]'");
-	//$membre = mysql_fetch_assoc($result);
- 
-	if(($_POST[login]=="Val") && isset($_POST[pass]))
-	{
-		$date = $_POST[pass];
-		
-		if (openssl_private_decrypt(base64_decode($data), $decrypted, $_POST[private_key]))
-            $data = $decrypted;
-        else
-            $data = '';
-		//setcookie("id",$membre[id]); // genere un cookie contenant l'id du membre
-		//setcookie("login",$membre[login]); // genere un cookie contenant le login du membre		
-		echo "data"; // on 'retourne' la valeur 1 au javascript si la connexion est bonne
-	}
-	else 
-	{
-		echo "0"; // on 'retourne' la valeur 0 au javascript si la connexion n'est pas bonne
-	}
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
 
-/*
-	// connexion avec la base de données
-//	$link = mysql_connect("localhost", "root", "") or die("Impossible de se connecter : " . mysql_error());
-//	mysql_select_db("nomDeMaBase");
- 
-	// on exécute maintenant la requete sql pour tester si les parametres de connexion sont ok
-//	$result = mysql_query("SELECT login, pass, id FROM membres WHERE login = '$_POST[login]' AND pass = '$_POST[pass]'");
-//	$membre = mysql_fetch_assoc($result);
- 
-//	if(($_POST[login]==$membre[login])&&($_POST[pass]==$membre[pass]))
-//	{
-//		setcookie("id",$membre[id]); // genere un cookie contenant l'id du membre
-//		setcookie("login",$membre[login]); // genere un cookie contenant le login du membre		
-//		echo "1"; // on 'retourne' la valeur 1 au javascript si la connexion est bonne
-//	}
-//	else 
-//	{
-//		echo "0"; // on 'retourne' la valeur 0 au javascript si la connexion n'est pas bonne
-//	}
-*/
-?>
+		<title>Site title here !</title>
+
+		<?php
+			$PageType    = "login";
+			$CurrentPath = "/pages";
+			include "parts/variables.php";
+			
+			include $PAGE_PART_PATH . "/headCssJs.php";
+			include $PAGE_PART_PATH . "/securite.php";
+		?>
+	</head>
+	<body>
+		<?php
+			include $PAGE_PART_PATH . "/header.php";
+		?>
+
+		<div id="debugFrame" class="myContainer">
+			<div id="debugText">
+				<!--[Debug text]-->
+			</div>
+		</div>
+	
+		<div id="questionFrame" class="myContainer">
+			<div id="questionTextDivContainer">
+				<div id="questionTextDivSubNav">
+					<div id="questionTextDiv" class="myContainer">
+						<div id="questionTextIcon"><img src="<?php echo $IMG_PATH; ?>/home.png" alt="icone accueil">
+						</div><h1>Connexion<br><small>Veuillez vous identifier</small></h1>
+						<div class="clearer"></div>
+					</div>
+				</div>
+			</div>
+			
+			<div id="menu">
+				<div id="connection-form">
+					
+					<div id="login-info"></div>
+					
+					<form class="form-horizontal" id="rba-innophyt-connection">
+						<div class="control-group">
+							<label class="control-label" for="loginEmail">Email</label>
+							<div class="controls">
+								<input type="text" id="loginEmail" placeholder="Email">
+							</div>
+						</div>
+						<div class="control-group">
+							<label class="control-label" for="loginPass">Mot de passe</label>
+							<div class="controls">
+								<input type="password" id="loginPass" placeholder="Mot de passe">
+							</div>
+						</div>
+						<div class="control-group">
+							<div class="controls">
+								<label class="checkbox"><input type="checkbox" id="remember-me">Se souvenir de moi</label>
+								<button type="submit" class="btn">Connexion</button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		
+		<?php
+			include $PAGE_PART_PATH . "/footer.php";
+			include $PAGE_PART_PATH . "/script.php";
+		?>
+	</body>
+</html>

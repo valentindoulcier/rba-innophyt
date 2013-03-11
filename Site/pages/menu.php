@@ -1,10 +1,3 @@
-<?php
-	$JS_PATH = "../js";
-	$CSS_PATH = "../css";
-	$IMG_PATH = "../images";
-	
-	$PageType = "page";
-?>
 <!doctype html>
 <html>
 	<head>
@@ -13,12 +6,17 @@
 		<title>Site title here !</title>
 
 		<?php
-			include "parts/headCssJs.php";
+			$PageType    = "page";
+			$CurrentPath = "/pages";
+			include "parts/variables.php";
+
+			include $PAGE_PART_PATH . "/headCssJs.php";
+			include $PAGE_PART_PATH . "/securite.php";
 		?>
 	</head>
 	<body>
 		<?php
-			include "parts/header.php";
+			include $PAGE_PART_PATH . "/header.php";
 		?>
 
 		<div id="debugFrame" class="myContainer">
@@ -63,8 +61,8 @@
 		
 
 		<?php
-			include "parts/footer.php";
-			include "parts/script.php";
+			include $PAGE_PART_PATH . "/footer.php";
+			include $PAGE_PART_PATH . "/script.php";
 		?>
 	</body>
 </html>

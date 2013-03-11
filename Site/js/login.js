@@ -1,25 +1,26 @@
 function loadSubmitFormAction() {
 	$('#rba-innophyt-connection').submit(function(e) {
 		var email     = $("#loginEmail").val();
-		var password  = cryptico.encrypt($("#loginPass").val(), public_key).cipher;
+		var password  = CryptoJS.MD5($("#loginPass").val()).toString();
 		
 		$.ajax({
 			type : "POST",
-			url : "pages/login.php",
-			data : "login=" + email + "&pass=" + password + "&private_key=" + private_key,
+			url : php_script_url + "/login.php",
+			data : { "login" : email, "pass" : password, "idKey" : idKey },
 			success : function(msg) {
-				if (msg == "1") {
+				if (msg == CryptoJS.MD5(idKey)) {
 					$('#login-info').html("<div class='alert alert-success'> <button type='button' class='close' data-dismiss='alert'>&times;</button> <strong>Authentification réussit !</strong> Vous allez être redirigé vers le menu </div>")
+					var authInfo = '{ "loginEmail": "' + email + '" , "pass": "' + password + '" , "idKeyMd5": "' + CryptoJS.MD5(idKey).toString() + '" }';
 					if ($('#remember-me').attr('checked') == "checked") {
-						sessionStorage.setItem('loginEmail',   email);
-						sessionStorage.setItem('loginPassWd',  password);
+						sessionStorage.setItem('loginInfoRBA-INNOPHYT', authInfo);
 					} else {
-						localStorage.setItem('loginEmail',   email);
-						localStorage.setItem('loginPassWd',  password);
+						localStorage.setItem('loginInfoRBA-INNOPHYT', authInfo);
 					}
+					location = pages_url + "/menu.php";
 				} else {
+					console.error(msg);
 					$('#login-info').html("<div class='alert alert-error'> <button type='button' class='close' data-dismiss='alert'>&times;</button> <strong>Authentification impossible !</strong> Erreur dans votre email ou votre mot de passe </div>")
-				} alert(msg);
+				}
 			},
 			error : function(jqXHR, textStatus, errorThrown) {
 				console.error("Connexion fail : " + textStatus + " - " + errorThrown)
