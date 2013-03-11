@@ -12,9 +12,9 @@ function loadSubmitFormAction() {
 					$('#login-info').html("<div class='alert alert-success'> <button type='button' class='close' data-dismiss='alert'>&times;</button> <strong>Authentification réussit !</strong> Vous allez être redirigé vers le menu </div>")
 					var authInfo = '{ "loginEmail": "' + email + '" , "pass": "' + password + '" , "idKeyMd5": "' + CryptoJS.MD5(idKey).toString() + '" }';
 					if ($('#remember-me').attr('checked') == "checked") {
-						sessionStorage.setItem('loginInfoRBA-INNOPHYT', authInfo);
-					} else {
 						localStorage.setItem('loginInfoRBA-INNOPHYT', authInfo);
+					} else {
+						sessionStorage.setItem('loginInfoRBA-INNOPHYT', authInfo);
 					}
 					location = pages_url + "/menu.php";
 				} else {

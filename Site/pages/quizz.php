@@ -30,10 +30,7 @@
 				<div id="questionTextDivSubNav">
 					<div id="questionTextDiv" class="myContainer">
 						<div id="questionTextIcon"><img src="images/question-mark.png" alt="icone question">
-						</div>
-						<h1><!--[Question]-->
-						<br>
-						<small><!--[Legend]--></small></h1>
+						</div><h1><!--[Question]--><br><small><!--[Legend]--></small></h1>
 						<div class="clearer"></div>
 					</div>
 				</div>
