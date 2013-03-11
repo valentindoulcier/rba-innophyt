@@ -21,6 +21,7 @@
 	$PHP_SCRIPT_URL    = $BASE_URL . "/php_script";
 	$LOGIN_URL         = $PAGES_URL . "/login.php";
 	$MENU_URL          = $PAGES_URL . "/menu.php";
+	$QUIZZ_URL         = $PAGES_URL . "/quizz.php";
 	
 	$LOGIN_PAGE        = $PAGE_PATH . "/login.php";
 	

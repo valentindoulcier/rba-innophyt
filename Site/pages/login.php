@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="UTF-8" />
 
-		<title>Site title here !</title>
+		<title>Connexion</title>
 
 		<?php
 			$PageType    = "login";
@@ -11,7 +11,8 @@
 			include "parts/variables.php";
 			
 			include $PAGE_PART_PATH . "/headCssJs.php";
-			include $PAGE_PART_PATH . "/securite.php";
+			// On désactive le module de sécurité sur la page de login car l'utilisateur doit s'authentifier
+			//include $PAGE_PART_PATH . "/securite.php";
 		?>
 	</head>
 	<body>

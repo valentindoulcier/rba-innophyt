@@ -6,7 +6,7 @@
 				authInfo = localStorage.getItem(session_login_name);
 			} else {
 				console.error("Error login - Missing authentification informations !");
-				location = "<?php echo $BASE_URL ?>";
+				location = "<?php echo $LOGIN_URL ?>";
 			}
 			
 			authInfo = $.parseJSON(authInfo);
@@ -22,7 +22,7 @@
 						}
 					} else {
 						console.error(msg);
-						location = "<?php echo $BASE_URL ?>";
+						location = "<?php echo $LOGIN_URL ?>";
 					}
 				},
 				error : function(jqXHR, textStatus, errorThrown) {
