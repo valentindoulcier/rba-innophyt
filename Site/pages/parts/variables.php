@@ -25,6 +25,8 @@
 	
 	$LOGIN_PAGE        = $PAGE_PATH . "/login.php";
 	
+	define('XML_FILEPATH', $ARBRE_PATH . '/structure_xml.xml');
+	
 	//$PageType = page / login / quizz
 	
 	if (!$HEADER) {
