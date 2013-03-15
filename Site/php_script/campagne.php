@@ -20,7 +20,7 @@
 						$returnCampagne = '{ "statut": "1", "dataType": "campagne", "data": { ';
 						
 						 while ($rowC = $campagne->fetch_assoc()) {
-							 $returnCampagne .= '"' . $row['ID'] . '": {';
+							 $returnCampagne .= '"' . $rowC['ID'] . '": {';
 							 $returnCampagne .= '"id": "'           . $rowC['ID'] . '",';
 							 $returnCampagne .= '"nom": "'          . $rowC['NOM'] . '",';
 							 $returnCampagne .= '"description": "'  . $rowC['DESCRIPTION'] . '",';

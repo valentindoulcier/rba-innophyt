@@ -679,7 +679,7 @@ input::-webkit-input-placeholder {
 	padding-bottom: 5px;
 }
 .fieldSpan{
-	color: red;
+	color: #6D7269;
 	display: block;
 	margin-left: 25px;
 }
@@ -688,13 +688,14 @@ input::-webkit-input-placeholder {
 	margin-bottom: 20px;
 }
 .campagne{
-	background-color: red;
+	background-color: #c2cbba;
 	width: 120px;
 	height: 120px;
 	margin-top: 20px;
 	text-align: center;
-}
-.nom-item {
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
 }
 
 /*----------------------------

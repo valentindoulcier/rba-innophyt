@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="UTF-8" />
 
-		<title>Menu</title>
+		<title>Campagnes</title>
 
 		<?php
 			$PageType    = "prepareQuizz";
@@ -30,7 +30,7 @@
 				<div id="questionTextDivSubNav">
 					<div id="questionTextDiv" class="myContainer">
 						<div id="questionTextIcon"><img src="<?php echo $IMG_PATH; ?>/home.png" alt="icone accueil">
-						</div><h1>Campagne<br><small>Veuillez sélectionner votre campagne</small></h1>
+						</div><h1>Campagnes<br><small>Veuillez sélectionner votre campagne</small></h1>
 						<div class="clearer"></div>
 					</div>
 				</div>
@@ -46,12 +46,10 @@
 				<div id="infos_elem">
 					<header><h2>Information</h2></header>
 					<section>
-						<div class="field">Nom<span id="fieldName" class="fieldSpan">2013</span></div>
-						<div class="field">Description<span id="fieldDescription" class="fieldSpan">Je fais une belle est longue description de merde</span></div>
-						<div class="field">Date de début<span id="fieldDateDebut" class="fieldSpan">10/03/2013</span></div>
-						<div class="field">Date de fin<span id="fieldDateFin" class="fieldSpan">31/03/2013</span></div>
-						
-						<a rel="shadowbox" href="menu.php">kjwshvkhbqsdkjfsd</a>
+						<div class="field">Nom<span id="fieldName" class="fieldSpan">&nbsp;</span></div>
+						<div class="field">Description<span id="fieldDescription" class="fieldSpan">&nbsp;</span></div>
+						<div class="field">Date de début<span id="fieldDateDebut" class="fieldSpan">&nbsp;</span></div>
+						<div class="field">Date de fin<span id="fieldDateFin" class="fieldSpan">&nbsp;</span></div>
 					</section>
 				</div>
 				<div class="clearer"></div>
