@@ -1,14 +1,24 @@
+var data
 function lister_campagne() {
 	$.ajax({
 		type : "POST",
 		url : php_script_url + "/campagne.php",
 		data : { "idKey" : authInfo.idKeyMd5 },
 		success : function(msg) {
-			var data = $.parseJSON(msg);
+			 data = $.parseJSON(msg);
 			if (data.idKey == authInfo.idKeyMd5) {
 				if (data.dataType == "campagne") {
+					sessionStorage.setItem("liste_campagne-" + authInfo.idKeyMd5, msg);
 					console.debug(data);
-					$('#liste_campagne').html(msg);
+					var html = "<div class='row'>";
+					html += "<div class='span1 campagne'><h3>+</h3></div>";
+					$.each(data.data, function() {
+						if (this.id) {
+							html += "<div class='span1 campagne'><span class='nom-item'><h3>" + this.nom + "</h3></span></div>";
+						}
+					});
+					html += "</div>";
+					$('#liste_campagne').html(html);
 				} else {
 					$('#liste_campagne').html("<div class='alert alert-error'> <button type='button' class='close' data-dismiss='alert'>&times;</button> <strong>Erreur !</strong> Problème dans la récupération de la liste des campagnes </div>")
 				}

@@ -50,6 +50,8 @@
 						<div class="field">Description<span id="fieldDescription" class="fieldSpan">Je fais une belle est longue description de merde</span></div>
 						<div class="field">Date de début<span id="fieldDateDebut" class="fieldSpan">10/03/2013</span></div>
 						<div class="field">Date de fin<span id="fieldDateFin" class="fieldSpan">31/03/2013</span></div>
+						
+						<a rel="shadowbox" href="menu.php">kjwshvkhbqsdkjfsd</a>
 					</section>
 				</div>
 				<div class="clearer"></div>
