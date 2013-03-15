@@ -38,7 +38,7 @@
 			
 			<div id="menu" class="row">
 				<div class="span3 cell">
-					<a href="#" title=""><img src="<?php echo $IMG_PATH ?>/questionnaire.png" alt="icone questionnaire" class="ico-accueil"/></a>
+					<a href="<?php echo $PROTOCOLES_URL?>" title=""><img src="<?php echo $IMG_PATH ?>/vache.png" alt="icone questionnaire" class="ico-accueil"/></a>
 				</div>
 				<div class="span3 cell">
 					<a href="<?php echo $QUIZZ_URL?>" title=""><img src="<?php echo $IMG_PATH ?>/vache.png" alt="icone questionnaire" class="ico-accueil"/></a>

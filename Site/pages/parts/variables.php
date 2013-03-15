@@ -8,6 +8,7 @@
 	
 	$JS_PATH           = $BACK_PATH . "/js";
 	$CSS_PATH          = $BACK_PATH . "/css";
+	$DOCUMENTS_PATH    = $BACK_PATH . "/documents";
 	$IMG_PATH          = $BACK_PATH . "/images";
 	$PAGE_PATH         = $BACK_PATH . "/pages";
 	$PAGE_PART_PATH    = $PAGE_PATH . "/parts";
@@ -21,6 +22,7 @@
 	$PHP_SCRIPT_URL    = $BASE_URL . "/php_script";
 	$LOGIN_URL         = $PAGES_URL . "/login.php";
 	$MENU_URL          = $PAGES_URL . "/menu.php";
+	$PROTOCOLES_URL    = $PAGES_URL . "/protocoles.php";
 	$QUIZZ_URL         = $PAGES_URL . "/quizz.php";
 	
 	$LOGIN_PAGE        = $PAGE_PATH . "/login.php";
