@@ -29,7 +29,7 @@
 					success : function(msg) {
 						if (msg == authInfo.idKeyMd5) {
 							console.debug("securite ok");
-							$('#footer p.right').html('Vous êtes connecté en tant que ' + authInfo.loginEmail + '<i class="icon-ok-sign"></i> - <a href="<?php echo $MENU_URL ?>" alt="Menu">Menu</a> <i class="icon-th"></i> - <a href="#" alt="Déconnection" onClick="logout();">Déconnection</a>');
+							$('#footer p.right').html('Vous êtes connecté en tant que ' + authInfo.loginEmail + '<i class="icon-ok-sign"></i> - <a href="<?php echo $MENU_URL ?>" alt="Menu">Menu</a> <i class="icon-th"></i> - <a href="#" alt="Déconnexion" onClick="logout();">Déconnection</a>');
 							if (location == "<?php echo $LOGIN_URL ?>") {
 								location = "<?php echo $MENU_URL ?>";
 							}

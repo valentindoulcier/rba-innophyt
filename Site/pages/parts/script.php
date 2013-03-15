@@ -45,3 +45,11 @@
 <?
 	}
 ?>
+
+<?php
+	if (strcmp($PageType, "prepareQuizz") == 0) {
+?>
+	<script type="text/javascript" src="<?php echo $JS_PATH; ?>/prepareQuizz.js"></script>
+<?
+	}
+?>

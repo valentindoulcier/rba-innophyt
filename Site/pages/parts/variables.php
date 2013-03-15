@@ -23,13 +23,14 @@
 	$LOGIN_URL         = $PAGES_URL . "/login.php";
 	$MENU_URL          = $PAGES_URL . "/menu.php";
 	$PROTOCOLES_URL    = $PAGES_URL . "/protocoles.php";
+	$CAMPAGNE_URL      = $PAGES_URL . "/campagne.php";
 	$QUIZZ_URL         = $PAGES_URL . "/quizz.php";
 	
 	$LOGIN_PAGE        = $PAGE_PATH . "/login.php";
 	
 	define('XML_FILEPATH', $ARBRE_PATH . '/structure_xml.xml');
 	
-	//$PageType = page / login / quizz
+	//$PageType = page / login / quizz / prepareQuizz
 	
 	if (!$HEADER) {
 ?>
