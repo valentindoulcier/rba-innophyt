@@ -1,7 +1,6 @@
 function bindCampagneClick() {
 	$('.existingCampagne').bind('click', function() {
 		var campagne = document.getElementById($(this).attr('id'));
-		console.debug(campagne.dataset);
 		$('#fieldName').html(campagne.dataset.nom);
 		$('#fieldDescription').html(campagne.dataset.description);
 		$('#fieldDateDebut').html(campagne.dataset.datedebut);
@@ -9,7 +8,7 @@ function bindCampagneClick() {
 	});
 }
 function lister_campagne() {
-	var campagneForm = pages_url + "campagneForm.php";
+	var campagneForm = "#resultRightDiv";//pages_url + "/campagneForm.php";
 	$.ajax({
 		type : "POST",
 		url : php_script_url + "/campagne.php",
@@ -21,7 +20,7 @@ function lister_campagne() {
 					sessionStorage.setItem("liste_campagne-" + authInfo.idKeyMd5, msg);
 					console.debug(data);
 					var html = "<div class='row'>";
-					html += "<div class='span1 campagne'><a href='" + campagneForm + "' rel='shadowbox;width=490px;height=400px' title='Formulaire d\'ajout dune campagne'><img src='" + images_url + "/add2.png' alt='Ajouter une campange' style='padding-top: 34px; width: 58px; height: auto;' /></a></div>";
+					html += "<div class='span1 campagne'><a href='" + campagneForm + "' rel='shadowbox;width=500px;height=313px' title='Ajouter une campagne'><img src='" + images_url + "/add2.png' alt='Ajouter une campange' style='padding-top: 34px; width: 58px; height: auto;' /></a></div>";
 					$.each(data.data, function() {
 						if (this.id) {
 							html += "<div id='c" + this.id + "' class='span1 campagne existingCampagne' data-id='" + this.id + "' data-nom='" + this.nom + "' data-description='" + this.description + "' data-datedebut='" + this.date_debut + "' data-datefin='" + this.date_fin + "' data-adresse='" + this.adresse + "' data-latitude='" + this.latitude + "' data-longitude='" + this.longitude + "'><h3>" + this.nom + "</h3></div>";
@@ -64,3 +63,54 @@ $(document).ready(function() {
 		liste_piege();
 	}
 }); 
+
+
+
+
+
+
+
+
+
+
+
+			function loadFormAction() {
+				$('#formCampagne').submit(function(e) {
+					var nom         = $("#nom").val();
+					var description = $("#description").val();
+					var datedeb     = $("#dateDeb").val();
+					var datefin     = $("#dateFin").val();
+					
+
+					$.ajax({
+						type : "POST",
+						url : php_script_url + "/campagneCreateOrUpdate.php",
+						data : {
+							"nom" : nom,
+							"description" : description,
+							"datedeb" : datedeb,
+							"datefin" : datefin,
+							"idKey" : authInfo.idKeyMd5
+						},
+						success : function(msg) {
+							Shadowbox.close();/*
+							if (msg == authInfo.idKeyMd5) {
+							} else {
+								console.error(msg);
+								$('#login-info').html("<div class='alert alert-error'> <button type='button' class='close' data-dismiss='alert'>&times;</button> <strong>Erreur !</strong> " + msg + " </div>")
+							}*/
+						},
+						error : function(jqXHR, textStatus, errorThrown) {
+							console.error("Connexion fail : " + textStatus + " - " + errorThrown)
+						}
+					});
+					e.preventDefault();
+					return false;
+				});
+			}
+
+			/****** DOCUMENT READY *****/
+
+			$(document).ready(function() {
+				loadFormAction();
+			});

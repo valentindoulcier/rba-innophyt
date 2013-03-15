@@ -10,7 +10,7 @@
 		include "parts/variables.php";
 
 		include $PAGE_PART_PATH . "/headCssJs.php";
-		//include $PAGE_PART_PATH . "/securite.php";
+		include $PAGE_PART_PATH . "/securite.php";
 		?>
 	</head>
 	<body>
@@ -72,20 +72,12 @@
 							"datefin" : datefin,
 							"idKey" : authInfo.idKeyMd5
 						},
-						success : function(msg) {
+						success : function(msg) {/*
 							if (msg == authInfo.idKeyMd5) {
-								$('#login-info').html("<div class='alert alert-success'> <button type='button' class='close' data-dismiss='alert'>&times;</button> <strong>Authentification réussit !</strong> Vous allez être redirigé vers le menu </div>")
-								var authInfo = '{ "loginEmail": "' + email + '" , "pass": "' + password + '" , "idKeyMd5": "' + CryptoJS.MD5(idKey).toString() + '" }';
-								if ($('#remember-me').attr('checked') == "checked") {
-									localStorage.setItem('loginInfoRBA-INNOPHYT', authInfo);
-								} else {
-									sessionStorage.setItem('loginInfoRBA-INNOPHYT', authInfo);
-								}
-								location = pages_url + "/menu.php";
 							} else {
 								console.error(msg);
-								$('#login-info').html("<div class='alert alert-error'> <button type='button' class='close' data-dismiss='alert'>&times;</button> <strong>Authentification impossible !</strong> Erreur dans votre email ou votre mot de passe </div>")
-							}
+								$('#login-info').html("<div class='alert alert-error'> <button type='button' class='close' data-dismiss='alert'>&times;</button> <strong>Erreur !</strong> " + msg + " </div>")
+							}*/
 						},
 						error : function(jqXHR, textStatus, errorThrown) {
 							console.error("Connexion fail : " + textStatus + " - " + errorThrown)
