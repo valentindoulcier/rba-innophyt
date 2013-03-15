@@ -9,7 +9,7 @@ function bindCampagneClick() {
 	});
 }
 function lister_campagne() {
-	var campagneForm = pages_url + "";
+	var campagneForm = pages_url + "campagneForm.php";
 	$.ajax({
 		type : "POST",
 		url : php_script_url + "/campagne.php",
@@ -21,7 +21,7 @@ function lister_campagne() {
 					sessionStorage.setItem("liste_campagne-" + authInfo.idKeyMd5, msg);
 					console.debug(data);
 					var html = "<div class='row'>";
-					html += "<div class='span1 campagne'><a href='" + campagneForm + "' rel='shadowbox' title='Formulaire d\'ajout dune campagne'><img src='" + images_url + "/add2.png' alt='Ajouter une campange' style='padding-top: 34px; width: 58px; height: auto;' /></a></div>";
+					html += "<div class='span1 campagne'><a href='" + campagneForm + "' rel='shadowbox;width=490px;height=400px' title='Formulaire d\'ajout dune campagne'><img src='" + images_url + "/add2.png' alt='Ajouter une campange' style='padding-top: 34px; width: 58px; height: auto;' /></a></div>";
 					$.each(data.data, function() {
 						if (this.id) {
 							html += "<div id='c" + this.id + "' class='span1 campagne existingCampagne' data-id='" + this.id + "' data-nom='" + this.nom + "' data-description='" + this.description + "' data-datedebut='" + this.date_debut + "' data-datefin='" + this.date_fin + "' data-adresse='" + this.adresse + "' data-latitude='" + this.latitude + "' data-longitude='" + this.longitude + "'><h3>" + this.nom + "</h3></div>";

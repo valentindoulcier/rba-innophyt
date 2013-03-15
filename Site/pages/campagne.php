@@ -50,9 +50,6 @@
 						<div class="field">Description<span id="fieldDescription" class="fieldSpan">&nbsp;</span></div>
 						<div class="field">Date de début<span id="fieldDateDebut" class="fieldSpan">&nbsp;</span></div>
 						<div class="field">Date de fin<span id="fieldDateFin" class="fieldSpan">&nbsp;</span></div>
-
-						<a rel="shadowbox;width=490px;height=400px" href="campagneForm.php">Test</a>
-
 					</section>
 				</div>
 				<div class="clearer"></div>
