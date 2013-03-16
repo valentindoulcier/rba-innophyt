@@ -90,8 +90,27 @@ function setEmptyForm() {
 	$(".dateDeb").val("");
 	$(".dateFin").val("");
 };
-function deleteCategorie() {
-	;
+function deleteCampagne() {
+	if ($("#fieldId").html() != "") {
+		$.ajax({
+			type : "POST",
+			url : php_script_url + "/campagne.php",
+			data : { "idKey" : authInfo.idKeyMd5, "action": "supprimer", "id": $("#fieldId").html() },
+			success : function(msg) {
+				var data = $.parseJSON(msg);
+				//console.debug(data);
+				if (data.idKey == authInfo.idKeyMd5) {
+					location.reload();
+				} else {
+					$('#liste_campagne').html("<div class='alert alert-error'> <button type='button' class='close' data-dismiss='alert'>&times;</button> <strong>Erreur !</strong> " + data.data + " </div>")
+				}
+			},
+			error : function(jqXHR, textStatus, errorThrown) {
+				console.error("Connexion fail : " + textStatus + " - " + errorThrown);
+				$('#liste_campagne').html("<div class='alert alert-error'> <button type='button' class='close' data-dismiss='alert'>&times;</button> <strong>Connexion fail !</strong> " + textStatus + " - " + errorThrown + " </div>")
+			}
+		});
+	}
 }
 function loadInfoModif() {
 	if ($("#fieldId").html() != "") {

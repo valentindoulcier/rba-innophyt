@@ -166,7 +166,7 @@
 								<div class="btn-toolbar">
 									<div class="btn-group" style="margin-left: 120px;">
 										<a href="#" id="cancel-form" class="btn" onclick="Shadowbox.close();">Annuler</a>
-										<a href="#" id="submit-form" class="btn btn-danger" onclick="deleteCategorie();">Supprimer</a>
+										<a href="#" id="submit-form" class="btn btn-danger" onclick="deleteCampagne();">Supprimer</a>
 									</div>
 								</div>
 							</div>

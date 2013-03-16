@@ -102,8 +102,40 @@
 					if (!$stmt->execute()) {
 						$returnCampagne = '{ "statut": "0", "dataType": "error", "data": "Echec lors de l execution: (' . $mysqli -> connect_errno . ') ' . $mysqli -> connect_error . '" }';
 					} else {
-						//$returnCampagne = '{ "statut": "2", "dataType": "ok", "data": "Campagne ajoutée" , "idKey": "' . $row['RSA_PRIVE'] . '"}';
+						//$returnCampagne = '{ "statut": "2", "dataType": "ok", "data": "Campagne modifiée" , "idKey": "' . $row['RSA_PRIVE'] . '"}';
 						header('Location: ' . $CAMPAGNE_URL);
+					}
+					
+				} else {
+					$returnCampagne = '{ "statut": "0", "dataType": "error", "data": "Erreur lors de l\'identification de l\'utilisateur avec son ID" }';
+			}
+			} else {
+				$returnCampagne = '{ "statut": "0", "dataType": "error", "data": "Erreur lors de l\'identification de l\'utilisateur" }';
+			}
+		}
+	} else if (isset($_POST['idKey']) && strcmp($_POST['action'], 'supprimer') == 0 && isset($_POST['id'])) {
+	
+		$mysqli = new mysqli("127.0.0.1", "admin", "", "rba-innophyt", 3306);
+		if ($mysqli -> connect_errno) {
+			$returnCampagne = '{ "statut": "0", "dataType": "error", "data": "Failed to connect to MySQL: (' . $mysqli -> connect_errno . ') ' . $mysqli -> connect_error . '" }';
+		} else {
+	
+			$query = "SELECT * FROM TABLE_USER WHERE RSA_PRIVE='" . $_POST[idKey] . "'";
+			$res = $mysqli->query($query);
+			if ($res) {
+				$row = $res->fetch_assoc();
+				if (isset($row['ID'])) {
+					
+					$query = "DELETE FROM TABLE_CAMPAGNE  WHERE ID=" . $_POST['id'];
+					
+					if (!($stmt = $mysqli->prepare($query))) {
+						$returnCampagne = '{ "statut": "0", "dataType": "error", "data": "Echec de la preparation: (' . $mysqli -> connect_errno . ') ' . $mysqli -> connect_error . '" }';
+					}
+					
+					if (!$stmt->execute()) {
+						$returnCampagne = '{ "statut": "0", "dataType": "error", "data": "Echec lors de l execution: (' . $mysqli -> connect_errno . ') ' . $mysqli -> connect_error . '" }';
+					} else {
+						$returnCampagne = '{ "statut": "2", "dataType": "ok", "data": "Campagne supprimée" , "idKey": "' . $row['RSA_PRIVE'] . '"}';
 					}
 					
 				} else {
