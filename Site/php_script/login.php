@@ -7,13 +7,13 @@
 			exit();
 		}
 		
-		$query = "SELECT * FROM TABLE_User WHERE EMAIL='" . $_POST[login] . "'";
+		$query = "SELECT * FROM TABLE_USER WHERE EMAIL='" . $_POST[login] . "'";
 		$res = $mysqli->query($query);
 		if ($res) {
 			$row = $res->fetch_assoc();
 			if (strcasecmp($row['PASSWD'], $_POST['pass']) == 0) {
 				$returnHash = md5($_POST['idKey']);
-				mysqli_query($mysqli,"UPDATE TABLE_User SET RSA_PRIVE='" . $returnHash . "' WHERE ID=" . $row['ID']);
+				mysqli_query($mysqli,"UPDATE TABLE_USER SET RSA_PRIVE='" . $returnHash . "' WHERE ID=" . $row['ID']);
 				mysqli_close($mysqli);
 				echo $returnHash;
 			} else {

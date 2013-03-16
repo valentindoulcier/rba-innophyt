@@ -7,7 +7,7 @@
 			exit();
 		}
 		
-		$query = "SELECT * FROM TABLE_User WHERE EMAIL='" . $_POST[login] . "'";
+		$query = "SELECT * FROM TABLE_USER WHERE EMAIL='" . $_POST[login] . "'";
 		$res = $mysqli->query($query);
 		if ($res) {
 			$row = $res->fetch_assoc();
