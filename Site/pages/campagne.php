@@ -59,7 +59,7 @@
 					</header>
 					<section>
 						<div class="field" style="display: none;">
-							Id<span id="fieldId" class="fieldSpan">&nbsp;</span>
+							Id<span id="fieldId" class="fieldSpan"></span>
 						</div>
 						<div class="field">
 							Nom<span id="fieldName" class="fieldSpan">&nbsp;</span>
@@ -78,7 +78,7 @@
 							<div class="controls">
 								<div class="btn-toolbar">
 									<div class="btn-group" style="margin-left: 10px;">
-										<a href="#selectionner-item" rel='shadowbox;width=400px;height=109px' id="modif-campagne" class="btn btn-link" onclick="sessionStorage.setItem('action-rba-innophyt', 'modifier');">Modifier</a>
+										<a href="#selectionner-item" rel='shadowbox;width=400px;height=109px' id="modif-campagne" class="btn btn-link" onclick="sessionStorage.setItem('action-rba-innophyt', 'modifier'); loadInfoModif();">Modifier</a>
 										<a href="#selectionner-item" rel='shadowbox;width=400px;height=109px' id="delete-campagne" class="btn btn-link">Supprimer</a>
 									</div>
 									<div class="btn-group" style="margin-left: 40px;">
@@ -132,6 +132,7 @@
 							
 							<input id="idKey-field" class="idKey-field" name="idKey" type="hidden">
 							<input id="action-field" class="action-field" name="action" type="hidden">
+							<input id="id-field" class="id-field" name="id" type="hidden">
 							<script type="text/javascript">
 								$('.idKey-field').val(authInfo.idKeyMd5);
 							</script>
