@@ -38,9 +38,7 @@
 				<div id="questionTextDivSubNav">
 					<div id="questionTextDiv" class="myContainer">
 						<div id="questionTextIcon"><img src="<?php echo $IMG_PATH; ?>/home.png" alt="icone accueil">
-						</div><h1>Campagnes
-						<br>
-						<small>Veuillez sélectionner votre campagne</small></h1>
+						</div><h1>Campagnes<br><small>Veuillez sélectionner votre campagne</small></h1>
 						<div class="clearer"></div>
 					</div>
 				</div>
@@ -60,6 +58,9 @@
 						<h2>Information</h2>
 					</header>
 					<section>
+						<div class="field" style="display: none;">
+							Id<span id="fieldId" class="fieldSpan">&nbsp;</span>
+						</div>
 						<div class="field">
 							Nom<span id="fieldName" class="fieldSpan">&nbsp;</span>
 						</div>
@@ -77,11 +78,11 @@
 							<div class="controls">
 								<div class="btn-toolbar">
 									<div class="btn-group" style="margin-left: 10px;">
-										<a href="#resultRightDiv" rel='shadowbox;width=500px;height=313px' id="reinit-form" class="btn btn-link deactivate" onclick="">Modifier</a>
-										<a href="#deleteForm" rel='shadowbox;width=400px;height=109px' id="cancel-form" class="btn btn-link deactivate" onclick="">Supprimer</a>
+										<a href="#selectionner-item" rel='shadowbox;width=400px;height=109px' id="modif-campagne" class="btn btn-link" onclick="sessionStorage.setItem('action-rba-innophyt', 'modifier');">Modifier</a>
+										<a href="#selectionner-item" rel='shadowbox;width=400px;height=109px' id="delete-campagne" class="btn btn-link">Supprimer</a>
 									</div>
 									<div class="btn-group" style="margin-left: 40px;">
-										<a href="#" id="submit-form" class="btn btn-success" onclick="">Suivant</a>
+										<a href="#selectionner-item" id="choose-campagne" class="btn btn-success" onclick="">Suivant</a>
 									</div>
 								</div>
 							</div>
@@ -100,7 +101,7 @@
 					<li class="windowTitle"><h3><i class="icon-ok"></i>Campagne</h3></li>
 					<li id="resultWindowContent">
 						<div class="form-info"></div>
-						<form class="form-horizontal" id="formCampagne">
+						<form class="form-horizontal formCampagne" action="<?php echo $PHP_SCRIPT_PATH . "/campagne.php"; ?>" method="post">
 							<div class="control-group">
 								<label class="control-label" for="nom">Nom</label>
 								<div class="controls">
@@ -128,6 +129,12 @@
 									<input id="dateFin" class="dateFin" name="dateFin" type="date" placeholder="28/02/2013">
 								</div>
 							</div>
+							
+							<input id="idKey-field" class="idKey-field" name="idKey" type="hidden">
+							<input id="action-field" class="action-field" name="action" type="hidden">
+							<script type="text/javascript">
+								$('.idKey-field').val(authInfo.idKeyMd5);
+							</script>
 
 							<div class="control-group">
 								<div class="controls">
@@ -135,7 +142,7 @@
 										<div class="btn-group">
 											<a href="#" id="cancel-form" class="btn" onclick="Shadowbox.close();">Annuler</a>
 											<a href="#" id="reinit-form" class="btn" onclick="setEmptyForm();">Réinitialiser</a>
-											<a href="#" id="submit-form" class="btn btn-success" onclick="submitForm();">Enregistrer</a>
+											<a href="#" id="submit-form" class="btn btn-success" onclick="$('.action-field').val(sessionStorage.getItem('action-rba-innophyt')); javascript:submit()">Enregistrer</a>
 										</div>
 									</div>
 								</div>
@@ -159,6 +166,27 @@
 									<div class="btn-group" style="margin-left: 120px;">
 										<a href="#" id="cancel-form" class="btn" onclick="Shadowbox.close();">Annuler</a>
 										<a href="#" id="submit-form" class="btn btn-danger" onclick="deleteCategorie();">Supprimer</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		
+		
+
+		<div id="selectionner-item" style="display: none;">
+			<div class="window" id="resultWindow">
+				<ul>
+					<li class="windowTitle"><h3><i class="icon-ok"></i>Sélectionner une campagne</h3></li>
+					<li id="resultWindowContent">
+						<div class="control-group">
+							<div class="controls">
+								<div class="btn-toolbar">
+									<div class="btn-group" style="margin-left: 150px;">
+										<a href="#" id="cancel-form" class="btn" onclick="Shadowbox.close();">Fermer</a>
 									</div>
 								</div>
 							</div>

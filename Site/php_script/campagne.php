@@ -1,14 +1,18 @@
 <?php
+	$HEADER = true;
+	$CurrentPath = "/php_script";
+	include "../pages/parts/variables.php";
+	
 	$returnCampagne = "";
 	
-	if (isset($_POST['idKey'])) {
+	if (isset($_POST['idKey']) && strcmp($_POST['action'], 'lister') == 0) {
 	
 		$mysqli = new mysqli("127.0.0.1", "admin", "", "rba-innophyt", 3306);
 		if ($mysqli -> connect_errno) {
 			$returnCampagne = '{ "statut": "0", "dataType": "error", "data": "Failed to connect to MySQL: (' . $mysqli -> connect_errno . ') ' . $mysqli -> connect_error . '" }';
 		} else {
 	
-			$query = "SELECT * FROM TABLE_User WHERE RSA_PRIVE='" . $_POST[idKey] . "'";
+			$query = "SELECT * FROM TABLE_USER WHERE RSA_PRIVE='" . $_POST[idKey] . "'";
 			$res = $mysqli -> query($query);
 			if ($res) {
 				$row = $res -> fetch_assoc();
@@ -30,13 +34,69 @@
 							 $returnCampagne .= '"latitude": "'     . $rowC['LATITUDE'] . '",';
 							 $returnCampagne .= '"longitude": "'    . $rowC['LONGITUDE'] . '"';
 							 $returnCampagne .= '},';
-						 }
+						}
 						$returnCampagne .= ' "":"" }, "idKey": "' . $row['RSA_PRIVE'] . '"}';
 					} else {
 						$returnCampagne = '{ "statut": "0", "dataType": "error", "data": "Aucune campagnes trouvées" }';
 					}
 				} else {
-				$returnCampagne = '{ "statut": "0", "dataType": "error", "data": "Erreur lors de l\'identification de l\'utilisateur avec son ID" }';
+					$returnCampagne = '{ "statut": "0", "dataType": "error", "data": "Erreur lors de l\'identification de l\'utilisateur avec son ID" }';
+			}
+			} else {
+				$returnCampagne = '{ "statut": "0", "dataType": "error", "data": "Erreur lors de l\'identification de l\'utilisateur" }';
+			}
+		}
+	} else if (isset($_POST['idKey']) && strcmp($_POST['action'], 'ajouter') == 0) {
+	
+		$mysqli = new mysqli("127.0.0.1", "admin", "", "rba-innophyt", 3306);
+		if ($mysqli -> connect_errno) {
+			$returnCampagne = '{ "statut": "0", "dataType": "error", "data": "Failed to connect to MySQL: (' . $mysqli -> connect_errno . ') ' . $mysqli -> connect_error . '" }';
+		} else {
+	
+			$query = "SELECT * FROM TABLE_USER WHERE RSA_PRIVE='" . $_POST[idKey] . "'";
+			$res = $mysqli -> query($query);
+			if ($res) {
+				$row = $res -> fetch_assoc();
+				if (isset($row['ID'])) {
+	
+					if (!($stmt = $mysqli->prepare("INSERT INTO TABLE_CAMPAGNE(UTILISATEUR_ID, NOM, DATE_DEBUT, DATE_FIN, DESCRIPTION) VALUES (?, ?, ?, ?, ?)"))) {
+						$returnCampagne = '{ "statut": "0", "dataType": "error", "data": "Echec de la preparation: (' . $mysqli -> connect_errno . ') ' . $mysqli -> connect_error . '" }';
+					}
+					
+					if (!$stmt->bind_param("issss", $row['ID'], $_POST['nom'], $_POST['dateDeb'], $_POST['dateFin'], $_POST['description'])) {
+						$returnCampagne = '{ "statut": "0", "dataType": "error", "data": "Echec lors du liage des paramètres: (' . $mysqli -> connect_errno . ') ' . $mysqli -> connect_error . '" }';
+					}
+					
+					if (!$stmt->execute()) {
+						$returnCampagne = '{ "statut": "0", "dataType": "error", "data": "Echec lors de l execution: (' . $mysqli -> connect_errno . ') ' . $mysqli -> connect_error . '" }';
+					} else {
+						//$returnCampagne = '{ "statut": "2", "dataType": "ok", "data": "Campagne ajoutée" , "idKey": "' . $row['RSA_PRIVE'] . '"}';
+						header('Location: ' . $CAMPAGNE_URL);
+					}
+				} else {
+					$returnCampagne = '{ "statut": "0", "dataType": "error", "data": "Erreur lors de l\'identification de l\'utilisateur avec son ID" }';
+				}
+			} else {
+				$returnCampagne = '{ "statut": "0", "dataType": "error", "data": "Erreur lors de l\'identification de l\'utilisateur" }';
+			}
+		}
+	} else if (isset($_POST['idKey']) && strcmp($_POST['action'], 'modifier') == 0) {
+	
+		$mysqli = new mysqli("127.0.0.1", "admin", "", "rba-innophyt", 3306);
+		if ($mysqli -> connect_errno) {
+			$returnCampagne = '{ "statut": "0", "dataType": "error", "data": "Failed to connect to MySQL: (' . $mysqli -> connect_errno . ') ' . $mysqli -> connect_error . '" }';
+		} else {
+	
+			$query = "SELECT * FROM TABLE_USER WHERE RSA_PRIVE='" . $_POST[idKey] . "'";
+			$res = $mysqli -> query($query);
+			if ($res) {
+				$row = $res -> fetch_assoc();
+				if (isset($row['ID'])) {
+						
+					// TODO
+					
+				} else {
+					$returnCampagne = '{ "statut": "0", "dataType": "error", "data": "Erreur lors de l\'identification de l\'utilisateur avec son ID" }';
 			}
 			} else {
 				$returnCampagne = '{ "statut": "0", "dataType": "error", "data": "Erreur lors de l\'identification de l\'utilisateur" }';
