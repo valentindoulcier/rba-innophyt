@@ -72,6 +72,20 @@
 						<div class="field">
 							Date de fin<span id="fieldDateFin" class="fieldSpan">&nbsp;</span>
 						</div>
+
+						<div class="control-group">
+							<div class="controls">
+								<div class="btn-toolbar">
+									<div class="btn-group" style="margin-left: 10px;">
+										<a href="#resultRightDiv" rel='shadowbox;width=500px;height=313px' id="reinit-form" class="btn btn-link deactivate" onclick="">Modifier</a>
+										<a href="#deleteForm" rel='shadowbox;width=400px;height=109px' id="cancel-form" class="btn btn-link deactivate" onclick="">Supprimer</a>
+									</div>
+									<div class="btn-group" style="margin-left: 40px;">
+										<a href="#" id="submit-form" class="btn btn-success" onclick="">Suivant</a>
+									</div>
+								</div>
+							</div>
+						</div>
 					</section>
 				</div>
 				<div class="clearer"></div>
@@ -85,32 +99,33 @@
 				<ul>
 					<li class="windowTitle"><h3><i class="icon-ok"></i>Campagne</h3></li>
 					<li id="resultWindowContent">
+						<div class="form-info"></div>
 						<form class="form-horizontal" id="formCampagne">
 							<div class="control-group">
 								<label class="control-label" for="nom">Nom</label>
 								<div class="controls">
-									<input id="nom" name="nom" type="text" placeholder="Nom de la Campagne" required autofocus>
+									<input id="nom" class="nom" name="nom" type="text" placeholder="Nom de la Campagne" required autofocus>
 								</div>
 							</div>
 
 							<div class="control-group">
 								<label class="control-label" for="description">Description</label>
 								<div class="controls">
-									<input id="description" name="description" type="text" placeholder="Description">
+									<input id="description" class="description" name="description" type="text" placeholder="Description">
 								</div>
 							</div>
 
 							<div class="control-group">
 								<label class="control-label" for="dateDeb">Date de début</label>
 								<div class="controls">
-									<input id="dateDeb" name="dateDeb" type="date" placeholder="26/02/2012">
+									<input id="dateDeb" class="dateDeb" name="dateDeb" type="date" placeholder="26/02/2013">
 								</div>
 							</div>
 
 							<div class="control-group">
 								<label class="control-label" for="dateFin">Date de fin</label>
 								<div class="controls">
-									<input id="dateFin" name="dateFin" type="date" placeholder="28/02/2012">
+									<input id="dateFin" class="dateFin" name="dateFin" type="date" placeholder="28/02/2013">
 								</div>
 							</div>
 
@@ -118,19 +133,40 @@
 								<div class="controls">
 									<div class="btn-toolbar">
 										<div class="btn-group">
-											<button class="btn" type="reset">Réinitialiser</button>
-											<button class="btn" type="submit">Enregistrer</button>
+											<a href="#" id="cancel-form" class="btn" onclick="Shadowbox.close();">Annuler</a>
+											<a href="#" id="reinit-form" class="btn" onclick="setEmptyForm();">Réinitialiser</a>
+											<a href="#" id="submit-form" class="btn btn-success" onclick="submitForm();">Enregistrer</a>
 										</div>
 									</div>
 								</div>
 							</div>
-
 						</form>
 					</li>
 				</ul>
 			</div>
 		</div>
 		
+		
+
+		<div id="deleteForm" style="display: none;">
+			<div class="window" id="resultWindow">
+				<ul>
+					<li class="windowTitle"><h3><i class="icon-ok"></i>Suppression de la campagne</h3></li>
+					<li id="resultWindowContent">
+						<div class="control-group">
+							<div class="controls">
+								<div class="btn-toolbar">
+									<div class="btn-group" style="margin-left: 120px;">
+										<a href="#" id="cancel-form" class="btn" onclick="Shadowbox.close();">Annuler</a>
+										<a href="#" id="submit-form" class="btn btn-danger" onclick="deleteCategorie();">Supprimer</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
 		
 		<?php
 			include $PAGE_PART_PATH . "/footer.php";

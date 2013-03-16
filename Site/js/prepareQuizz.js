@@ -5,8 +5,11 @@ function bindCampagneClick() {
 		$('#fieldDescription').html(campagne.dataset.description);
 		$('#fieldDateDebut').html(campagne.dataset.datedebut);
 		$('#fieldDateFin').html(campagne.dataset.datefin);
+		$('.existingCampagne').removeClass('active');
+		$(this).addClass('active');
 	});
 }
+
 function lister_campagne() {
 	var campagneForm = "#resultRightDiv";//pages_url + "/campagneForm.php";
 	$.ajax({
@@ -20,7 +23,7 @@ function lister_campagne() {
 					sessionStorage.setItem("liste_campagne-" + authInfo.idKeyMd5, msg);
 					console.debug(data);
 					var html = "<div class='row'>";
-					html += "<div class='span1 campagne'><a href='" + campagneForm + "' rel='shadowbox;width=500px;height=313px' title='Ajouter une campagne'><img src='" + images_url + "/add2.png' alt='Ajouter une campange' style='padding-top: 34px; width: 58px; height: auto;' /></a></div>";
+					html += "<a href='" + campagneForm + "' rel='shadowbox;width=500px;height=313px' title='Ajouter une campagne' onclick=\"$('.form-info').empty();\"><div class='span1 campagne'><img src='" + images_url + "/add2.png' alt='Ajouter une campange' style='padding-top: 34px; width: 58px; height: auto;' /></div></a>";
 					$.each(data.data, function() {
 						if (this.id) {
 							html += "<div id='c" + this.id + "' class='span1 campagne existingCampagne' data-id='" + this.id + "' data-nom='" + this.nom + "' data-description='" + this.description + "' data-datedebut='" + this.date_debut + "' data-datefin='" + this.date_fin + "' data-adresse='" + this.adresse + "' data-latitude='" + this.latitude + "' data-longitude='" + this.longitude + "'><h3>" + this.nom + "</h3></div>";
@@ -64,53 +67,54 @@ $(document).ready(function() {
 	}
 }); 
 
+/*----------------
+ * Form functions
+ */
+function normalSizeForm() {
+	$('.close').bind('click', function() {
+		Shadowbox.skin.dynamicResize(500, 313);
+	});
+}
+function setEmptyForm() {
+	$(".nom").val("");
+	$(".description").val("");
+	$(".dateDeb").val("");
+	$(".dateFin").val("");
+};
 
+function submitForm() {
+	var nom = $(".nom").val();
+	var description = $(".description").val();
+	var datedeb = $(".dateDeb").val();
+	var datefin = $(".dateFin").val();
 
-
-
-
-
-
-
-
-
-			function loadFormAction() {
-				$('#formCampagne').submit(function(e) {
-					var nom         = $("#nom").val();
-					var description = $("#description").val();
-					var datedeb     = $("#dateDeb").val();
-					var datefin     = $("#dateFin").val();
-					
-
-					$.ajax({
-						type : "POST",
-						url : php_script_url + "/campagneCreateOrUpdate.php",
-						data : {
-							"nom" : nom,
-							"description" : description,
-							"datedeb" : datedeb,
-							"datefin" : datefin,
-							"idKey" : authInfo.idKeyMd5
-						},
-						success : function(msg) {
-							Shadowbox.close();/*
-							if (msg == authInfo.idKeyMd5) {
-							} else {
-								console.error(msg);
-								$('#login-info').html("<div class='alert alert-error'> <button type='button' class='close' data-dismiss='alert'>&times;</button> <strong>Erreur !</strong> " + msg + " </div>")
-							}*/
-						},
-						error : function(jqXHR, textStatus, errorThrown) {
-							console.error("Connexion fail : " + textStatus + " - " + errorThrown)
-						}
-					});
-					e.preventDefault();
-					return false;
-				});
+	if (nom != "" && nom != undefined) {
+		$.ajax({
+			type : "POST",
+			url : php_script_url + "/campagneCreateOrUpdate.php",
+			data : { "nom" : nom, "description" : description, "datedeb" : datedeb, "datefin" : datefin, "idKey" : authInfo.idKeyMd5 },
+			success : function(msg) {
+				if (msg == authInfo.idKeyMd5) {
+					Shadowbox.close();
+				} else {
+					console.error(msg);
+				 	//$('#login-info').html("<div class='alert alert-error'> <button type='button' class='close' data-dismiss='alert'>&times;</button> <strong>Erreur !</strong> " + msg + " </div>")
+				}
+			},
+			error : function(jqXHR, textStatus, errorThrown) {
+				console.error("Connexion fail : " + textStatus + " - " + errorThrown);
+				//$('#login-info').html("<div class='alert alert-error'> <button type='button' class='close' data-dismiss='alert'>&times;</button> <strong>Erreur !</strong> " + msg + " </div>")
 			}
+		});
+		e.preventDefault();
+		return false;
+	} else {
+		Shadowbox.skin.dynamicResize(500, 350);
+		$('.form-info').html("<div class='alert alert-error'> <button type='button' class='close' data-dismiss='alert'>&times;</button> <strong>Erreur !</strong> le champ nom doit être renseigné </div>")
+		normalSizeForm();
+	}
+}
 
-			/****** DOCUMENT READY *****/
-
-			$(document).ready(function() {
-				loadFormAction();
-			});
+function deleteCategorie() {
+	;
+}
