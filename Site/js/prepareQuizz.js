@@ -42,8 +42,8 @@ function lister_campagne() {
 					$('#liste_campagne').html(html);
 					Shadowbox.clearCache();
 					Shadowbox.setup();
-					
 					bindCampagneClick();
+					$('#c' + getURLParameter('id')).click();
 				} else {
 					$('#liste_campagne').html("<div class='alert alert-error'> <button type='button' class='close' data-dismiss='alert'>&times;</button> <strong>Erreur !</strong> Problème dans la récupération de la liste des campagnes </div>")
 				}

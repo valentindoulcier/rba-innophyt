@@ -103,7 +103,7 @@
 						$returnCampagne = '{ "statut": "0", "dataType": "error", "data": "Echec lors de l execution: (' . $mysqli -> connect_errno . ') ' . $mysqli -> connect_error . '" }';
 					} else {
 						//$returnCampagne = '{ "statut": "2", "dataType": "ok", "data": "Campagne modifiée" , "idKey": "' . $row['RSA_PRIVE'] . '"}';
-						header('Location: ' . $CAMPAGNE_URL);
+						header('Location: ' . $CAMPAGNE_URL . '?id=' . $_POST['id']);
 					}
 					
 				} else {
