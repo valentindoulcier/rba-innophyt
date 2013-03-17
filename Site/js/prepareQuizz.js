@@ -14,8 +14,13 @@ function bindCampagneClick() {
 		
 		$('#delete-campagne').attr('href', '#deleteForm');
 		$('#delete-campagne').attr('rel', 'shadowbox;width=400px;height=109px');
+		
+		$('#choose-campagne').attr('href', pages_url + '/parcelle.php');
+		$('#choose-campagne').removeAttr('rel');
 		Shadowbox.clearCache();
 		Shadowbox.setup();
+		
+		sessionStorage.setItem(session_id_campagne, campagne.dataset.id);
 	});
 }
 
@@ -43,7 +48,9 @@ function lister_campagne() {
 					Shadowbox.clearCache();
 					Shadowbox.setup();
 					bindCampagneClick();
-					$('#c' + getURLParameter('id')).click();
+					
+					var id = sessionStorage.getItem(session_id_campagne) ? sessionStorage.getItem(session_id_campagne) : getURLParameter('id');
+					$('#c' + id).click();
 				} else {
 					$('#liste_campagne').html("<div class='alert alert-error'> <button type='button' class='close' data-dismiss='alert'>&times;</button> <strong>Erreur !</strong> Problème dans la récupération de la liste des campagnes </div>")
 				}
@@ -89,6 +96,14 @@ function setEmptyForm() {
 	$(".description").val("");
 	$(".dateDeb").val("");
 	$(".dateFin").val("");
+	setTimeout(function () {
+		$('#sb-container .dateDeb').attr('id', 'dateDeb-field');
+		$('#sb-container .dateFin').attr('id', 'dateFin-field');
+		$('#dateDeb-field').datepicker();
+		$('#dateFin-field').datepicker();
+		$('#dateDeb-field').datepicker("option", "dateFormat", "yy-mm-dd");
+		$('#dateFin-field').datepicker("option", "dateFormat", "yy-mm-dd");
+	}, 2000);
 };
 function deleteCampagne() {
 	if ($("#fieldId").html() != "") {
@@ -115,11 +130,18 @@ function deleteCampagne() {
 function loadInfoModif() {
 	if ($("#fieldId").html() != "") {
 		setTimeout(function () {
+			$('#sb-container .dateDeb').attr('id', 'dateDeb-field');
+			$('#sb-container .dateFin').attr('id', 'dateFin-field');
+			$('#dateDeb-field').datepicker();
+			$('#dateFin-field').datepicker();
+			$('#dateDeb-field').datepicker("option", "dateFormat", "yy-mm-dd");
+			$('#dateFin-field').datepicker("option", "dateFormat", "yy-mm-dd");
+			
 			$(".nom").val($('#fieldName').html());
 			$(".description").val($('#fieldDescription').html());
+			$(".id-field").val($('#fieldId').html());
 			$(".dateDeb").val($('#fieldDateDebut').html());
 			$(".dateFin").val($('#fieldDateFin').html());
-			$(".id-field").val($('#fieldId').html());
 		}, 1500);
 	}
 }

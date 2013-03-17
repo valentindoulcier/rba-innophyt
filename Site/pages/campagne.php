@@ -82,7 +82,7 @@
 										<a href="#selectionner-item" rel='shadowbox;width=400px;height=109px' id="delete-campagne" class="btn btn-link">Supprimer</a>
 									</div>
 									<div class="btn-group" style="margin-left: 40px;">
-										<a href="#selectionner-item" id="choose-campagne" class="btn btn-success" onclick="">Suivant</a>
+										<a href="#selectionner-item" rel='shadowbox;width=400px;height=109px' id="choose-campagne" class="btn btn-success">Suivant</a>
 									</div>
 								</div>
 							</div>

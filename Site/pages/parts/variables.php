@@ -48,6 +48,10 @@
 			var page_type           = "<?php echo $PageType ?>";
 			
 			var session_login_name  = "loginInfoRBA-INNOPHYT";
+			var action_form         = "action-rba-innophyt";
+			var session_id_campagne = "id_campagne-rba-innophyt";
+			var session_id_parcelle = "id_parcelle-rba-innophyt";
+			var session_id_piege    = "id_piege-rba-innophyt";
 		</script>
 <?php
 	}
