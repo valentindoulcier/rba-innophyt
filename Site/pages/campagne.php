@@ -78,7 +78,7 @@
 							<div class="controls">
 								<div class="btn-toolbar">
 									<div class="btn-group" style="margin-left: 10px;">
-										<a href="#selectionner-item" rel='shadowbox;width=400px;height=109px' id="modif-campagne" class="btn btn-link" onclick="sessionStorage.setItem('action-rba-innophyt', 'modifier'); loadInfoModif();">Modifier</a>
+										<a href="#selectionner-item" rel='shadowbox;width=400px;height=109px' id="modif-campagne" class="btn btn-link" onclick="loadInfoModif();">Modifier</a>
 										<a href="#selectionner-item" rel='shadowbox;width=400px;height=109px' id="delete-campagne" class="btn btn-link">Supprimer</a>
 									</div>
 									<div class="btn-group" style="margin-left: 40px;">
@@ -119,14 +119,14 @@
 							<div class="control-group">
 								<label class="control-label" for="dateDeb">Date de début</label>
 								<div class="controls">
-									<input id="dateDeb" class="dateDeb" name="dateDeb" type="date" placeholder="26/02/2013">
+									<input id="dateDeb" class="dateDeb" name="dateDeb" type="date" placeholder="2013-02-24">
 								</div>
 							</div>
 
 							<div class="control-group">
 								<label class="control-label" for="dateFin">Date de fin</label>
 								<div class="controls">
-									<input id="dateFin" class="dateFin" name="dateFin" type="date" placeholder="28/02/2013">
+									<input id="dateFin" class="dateFin" name="dateFin" type="date" placeholder="2013-05-30">
 								</div>
 							</div>
 							

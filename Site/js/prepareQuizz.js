@@ -103,7 +103,7 @@ function setEmptyForm() {
 		$('#dateFin-field').datepicker();
 		$('#dateDeb-field').datepicker("option", "dateFormat", "yy-mm-dd");
 		$('#dateFin-field').datepicker("option", "dateFormat", "yy-mm-dd");
-	}, 2000);
+	}, 1500);
 };
 function deleteCampagne() {
 	if ($("#fieldId").html() != "") {
@@ -128,6 +128,8 @@ function deleteCampagne() {
 	}
 }
 function loadInfoModif() {
+	sessionStorage.setItem('action-rba-innophyt', 'modifier');
+	
 	if ($("#fieldId").html() != "") {
 		setTimeout(function () {
 			$('#sb-container .dateDeb').attr('id', 'dateDeb-field');
