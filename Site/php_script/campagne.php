@@ -51,20 +51,20 @@
 		
 		if (strcmp($_POST['nom'], '') == 0) {
 			$ERROR = true;
-			header('Location: ' . $CAMPAGNE_URL . '?statut=0&dataType=error&data=Le champ nom ne peut pas être vide');
+			header('Location: ' . $CAMPAGNE_URL . '?statut=0&dataType=error&data=Le champ nom ne peut pas être vide&action=ajouter&field={"nom":"' . $_POST['nom'] . '","description":"' . $_POST['description'] . '","dateDeb":"' . $_POST['dateDeb'] . '","dateFin":"' . $_POST['dateFin'] . '"}');
 		}
 		if (isset($_POST['dateDeb'])) {
 			$date = explode('-', $_POST['dateDeb']);
 			if (sizeof($date) != 3 || intval($date[0]) < 2000 || intval($date[0]) > 2100 || intval($date[1]) < 1 || intval($date[1]) > 12 || intval($date[2]) < 1 || intval($date[2]) > 31 ) {
 				$ERROR = true;
-				header('Location: ' . $CAMPAGNE_URL . '?statut=0&dataType=error&data=La date de début est incorrecte');
+				header('Location: ' . $CAMPAGNE_URL . '?statut=0&dataType=error&data=La date de début est incorrecte&action=ajouter&field={"nom":"' . $_POST['nom'] . '","description":"' . $_POST['description'] . '","dateDeb":"' . $_POST['dateDeb'] . '","dateFin":"' . $_POST['dateFin'] . '"}');
 			}
 		}
 		if (isset($_POST['dateFin'])) {
 			$date = explode('-', $_POST['dateFin']);
 			if (sizeof($date) != 3 || intval($date[0]) < 2000 || intval($date[0]) > 2100 || intval($date[1]) < 1 || intval($date[1]) > 12 || intval($date[2]) < 1 || intval($date[2]) > 31 ) {
 				$ERROR = true;
-				header('Location: ' . $CAMPAGNE_URL . '?statut=0&dataType=error&data=La date de fin est incorrecte');
+				header('Location: ' . $CAMPAGNE_URL . '?statut=0&dataType=error&data=La date de fin est incorrecte&action=ajouter&field={"nom":"' . $_POST['nom'] . '","description":"' . $_POST['description'] . '","dateDeb":"' . $_POST['dateDeb'] . '","dateFin":"' . $_POST['dateFin'] . '"}');
 			}
 		}
 		
@@ -114,20 +114,20 @@
 		
 		if (strcmp($_POST['nom'], '') == 0) {
 			$ERROR = true;
-			header('Location: ' . $CAMPAGNE_URL . '?statut=0&dataType=error&data=Le champ nom ne peut pas être vide');
+			header('Location: ' . $CAMPAGNE_URL . '?statut=0&dataType=error&data=Le champ nom ne peut pas être vide&action=modifier&field={"nom":"' . $_POST['nom'] . '","description":"' . $_POST['description'] . '","dateDeb":"' . $_POST['dateDeb'] . '","dateFin":"' . $_POST['dateFin'] . '"}');
 		}
 		if (isset($_POST['dateDeb'])) {
 			$date = explode('-', $_POST['dateDeb']);
 			if (sizeof($date) != 3 || intval($date[0]) < 2000 || intval($date[0]) > 2100 || intval($date[1]) < 1 || intval($date[1]) > 12 || intval($date[2]) < 1 || intval($date[2]) > 31 ) {
 				$ERROR = true;
-				header('Location: ' . $CAMPAGNE_URL . '?statut=0&dataType=error&data=La date de début est incorrecte');
+				header('Location: ' . $CAMPAGNE_URL . '?statut=0&dataType=error&data=La date de début est incorrecte&action=modifier&field={"nom":"' . $_POST['nom'] . '","description":"' . $_POST['description'] . '","dateDeb":"' . $_POST['dateDeb'] . '","dateFin":"' . $_POST['dateFin'] . '"}');
 			}
 		}
 		if (isset($_POST['dateFin'])) {
 			$date = explode('-', $_POST['dateFin']);
 			if (sizeof($date) != 3 || intval($date[0]) < 2000 || intval($date[0]) > 2100 || intval($date[1]) < 1 || intval($date[1]) > 12 || intval($date[2]) < 1 || intval($date[2]) > 31 ) {
 				$ERROR = true;
-				header('Location: ' . $CAMPAGNE_URL . '?statut=0&dataType=error&data=La date de fin est incorrecte');
+				header('Location: ' . $CAMPAGNE_URL . '?statut=0&dataType=error&data=La date de fin est incorrecte&action=modifier&field={"nom":"' . $_POST['nom'] . '","description":"' . $_POST['description'] . '","dateDeb":"' . $_POST['dateDeb'] . '","dateFin":"' . $_POST['dateFin'] . '"}');
 			}
 		}
 		

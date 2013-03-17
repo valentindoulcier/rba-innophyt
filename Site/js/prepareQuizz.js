@@ -37,7 +37,7 @@ function lister_campagne() {
 				if (data.dataType == "campagne") {
 					sessionStorage.setItem("liste_campagne-" + authInfo.idKeyMd5, msg);
 					var html = "<div class='row'>";
-					html += "<a href='" + campagneForm + "' rel='shadowbox;width=500px;height=313px' title='Ajouter une campagne' onclick=\"$('.form-info').empty(); sessionStorage.setItem('action-rba-innophyt', 'ajouter'); setEmptyForm();\"><div class='span1 campagne'><img src='" + images_url + "/add2.png' alt='Ajouter une campange' style='padding-top: 34px; width: 58px; height: auto;' /></div></a>";
+					html += "<a id='ajout-campagne' href='" + campagneForm + "' rel='shadowbox;width=500px;height=313px' title='Ajouter une campagne' onclick=\"$('.form-info').empty(); sessionStorage.setItem('action-rba-innophyt', 'ajouter'); setEmptyForm();\"><div class='span1 campagne'><img src='" + images_url + "/add2.png' alt='Ajouter une campange' style='padding-top: 34px; width: 58px; height: auto;' /></div></a>";
 					$.each(data.data, function() {
 						if (this.id) {
 							html += "<div id='c" + this.id + "' class='span1 campagne existingCampagne' data-id='" + this.id + "' data-nom='" + this.nom + "' data-description='" + this.description + "' data-datedebut='" + this.date_debut + "' data-datefin='" + this.date_fin + "' data-adresse='" + this.adresse + "' data-latitude='" + this.latitude + "' data-longitude='" + this.longitude + "'><h3>" + this.nom + "</h3></div>";
@@ -80,6 +80,30 @@ $(document).ready(function() {
 		liste_parcelle();
 	} else if ($('liste_piege')) {
 		liste_piege();
+	}
+	if (getURLParameter('statut') == "0" && getURLParameter('dataType') == "error") {
+		var field = $.parseJSON(getURLParameter('field'));
+		$('.form-info').html("<div class='alert alert-error'> <button type='button' class='close' data-dismiss='alert'>&times;</button> <strong>Erreur !</strong> " + getURLParameter('data') + " </div>")
+		if (getURLParameter('action') == "ajouter") {
+			setTimeout( function (){
+				$(".nom").val(field.nom);
+				$(".description").val(field.description);
+				$(".dateDeb").val(field.dateDeb);
+				$(".dateFin").val(field.dateFin);
+				$('#ajout-campagne').click();
+				setTimeout(function () {
+					$('#sb-container .dateDeb').attr('id', 'dateDeb-field');
+					$('#sb-container .dateFin').attr('id', 'dateFin-field');
+					$('#dateDeb-field').datepicker();
+					$('#dateFin-field').datepicker();
+					$('#dateDeb-field').datepicker("option", "dateFormat", "yy-mm-dd");
+					$('#dateFin-field').datepicker("option", "dateFormat", "yy-mm-dd");
+				}, 1500);
+				Shadowbox.skin.dynamicResize(500, 403);
+			}, 1000);
+		} else if (getURLParameter('action') == "modifier") {
+			setTimeout( function (){ $('#ajout-campagne').click(); loadInfoModif(); }, 1000);
+		}
 	}
 }); 
 
