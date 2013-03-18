@@ -1,6 +1,6 @@
 
 body {
-	background-color: #d3e8f2;
+	background-color: #dbf5c3;
 	text-align: center;
 }
 
@@ -689,7 +689,7 @@ input::-webkit-input-placeholder {
 	padding-left: 15px;
 	margin-bottom: 20px;
 }
-.campagne{
+.newItem, .existingItem{
 	background-color: #c2cbba;
 	width: 120px;
 	height: 120px;

@@ -78,11 +78,11 @@
 							<div class="controls">
 								<div class="btn-toolbar">
 									<div class="btn-group" style="margin-left: 10px;">
-										<a href="#selectionner-item" rel='shadowbox;width=400px;height=109px' id="modif-campagne" class="btn btn-link" onclick="loadInfoModif();">Modifier</a>
-										<a href="#selectionner-item" rel='shadowbox;width=400px;height=109px' id="delete-campagne" class="btn btn-link">Supprimer</a>
+										<a href="#selectionner-item" rel='shadowbox;width=400px;height=109px' id="modif-item" class="btn btn-link" onclick="loadInfoModif();">Modifier</a>
+										<a href="#selectionner-item" rel='shadowbox;width=400px;height=109px' id="delete-item" class="btn btn-link">Supprimer</a>
 									</div>
 									<div class="btn-group" style="margin-left: 40px;">
-										<a href="#selectionner-item" rel='shadowbox;width=400px;height=109px' id="choose-campagne" class="btn btn-success">Suivant</a>
+										<a href="#selectionner-item" rel='shadowbox;width=400px;height=109px' id="choose-item" class="btn btn-success">Suivant</a>
 									</div>
 								</div>
 							</div>
@@ -166,7 +166,7 @@
 								<div class="btn-toolbar">
 									<div class="btn-group" style="margin-left: 120px;">
 										<a href="#" id="cancel-form" class="btn" onclick="Shadowbox.close();">Annuler</a>
-										<a href="#" id="submit-form" class="btn btn-danger" onclick="deleteCampagne();">Supprimer</a>
+										<a href="#" id="submit-form" class="btn btn-danger" onclick="deleteItem();">Supprimer</a>
 									</div>
 								</div>
 							</div>

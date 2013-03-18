@@ -53,14 +53,14 @@
 			$ERROR = true;
 			header('Location: ' . $CAMPAGNE_URL . '?statut=0&dataType=error&data=Le champ nom ne peut pas être vide&action=ajouter&field={"nom":"' . $_POST['nom'] . '","description":"' . $_POST['description'] . '","dateDeb":"' . $_POST['dateDeb'] . '","dateFin":"' . $_POST['dateFin'] . '"}');
 		}
-		if (isset($_POST['dateDeb'])) {
+		if (isset($_POST['dateDeb']) && strcmp($_POST['dateDeb'], '') && !$ERROR) {
 			$date = explode('-', $_POST['dateDeb']);
 			if (sizeof($date) != 3 || intval($date[0]) < 2000 || intval($date[0]) > 2100 || intval($date[1]) < 1 || intval($date[1]) > 12 || intval($date[2]) < 1 || intval($date[2]) > 31 ) {
 				$ERROR = true;
 				header('Location: ' . $CAMPAGNE_URL . '?statut=0&dataType=error&data=La date de début est incorrecte&action=ajouter&field={"nom":"' . $_POST['nom'] . '","description":"' . $_POST['description'] . '","dateDeb":"' . $_POST['dateDeb'] . '","dateFin":"' . $_POST['dateFin'] . '"}');
 			}
 		}
-		if (isset($_POST['dateFin'])) {
+		if (isset($_POST['dateFin']) && strcmp($_POST['dateFin'], '') && !$ERROR) {
 			$date = explode('-', $_POST['dateFin']);
 			if (sizeof($date) != 3 || intval($date[0]) < 2000 || intval($date[0]) > 2100 || intval($date[1]) < 1 || intval($date[1]) > 12 || intval($date[2]) < 1 || intval($date[2]) > 31 ) {
 				$ERROR = true;
@@ -73,7 +73,7 @@
 			$mysqli = new mysqli("127.0.0.1", "admin", "", "rba-innophyt", 3306);
 			if ($mysqli->connect_errno) {
 				//$returnCampagne = '{ "statut": "0", "dataType": "error", "data": "Failed to connect to MySQL: (' . $mysqli->connect_errno . ') ' . $mysqli->connect_error . '" }';
-				header('Location: ' . $CAMPAGNE_URL . '?statut=0&dataType=error&data=Failed to connect to MySQL: (' . $mysqli->connect_errno . ') ' . $mysqli->connect_error);
+				header('Location: ' . $CAMPAGNE_URL . '?statut=0&dataType=error&data=Failed to connect to MySQL: (' . $mysqli->connect_errno . ') ' . $mysqli->connect_error . '&action=ajouter&field={"nom":"' . $_POST['nom'] . '","description":"' . $_POST['description'] . '","dateDeb":"' . $_POST['dateDeb'] . '","dateFin":"' . $_POST['dateFin'] . '"}');
 			} else {
 		
 				$query = "SELECT * FROM TABLE_USER WHERE RSA_PRIVE='" . $_POST[idKey] . "'";
@@ -84,28 +84,28 @@
 		
 						if (!($stmt = $mysqli->prepare("INSERT INTO TABLE_CAMPAGNE(UTILISATEUR_ID, NOM, DATE_DEBUT, DATE_FIN, DESCRIPTION) VALUES (?, ?, ?, ?, ?)"))) {
 							//$returnCampagne = '{ "statut": "0", "dataType": "error", "data": "Echec de la preparation de la requete: (' . $mysqli->connect_errno . ') ' . $mysqli->connect_error . '" }';
-							header('Location: ' . $CAMPAGNE_URL . '?statut=0&dataType=error&data=Echec de la preparation de la requete: (' . $mysqli->connect_errno . ') ' . $mysqli->connect_error);
+							header('Location: ' . $CAMPAGNE_URL . '?statut=0&dataType=error&data=Echec de la preparation de la requete: (' . $mysqli->connect_errno . ') ' . $mysqli->connect_error . '&action=ajouter&field={"nom":"' . $_POST['nom'] . '","description":"' . $_POST['description'] . '","dateDeb":"' . $_POST['dateDeb'] . '","dateFin":"' . $_POST['dateFin'] . '"}');
 						}
 						
 						if (!$stmt->bind_param("issss", $row['ID'], $_POST['nom'], $_POST['dateDeb'], $_POST['dateFin'], $_POST['description'])) {
 							//$returnCampagne = '{ "statut": "0", "dataType": "error", "data": "Echec lors du liage des paramètres: (' . $mysqli->connect_errno . ') ' . $mysqli-connect_error . '" }';
-							header('Location: ' . $CAMPAGNE_URL . '?statut=0&dataType=error&data=Echec lors du liage des parametres: (' . $mysqli->connect_errno . ') ' . $mysqli->connect_error);
+							header('Location: ' . $CAMPAGNE_URL . '?statut=0&dataType=error&data=Echec lors du liage des parametres: (' . $mysqli->connect_errno . ') ' . $mysqli->connect_error . '&action=ajouter&field={"nom":"' . $_POST['nom'] . '","description":"' . $_POST['description'] . '","dateDeb":"' . $_POST['dateDeb'] . '","dateFin":"' . $_POST['dateFin'] . '"}');
 						}
 						
 						if (!$stmt->execute()) {
 							//$returnCampagne = '{ "statut": "0", "dataType": "error", "data": "Echec lors de l execution: (' . $mysqli->connect_errno . ') ' . $mysqli->connect_error . '" }';
-							header('Location: ' . $CAMPAGNE_URL . '?statut=0&dataType=error&data=Echec lors de l execution: (' . $mysqli->connect_errno . ') ' . $mysqli->connect_error);
+							header('Location: ' . $CAMPAGNE_URL . '?statut=0&dataType=error&data=Echec lors de l execution: (' . $mysqli->connect_errno . ') ' . $mysqli->connect_error . '&action=ajouter&field={"nom":"' . $_POST['nom'] . '","description":"' . $_POST['description'] . '","dateDeb":"' . $_POST['dateDeb'] . '","dateFin":"' . $_POST['dateFin'] . '"}');
 						} else {
 							//$returnCampagne = '{ "statut": "2", "dataType": "ok", "data": "Campagne ajoutée" , "idKey": "' . $row['RSA_PRIVE'] . '"}';
 							header('Location: ' . $CAMPAGNE_URL);
 						}
 					} else {
 						//$returnCampagne = '{ "statut": "0", "dataType": "error", "data": "Erreur lors de l identification de l utilisateur avec son ID" }';
-						header('Location: ' . $CAMPAGNE_URL . '?statut=0&dataType=error&data=Erreur lors de l identification de l utilisateur avec son ID');
+						header('Location: ' . $CAMPAGNE_URL . '?statut=0&dataType=error&data=Erreur lors de l identification de l utilisateur avec son ID&action=ajouter&field={"nom":"' . $_POST['nom'] . '","description":"' . $_POST['description'] . '","dateDeb":"' . $_POST['dateDeb'] . '","dateFin":"' . $_POST['dateFin'] . '"}');
 					}
 				} else {
 					//$returnCampagne = '{ "statut": "0", "dataType": "error", "data": "Erreur lors de l identification de l utilisateur" }';
-					header('Location: ' . $CAMPAGNE_URL . '?statut=0&dataType=error&data=Erreur lors de l identification de l utilisateur');
+					header('Location: ' . $CAMPAGNE_URL . '?statut=0&dataType=error&data=Erreur lors de l identification de l utilisateur&action=ajouter&field={"nom":"' . $_POST['nom'] . '","description":"' . $_POST['description'] . '","dateDeb":"' . $_POST['dateDeb'] . '","dateFin":"' . $_POST['dateFin'] . '"}');
 				}
 			}
 		}
@@ -136,7 +136,7 @@
 			$mysqli = new mysqli("127.0.0.1", "admin", "", "rba-innophyt", 3306);
 			if ($mysqli->connect_errno) {
 				//$returnCampagne = '{ "statut": "0", "dataType": "error", "data": "Failed to connect to MySQL: (' . $mysqli->connect_errno . ') ' . $mysqli->connect_error . '" }';
-				header('Location: ' . $CAMPAGNE_URL . '?statut=0&dataType=error&data=Failed to connect to MySQL: (' . $mysqli->connect_errno . ') ' . $mysqli->connect_error);
+				header('Location: ' . $CAMPAGNE_URL . '?statut=0&dataType=error&data=Failed to connect to MySQL: (' . $mysqli->connect_errno . ') ' . $mysqli->connect_error . '&action=modifier&field={"nom":"' . $_POST['nom'] . '","description":"' . $_POST['description'] . '","dateDeb":"' . $_POST['dateDeb'] . '","dateFin":"' . $_POST['dateFin'] . '"}');
 			} else {
 		
 				$query = "SELECT * FROM TABLE_USER WHERE RSA_PRIVE='" . $_POST[idKey] . "'";
@@ -149,23 +149,23 @@
 						
 						if (!($stmt = $mysqli->prepare($query))) {
 							//$returnCampagne = '{ "statut": "0", "dataType": "error", "data": "Echec de la preparation: (' . $mysqli->connect_errno . ') ' . $mysqli->connect_error . '" }';
-							header('Location: ' . $CAMPAGNE_URL . '?statut=0&dataType=error&data=Echec de la preparation: (' . $mysqli->connect_errno . ') ' . $mysqli->connect_error);
+							header('Location: ' . $CAMPAGNE_URL . '?statut=0&dataType=error&data=Echec de la preparation: (' . $mysqli->connect_errno . ') ' . $mysqli->connect_error . '&action=modifier&field={"nom":"' . $_POST['nom'] . '","description":"' . $_POST['description'] . '","dateDeb":"' . $_POST['dateDeb'] . '","dateFin":"' . $_POST['dateFin'] . '"}');
 						}
 						
 						if (!$stmt->execute()) {
 							//$returnCampagne = '{ "statut": "0", "dataType": "error", "data": "Echec lors de l execution: (' . $mysqli->connect_errno . ') ' . $mysqli->connect_error . '" }';
-							header('Location: ' . $CAMPAGNE_URL . '?statut=0&dataType=error&data=Echec lors de l execution: (' . $mysqli->connect_errno . ') ' . $mysqli->connect_error);
+							header('Location: ' . $CAMPAGNE_URL . '?statut=0&dataType=error&data=Echec lors de l execution: (' . $mysqli->connect_errno . ') ' . $mysqli->connect_error . '&action=modifier&field={"nom":"' . $_POST['nom'] . '","description":"' . $_POST['description'] . '","dateDeb":"' . $_POST['dateDeb'] . '","dateFin":"' . $_POST['dateFin'] . '"}');
 						} else {
 							//$returnCampagne = '{ "statut": "2", "dataType": "ok", "data": "Campagne modifiée" , "idKey": "' . $row['RSA_PRIVE'] . '"}';
 							header('Location: ' . $CAMPAGNE_URL . '?id=' . $_POST['id']);
 						}
 					} else {
 						//$returnCampagne = '{ "statut": "0", "dataType": "error", "data": "Erreur lors de l identification de l utilisateur avec son ID" }';
-						header('Location: ' . $CAMPAGNE_URL . '?statut=0&dataType=error&data=Erreur lors de l identification de l utilisateur avec son ID');
+						header('Location: ' . $CAMPAGNE_URL . '?statut=0&dataType=error&data=Erreur lors de l identification de l utilisateur avec son ID&action=modifier&field={"nom":"' . $_POST['nom'] . '","description":"' . $_POST['description'] . '","dateDeb":"' . $_POST['dateDeb'] . '","dateFin":"' . $_POST['dateFin'] . '"}');
 					}
 				} else {
 					//$returnCampagne = '{ "statut": "0", "dataType": "error", "data": "Erreur lors de l identification de l utilisateur" }';
-					header('Location: ' . $CAMPAGNE_URL . '?statut=0&dataType=error&data=Erreur lors de l identification de l utilisateur');
+					header('Location: ' . $CAMPAGNE_URL . '?statut=0&dataType=error&data=Erreur lors de l identification de l utilisateur&action=modifier&field={"nom":"' . $_POST['nom'] . '","description":"' . $_POST['description'] . '","dateDeb":"' . $_POST['dateDeb'] . '","dateFin":"' . $_POST['dateFin'] . '"}');
 				}
 			}
 		}
