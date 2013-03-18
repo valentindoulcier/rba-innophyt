@@ -24,6 +24,7 @@
 	$MENU_URL          = $PAGES_URL . "/menu.php";
 	$PROTOCOLES_URL    = $PAGES_URL . "/protocoles.php";
 	$CAMPAGNE_URL      = $PAGES_URL . "/campagne.php";
+	$PARCELLE_URL      = $PAGES_URL . "/parcelle.php";
 	$QUIZZ_URL         = $PAGES_URL . "/quizz.php";
 	
 	$LOGIN_PAGE        = $PAGE_PATH . "/login.php";

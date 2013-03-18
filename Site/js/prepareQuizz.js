@@ -9,16 +9,20 @@ function bindItemClick() {
 		var pageChoix = sessionStorage.getItem('pageChoix');
 		var item = document.getElementById($(this).attr('id'));
 		var urlPageSuivante = "";
-		var shadowBoxModifier = "shadowbox;width=500px;height=313px";
+		var shadowBoxModifier = "";
 		var shadowBoxSupprimer = "shadowbox;width=400px;height=109px";
 		
 		// Mise à jour de l'item sélectionné dans la sessionStorage
 		if (pageChoix == "campagne") {
 			sessionStorage.setItem(session_id_campagne, item.dataset.id);
 			urlPageSuivante = pages_url + '/parcelle.php';
+			
+			shadowBoxModifier = "shadowbox;width=500px;height=313px";
 		} else if (pageChoix == "parcelle") {
 			sessionStorage.setItem(session_id_parcelle, item.dataset.id);
 			urlPageSuivante = pages_url + '/piege.php';
+			
+			shadowBoxModifier = "shadowbox;width=500px;height=453px";
 		} if (pageChoix == "piege") {
 			sessionStorage.setItem(session_id_piege, item.dataset.id);
 			urlPageSuivante = pages_url + '/quizz.php';
@@ -27,9 +31,12 @@ function bindItemClick() {
 		// Chargement des champs dans la partie information
 		$('#fieldId').html(item.dataset.id);
 		$('#fieldName').html(item.dataset.nom);
+		$('#fieldAdresse').html(item.dataset.adresse);
 		$('#fieldDescription').html(item.dataset.description);
 		$('#fieldDateDebut').html(item.dataset.datedebut);
 		$('#fieldDateFin').html(item.dataset.datefin);
+		$('#fieldLatitude').html(item.dataset.latitude);
+		$('#fieldLongitude').html(item.dataset.longitude);
 		
 		// Ajout du shadow sur l'item sélectionné
 		$('.existingItem').removeClass('active');
@@ -59,12 +66,10 @@ function bindItemClick() {
  * @return {Void}
  **/
 function listerItem(pageChoix) {
-	var itemForm = "#resultRightDiv";
-	
 	$.ajax({
 		type : "POST",
 		url : php_script_url + "/" + pageChoix + ".php",
-		data : { "idKey" : authInfo.idKeyMd5, "action": "lister" },
+		data : { "idKey" : authInfo.idKeyMd5, "action": "lister", "campagneId": sessionStorage.getItem(session_id_campagne)},
 		success : function(msg) {
 			var data = $.parseJSON(msg);
 			if (data.idKey == authInfo.idKeyMd5) {
@@ -72,6 +77,7 @@ function listerItem(pageChoix) {
 					var shadowboxRelAjouter = "";
 					var htmlListeItem = "<div class='row'>";
 					var ajouterOnClickAction = "";
+					var itemForm = "#resultRightDiv";
 					
 					ajouterOnClickAction += "setEmptyForm(); ";
 					ajouterOnClickAction += "sessionStorage.setItem(session_action, 'ajouter'); ";
@@ -86,6 +92,13 @@ function listerItem(pageChoix) {
 						}
 					} else if (pageChoix == "parcelle") {
 						sessionStorage.setItem(session_liste_parc + authInfo.idKeyMd5, msg);
+						$('.campagne-id-field').val(sessionStorage.getItem(session_id_campagne));
+						
+						if (getURLParameter('statut') == "0" && getURLParameter('dataType') == "error") {
+							shadowboxRelAjouter = "shadowbox;width=500px;height=483px";
+						} else {
+							shadowboxRelAjouter = "shadowbox;width=500px;height=453px";
+						}
 					} if (pageChoix == "piege") {
 						sessionStorage.setItem(session_liste_pieg + authInfo.idKeyMd5, msg);
 					}
@@ -121,7 +134,7 @@ function listerItem(pageChoix) {
 					});
 					htmlListeItem += "</div>";
 					// Ajout de la liste générée dans la page
-					$('#liste_campagne').html(htmlListeItem);
+					$('#liste_' + sessionStorage.getItem('pageChoix')).html(htmlListeItem);
 					
 					// Mise à jour de shadowbox pour les pop-up de modification et suppression
 					Shadowbox.clearCache();
@@ -207,8 +220,11 @@ function loadInfoModif() {
 			$(".id-field").val($('#fieldId').html());
 			$(".nom").val($('#fieldName').html());
 			$(".description").val($('#fieldDescription').html());
+			$('.adresse').val($('#fieldAdresse').html())
 			$("#dateDeb-field").val($('#fieldDateDebut').html());
 			$("#dateFin-field").val($('#fieldDateFin').html());
+			$(".latitude").val($('#fieldLatitude').html());
+			$('.longitude').val($('#fieldLongitude').html())
 		}, 1500);
 	}
 }
@@ -289,7 +305,7 @@ function normalSizeCampagneForm() {
 		if (pageChoix == "campagne") {
 			Shadowbox.skin.dynamicResize(500, 313);
 		} else if (pageChoix == "parcelle") {
-			Shadowbox.skin.dynamicResize(500, 313);
+			Shadowbox.skin.dynamicResize(500, 453);
 		} if (pageChoix == "piege") {
 			Shadowbox.skin.dynamicResize(500, 313);
 		}
@@ -302,10 +318,12 @@ $(document).ready(function() {
 	var pageChoix = "";
 	
 	// Détection du type d'item dans la page
-	if ($('liste_campagne')) {
+	if ($('#liste_campagne').length) {
 		pageChoix = "campagne";
-	} else if ($('liste_parcelle')) {
-	} else if ($('liste_piege')) {
+	} else if ($('#liste_parcelle').length) {
+		pageChoix = "parcelle";
+	} else if ($('#liste_piege').length) {
+		pageChoix = "piege";
 	}
 	sessionStorage.setItem('pageChoix', pageChoix);
 	listerItem(pageChoix);
