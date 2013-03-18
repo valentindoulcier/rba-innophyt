@@ -10,6 +10,10 @@ $(document).ready(function() {
 
 	loadAllPulgins();
 	// Charge les différents plugins
+	
+	if (authInfo != undefined) {
+		$('#exportCSV').attr('href', $('#exportCSV').attr('href') + authInfo.idKeyMd5);
+	}
 });
 
 /****** LOAD PLUGINS *****/
