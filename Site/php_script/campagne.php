@@ -87,7 +87,7 @@
 							header('Location: ' . $CAMPAGNE_URL . '?statut=0&dataType=error&data=Echec de la preparation de la requete: (' . $mysqli->connect_errno . ') ' . $mysqli->connect_error . '&action=ajouter&field={"nom":"' . $_POST['nom'] . '","description":"' . $_POST['description'] . '","dateDeb":"' . $_POST['dateDeb'] . '","dateFin":"' . $_POST['dateFin'] . '"}');
 						}
 						
-						if (!$stmt->bind_param("issss", $row['ID'], $_POST['nom'], $_POST['dateDeb'], $_POST['dateFin'], $_POST['description'])) {
+						if (!$stmt->bind_param("issss", $row['ID'], htmlentities($_POST['nom']), htmlentities($_POST['dateDeb']), htmlentities($_POST['dateFin']), htmlentities($_POST['description']))) {
 							//$returnCampagne = '{ "statut": "0", "dataType": "error", "data": "Echec lors du liage des paramètres: (' . $mysqli->connect_errno . ') ' . $mysqli-connect_error . '" }';
 							header('Location: ' . $CAMPAGNE_URL . '?statut=0&dataType=error&data=Echec lors du liage des parametres: (' . $mysqli->connect_errno . ') ' . $mysqli->connect_error . '&action=ajouter&field={"nom":"' . $_POST['nom'] . '","description":"' . $_POST['description'] . '","dateDeb":"' . $_POST['dateDeb'] . '","dateFin":"' . $_POST['dateFin'] . '"}');
 						}
@@ -145,7 +145,7 @@
 					$row = $res->fetch_assoc();
 					if (isset($row['ID'])) {
 						
-						$query = "UPDATE TABLE_CAMPAGNE SET NOM='" . $_POST['nom'] . "', DATE_DEBUT='" . $_POST['dateDeb'] . "', DATE_FIN='" . $_POST['dateFin'] . "', DESCRIPTION='" . $_POST['description'] . "' WHERE ID=" . $_POST['id'];
+						$query = "UPDATE TABLE_CAMPAGNE SET NOM='" . htmlentities($_POST['nom']) . "', DATE_DEBUT='" . htmlentities($_POST['dateDeb']) . "', DATE_FIN='" . htmlentities($_POST['dateFin']) . "', DESCRIPTION='" . htmlentities($_POST['description']) . "' WHERE ID=" . $_POST['id'];
 						
 						if (!($stmt = $mysqli->prepare($query))) {
 							//$returnCampagne = '{ "statut": "0", "dataType": "error", "data": "Echec de la preparation: (' . $mysqli->connect_errno . ') ' . $mysqli->connect_error . '" }';
