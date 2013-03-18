@@ -249,11 +249,10 @@ function loadPopUpAfterError() {
 		
 		$('.form-info').html("<div class='alert alert-error'> <button type='button' class='close' data-dismiss='alert'>&times;</button> <strong>Erreur !</strong> " + getURLParameter('data') + " </div>")
 		
-		sessionStorage.setItem(session_action, action);
-		
 		setTimeout( function (){
 			// Ouverture du formulaire
 			$('#ajout-item').click();
+			sessionStorage.setItem(session_action, action);
 			
 			setTimeout(function () {
 				$('#sb-container .dateDeb').attr('id', 'dateDeb-field');
