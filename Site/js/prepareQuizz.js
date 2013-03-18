@@ -264,6 +264,7 @@ function loadPopUpAfterError() {
 				$('#dateFin-field').datepicker("option", "dateFormat", "yy-mm-dd");
 
 				// Chargement des champs saisie dans le formulaire
+				$(".id-field").val(field.id);
 				$(".nom").val(field.nom);
 				$(".description").val(field.description);
 				$("#dateDeb-field").val(field.dateDeb);
