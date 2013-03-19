@@ -182,7 +182,7 @@
 				$row = $res->fetch_assoc();
 				if (isset($row['ID'])) {
 					
-					$query = "DELETE FROM TABLE_CAMPAGNE  WHERE ID=" . $_POST['id'];
+					$query = "DELETE FROM TABLE_PARCELLE  WHERE ID=" . $_POST['id'];
 					
 					if (!($stmt = $mysqli->prepare($query))) {
 						$returnItem = '{ "statut": "0", "dataType": "error", "data": "Echec de la preparation: (' . $mysqli -> connect_errno . ') ' . $mysqli -> connect_error . '" }';

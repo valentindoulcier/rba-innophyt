@@ -174,7 +174,7 @@
 										<div class="btn-group">
 											<a href="#" id="cancel-form" class="btn" onclick="Shadowbox.close();">Annuler</a>
 											<a href="#" id="reinit-form" class="btn" onclick="setEmptyForm();">Réinitialiser</a>
-											<a href="#" id="submit-form" class="btn btn-success" onclick="$('.action-field').val(sessionStorage.getItem('action-rba-innophyt')); javascript:submit()">Enregistrer</a>
+											<a href="#" id="submit-form" class="btn btn-success" onclick="$('.action-field').val(sessionStorage.getItem(session_action)); javascript:submit()">Enregistrer</a>
 										</div>
 									</div>
 								</div>
