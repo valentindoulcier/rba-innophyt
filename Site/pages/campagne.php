@@ -46,7 +46,7 @@
 
 			<div id="selection-2_3">
 				<div id="liste_elem">
-					<header>
+					<header id="title_campagne">
 						<h2>Liste des campagnes</h2>
 					</header>
 					<section id="liste_campagne">

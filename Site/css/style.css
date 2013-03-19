@@ -688,11 +688,13 @@ input::-webkit-input-placeholder {
 }
 .field{
 	padding-bottom: 5px;
+	font-size: 15px;
 }
 .fieldSpan{
 	color: #6D7269;
 	display: block;
 	margin-left: 25px;
+	margin-top: 3px;
 }
 #liste_campagne{
 	padding-left: 15px;

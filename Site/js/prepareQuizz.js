@@ -55,6 +55,9 @@ function bindItemClick() {
 		// Mise à jour de shadowbox pour les pop-up de modification et suppression
 		Shadowbox.clearCache();
 		Shadowbox.setup();
+		
+		// Mise à jour du "fil d'arinne" de la sélection de la campagne / parcelle / piege
+		updateTitle();
 	});
 }
 
@@ -146,6 +149,9 @@ function listerItem(pageChoix) {
 					// Récupération de l'id de l'item précédement sélectionné
 					var id = sessionStorage.getItem(eval('session_id_' + pageChoix)) ? sessionStorage.getItem(eval('session_id_' + pageChoix)) : getURLParameter('id');
 					$('#' + pageChoix + id).click();
+					
+					// Mise à jour du "fil d'arinne" de la sélection de la campagne / parcelle / piege
+					updateTitle();
 					
 					// Appel de la fonction qui gère les retours d'erreurs du serveur
 					loadPopUpAfterError();
@@ -293,7 +299,7 @@ function loadPopUpAfterError() {
 }
 
 /**
- * Cette fonction permet de remttre la bonne taille de la pop-up lorsque l'utilisateur ferme le message d'erreur
+ * Cette fonction permet de remettre la bonne taille de la pop-up lorsque l'utilisateur ferme le message d'erreur
  *
  * @method normalSizeCampagneForm
  * @return {Void}
@@ -310,6 +316,44 @@ function normalSizeCampagneForm() {
 			Shadowbox.skin.dynamicResize(500, 313);
 		}
 	});
+}
+
+/**
+ * Cette fonction permet de mettre à jour le titre par rapport aux items sélectionnés
+ *
+ * @method updateTitle
+ * @return {Void}
+ **/
+function updateTitle() {
+	var pageChoix = sessionStorage.getItem('pageChoix');
+	var title = "<h2>";
+	
+	var campagne_id = sessionStorage.getItem(session_id_campagne);
+	var parcelle_id = sessionStorage.getItem(session_id_parcelle);
+	var piege_id    = sessionStorage.getItem(session_id_piege);
+	
+	if (campagne_id) {
+		var campagne = $.parseJSON(sessionStorage.getItem(session_liste_camp + authInfo.idKeyMd5));
+		title += "<a href='" + campagne_url + "' title='Retour à la liste des campagnes'>" + campagne.data[campagne_id].nom + "</a> / ";
+	}
+	if (parcelle_id) {
+		var parcelle = $.parseJSON(sessionStorage.getItem(session_liste_parc + authInfo.idKeyMd5));
+		title += "<a href='" + parcelle_url + "' title='Retour à la liste des campagnes'>" + parcelle.data[parcelle_id].nom + "</a> / ";
+	}
+	if (piege_id) {
+		var piege    = $.parseJSON(sessionStorage.getItem(session_liste_pieg + authInfo.idKeyMd5));
+		title += "<a href='" + piege_url    + "' title='Retour à la liste des campagnes'>" + piege.data[piege_id].nom + "</a>";
+	}
+	title += "</h2>";
+	
+	if (pageChoix == "campagne") {
+		$('#title_campagne').html(title);
+	} else if (pageChoix == "parcelle") {
+		$('#title_parcelle').html(title);
+	} else if (pageChoix == "piege") {
+		$('#title_piege').html(title);
+	}
+	
 }
 
 /***** DOCUMENT READY *****/

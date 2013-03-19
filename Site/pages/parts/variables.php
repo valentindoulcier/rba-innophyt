@@ -28,6 +28,7 @@
 	$PROTOCOLES_URL    = $PAGES_URL . "/protocoles.php";
 	$CAMPAGNE_URL      = $PAGES_URL . "/campagne.php";
 	$PARCELLE_URL      = $PAGES_URL . "/parcelle.php";
+	$PIEGE_URL         = $PAGES_URL . "/piege.php";
 	$QUIZZ_URL         = $PAGES_URL . "/quizz.php";
 	
 	$LOGIN_PAGE        = $PAGE_PATH . "/login.php";
@@ -50,6 +51,10 @@
 			var pages_url           = "<?php echo $PAGES_URL ?>";
 			var php_script_url      = "<?php echo $PHP_SCRIPT_URL ?>";
 			var page_type           = "<?php echo $PageType ?>";
+			
+			var campagne_url        = "<?php echo $CAMPAGNE_URL ?>";
+			var parcelle_url        = "<?php echo $PARCELLE_URL ?>";
+			var piege_url           = "<?php echo $PIEGE_URL ?>";
 			
 			var session_login_name  = "loginInfoRBA-INNOPHYT";
 			var action_form         = "action-rba-innophyt";
