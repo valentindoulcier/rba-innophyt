@@ -14,12 +14,19 @@ function bindItemClick() {
 		
 		// Mise à jour de l'item sélectionné dans la sessionStorage
 		if (pageChoix == "campagne") {
-			sessionStorage.setItem(session_id_campagne, item.dataset.id);
+			if (sessionStorage.getItem(session_id_campagne) !=  item.dataset.id) {
+				sessionStorage.setItem(session_id_campagne, item.dataset.id);
+				sessionStorage.removeItem(session_id_parcelle);
+				sessionStorage.removeItem(session_id_piege);
+			}
 			urlPageSuivante = pages_url + '/parcelle.php';
 			
 			shadowBoxModifier = "shadowbox;width=500px;height=313px";
 		} else if (pageChoix == "parcelle") {
-			sessionStorage.setItem(session_id_parcelle, item.dataset.id);
+			if (sessionStorage.getItem(session_id_parcelle) !=  item.dataset.id) {
+				sessionStorage.setItem(session_id_parcelle, item.dataset.id);
+				sessionStorage.removeItem(session_id_piege);
+			}
 			urlPageSuivante = pages_url + '/piege.php';
 			
 			shadowBoxModifier = "shadowbox;width=500px;height=453px";
@@ -72,7 +79,7 @@ function listerItem(pageChoix) {
 	$.ajax({
 		type : "POST",
 		url : php_script_url + "/" + pageChoix + ".php",
-		data : { "idKey" : authInfo.idKeyMd5, "action": "lister", "campagneId": sessionStorage.getItem(session_id_campagne)},
+		data : { "idKey" : authInfo.idKeyMd5, "action": "lister", "campagneId": sessionStorage.getItem(session_id_campagne), "parcelleId": sessionStorage.getItem(session_id_parcelle) },
 		success : function(msg) {
 			data = $.parseJSON(msg);
 			if (data.idKey == authInfo.idKeyMd5) {
@@ -104,6 +111,13 @@ function listerItem(pageChoix) {
 						}
 					} if (pageChoix == "piege") {
 						sessionStorage.setItem(session_liste_pieg + authInfo.idKeyMd5, msg);
+						$('.parcelle-id-field').val(sessionStorage.getItem(session_id_parcelle));
+						
+						if (getURLParameter('statut') == "0" && getURLParameter('dataType') == "error") {
+							shadowboxRelAjouter = "shadowbox;width=500px;height=483px";
+						} else {
+							shadowboxRelAjouter = "shadowbox;width=500px;height=453px";
+						}
 					}
 		
 					
@@ -150,19 +164,19 @@ function listerItem(pageChoix) {
 					var id = sessionStorage.getItem(eval('session_id_' + pageChoix)) ? sessionStorage.getItem(eval('session_id_' + pageChoix)) : getURLParameter('id');
 					$('#' + pageChoix + id).click();
 					
-					// Mise à jour du "fil d'arinne" de la sélection de la campagne / parcelle / piege
-					updateTitle();
-					
 					// Appel de la fonction qui gère les retours d'erreurs du serveur
 					loadPopUpAfterError();
 				} else {
 					// Affichage d'un message d'erreur dans le cas où il y a une erreur pour la récupération des items
-					$('#liste_campagne').html("<div class='alert alert-error'> <button type='button' class='close' data-dismiss='alert'>&times;</button> <strong>Erreur !</strong> Problème dans la récupération de la liste des " + pageChoix + "s </div>")
+					$('#liste_' + sessionStorage.getItem('pageChoix')).html("<div class='alert alert-error'> <button type='button' class='close' data-dismiss='alert'>&times;</button> <strong>Erreur !</strong> Problème dans la récupération de la liste des " + pageChoix + "s </div>")
 				}
 			} else {
 				// Affichage d'un message d'erreur dans le cas où l'utilisateur n'est pas reconnu
-				$('#liste_campagne').html("<div class='alert alert-error'> <button type='button' class='close' data-dismiss='alert'>&times;</button> <strong>Erreur !</strong> " + data.data + " </div>")
+				$('#liste_' + sessionStorage.getItem('pageChoix')).html("<div class='alert alert-error'> <button type='button' class='close' data-dismiss='alert'>&times;</button> <strong>Erreur !</strong> " + data.data + " </div>")
 			}
+					
+			// Mise à jour du "fil d'arinne" de la sélection de la campagne / parcelle / piege
+			updateTitle();
 		},
 		error : function(jqXHR, textStatus, errorThrown) {
 			// Affichage d'un message d'erreur si il y a une erreur lors de l'exécution de la requête ajax

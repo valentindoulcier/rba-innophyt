@@ -18,12 +18,12 @@
 				$row = $res->fetch_assoc();
 				if (isset($row['ID'])) {
 					$query = "SELECT * FROM TABLE_PARCELLE WHERE CAMPAGNE_ID='" . $_POST['campagneId'] . "'";
-					$campagne = $mysqli->query($query);
+					$item = $mysqli->query($query);
 	
-					if ($campagne) {
+					if ($item) {
 						$returnItem = '{ "statut": "1", "dataType": "parcelle", "data": { ';
 						
-						 while ($rowC = $campagne->fetch_assoc()) {
+						 while ($rowC = $item->fetch_assoc()) {
 							 $returnItem .= '"' . $rowC['ID'] . '": {';
 							 $returnItem .= '"id": "'           . html_entity_decode($rowC['ID']) . '",';
 							 $returnItem .= '"nom": "'          . html_entity_decode(str_replace("\'", "&#39;", $rowC['NOM'])) . '",';
