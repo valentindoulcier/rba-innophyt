@@ -26,6 +26,7 @@
 	$LOGIN_URL         = $PAGES_URL . "/login.php";
 	$MENU_URL          = $PAGES_URL . "/menu.php";
 	$PROTOCOLES_URL    = $PAGES_URL . "/protocoles.php";
+	$MOSAIQUE_URL      = $PAGES_URL . "/mosaique.php";
 	$CAMPAGNE_URL      = $PAGES_URL . "/campagne.php";
 	$PARCELLE_URL      = $PAGES_URL . "/parcelle.php";
 	$PIEGE_URL         = $PAGES_URL . "/piege.php";
