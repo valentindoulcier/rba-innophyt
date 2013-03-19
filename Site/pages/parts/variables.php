@@ -10,6 +10,7 @@
 	$CSS_PATH          = $BACK_PATH . "/css";
 	$DOCUMENTS_PATH    = $BACK_PATH . "/documents";
 	$IMG_PATH          = $BACK_PATH . "/images";
+	$APROPOS_PATH      = $IMG_PATH  . "/apropos";
 	$PAGE_PATH         = $BACK_PATH . "/pages";
 	$PAGE_PART_PATH    = $PAGE_PATH . "/parts";
 	$PHP_SCRIPT_PATH   = $BACK_PATH . "/php_script";

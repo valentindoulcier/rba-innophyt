@@ -55,13 +55,10 @@
 										<li id="resultWindowContent">
 											<div class="row partenaire">
 												<div class="span3 cell">
-													<a href="#" title=""><img src="<?php echo $IMG_PATH ?>/questionnaire.png" alt="icone questionnaire" class="ico-accueil"/></a>
+													<a href="#" title=""><img src="<?php echo $APROPOS_PATH; ?>/financeur1.jpg" alt="icone questionnaire" class="ico-apropos"/></a>
 												</div>
 												<div class="span3 cell">
-													<a href="#" title=""><img src="<?php echo $IMG_PATH ?>/questionnaire.png" alt="icone questionnaire" class="ico-accueil"/></a>
-												</div>
-												<div class="span3 cell">
-													<a href="#" title=""><img src="<?php echo $IMG_PATH ?>/questionnaire.png" alt="icone questionnaire" class="ico-accueil"/></a>
+													<a href="#" title=""><img src="<?php echo $APROPOS_PATH; ?>/financeur2.jpg" alt="icone questionnaire" class="ico-apropos"/></a>
 												</div>
 											</div>
 										</li>
@@ -78,13 +75,45 @@
 										<li id="resultWindowContent">
 											<div class="row partenaire">
 												<div class="span3 cell">
-													<a href="#" title=""><img src="<?php echo $IMG_PATH ?>/questionnaire.png" alt="icone questionnaire" class="ico-accueil"/></a>
+													<a href="#" title=""><img src="<?php echo $APROPOS_PATH; ?>/auteur1.jpg" alt="icone questionnaire" class="ico-apropos"/></a>
 												</div>
 												<div class="span3 cell">
-													<a href="#" title=""><img src="<?php echo $IMG_PATH ?>/questionnaire.png" alt="icone questionnaire" class="ico-accueil"/></a>
+													<a href="#" title=""><img src="<?php echo $APROPOS_PATH; ?>/auteur2.png" alt="icone questionnaire" class="ico-apropos"/></a>
 												</div>
 												<div class="span3 cell">
-													<a href="#" title=""><img src="<?php echo $IMG_PATH ?>/questionnaire.png" alt="icone questionnaire" class="ico-accueil"/></a>
+													<a href="#" title=""><img src="<?php echo $APROPOS_PATH; ?>/auteur3.gif" alt="icone questionnaire" class="ico-apropos"/></a>
+												</div>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+							
+							<div id="resultRightDiv" style="width: 945px;">
+								<div class="window" id="resultWindow">
+									<ul>
+										<li class="windowTitle">
+											<h3><i class="icon-ok"></i>Partenaires</h3>
+										</li>
+										<li id="resultWindowContent">
+											<div class="row partenaire">
+												<div class="span3 cell">
+													<a href="#" title=""><img src="<?php echo $APROPOS_PATH; ?>/partenaire1.png" alt="icone questionnaire" class="ico-apropos"/></a>
+												</div>
+												<div class="span3 cell">
+													<a href="#" title=""><img src="<?php echo $APROPOS_PATH; ?>/partenaire2.jpg" alt="icone questionnaire" class="ico-apropos"/></a>
+												</div>
+												<div class="span3 cell">
+													<a href="#" title=""><img src="<?php echo $APROPOS_PATH; ?>/partenaire3.jpg" alt="icone questionnaire" class="ico-apropos"/></a>
+												</div>
+												<div class="span3 cell">
+													<a href="#" title=""><img src="<?php echo $APROPOS_PATH; ?>/partenaire4.jpg" alt="icone questionnaire" class="ico-apropos"/></a>
+												</div>
+												<div class="span3 cell">
+													<a href="#" title=""><img src="<?php echo $APROPOS_PATH; ?>/logoINRA.jpg" alt="icone questionnaire" class="ico-apropos"/></a>
+												</div>
+												<div class="span3 cell">
+													<a href="#" title=""><img src="<?php echo $APROPOS_PATH; ?>/partenaire6.jpg" alt="icone questionnaire" class="ico-apropos"/></a>
 												</div>
 											</div>
 										</li>
