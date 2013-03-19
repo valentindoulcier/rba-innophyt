@@ -25,14 +25,14 @@
 						
 						 while ($rowC = $campagne->fetch_assoc()) {
 							 $returnItem .= '"' . $rowC['ID'] . '": {';
-							 $returnItem .= '"id": "'           . $rowC['ID'] . '",';
-							 $returnItem .= '"nom": "'          . $rowC['NOM'] . '",';
-							 $returnItem .= '"description": "'  . $rowC['DESCRIPTION'] . '",';
-							 $returnItem .= '"date_debut": "'   . $rowC['DATE_DEBUT'] . '",';
-							 $returnItem .= '"date_fin": "'     . $rowC['DATE_FIN'] . '",';
-							 $returnItem .= '"adresse": "'      . $rowC['ADRESSE'] . '",';
-							 $returnItem .= '"latitude": "'     . $rowC['LATITUDE'] . '",';
-							 $returnItem .= '"longitude": "'    . $rowC['LONGITUDE'] . '"';
+							 $returnItem .= '"id": "'           . html_entity_decode($rowC['ID']) . '",';
+							 $returnItem .= '"nom": "'          . html_entity_decode(str_replace("\'", "&#39;", $rowC['NOM'])) . '",';
+							 $returnItem .= '"description": "'  . html_entity_decode(str_replace("\'", "&#39;", $rowC['DESCRIPTION'])) . '",';
+							 $returnItem .= '"date_debut": "'   . html_entity_decode($rowC['DATE_DEBUT']) . '",';
+							 $returnItem .= '"date_fin": "'     . html_entity_decode($rowC['DATE_FIN']) . '",';
+							 $returnItem .= '"adresse": "'      . html_entity_decode($rowC['ADRESSE']) . '",';
+							 $returnItem .= '"latitude": "'     . html_entity_decode($rowC['LATITUDE']) . '",';
+							 $returnItem .= '"longitude": "'    . html_entity_decode($rowC['LONGITUDE']) . '"';
 							 $returnItem .= '},';
 						}
 						$returnItem .= ' "":"" }, "idKey": "' . $row['RSA_PRIVE'] . '"}';
@@ -59,6 +59,8 @@
 				$ERROR = true;
 				header('Location: ' . $PARCELLE_URL . '?statut=0&dataType=error&data=La date de début est incorrecte&action=ajouter&field={"nom":"' . $_POST['nom'] . '","description":"' . $_POST['description'] . '","dateDeb":"' . $_POST['dateDeb'] . '","dateFin":"' . $_POST['dateFin'] . '","adresse":"' . $_POST['adresse'] . '","latitude":"' . $_POST['latitude'] . '","longitude":"' . $_POST['longitude'] . '"}');
 			}
+		} else {
+			$_POST['dateDeb'] = date("Y-m-d");
 		}
 		if (isset($_POST['dateFin']) && strcmp($_POST['dateFin'], '') && !$ERROR) {
 			$date = explode('-', $_POST['dateFin']);
@@ -66,6 +68,8 @@
 				$ERROR = true;
 				header('Location: ' . $PARCELLE_URL . '?statut=0&dataType=error&data=La date de fin est incorrecte&action=ajouter&field={"nom":"' . $_POST['nom'] . '","description":"' . $_POST['description'] . '","dateDeb":"' . $_POST['dateDeb'] . '","dateFin":"' . $_POST['dateFin'] . '","adresse":"' . $_POST['adresse'] . '","latitude":"' . $_POST['latitude'] . '","longitude":"' . $_POST['longitude'] . '"}');
 			}
+		} else {
+			$_POST['dateFin'] = date("Y-m-d", mktime(0, 0, 0, date("m") + 1, date("d"), date("Y")));
 		}
 		
 		if (!$ERROR) {
@@ -122,6 +126,8 @@
 				$ERROR = true;
 				header('Location: ' . $PARCELLE_URL . '?statut=0&dataType=error&data=La date de début est incorrecte&action=modifier&field={"id":"' . $_POST['id'] . '","nom":"' . $_POST['nom'] . '","description":"' . $_POST['description'] . '","dateDeb":"' . $_POST['dateDeb'] . '","dateFin":"' . $_POST['dateFin'] . '","adresse":"' . $_POST['adresse'] . '","latitude":"' . $_POST['latitude'] . '","longitude":"' . $_POST['longitude'] . '"}');
 			}
+		} else {
+			$_POST['dateDeb'] = date("Y-m-d");
 		}
 		if (isset($_POST['dateFin'])) {
 			$date = explode('-', $_POST['dateFin']);
@@ -129,6 +135,8 @@
 				$ERROR = true;
 				header('Location: ' . $PARCELLE_URL . '?statut=0&dataType=error&data=La date de fin est incorrecte&action=modifier&field={"id":"' . $_POST['id'] . '","nom":"' . $_POST['nom'] . '","description":"' . $_POST['description'] . '","dateDeb":"' . $_POST['dateDeb'] . '","dateFin":"' . $_POST['dateFin'] . '","adresse":"' . $_POST['adresse'] . '","latitude":"' . $_POST['latitude'] . '","longitude":"' . $_POST['longitude'] . '"}');
 			}
+		} else {
+			$_POST['dateFin'] = date("Y-m-d", mktime(0, 0, 0, date("m") + 1, date("d"), date("Y")));
 		}
 		
 		if (!$ERROR) {

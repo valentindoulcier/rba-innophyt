@@ -6,6 +6,8 @@
 		$BACK_PATH = "..";
 	}
 	
+	date_default_timezone_set('UTC');
+	
 	$JS_PATH           = $BACK_PATH . "/js";
 	$CSS_PATH          = $BACK_PATH . "/css";
 	$DOCUMENTS_PATH    = $BACK_PATH . "/documents";

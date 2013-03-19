@@ -64,14 +64,14 @@ function bindItemClick() {
  * @method listerItem
  * @param {String} pageChoix Nom de l'item qui est affiché sur la page (campagne/parcelle/piege)
  * @return {Void}
- **/
+ **/var data;
 function listerItem(pageChoix) {
 	$.ajax({
 		type : "POST",
 		url : php_script_url + "/" + pageChoix + ".php",
 		data : { "idKey" : authInfo.idKeyMd5, "action": "lister", "campagneId": sessionStorage.getItem(session_id_campagne)},
 		success : function(msg) {
-			var data = $.parseJSON(msg);
+			data = $.parseJSON(msg);
 			if (data.idKey == authInfo.idKeyMd5) {
 				if (data.dataType != "error") {
 					var shadowboxRelAjouter = "";
