@@ -33,6 +33,8 @@ function bindItemClick() {
 		} if (pageChoix == "piege") {
 			sessionStorage.setItem(session_id_piege, item.dataset.id);
 			urlPageSuivante = pages_url + '/quizz.php';
+			
+			shadowBoxModifier = "shadowbox;width=500px;height=453px";
 		}
 		
 		// Chargement des champs dans la partie information
