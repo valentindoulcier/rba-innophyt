@@ -17,7 +17,7 @@
 			if ($res) {
 				$row = $res->fetch_assoc();
 				if (isset($row['ID'])) {
-					$query = "SELECT * FROM TABLE_PIEGE WHERE PARCELLE_ID='" . $_POST['parcelleId'] . "'";
+					$query = "SELECT * FROM TABLE_PIEGE WHERE PARCEL_ID='" . $_POST['parcelleId'] . "'";
 					$item = $mysqli->query($query);
 	
 					if ($item) {
@@ -87,7 +87,7 @@
 					$row = $res->fetch_assoc();
 					if (isset($row['ID'])) {
 		
-						if (!($stmt = $mysqli->prepare("INSERT INTO TABLE_PIEGE(PARCELLE_ID, NOM, DATE_DEBUT, DATE_FIN, ADRESSE, LATITUDE, LONGITUDE, DESCRIPTION) VALUES (?, ?, ?, ?, ?, ?, ?, ?)"))) {
+						if (!($stmt = $mysqli->prepare("INSERT INTO TABLE_PIEGE(PARCEL_ID, NOM, DATE_DEBUT, DATE_FIN, ADRESSE, LATITUDE, LONGITUDE, DESCRIPTION) VALUES (?, ?, ?, ?, ?, ?, ?, ?)"))) {
 							//$returnItem = '{ "statut": "0", "dataType": "error", "data": "Echec de la preparation de la requete: (' . $mysqli->connect_errno . ') ' . $mysqli->connect_error . '" }';
 							header('Location: ' . $PIEGE_URL . '?statut=0&dataType=error&data=Echec de la preparation de la requete: (' . $mysqli->connect_errno . ') ' . $mysqli->connect_error . '&action=ajouter&field={"nom":"' . $_POST['nom'] . '","description":"' . $_POST['description'] . '","dateDeb":"' . $_POST['dateDeb'] . '","dateFin":"' . $_POST['dateFin'] . '","adresse":"' . $_POST['adresse'] . '","latitude":"' . $_POST['latitude'] . '","longitude":"' . $_POST['longitude'] . '"}');
 						}
