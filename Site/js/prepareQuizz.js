@@ -144,7 +144,7 @@ function listerItem(pageChoix) {
 					bindItemClick();
 					
 					// Récupération de l'id de l'item précédement sélectionné
-					var id = sessionStorage.getItem(session_id_campagne) ? sessionStorage.getItem(session_id_campagne) : getURLParameter('id');
+					var id = sessionStorage.getItem(eval('session_id_' + pageChoix)) ? sessionStorage.getItem(eval('session_id_' + pageChoix)) : getURLParameter('id');
 					$('#' + pageChoix + id).click();
 					
 					// Appel de la fonction qui gère les retours d'erreurs du serveur
