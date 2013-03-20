@@ -49,6 +49,7 @@
 <?php
 	if (strcmp($PageType, "prepareQuizz") == 0) {
 ?>
+	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCfZN9a70ZRFuLhcNNzDm-q_JlkLyWyW3w&sensor=true"></script>
 	<script type="text/javascript" src="<?php echo $JS_PATH; ?>/prepareQuizz.js"></script>
 <?php
 	}

@@ -721,6 +721,11 @@ input::-webkit-input-placeholder {
 .btn-link{
 	color: #54a6de;
 }
+.btn-success{
+	font-size: 16px;
+	padding: 6px 12px 6px 12px;
+	margin-bottom: -3px;
+}
 input::-webkit-input-placeholder { /* WebKit browsers */
     color: #999;
 }
