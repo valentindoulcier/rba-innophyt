@@ -39,6 +39,8 @@
 	$BODY_MAIL         = "";
 	$MAILTO            = "mailto:" . $ADRESSE_MAIL . "?subject=" . $SUJET_MAIL . "&body=" . $BODY_MAIL;
 	
+	$FAVICON           = $IMG_PATH . "/favicon.ico";
+	
 	define('XML_FILEPATH', $ARBRE_PATH . '/structure_xml.xml');
 	
 	//$PageType = page / login / quizz / prepareQuizz
