@@ -34,6 +34,11 @@
 	
 	$LOGIN_PAGE        = $PAGE_PATH . "/login.php";
 	
+	$ADRESSE_MAIL      = "admin@rba-innophyt.fr";
+	$SUJET_MAIL        = "Besoin d'aide avec l'application web RBA-INNOPHYT";
+	$BODY_MAIL         = "";
+	$MAILTO            = "mailto:" . $ADRESSE_MAIL . "?subject=" . $SUJET_MAIL . "&body=" . $BODY_MAIL;
+	
 	define('XML_FILEPATH', $ARBRE_PATH . '/structure_xml.xml');
 	
 	//$PageType = page / login / quizz / prepareQuizz
