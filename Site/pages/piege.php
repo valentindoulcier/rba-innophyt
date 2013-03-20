@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="UTF-8" />
 
-		<title>Campagnes</title>
+		<title>Pièges</title>
 
 		<?php
 			$HEADER = false;
@@ -113,9 +113,22 @@
 						<div class="form-info"></div>
 						<form class="form-horizontal formCampagne" action="<?php echo $PHP_SCRIPT_PATH . "/piege.php"; ?>" method="post">
 							<div class="control-group">
+								<label class="control-label" for="nom">Type</label>
+								<div class="controls">
+									<div class="btn-toolbar" style="margin: 0 !important;">
+										<div class="btn-group">
+											<a href="#" id="type-bol_jaune" class="btn piegeType" data-prefix="BJ-">Bol Jaune</a>
+											<a href="#" id="type-tente_malaise" class="btn piegeType" data-prefix="TM-">Tente Malaise</a>
+											<a href="#" id="type-piege_barber" class="btn piegeType" data-prefix="B-">Piège Barber</a>
+										</div>
+									</div>
+								</div>
+							</div>
+							
+							<div class="control-group">
 								<label class="control-label" for="nom">Nom</label>
 								<div class="controls">
-									<input id="nom" class="nom" name="nom" type="text" placeholder="Nom du piège" required autofocus>
+									<input id="nom" class="nom" name="nom" type="text" placeholder="Nom du piège" required autofocus disabled>
 								</div>
 							</div>
 
@@ -176,7 +189,7 @@
 										<div class="btn-group">
 											<a href="#" id="cancel-form" class="btn" onclick="Shadowbox.close();">Annuler</a>
 											<a href="#" id="reinit-form" class="btn" onclick="setEmptyForm();">Réinitialiser</a>
-											<a href="#" id="submit-form" class="btn btn-success" onclick="$('.action-field').val(sessionStorage.getItem(session_action)); javascript:submit()">Enregistrer</a>
+											<a href="#" id="submit-form" class="btn btn-success" onclick="$('.action-field').val(sessionStorage.getItem(session_action)); $('.nom').removeAttr('disabled'); javascript:submit()">Enregistrer</a>
 										</div>
 									</div>
 								</div>

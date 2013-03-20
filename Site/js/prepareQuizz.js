@@ -34,7 +34,7 @@ function bindItemClick() {
 			sessionStorage.setItem(session_id_piege, item.dataset.id);
 			urlPageSuivante = pages_url + '/quizz.php';
 			
-			shadowBoxModifier = "shadowbox;width=500px;height=453px";
+			shadowBoxModifier = "shadowbox;width=500px;height=500px";
 		}
 		
 		// Chargement des champs dans la partie information
@@ -116,9 +116,9 @@ function listerItem(pageChoix) {
 						$('.parcelle-id-field').val(sessionStorage.getItem(session_id_parcelle));
 						
 						if (getURLParameter('statut') == "0" && getURLParameter('dataType') == "error") {
-							shadowboxRelAjouter = "shadowbox;width=500px;height=483px";
+							shadowboxRelAjouter = "shadowbox;width=500px;height=555px";
 						} else {
-							shadowboxRelAjouter = "shadowbox;width=500px;height=453px";
+							shadowboxRelAjouter = "shadowbox;width=500px;height=500px";
 						}
 					}
 		
@@ -232,6 +232,9 @@ function loadInfoModif() {
 	
 	if ($("#fieldId").html() != "" && !(getURLParameter('statut') == "0" && getURLParameter('dataType') == "error")) {
 		setTimeout(function () {
+			$('.nom').removeAttr('disabled');
+			setPrefixePiege();
+			
 			$('#sb-container .dateDeb').attr('id', 'dateDeb-field');
 			$('#sb-container .dateFin').attr('id', 'dateFin-field');
 			$('#dateDeb-field').datepicker();
@@ -271,6 +274,8 @@ function setEmptyForm() {
 		$('#dateFin-field').datepicker();
 		$('#dateDeb-field').datepicker("option", "dateFormat", "yy-mm-dd");
 		$('#dateFin-field').datepicker("option", "dateFormat", "yy-mm-dd");
+		
+		setPrefixePiege();
 	}, 1500);
 };
 
@@ -293,6 +298,11 @@ function loadPopUpAfterError() {
 			sessionStorage.setItem(session_action, action);
 			
 			setTimeout(function () {
+				if ($('.nom').val()) {
+					$('.nom').removeAttr('disabled');
+				}
+				setPrefixePiege();
+				
 				$('#sb-container .dateDeb').attr('id', 'dateDeb-field');
 				$('#sb-container .dateFin').attr('id', 'dateFin-field');
 
@@ -329,7 +339,7 @@ function normalSizeCampagneForm() {
 		} else if (pageChoix == "parcelle") {
 			Shadowbox.skin.dynamicResize(500, 453);
 		} if (pageChoix == "piege") {
-			Shadowbox.skin.dynamicResize(500, 313);
+			Shadowbox.skin.dynamicResize(500, 500);
 		}
 	});
 }
@@ -370,6 +380,14 @@ function updateTitle() {
 		$('#title_piege').html(title);
 	}
 	
+}
+
+function setPrefixePiege() {
+	$('.piegeType').bind('click', function() {
+		var type    = document.getElementById($(this).attr('id'));
+		$('.nom').removeAttr('disabled');
+		$('.nom').val(type.dataset.prefix);
+	});
 }
 
 /***** DOCUMENT READY *****/

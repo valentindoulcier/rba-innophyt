@@ -212,8 +212,8 @@
 		}
 	} else {
 		//$returnItem = '{ "statut": "0", "dataType": "error", "data": "Missing request parameters" }';
-		//header('Location: ' . $PIEGE_URL . '?statut=0&dataType=error&data=Missing request parameters');
-		var_dump($_POST);
+		header('Location: ' . $PIEGE_URL . '?statut=0&dataType=error&data=Missing request parameters');
+		//var_dump($_POST);
 	}
 	
 	echo $returnItem;
