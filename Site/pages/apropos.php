@@ -6,11 +6,12 @@
 		<title>A Propos</title>
 
 		<?php
+			$HEADER = false;
 			$CurrentPath = "/pages";
 			include "parts/variables.php";
 	
 			include $PAGE_PART_PATH . "/headCssJs.php";
-			include $PAGE_PART_PATH . "/securite.php";
+			//include $PAGE_PART_PATH . "/securite.php";
 		?>
 	</head>
 	<body>

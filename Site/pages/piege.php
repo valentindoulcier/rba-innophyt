@@ -6,6 +6,7 @@
 		<title>Campagnes</title>
 
 		<?php
+			$HEADER = false;
 			$PageType    = "prepareQuizz";
 			$CurrentPath = "/pages";
 			include "parts/variables.php";

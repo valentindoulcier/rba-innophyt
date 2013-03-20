@@ -27,7 +27,7 @@
 	<script type="text/javascript" src="<?php echo $JS_PATH; ?>/quizz.js"></script>
 	<!-- Demo Content -->
 	<!--<script type="text/javascript" src="js/test.js"></script>-->
-<?
+<?php
 	}
 ?>
 
@@ -42,7 +42,7 @@
 ?>
 	<script type="text/javascript" src="<?php echo $JS_PATH; ?>/md5.min.js"></script>
 	<script type="text/javascript" src="<?php echo $JS_PATH; ?>/login.js"></script>
-<?
+<?php
 	}
 ?>
 
@@ -50,6 +50,6 @@
 	if (strcmp($PageType, "prepareQuizz") == 0) {
 ?>
 	<script type="text/javascript" src="<?php echo $JS_PATH; ?>/prepareQuizz.js"></script>
-<?
+<?php
 	}
 ?>

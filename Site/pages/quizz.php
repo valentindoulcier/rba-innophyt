@@ -6,6 +6,7 @@
 		<title>Arbre de question</title>
 
 		<?php
+			$HEADER = false;
 			$PageType = "quizz";
 			$CurrentPath = "/pages";
 			include "parts/variables.php";

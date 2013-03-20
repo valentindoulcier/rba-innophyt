@@ -6,6 +6,7 @@
 		<title>Connexion</title>
 
 		<?php
+			$HEADER = false;
 			$PageType    = "login";
 			$CurrentPath = "/pages";
 			include "parts/variables.php";

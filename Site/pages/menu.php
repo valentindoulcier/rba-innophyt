@@ -6,6 +6,7 @@
 		<title>Menu</title>
 
 		<?php
+			$HEADER = false;
 			$PageType    = "page";
 			$CurrentPath = "/pages";
 			include "parts/variables.php";

@@ -6,6 +6,7 @@
 		<title>Protocoles</title>
 
 		<?php
+			$HEADER = false;
 			$CurrentPath = "/pages";
 			include "parts/variables.php";
 	
