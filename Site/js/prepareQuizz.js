@@ -32,7 +32,7 @@ function bindItemClick() {
 			shadowBoxModifier = "shadowbox;width=500px;height=453px";
 		} if (pageChoix == "piege") {
 			sessionStorage.setItem(session_id_piege, item.dataset.id);
-			urlPageSuivante = pages_url + '/quizz.php';
+			urlPageSuivante = '#items-choisis';
 			
 			shadowBoxModifier = "shadowbox;width=500px;height=500px";
 		}
@@ -59,7 +59,11 @@ function bindItemClick() {
 		$('#delete-item').attr('rel', shadowBoxSupprimer);
 		// Modification du lien pour passer à la page suivante
 		$('#choose-item').attr('href', urlPageSuivante);
-		$('#choose-item').removeAttr('rel');
+		if (pageChoix == "piege") {
+			$('#choose-item').attr('rel', 'shadowbox;width=500px;height=270px');
+		} else {
+			$('#choose-item').removeAttr('rel');
+		}
 		
 		// Mise à jour de shadowbox pour les pop-up de modification et suppression
 		Shadowbox.clearCache();
@@ -382,12 +386,40 @@ function updateTitle() {
 	
 }
 
+/**
+ * Cette fonction permet d'ajouter le préfix pour le type de piège et de débloquer le champ nom
+ *
+ * @method updateTitle
+ * @return {Void}
+ **/
 function setPrefixePiege() {
 	$('.piegeType').bind('click', function() {
 		var type    = document.getElementById($(this).attr('id'));
 		$('.nom').removeAttr('disabled');
 		$('.nom').val(type.dataset.prefix);
 	});
+}
+
+/**
+ * Cette fonction charge les informations dans la pop-up avant de passer au quizz
+ *
+ * @method loadInfoBeaforeQuizz
+ * @return {Void}
+ **/
+function loadInfoBeaforeQuizz() {
+	setTimeout( function() {
+		var campagne_id = sessionStorage.getItem(session_id_campagne);
+		var parcelle_id = sessionStorage.getItem(session_id_parcelle);
+		var piege_id    = sessionStorage.getItem(session_id_piege);
+			
+		var campagne = $.parseJSON(sessionStorage.getItem(session_liste_camp + authInfo.idKeyMd5));
+		var parcelle = $.parseJSON(sessionStorage.getItem(session_liste_parc + authInfo.idKeyMd5));
+		var piege    = $.parseJSON(sessionStorage.getItem(session_liste_pieg + authInfo.idKeyMd5));
+				
+		$('.choose-campagne-field').val(campagne.data[campagne_id].nom);
+		$('.choose-parcelle-field').val(parcelle.data[parcelle_id].nom);
+		$('.choose-piege-field').val(piege.data[piege_id].nom);
+	}, 1250);
 }
 
 /***** DOCUMENT READY *****/

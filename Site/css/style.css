@@ -696,7 +696,7 @@ input::-webkit-input-placeholder {
 	margin-left: 25px;
 	margin-top: 3px;
 }
-#liste_campagne{
+#liste_campagne, #liste_parcelle, #liste_piege{
 	padding-left: 15px;
 	margin-bottom: 20px;
 }
@@ -737,6 +737,13 @@ input::-moz-placeholder { /* Mozilla Firefox 19+ */
 }
 input:-ms-input-placeholder { /* Internet Explorer 10+ */
     color: #999;
+}
+.choose-info input[disabled] {
+	color: #000000;
+	background-color: #ffffff;
+}
+.choose-info .control-label{
+	font-size: 15px;
 }
 /*----------------------------
 	A propos
