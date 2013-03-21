@@ -39,10 +39,10 @@
 			
 			<div id="menu" class="row">
 				<div class="span3 cell">
-					<a href="<?php echo $PROTOCOLES_URL?>" title=""><img src="<?php echo $IMG_PATH ?>/vache.png" alt="icone questionnaire" class="ico-accueil"/></a>
+					<a href="<?php echo $PROTOCOLES_URL?>" title=""><img src="<?php echo $IMG_PATH ?>/vache1.png" alt="icone questionnaire" class="ico-accueil"/></a>
 				</div>
 				<div class="span3 cell">
-					<a href="<?php echo $CAMPAGNE_URL?>" title=""><img src="<?php echo $IMG_PATH ?>/vache.png" alt="icone questionnaire" class="ico-accueil"/></a>
+					<a href="<?php echo $CAMPAGNE_URL?>" title=""><img src="<?php echo $IMG_PATH ?>/vache2.png" alt="icone questionnaire" class="ico-accueil"/></a>
 				</div>
 				<div class="span3 cell">
 					<a href="<?php echo $MOSAIQUE_URL?>" title=""><img src="<?php echo $IMG_PATH ?>/vache.png" alt="icone questionnaire" class="ico-accueil"/></a>
