@@ -45,16 +45,16 @@
 					<a href="<?php echo $CAMPAGNE_URL?>" title=""><img src="<?php echo $IMG_PATH ?>/vache2.png" alt="icone questionnaire" class="ico-accueil"/></a>
 				</div>
 				<div class="span3 cell">
-					<a href="<?php echo $MOSAIQUE_URL?>" title=""><img src="<?php echo $IMG_PATH ?>/vache.png" alt="icone questionnaire" class="ico-accueil"/></a>
+					<a href="<?php echo $MOSAIQUE_URL?>" title=""><img src="<?php echo $IMG_PATH ?>/vache3.png" alt="icone questionnaire" class="ico-accueil"/></a>
 				</div>
 				<div class="span3 cell">
-					<a href="#" title=""><img src="<?php echo $IMG_PATH ?>/questionnaire.png" alt="icone questionnaire" class="ico-accueil"/></a>
+					<a href="#" title=""><img src="<?php echo $IMG_PATH ?>/vache4.png" alt="icone questionnaire" class="ico-accueil"/></a>
 				</div>
 				<div class="span3 cell">
-					<a id="exportCSV" href="<?php echo($PHP_SCRIPT_PATH)?>/exportCSV.php?idKey=" title=""><img src="<?php echo $IMG_PATH ?>/vache.png" alt="icone questionnaire" class="ico-accueil"/></a>
+					<a id="exportCSV" href="<?php echo($PHP_SCRIPT_PATH)?>/exportCSV.php?idKey=" title=""><img src="<?php echo $IMG_PATH ?>/vache5.png" alt="icone questionnaire" class="ico-accueil"/></a>
 				</div>
 				<div class="span3 cell">
-					<a href="#" title=""><img src="<?php echo $IMG_PATH ?>/questionnaire.png" alt="icone questionnaire" class="ico-accueil"/></a>
+					<a href="#" title=""><img src="<?php echo $IMG_PATH ?>/vache6.png" alt="icone questionnaire" class="ico-accueil"/></a>
 				</div>
 			</div>
 		</div>
