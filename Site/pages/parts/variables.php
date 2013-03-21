@@ -18,6 +18,7 @@
 	$PHP_SCRIPT_PATH   = $BACK_PATH  . "/php_script";
 	$LIB_PATH          = $BACK_PATH  . "/lib";
 	$ARBRE_PATH        = $BACK_PATH  . "/arbres";
+	$THUMBNAIL_ARBRE_PATH  = $ARBRE_PATH . "/thumbnail";
 	$MEDIA_ARBRE_PATH  = $ARBRE_PATH . "/medias";
 	
 	$BASE_URL          = "http://localhost/RBA-INNOPHYT/Site";
@@ -37,7 +38,7 @@
 	
 	$ADRESSE_MAIL      = "admin@rba-innophyt.fr";
 	$SUJET_MAIL        = "Besoin d'aide avec l'application web RBA-INNOPHYT";
-	$BODY_MAIL         = "";
+	$BODY_MAIL         = "Bonsoir, je sui nul et j'ai besoin d'aide";
 	$MAILTO            = "mailto:" . $ADRESSE_MAIL . "?subject=" . $SUJET_MAIL . "&body=" . $BODY_MAIL;
 	
 	$FAVICON           = $IMG_PATH . "/favicon.ico";
