@@ -8,16 +8,17 @@
 	
 	date_default_timezone_set('UTC');
 	
-	$JS_PATH           = $BACK_PATH . "/js";
-	$CSS_PATH          = $BACK_PATH . "/css";
-	$DOCUMENTS_PATH    = $BACK_PATH . "/documents";
-	$IMG_PATH          = $BACK_PATH . "/images";
-	$APROPOS_PATH      = $IMG_PATH  . "/apropos";
-	$PAGE_PATH         = $BACK_PATH . "/pages";
-	$PAGE_PART_PATH    = $PAGE_PATH . "/parts";
-	$PHP_SCRIPT_PATH   = $BACK_PATH . "/php_script";
-	$LIB_PATH          = $BACK_PATH . "/lib";
-	$ARBRE_PATH        = $BACK_PATH . "/arbres";
+	$JS_PATH           = $BACK_PATH  . "/js";
+	$CSS_PATH          = $BACK_PATH  . "/css";
+	$DOCUMENTS_PATH    = $BACK_PATH  . "/documents";
+	$IMG_PATH          = $BACK_PATH  . "/images";
+	$APROPOS_PATH      = $IMG_PATH   . "/apropos";
+	$PAGE_PATH         = $BACK_PATH  . "/pages";
+	$PAGE_PART_PATH    = $PAGE_PATH  . "/parts";
+	$PHP_SCRIPT_PATH   = $BACK_PATH  . "/php_script";
+	$LIB_PATH          = $BACK_PATH  . "/lib";
+	$ARBRE_PATH        = $BACK_PATH  . "/arbres";
+	$MEDIA_ARBRE_PATH  = $ARBRE_PATH . "/medias";
 	
 	$BASE_URL          = "http://localhost/RBA-INNOPHYT/Site";
 	$CURRENT_URL       = $CurrentPath;

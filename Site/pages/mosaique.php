@@ -39,9 +39,38 @@
 			<div id="bodyQuestionContent">
 				
 				<?php
-					var_dump($myArray);
+					//echo $nbMedias;
+					echo ('<div id="mosaique" class="row">');
 					
-					//echo "<a href='recolte.php' title='identification de bob' onclick='sessionStorage(\"insecte_selectionne-rba\", " . "res1" . ")'><img src='" . $myArray['res1']['media']['media1'] . "'/></a>";
+					$lol = 0;
+					
+					//echo (' medias<br/><br/>');
+					
+					for ($numResultat = 0; $numResultat < count($mosaiqueArray); $numResultat++)
+					{
+					    $lol++;
+						$lol1 = 0;
+						if(count($mosaiqueArray[$numResultat][5]) != 0) {
+							for ($numMedia = 0; $numMedia < count($mosaiqueArray[$numResultat][5]); $numMedia++)
+							{?>
+								<div class="span1 mosaiqueCell">
+									<img src="<?php echo $MEDIA_ARBRE_PATH . "/" .$mosaiqueArray[$numResultat][5][$numMedia][1]; ?>" alt="icone mosaique" class="ico-mosaique"/>
+								</div>
+							<?php
+							    $lol1++;
+							}
+							//echo $lol1;
+							//echo (' media(s) pour le resultat ' . $numResultat . ' <br/>');
+						}
+					}
+					//echo $lol;
+					//echo (' resultats<br/><br/>');
+					
+					echo ('</div>');
+
+					var_dump($mosaiqueArray);
+					
+					//echo "<a href='#' title='identification de bob' onclick='sessionStorage.setItem(\"insecte_selectionne-rba\", " . "res1" . ")'><img src='" . $mosaiqueArray['res1']['media']['media1'] . "'/></a>";
 				?>
 
 				<div class="clearer"></div>
