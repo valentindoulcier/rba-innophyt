@@ -248,7 +248,7 @@
 		<div id="items-choisis" style="display: none;">
 			<div class="window" id="resultWindow">
 				<ul>
-					<li class="windowTitle"><h3><i class="icon-ok"></i>Vous avez sélectionner</h3></li>
+					<li class="windowTitle"><h3><i class="icon-ok"></i>Vous avez sélectionné</h3></li>
 					<li id="resultWindowContent">
 						<div class="form-horizontal formCampagne choose-info">
 							<div class="control-group">
