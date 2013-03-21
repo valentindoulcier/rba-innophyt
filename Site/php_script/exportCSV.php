@@ -1,5 +1,10 @@
 <?php
-	$mysqli = new mysqli("127.0.0.1", "admin", "", "rba-innophyt", 3306);
+
+	$HEADER = true;
+	$CurrentPath = "/php_script";
+	include "../pages/parts/variables.php";
+	
+	$mysqli = new mysqli($HOST_DB, $USER_DB, $PASSWORD_DB, $SCHEMA_DB, $PORT_DB);
 	if ($mysqli->connect_errno) {
 		echo "Failed to connect to MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
 		exit();
@@ -51,7 +56,7 @@
 					LEFT OUTER JOIN TABLE_PIEGE TPI ON TPI.PARCEL_ID = TPA.ID
 					LEFT OUTER JOIN TABLE_RECOLTE TRE ON TRE.PIEGE_ID = TPI.ID
 				WHERE
-					TUT.RSA_PRIVE = '" . $_GET['idKey'] . "'";
+					TUT.TOKEN = '" . $_GET['idKey'] . "'";
 					
 	$sql = $mysqli->query($requete);
 	if($sql)

@@ -6,6 +6,16 @@
 		$BACK_PATH = "..";
 	}
 	
+	/* ----------------------
+	 * Data Base Informations
+	 * ------------------- */
+	 
+	$HOST_DB           = "127.0.0.1";
+	$USER_DB           = "admin";
+	$PASSWORD_DB       = "";
+	$SCHEMA_DB         = "rba-innophyt";
+	$PORT_DB           = 3306;
+	
 	date_default_timezone_set('UTC');
 	
 	$JS_PATH           = $BACK_PATH  . "/js";
@@ -37,7 +47,7 @@
 	$LOGIN_PAGE        = $PAGE_PATH . "/login.php";
 	
 	$ADRESSE_MAIL      = "admin@rba-innophyt.fr";
-	$SUJET_MAIL        = "Besoin d'aide avec l'application web RBA-INNOPHYT";
+	$SUJET_MAIL        = "[" . date("Y-m-d") . "] - Aide Application Web RBA-INNOPHYT";
 	$BODY_MAIL         = "Bonsoir, je sui nul et j'ai besoin d'aide";
 	$MAILTO            = "mailto:" . $ADRESSE_MAIL . "?subject=" . $SUJET_MAIL . "&body=" . $BODY_MAIL;
 	

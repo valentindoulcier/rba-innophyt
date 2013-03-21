@@ -178,7 +178,7 @@ function listerItem(pageChoix) {
 				}
 			} else {
 				// Affichage d'un message d'erreur dans le cas où l'utilisateur n'est pas reconnu
-				$('#liste_' + sessionStorage.getItem('pageChoix')).html("<div class='alert alert-error'> <button type='button' class='close' data-dismiss='alert'>&times;</button> <strong>Erreur !</strong> " + data.data + " </div>")
+				$('#liste_' + sessionStorage.getItem('pageChoix')).html("<div class='alert alert-error'> <button type='button' class='close' data-dismiss='alert'>&times;</button> <strong>Erreur !</strong> " + data.data + " </div>");
 			}
 					
 			// Mise à jour du "fil d'arinne" de la sélection de la campagne / parcelle / piege
@@ -187,7 +187,7 @@ function listerItem(pageChoix) {
 		error : function(jqXHR, textStatus, errorThrown) {
 			// Affichage d'un message d'erreur si il y a une erreur lors de l'exécution de la requête ajax
 			console.error("Connexion fail : " + textStatus + " - " + errorThrown);
-			$('#liste_campagne').html("<div class='alert alert-error'> <button type='button' class='close' data-dismiss='alert'>&times;</button> <strong>Connexion fail !</strong> " + textStatus + " - " + errorThrown + " </div>")
+			$('#liste_' + sessionStorage.getItem('pageChoix')).html("<div class='alert alert-error'> <button type='button' class='close' data-dismiss='alert'>&times;</button> <strong>Connexion fail !</strong> " + textStatus + " - " + errorThrown + " </div>")
 		}
 	});
 }

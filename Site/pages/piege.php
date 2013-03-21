@@ -149,14 +149,14 @@
 							<div class="control-group">
 								<label class="control-label" for="dateDeb">Date de pose</label>
 								<div class="controls">
-									<input id="dateDeb" class="dateDeb" name="dateDeb" type="date" placeholder="2013-02-24">
+									<input id="dateDeb" class="dateDeb" name="dateDeb" type="text" placeholder="2013-02-24">
 								</div>
 							</div>
 
 							<div class="control-group">
 								<label class="control-label" for="dateFin">Date de récolte</label>
 								<div class="controls">
-									<input id="dateFin" class="dateFin" name="dateFin" type="date" placeholder="2013-05-30">
+									<input id="dateFin" class="dateFin" name="dateFin" type="text" placeholder="2013-05-30">
 								</div>
 							</div>
 
@@ -277,7 +277,7 @@
 									<div class="btn-toolbar">
 										<div class="btn-group">
 											<a href="#" id="cancel-form" class="btn" onclick="Shadowbox.close();">Fermer</a>
-											<a href="<?php echo $QUIZZ_URL; ?>" id="cancel-form" class="btn btn-success">Arbre de décision</a>
+											<a href="<?php echo $QUIZZ_URL; ?>" id="cancel-form" class="btn btn-success">Identification</a>
 										</div>
 									</div>
 								</div>

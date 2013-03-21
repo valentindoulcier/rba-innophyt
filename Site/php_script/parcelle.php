@@ -7,12 +7,12 @@
 	
 	if (isset($_POST['idKey']) && isset($_POST['campagneId']) && strcmp($_POST['action'], 'lister') == 0) { // Fait en requête ajax, pas besoin de header pour redirection de la page et des infos
 	
-		$mysqli = new mysqli("127.0.0.1", "admin", "", "rba-innophyt", 3306);
+		$mysqli = new mysqli($HOST_DB, $USER_DB, $PASSWORD_DB, $SCHEMA_DB, $PORT_DB);
 		if ($mysqli->connect_errno) {
 			$returnItem = '{ "statut": "0", "dataType": "error", "data": "Failed to connect to MySQL: (' . $mysqli->connect_errno . ') ' . $mysqli->connect_error . '" }';
 		} else {
 	
-			$query = "SELECT * FROM TABLE_USER WHERE RSA_PRIVE='" . $_POST[idKey] . "'";
+			$query = "SELECT * FROM TABLE_USER WHERE TOKEN='" . $_POST[idKey] . "'";
 			$res = $mysqli->query($query);
 			if ($res) {
 				$row = $res->fetch_assoc();
@@ -35,7 +35,7 @@
 							 $returnItem .= '"longitude": "'    . html_entity_decode($rowC['LONGITUDE']) . '"';
 							 $returnItem .= '},';
 						}
-						$returnItem .= ' "":"" }, "idKey": "' . $row['RSA_PRIVE'] . '"}';
+						$returnItem .= ' "":"" }, "idKey": "' . $row['TOKEN'] . '"}';
 					} else {
 						$returnItem = '{ "statut": "0", "dataType": "error", "data": "Aucune campagnes trouvées" }';
 					}
@@ -74,13 +74,13 @@
 		
 		if (!$ERROR) {
 	
-			$mysqli = new mysqli("127.0.0.1", "admin", "", "rba-innophyt", 3306);
+			$mysqli = new mysqli($HOST_DB, $USER_DB, $PASSWORD_DB, $SCHEMA_DB, $PORT_DB);
 			if ($mysqli->connect_errno) {
 				//$returnItem = '{ "statut": "0", "dataType": "error", "data": "Failed to connect to MySQL: (' . $mysqli->connect_errno . ') ' . $mysqli->connect_error . '" }';
 				header('Location: ' . $PARCELLE_URL . '?statut=0&dataType=error&data=Failed to connect to MySQL: (' . $mysqli->connect_errno . ') ' . $mysqli->connect_error . '&action=ajouter&field={"nom":"' . $_POST['nom'] . '","description":"' . $_POST['description'] . '","dateDeb":"' . $_POST['dateDeb'] . '","dateFin":"' . $_POST['dateFin'] . '","adresse":"' . $_POST['adresse'] . '","latitude":"' . $_POST['latitude'] . '","longitude":"' . $_POST['longitude'] . '"}');
 			} else {
 		
-				$query = "SELECT * FROM TABLE_USER WHERE RSA_PRIVE='" . $_POST[idKey] . "'";
+				$query = "SELECT * FROM TABLE_USER WHERE TOKEN='" . $_POST[idKey] . "'";
 				$res = $mysqli->query($query);
 				if ($res) {
 					$row = $res->fetch_assoc();
@@ -141,13 +141,13 @@
 		
 		if (!$ERROR) {
 			
-			$mysqli = new mysqli("127.0.0.1", "admin", "", "rba-innophyt", 3306);
+			$mysqli = new mysqli($HOST_DB, $USER_DB, $PASSWORD_DB, $SCHEMA_DB, $PORT_DB);
 			if ($mysqli->connect_errno) {
 				//$returnItem = '{ "statut": "0", "dataType": "error", "data": "Failed to connect to MySQL: (' . $mysqli->connect_errno . ') ' . $mysqli->connect_error . '" }';
 				header('Location: ' . $PARCELLE_URL . '?statut=0&dataType=error&data=Failed to connect to MySQL: (' . $mysqli->connect_errno . ') ' . $mysqli->connect_error . '&action=modifier&field={"id":"' . $_POST['id'] . '","nom":"' . $_POST['nom'] . '","description":"' . $_POST['description'] . '","dateDeb":"' . $_POST['dateDeb'] . '","dateFin":"' . $_POST['dateFin'] . '","adresse":"' . $_POST['adresse'] . '","latitude":"' . $_POST['latitude'] . '","longitude":"' . $_POST['longitude'] . '"}');
 			} else {
 		
-				$query = "SELECT * FROM TABLE_USER WHERE RSA_PRIVE='" . $_POST[idKey] . "'";
+				$query = "SELECT * FROM TABLE_USER WHERE TOKEN='" . $_POST[idKey] . "'";
 				$res = $mysqli->query($query);
 				if ($res) {
 					$row = $res->fetch_assoc();
@@ -179,12 +179,12 @@
 		}
 	} else if (isset($_POST['idKey']) && strcmp($_POST['action'], 'supprimer') == 0 && isset($_POST['id'])) {
 			
-		$mysqli = new mysqli("127.0.0.1", "admin", "", "rba-innophyt", 3306);
+		$mysqli = new mysqli($HOST_DB, $USER_DB, $PASSWORD_DB, $SCHEMA_DB, $PORT_DB);
 		if ($mysqli->connect_errno) {
 			$returnItem = '{ "statut": "0", "dataType": "error", "data": "Failed to connect to MySQL: (' . $mysqli->connect_errno . ') ' . $mysqli->connect_error . '" }';
 		} else {
 		
-			$query = "SELECT * FROM TABLE_USER WHERE RSA_PRIVE='" . $_POST[idKey] . "'";
+			$query = "SELECT * FROM TABLE_USER WHERE TOKEN='" . $_POST[idKey] . "'";
 			$res = $mysqli->query($query);
 			if ($res) {
 				$row = $res->fetch_assoc();

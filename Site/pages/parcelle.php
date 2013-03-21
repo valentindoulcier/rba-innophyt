@@ -136,14 +136,14 @@
 							<div class="control-group">
 								<label class="control-label" for="dateDeb">Date de début</label>
 								<div class="controls">
-									<input id="dateDeb" class="dateDeb" name="dateDeb" type="date" placeholder="2013-02-24">
+									<input id="dateDeb" class="dateDeb" name="dateDeb" type="text" placeholder="2013-02-24">
 								</div>
 							</div>
 
 							<div class="control-group">
 								<label class="control-label" for="dateFin">Date de fin</label>
 								<div class="controls">
-									<input id="dateFin" class="dateFin" name="dateFin" type="date" placeholder="2013-05-30">
+									<input id="dateFin" class="dateFin" name="dateFin" type="text" placeholder="2013-05-30">
 								</div>
 							</div>
 
