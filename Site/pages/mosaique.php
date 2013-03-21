@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="UTF-8" />
 
-		<title>Protocoles</title>
+		<title>Mosaïque</title>
 
 		<?php
 			$CurrentPath = "/pages";
@@ -37,12 +37,16 @@
 
 			<div id="bodyQuestionContent">
 
+				<a class="btn btn-primary" href="<?php echo($PHP_SCRIPT_PATH)?>/mosaique.php" type="button">Charger Mosaique</a>
+				
+				<!--
 				<?php
 					$myArray = array('res1' => array('nom' => 'MEJ', 'type' => 'Phytophage', 'regime' => 'Carnivore', 'info' => 'une info', 'media' => array('media1' => 'URL du média')));
 					var_dump($myArray);
 					
 					echo "<a href='recolte.php' title='identification de bob' onclick='sessionStorage(\"insecte_selectionne-rba\", " . "res1" . ")'><img src='" . $myArray['res1']['media']['media1'] . "'/></a>";
 				?>
+				-->
 
 				<div class="clearer"></div>
 			</div>

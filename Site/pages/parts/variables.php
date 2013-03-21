@@ -21,8 +21,8 @@
 	
 	$BASE_URL          = "http://localhost/RBA-INNOPHYT/Site";
 	$CURRENT_URL       = $CurrentPath;
-	$PAGES_URL         = $BASE_URL . "/pages";
-	$PHP_SCRIPT_URL    = $BASE_URL . "/php_script";
+	$PAGES_URL         = $BASE_URL  . "/pages";
+	$PHP_SCRIPT_URL    = $BASE_URL  . "/php_script";
 	$LOGIN_URL         = $PAGES_URL . "/login.php";
 	$MENU_URL          = $PAGES_URL . "/menu.php";
 	$PROTOCOLES_URL    = $PAGES_URL . "/protocoles.php";
