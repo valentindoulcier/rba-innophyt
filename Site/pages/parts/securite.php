@@ -27,11 +27,20 @@
 					url : "<?php echo $PHP_SCRIPT_URL ?>/checkIdentity.php",
 					data : { "login" : authInfo.loginEmail, "pass" : authInfo.pass },
 					success : function(msg) {
-						if (msg == authInfo.idKeyMd5) {
+						var msg = $.parseJSON(msg);
+						if (msg.token == authInfo.idKeyMd5) {
 							console.debug("securite ok");
 							$('#footer p.right').html('Vous êtes connecté en tant que ' + authInfo.loginEmail + '<i class="icon-ok-sign"></i> - <a href="<?php echo $MENU_URL ?>" alt="Menu">Menu<i class="icon-th"></i></a> - <a href="#" title="Déconnexion" onClick="logout();">Déconnexion<i class="icon-off"></i></a>');
 							if (location == "<?php echo $LOGIN_URL ?>") {
 								location = "<?php echo $MENU_URL ?>";
+							}
+							// Si la personne essaie d'accéder à la page d'administration sans les droits administrateur
+							if (location == "<?php echo $ADMIN_URL?>" && msg.admin != "1") {
+								location = "<?php echo $MENU_URL ?>";
+							}
+							// Si la personne est administrateur, on ajoute l'icone
+							if (msg.admin == "1") {
+								$('#adminCell').html("<a href='<?php echo $ADMIN_URL ?>' title='Administration de l\'application'><img src='<?php echo $IMG_PATH ?>/vache6.png' alt='icone questionnaire' class='ico-accueil'/></a>");
 							}
 						} else {
 							console.error(msg);

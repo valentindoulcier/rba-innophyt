@@ -43,8 +43,9 @@
 	$PARCELLE_URL      = $PAGES_URL . "/parcelle.php";
 	$PIEGE_URL         = $PAGES_URL . "/piege.php";
 	$QUIZZ_URL         = $PAGES_URL . "/quizz.php";
+	$ADMIN_URL         = $PAGES_URL . "/admin.php";
 	
-	$LOGIN_PAGE        = $PAGE_PATH . "/login.php";
+	//$LOGIN_PAGE        = $PAGE_PATH . "/login.php";
 	
 	$ADRESSE_MAIL      = "admin@rba-innophyt.fr";
 	$SUJET_MAIL        = "[" . date("Y-m-d") . "] - Aide Application Web RBA-INNOPHYT";
@@ -55,7 +56,7 @@
 	
 	define('XML_FILEPATH', $ARBRE_PATH . '/structure_xml.xml');
 	
-	//$PageType = page / login / quizz / prepareQuizz
+	//$PageType = page / login / quizz / prepareQuizz / admin
 	
 	if (!$HEADER) {
 ?>

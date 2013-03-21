@@ -774,3 +774,12 @@ input:-ms-input-placeholder { /* Internet Explorer 10+ */
 	margin: 20px 0 20px 0;
 	padding-left: 10px;
 }
+/*----------------------------
+     Admin
+-----------------------------*/
+#generateThumbnailButton{
+	float: right;
+	margin-top: 16px;
+	margin-right: 16px;
+}
+ */

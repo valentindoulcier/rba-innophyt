@@ -17,7 +17,7 @@
 		if ($res) {
 			$row = $res->fetch_assoc();
 			if (strcasecmp($row['PASSWD'], $_POST['pass']) == 0) {
-				echo $row['TOKEN'];
+				echo '{ "token": "' . $row['TOKEN'] . '", "admin": "' . $row['ADMIN'] . '" }';
 				mysqli_close($mysqli);
 			} else {
 				echo "0 - Wrong passwd : '" . $row['PASSWD'] . "'";
