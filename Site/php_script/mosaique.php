@@ -85,11 +85,11 @@ while($reader->read()) {
 
 $reader -> close();
 
-echo $a;
+//echo $a;
 
-echo (' medias<br/><br/>');
+//echo (' medias<br/><br/>');
 
-var_dump($myArray);
+//var_dump($myArray);
 
 ?>
 

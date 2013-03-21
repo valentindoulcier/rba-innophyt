@@ -9,8 +9,9 @@
 			$CurrentPath = "/pages";
 			include "parts/variables.php";
 	
-			include $PAGE_PART_PATH . "/headCssJs.php";
-			include $PAGE_PART_PATH . "/securite.php";
+			include $PAGE_PART_PATH  . "/headCssJs.php";
+			include $PAGE_PART_PATH  . "/securite.php";
+			include $PHP_SCRIPT_PATH . "/mosaique.php";
 		?>
 	</head>
 	<body>
@@ -36,17 +37,12 @@
 			</div>
 
 			<div id="bodyQuestionContent">
-
-				<a class="btn btn-primary" href="<?php echo($PHP_SCRIPT_PATH)?>/mosaique.php" type="button">Charger Mosaique</a>
 				
-				<!--
 				<?php
-					$myArray = array('res1' => array('nom' => 'MEJ', 'type' => 'Phytophage', 'regime' => 'Carnivore', 'info' => 'une info', 'media' => array('media1' => 'URL du média')));
 					var_dump($myArray);
 					
-					echo "<a href='recolte.php' title='identification de bob' onclick='sessionStorage(\"insecte_selectionne-rba\", " . "res1" . ")'><img src='" . $myArray['res1']['media']['media1'] . "'/></a>";
+					//echo "<a href='recolte.php' title='identification de bob' onclick='sessionStorage(\"insecte_selectionne-rba\", " . "res1" . ")'><img src='" . $myArray['res1']['media']['media1'] . "'/></a>";
 				?>
-				-->
 
 				<div class="clearer"></div>
 			</div>
