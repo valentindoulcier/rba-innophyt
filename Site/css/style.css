@@ -742,10 +742,11 @@ input::-webkit-input-placeholder {
 .btn-link{
 	color: #54a6de;
 }
-#infos_elem .btn-success{
-	font-size: 16px;
-	padding: 6px 12px 6px 12px;
-	margin-bottom: -3px;
+#infos_elem .btn-large{
+	/*font-size: 16px;
+	padding: 6px 12px 6px 12px;*/
+	margin-bottom: -4px;
+	margin-left: 30px;
 }
 input::-webkit-input-placeholder { /* WebKit browsers */
     color: #999;

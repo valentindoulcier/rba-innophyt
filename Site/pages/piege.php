@@ -91,8 +91,8 @@
 										<a href="#selectionner-item" rel='shadowbox;width=400px;height=109px' id="modif-item" class="btn btn-link" onclick="loadInfoModif();">Modifier</a>
 										<a href="#selectionner-item" rel='shadowbox;width=400px;height=109px' id="delete-item" class="btn btn-link">Supprimer</a>
 									</div>
-									<div class="btn-group" style="margin-left: 40px;">
-										<a href="#selectionner-item" rel='shadowbox;width=400px;height=109px' id="choose-item" class="btn btn-success" onclick="loadInfoBeaforeQuizz();">Suivant</a>
+									<div class="btn-group">
+										<a href="#selectionner-item" rel='shadowbox;width=400px;height=109px' id="choose-item" class="btn btn-large btn-success" onclick="loadInfoBeaforeQuizz();">Suivant</a>
 									</div>
 								</div>
 							</div>
