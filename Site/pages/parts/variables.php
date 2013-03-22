@@ -86,6 +86,7 @@
 			var session_liste_parc  = "liste_parcelle-rba-innophyt_";
 			var session_liste_pieg  = "liste_piege-rba-innophyt_";
 			var session_action      = "action-rba-innophyt";
+			var session_save     = "rba-innophyt-save";
 		</script>
 <?php
 	}

@@ -50,13 +50,13 @@
 					<a href="<?php echo $PROTOCOLES_URL?>" title="Liste des protocoles"><img src="<?php echo $IMG_PATH ?>/vache1.png" alt="icone questionnaire" class="ico-accueil"/></a>
 				</div>
 				<div class="span3 cell">
-					<a href="<?php echo $CAMPAGNE_URL?>" title="Accès au choix des campagnes / parcelles / pièges"><img src="<?php echo $IMG_PATH ?>/vache2.png" alt="icone questionnaire" class="ico-accueil"/></a>
+					<a href="<?php echo $CAMPAGNE_URL?>" title="Accès au choix des campagnes / parcelles / pièges" onclick="sessionStorage.setItem(session_save, 'true');"><img src="<?php echo $IMG_PATH ?>/vache2.png" alt="icone questionnaire" class="ico-accueil"/></a>
 				</div>
 				<div class="span3 cell">
-					<a href="#selectionner-item" title="Accès à l'arbre d'identification" rel='shadowbox;width=450px;height=155px'><img src="<?php echo $IMG_PATH ?>/vache3.png" alt="icone questionnaire" class="ico-accueil"/></a>
+					<a href="#selectionner-item" title="Accès à l'arbre d'identification" rel='shadowbox;width=450px;height=155px' onclick="sessionStorage.setItem('item-rba-menu', 'quizz');"><img src="<?php echo $IMG_PATH ?>/vache3.png" alt="icone questionnaire" class="ico-accueil"/></a>
 				</div>
 				<div class="span3 cell">
-					<a href="<?php echo $MOSAIQUE_URL?>" title="Accès à la mosaïque"><img src="<?php echo $IMG_PATH ?>/vache4.png" alt="icone questionnaire" class="ico-accueil"/></a>
+					<a href="#selectionner-item" title="Accès à la mosaïque" rel='shadowbox;width=450px;height=155px' onclick="sessionStorage.setItem('item-rba-menu', 'mosaique');"><img src="<?php echo $IMG_PATH ?>/vache4.png" alt="icone questionnaire" class="ico-accueil"/></a>
 				</div>
 				<div class="span3 cell">
 					<a id="exportCSV" href="<?php echo($PHP_SCRIPT_PATH)?>/exportCSV.php?idKey=" title="Export des données"><img src="<?php echo $IMG_PATH ?>/vache5.png" alt="icone questionnaire" class="ico-accueil"/></a>
@@ -85,7 +85,16 @@
 								<div class="btn-toolbar">
 									<div class="btn-group" style="margin-left: 150px; margin-top: 10px;">
 										<a href="#" id="cancel-form" class="btn" onclick="Shadowbox.close();">Annuler</a>
-										<a href="<?php echo $QUIZZ_URL?>" id="continue-form" class="btn btn-warning" onclick="sessionStorage.removeItem(session_id_campagne); sessionStorage.removeItem(session_id_parcelle); sessionStorage.removeItem(session_id_piege);">Continuer</a>
+										<a href="#" id="continue-form" class="btn btn-warning continue-form" onclick="sessionStorage.setItem(session_save, 'false');">Continuer</a>
+										<script>
+											setTimeout( function() {
+												if (sessionStorage.getItem('item-rba-menu') == 'quizz') {
+													$('.continue-form').attr('href', '<?php echo $QUIZZ_URL?>');
+												} else if (sessionStorage.getItem('item-rba-menu') == 'mosaique') {
+													$('.continue-form').attr('href', '<?php echo $MOSAIQUE_URL?>');
+												}
+											}, 1250);
+										</script>
 									</div>
 								</div>
 							</div>
