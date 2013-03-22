@@ -51,7 +51,7 @@
 					<a href="<?php echo $MOSAIQUE_URL?>" title="Accès à la mosaïque"><img src="<?php echo $IMG_PATH ?>/vache4.png" alt="icone questionnaire" class="ico-accueil"/></a>
 				</div>
 				<div class="span3 cell">
-					<a id="exportCSV" href="<?php echo($PHP_SCRIPT_PATH)?>/exportCSV.php?idKey=" title="Export des connées"><img src="<?php echo $IMG_PATH ?>/vache5.png" alt="icone questionnaire" class="ico-accueil"/></a>
+					<a id="exportCSV" href="<?php echo($PHP_SCRIPT_PATH)?>/exportCSV.php?idKey=" title="Export des données"><img src="<?php echo $IMG_PATH ?>/vache5.png" alt="icone questionnaire" class="ico-accueil"/></a>
 				</div>
 				<div id="adminCell" class="span3 cell">
 					

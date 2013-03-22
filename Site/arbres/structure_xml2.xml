@@ -1,0 +1,1145 @@
+﻿<?xml version = '1.0' encoding="UTF8"?>
+<!DOCTYPE arbre SYSTEM "arbre.dtd">
+
+<arbre>
+	<branche id="b1">
+		<question id="q1" texte="Combien de pattes a l'arthropode ?" >
+			<reponse id="r1" texte="6 pattes" >
+				<branche id="b2">
+					<question id="q2" texte="Les pattes postérieures sont-elles développées pour le saut ?" >
+						<reponse id="r2" texte="Non" >
+							<branche id="b3">
+								<question id="q3" texte="Combien d'ailes possède l'insecte ?" >
+									<reponse id="r3" texte="2 ailes antérieures membraneuses, les 2 ailes postérieures transformées en balanciers" >
+										<branche id="b4">
+											<question id="q4" texte="Quelle longueur font les antennes ?" >
+												<reponse id="r4" texte="Antennes courtes avec 3 articles maximum." >
+													<branche id="b5">
+														<question id="q5" texte="Quelle est la couleur de l'abdomen ?" >
+															<reponse id="r5" texte="Pas de rayures jaunes et noires" >
+																<resultat id="res1" >
+																	<nom>MEJ</nom>
+																	<type></type>
+																	<regimeAlimentaire>Larves phytophages</regimeAlimentaire>
+																	<informations></informations>
+																	<media>
+																		<img id="media1" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-2L/Q-Longueur des antennes/R-Antennes courtes/Q-Ornementation de l'abdomen/R-Pas de rayures/F-MEJ/IMG_8133.jpg" />
+																		<legende></legende>
+																	</media>
+																	<media>
+																		<img id="media2" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-2L/Q-Longueur des antennes/R-Antennes courtes/Q-Ornementation de l'abdomen/R-Pas de rayures/F-MEJ/IMG_8136.jpg" />
+																		<legende></legende>
+																	</media>
+																	<media>
+																		<img id="media3" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-2L/Q-Longueur des antennes/R-Antennes courtes/Q-Ornementation de l'abdomen/R-Pas de rayures/F-MEJ/IMG_8137.jpg" />
+																		<legende></legende>
+																	</media>
+																</resultat>
+																<media>
+																	<img id="media4" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-2L/Q-Longueur des antennes/R-Antennes courtes/Q-Ornementation de l'abdomen/R-Pas de rayures/IMG_8133.jpg" />
+																	<legende></legende>
+																</media>
+																<media>
+																	<img id="media5" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-2L/Q-Longueur des antennes/R-Antennes courtes/Q-Ornementation de l'abdomen/R-Pas de rayures/IMG_8136.jpg" />
+																	<legende></legende>
+																</media>
+																<media>
+																	<img id="media6" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-2L/Q-Longueur des antennes/R-Antennes courtes/Q-Ornementation de l'abdomen/R-Pas de rayures/IMG_8137.jpg" />
+																	<legende></legende>
+																</media>
+															</reponse>
+															<reponse id="r6" texte="Rayures jaunes/orangées et noires faisant penser aux guêpes." >
+																<resultat id="res2" >
+																	<nom>MEI</nom>
+																	<type></type>
+																	<regimeAlimentaire>Larves prédatrices de pucerons, adultes pollinisateurs.</regimeAlimentaire>
+																	<informations></informations>
+																	<media>
+																		<img id="media7" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-2L/Q-Longueur des antennes/R-Antennes courtes/Q-Ornementation de l'abdomen/R-Rayures jaunes et noires/F-MEI/IMG_7668.jpg" />
+																		<legende></legende>
+																	</media>
+																	<media>
+																		<img id="media8" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-2L/Q-Longueur des antennes/R-Antennes courtes/Q-Ornementation de l'abdomen/R-Rayures jaunes et noires/F-MEI/IMG_7671.jpg" />
+																		<legende></legende>
+																	</media>
+																	<media>
+																		<img id="media9" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-2L/Q-Longueur des antennes/R-Antennes courtes/Q-Ornementation de l'abdomen/R-Rayures jaunes et noires/F-MEI/IMG_7676.jpg" />
+																		<legende></legende>
+																	</media>
+																	<media>
+																		<img id="media10" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-2L/Q-Longueur des antennes/R-Antennes courtes/Q-Ornementation de l'abdomen/R-Rayures jaunes et noires/F-MEI/IMG_7680.jpg" />
+																		<legende></legende>
+																	</media>
+																	<media>
+																		<img id="media11" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-2L/Q-Longueur des antennes/R-Antennes courtes/Q-Ornementation de l'abdomen/R-Rayures jaunes et noires/F-MEI/IMG_7684.jpg" />
+																		<legende></legende>
+																	</media>
+																	<media>
+																		<img id="media12" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-2L/Q-Longueur des antennes/R-Antennes courtes/Q-Ornementation de l'abdomen/R-Rayures jaunes et noires/F-MEI/IMG_7687 - copie.jpg" />
+																		<legende></legende>
+																	</media>
+																	<media>
+																		<img id="media13" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-2L/Q-Longueur des antennes/R-Antennes courtes/Q-Ornementation de l'abdomen/R-Rayures jaunes et noires/F-MEI/IMG_7695 - copie.jpg" />
+																		<legende></legende>
+																	</media>
+																	<media>
+																		<img id="media14" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-2L/Q-Longueur des antennes/R-Antennes courtes/Q-Ornementation de l'abdomen/R-Rayures jaunes et noires/F-MEI/IMG_7700 - copie.jpg" />
+																		<legende></legende>
+																	</media>
+																</resultat>
+																<media>
+																	<img id="media15" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-2L/Q-Longueur des antennes/R-Antennes courtes/Q-Ornementation de l'abdomen/R-Rayures jaunes et noires/IMG_7668.jpg" />
+																	<legende></legende>
+																</media>
+																<media>
+																	<img id="media16" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-2L/Q-Longueur des antennes/R-Antennes courtes/Q-Ornementation de l'abdomen/R-Rayures jaunes et noires/IMG_7671.jpg" />
+																	<legende></legende>
+																</media>
+																<media>
+																	<img id="media17" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-2L/Q-Longueur des antennes/R-Antennes courtes/Q-Ornementation de l'abdomen/R-Rayures jaunes et noires/IMG_7676.jpg" />
+																	<legende></legende>
+																</media>
+																<media>
+																	<img id="media18" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-2L/Q-Longueur des antennes/R-Antennes courtes/Q-Ornementation de l'abdomen/R-Rayures jaunes et noires/IMG_7680.jpg" />
+																	<legende></legende>
+																</media>
+															</reponse>
+														</question>
+													</branche>
+													<media>
+														<img id="media19" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-2L/Q-Longueur des antennes/R-Antennes courtes/An1.jpg" />
+														<legende></legende>
+													</media>
+													<media>
+														<img id="media20" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-2L/Q-Longueur des antennes/R-Antennes courtes/IMG_0299.jpg" />
+														<legende></legende>
+													</media>
+													<media>
+														<img id="media21" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-2L/Q-Longueur des antennes/R-Antennes courtes/IMG_0306.jpg" />
+														<legende></legende>
+													</media>
+													<media>
+														<img id="media22" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-2L/Q-Longueur des antennes/R-Antennes courtes/IMG_0315.jpg" />
+														<legende></legende>
+													</media>
+												</reponse>
+												<reponse id="r7" texte="Antennes de plus de 3 articles" >
+													<branche id="b6">
+														<question id="q6" texte="Quelle est la longueur du corps de l'insecte ?" >
+															<reponse id="r8" texte="Longueur égale ou supérieure à 1,3cm" >
+																<resultat id="res3" >
+																	<nom>MEK1</nom>
+																	<type></type>
+																	<regimeAlimentaire>Larve phytophage</regimeAlimentaire>
+																	<informations></informations>
+																	<media>
+																		<img id="media23" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-2L/Q-Longueur des antennes/R-Antennes longues/Q-Longueur du corps/R-Egale ou superieure a 1,3cm/F-MEK1/IMG_7711.jpg" />
+																		<legende></legende>
+																	</media>
+																	<media>
+																		<img id="media24" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-2L/Q-Longueur des antennes/R-Antennes longues/Q-Longueur du corps/R-Egale ou superieure a 1,3cm/F-MEK1/IMG_7723.jpg" />
+																		<legende></legende>
+																	</media>
+																</resultat>
+																<media>
+																	<img id="media25" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-2L/Q-Longueur des antennes/R-Antennes longues/Q-Longueur du corps/R-Egale ou superieure a 1,3cm/IMG_7711.jpg" />
+																	<legende></legende>
+																</media>
+																<media>
+																	<img id="media26" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-2L/Q-Longueur des antennes/R-Antennes longues/Q-Longueur du corps/R-Egale ou superieure a 1,3cm/IMG_7723.jpg" />
+																	<legende></legende>
+																</media>
+															</reponse>
+															<reponse id="r9" texte="Longueur strictement inférieure à 1,3cm" >
+																<resultat id="res4" >
+																	<nom>MEK2</nom>
+																	<type></type>
+																	<regimeAlimentaire>Hématophages ou consommateurs de sucs vegetaux</regimeAlimentaire>
+																	<informations></informations>
+																</resultat>
+															</reponse>
+														</question>
+													</branche>
+													<media>
+														<img id="media27" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-2L/Q-Longueur des antennes/R-Antennes longues/Ann1.jpg" />
+														<legende></legende>
+													</media>
+												</reponse>
+											</question>
+										</branche>
+										<media>
+											<img id="media28" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-2L/Image1.jpg" />
+											<legende>Les balanciers sont les deux structures visibles à la loupe qui ont une forme de cuillère ou d'altère.</legende>
+										</media>
+										<media>
+											<img id="media29" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-2L/Image2.jpg" />
+											<legende>Les balanciers sont les deux structures visibles à la loupe qui ont une forme de cuillère ou d'altère.</legende>
+										</media>
+									</reponse>
+									<reponse id="r10" texte="4 ailes" >
+										<branche id="b7">
+											<question id="q7" texte="Quel est la texture des ailes antérieures ?" >
+												<reponse id="r11" texte="Ailes antérieures cornées" >
+													<branche id="b8">
+														<question id="q8" texte="Quelle est la proportion de l'aile qui est cornée ?" >
+															<reponse id="r12" texte="2/3 des ailes antérieures sont cornées" >
+																<branche id="b9">
+																	<question id="q9" texte="Y a-t-il présence d'un écusson ?" >
+																		<reponse id="r13" texte="non" >
+																			<resultat id="res5" >
+																				<nom>ME inexistante</nom>
+																				<type></type>
+																				<regimeAlimentaire></regimeAlimentaire>
+																				<informations></informations>
+																			</resultat>
+																		</reponse>
+																		<reponse id="r14" texte="oui" >
+																			<resultat id="res6" >
+																				<nom>MEN</nom>
+																				<type></type>
+																				<regimeAlimentaire>Phytpophages</regimeAlimentaire>
+																				<informations></informations>
+																			</resultat>
+																			<media>
+																				<img id="media30" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-4L/Q-TxturL/R-Corne/Q-Propcornee/R-2tier/Q-Presence ecusson/R-OUI/ec1.jpg" />
+																				<legende></legende>
+																			</media>
+																			<media>
+																				<img id="media31" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-4L/Q-TxturL/R-Corne/Q-Propcornee/R-2tier/Q-Presence ecusson/R-OUI/IMG_7367.jpg" />
+																				<legende></legende>
+																			</media>
+																			<media>
+																				<img id="media32" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-4L/Q-TxturL/R-Corne/Q-Propcornee/R-2tier/Q-Presence ecusson/R-OUI/IMG_7384.jpg" />
+																				<legende></legende>
+																			</media>
+																			<media>
+																				<img id="media33" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-4L/Q-TxturL/R-Corne/Q-Propcornee/R-2tier/Q-Presence ecusson/R-OUI/IMG_7398.jpg" />
+																				<legende></legende>
+																			</media>
+																			<media>
+																				<img id="media34" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-4L/Q-TxturL/R-Corne/Q-Propcornee/R-2tier/Q-Presence ecusson/R-OUI/Légende écusson.jpg" />
+																				<legende></legende>
+																			</media>
+																		</reponse>
+																	</question>
+																</branche>
+																<media>
+																	<img id="media35" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-4L/Q-TxturL/R-Corne/Q-Propcornee/R-2tier/2tiers.jpg" />
+																	<legende></legende>
+																</media>
+																<media>
+																	<img id="media36" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-4L/Q-TxturL/R-Corne/Q-Propcornee/R-2tier/IMG_7371.jpg" />
+																	<legende></legende>
+																</media>
+																<media>
+																	<img id="media37" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-4L/Q-TxturL/R-Corne/Q-Propcornee/R-2tier/IMG_7378.jpg" />
+																	<legende></legende>
+																</media>
+																<media>
+																	<img id="media38" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-4L/Q-TxturL/R-Corne/Q-Propcornee/R-2tier/IMG_8121.jpg" />
+																	<legende></legende>
+																</media>
+																<media>
+																	<img id="media39" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-4L/Q-TxturL/R-Corne/Q-Propcornee/R-2tier/Légende écusson.jpg" />
+																	<legende></legende>
+																</media>
+															</reponse>
+															<reponse id="r15" texte="Entièrement cornées formant des élytres" >
+																<branche id="b10">
+																	<question id="q10" texte="Quelle est la longueur des élytres ?" >
+																		<reponse id="r16" texte="Elytres ne couvrant que les premiers segments de l'abdomen" >
+																			<resultat id="res7" >
+																				<nom>MEB</nom>
+																				<type></type>
+																				<regimeAlimentaire>Carnivore</regimeAlimentaire>
+																				<informations></informations>
+																			</resultat>
+																			<media>
+																				<img id="media40" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-4L/Q-TxturL/R-Corne/Q-Propcornee/R-Entmt/Q-LgElytre/R-1segm/IMG_7803.jpg" />
+																				<legende></legende>
+																			</media>
+																			<media>
+																				<img id="media41" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-4L/Q-TxturL/R-Corne/Q-Propcornee/R-Entmt/Q-LgElytre/R-1segm/IMG_7811.jpg" />
+																				<legende></legende>
+																			</media>
+																			<media>
+																				<img id="media42" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-4L/Q-TxturL/R-Corne/Q-Propcornee/R-Entmt/Q-LgElytre/R-1segm/Ocypus olens.jpg" />
+																				<legende></legende>
+																			</media>
+																			<media>
+																				<img id="media43" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-4L/Q-TxturL/R-Corne/Q-Propcornee/R-Entmt/Q-LgElytre/R-1segm/Staphilinus dimidiaticornis (2).jpg" />
+																				<legende></legende>
+																			</media>
+																		</reponse>
+																		<reponse id="r17" texte="Elytres couvrant plus de la moitié de l'abdomen donnant une forme convexe à l'insecte et une forme ventralement plate." >
+																			<resultat id="res8" >
+																				<nom>MEC</nom>
+																				<type></type>
+																				<regimeAlimentaire>Carnivore</regimeAlimentaire>
+																				<informations></informations>
+																			</resultat>
+																			<media>
+																				<img id="media44" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-4L/Q-TxturL/R-Corne/Q-Propcornee/R-Entmt/Q-LgElytre/R-moitEtConv/IMG_7729.jpg" />
+																				<legende></legende>
+																			</media>
+																			<media>
+																				<img id="media45" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-4L/Q-TxturL/R-Corne/Q-Propcornee/R-Entmt/Q-LgElytre/R-moitEtConv/IMG_7762.jpg" />
+																				<legende></legende>
+																			</media>
+																			<media>
+																				<img id="media46" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-4L/Q-TxturL/R-Corne/Q-Propcornee/R-Entmt/Q-LgElytre/R-moitEtConv/IMG_7768.jpg" />
+																				<legende></legende>
+																			</media>
+																			<media>
+																				<img id="media47" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-4L/Q-TxturL/R-Corne/Q-Propcornee/R-Entmt/Q-LgElytre/R-moitEtConv/IMG_7770.jpg" />
+																				<legende></legende>
+																			</media>
+																		</reponse>
+																		<reponse id="r18" texte="Elytres couvrant tout ou presque la totalité de l'abdomen" >
+																			<branche id="b11">
+																				<question id="q11" texte="Y a-t-il des ailes membraneuses sous les élytres ?" >
+																					<reponse id="r19" texte="La longueur du corps mesure plus d'1cm et il y a des ailerons sous les élytres (ailerons=ailes membraneuses atrophiées)" >
+																						<resultat id="res9" >
+																							<nom>MEA10</nom>
+																							<type></type>
+																							<regimeAlimentaire>Carnivores</regimeAlimentaire>
+																							<informations></informations>
+																						</resultat>
+																						<media>
+																							<img id="media48" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-4L/Q-TxturL/R-Corne/Q-Propcornee/R-Entmt/Q-LgElytre/R-tt/Q-Lmb/R-nn/AIMG_0695profil.jpg" />
+																							<legende></legende>
+																						</media>
+																						<media>
+																							<img id="media49" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-4L/Q-TxturL/R-Corne/Q-Propcornee/R-Entmt/Q-LgElytre/R-tt/Q-Lmb/R-nn/AIMG_0702arrière.jpg" />
+																							<legende></legende>
+																						</media>
+																						<media>
+																							<img id="media50" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-4L/Q-TxturL/R-Corne/Q-Propcornee/R-Entmt/Q-LgElytre/R-tt/Q-Lmb/R-nn/Archicarabus nemoralis - copie.jpg" />
+																							<legende></legende>
+																						</media>
+																						<media>
+																							<img id="media51" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-4L/Q-TxturL/R-Corne/Q-Propcornee/R-Entmt/Q-LgElytre/R-tt/Q-Lmb/R-nn/Carabus auratus - copie.jpg" />
+																							<legende></legende>
+																						</media>
+																						<media>
+																							<img id="media52" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-4L/Q-TxturL/R-Corne/Q-Propcornee/R-Entmt/Q-LgElytre/R-tt/Q-Lmb/R-nn/Carabus non identifie 2 - copie.jpg" />
+																							<legende></legende>
+																						</media>
+																						<media>
+																							<img id="media53" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-4L/Q-TxturL/R-Corne/Q-Propcornee/R-Entmt/Q-LgElytre/R-tt/Q-Lmb/R-nn/Notiophilus quadripunctatus.jpg" />
+																							<legende></legende>
+																						</media>
+																					</reponse>
+																					<reponse id="r20" texte="Ailes membraneuses sous les élytres" >
+																						<branche id="b12">
+																							<question id="q12" texte="Quelle est la forme des pièces buccales ?" >
+																								<reponse id="r21" texte="Pas de trompe" >
+																									<branche id="b13">
+																										<question id="q13" texte="Quelle est la forme du thorax ?" >
+																											<reponse id="r22" texte="Thorax cordiforme, moins large dans sa partie postérieure." >
+																												<resultat id="res10" >
+																													<nom></nom>
+																													<type></type>
+																													<regimeAlimentaire></regimeAlimentaire>
+																													<informations></informations>
+																												</resultat>
+																												<media>
+																													<img id="media54" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-4L/Q-TxturL/R-Corne/Q-Propcornee/R-Entmt/Q-LgElytre/R-tt/Q-Lmb/R-ui/Q-Bche/R-nnrost/Q-thrx/R-cord/An1.jpg" />
+																													<legende></legende>
+																												</media>
+																												<media>
+																													<img id="media55" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-4L/Q-TxturL/R-Corne/Q-Propcornee/R-Entmt/Q-LgElytre/R-tt/Q-Lmb/R-ui/Q-Bche/R-nnrost/Q-thrx/R-cord/An2.jpg" />
+																													<legende></legende>
+																												</media>
+																												<media>
+																													<img id="media56" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-4L/Q-TxturL/R-Corne/Q-Propcornee/R-Entmt/Q-LgElytre/R-tt/Q-Lmb/R-ui/Q-Bche/R-nnrost/Q-thrx/R-cord/Anchomenus dorsalis.jpg" />
+																													<legende></legende>
+																												</media>
+																												<media>
+																													<img id="media57" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-4L/Q-TxturL/R-Corne/Q-Propcornee/R-Entmt/Q-LgElytre/R-tt/Q-Lmb/R-ui/Q-Bche/R-nnrost/Q-thrx/R-cord/Bembidion quadrimaculatum2.jpg" />
+																													<legende></legende>
+																												</media>
+																												<media>
+																													<img id="media58" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-4L/Q-TxturL/R-Corne/Q-Propcornee/R-Entmt/Q-LgElytre/R-tt/Q-Lmb/R-ui/Q-Bche/R-nnrost/Q-thrx/R-cord/IMG_0215.jpg" />
+																													<legende></legende>
+																												</media>
+																												<media>
+																													<img id="media59" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-4L/Q-TxturL/R-Corne/Q-Propcornee/R-Entmt/Q-LgElytre/R-tt/Q-Lmb/R-ui/Q-Bche/R-nnrost/Q-thrx/R-cord/IMG_7792.jpg" />
+																													<legende></legende>
+																												</media>
+																												<media>
+																													<img id="media60" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-4L/Q-TxturL/R-Corne/Q-Propcornee/R-Entmt/Q-LgElytre/R-tt/Q-Lmb/R-ui/Q-Bche/R-nnrost/Q-thrx/R-cord/Trepanes articulatus.jpg" />
+																													<legende></legende>
+																												</media>
+																											</reponse>
+																											<reponse id="r23" texte="Thorax trapézoïdale, plus large dans sa partie postérieure." >
+																												<resultat id="res11" >
+																													<nom></nom>
+																													<type></type>
+																													<regimeAlimentaire></regimeAlimentaire>
+																													<informations></informations>
+																												</resultat>
+																												<media>
+																													<img id="media61" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-4L/Q-TxturL/R-Corne/Q-Propcornee/R-Entmt/Q-LgElytre/R-tt/Q-Lmb/R-ui/Q-Bche/R-nnrost/Q-thrx/R-trap/An1.jpg" />
+																													<legende></legende>
+																												</media>
+																												<media>
+																													<img id="media62" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-4L/Q-TxturL/R-Corne/Q-Propcornee/R-Entmt/Q-LgElytre/R-tt/Q-Lmb/R-ui/Q-Bche/R-nnrost/Q-thrx/R-trap/An2.jpg" />
+																													<legende></legende>
+																												</media>
+																												<media>
+																													<img id="media63" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-4L/Q-TxturL/R-Corne/Q-Propcornee/R-Entmt/Q-LgElytre/R-tt/Q-Lmb/R-ui/Q-Bche/R-nnrost/Q-thrx/R-trap/Cetonia aurata2 - copie.jpg" />
+																													<legende></legende>
+																												</media>
+																												<media>
+																													<img id="media64" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-4L/Q-TxturL/R-Corne/Q-Propcornee/R-Entmt/Q-LgElytre/R-tt/Q-Lmb/R-ui/Q-Bche/R-nnrost/Q-thrx/R-trap/IMG_7472.jpg" />
+																													<legende></legende>
+																												</media>
+																												<media>
+																													<img id="media65" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-4L/Q-TxturL/R-Corne/Q-Propcornee/R-Entmt/Q-LgElytre/R-tt/Q-Lmb/R-ui/Q-Bche/R-nnrost/Q-thrx/R-trap/IMG_7607 - copie (2).jpg" />
+																													<legende></legende>
+																												</media>
+																												<media>
+																													<img id="media66" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-4L/Q-TxturL/R-Corne/Q-Propcornee/R-Entmt/Q-LgElytre/R-tt/Q-Lmb/R-ui/Q-Bche/R-nnrost/Q-thrx/R-trap/IMG_7647.jpg" />
+																													<legende></legende>
+																												</media>
+																												<media>
+																													<img id="media67" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-4L/Q-TxturL/R-Corne/Q-Propcornee/R-Entmt/Q-LgElytre/R-tt/Q-Lmb/R-ui/Q-Bche/R-nnrost/Q-thrx/R-trap/IMG_7828 (2).jpg" />
+																													<legende></legende>
+																												</media>
+																												<media>
+																													<img id="media68" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-4L/Q-TxturL/R-Corne/Q-Propcornee/R-Entmt/Q-LgElytre/R-tt/Q-Lmb/R-ui/Q-Bche/R-nnrost/Q-thrx/R-trap/IMG_7830.jpg" />
+																													<legende></legende>
+																												</media>
+																											</reponse>
+																										</question>
+																									</branche>
+																								</reponse>
+																								<reponse id="r24" texte="Forme de trompe = rostre" >
+																									<resultat id="res12" >
+																										<nom>MEA7</nom>
+																										<type></type>
+																										<regimeAlimentaire>Phytophages</regimeAlimentaire>
+																										<informations></informations>
+																									</resultat>
+																									<media>
+																										<img id="media69" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-4L/Q-TxturL/R-Corne/Q-Propcornee/R-Entmt/Q-LgElytre/R-tt/Q-Lmb/R-ui/Q-Bche/R-Rost/IMG_73572.jpg" />
+																										<legende></legende>
+																									</media>
+																									<media>
+																										<img id="media70" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-4L/Q-TxturL/R-Corne/Q-Propcornee/R-Entmt/Q-LgElytre/R-tt/Q-Lmb/R-ui/Q-Bche/R-Rost/IMG_7364.jpg" />
+																										<legende></legende>
+																									</media>
+																									<media>
+																										<img id="media71" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-4L/Q-TxturL/R-Corne/Q-Propcornee/R-Entmt/Q-LgElytre/R-tt/Q-Lmb/R-ui/Q-Bche/R-Rost/IMG_7952.jpg" />
+																										<legende></legende>
+																									</media>
+																									<media>
+																										<img id="media72" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-4L/Q-TxturL/R-Corne/Q-Propcornee/R-Entmt/Q-LgElytre/R-tt/Q-Lmb/R-ui/Q-Bche/R-Rost/IMG_7955.jpg" />
+																										<legende></legende>
+																									</media>
+																									<media>
+																										<img id="media73" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-4L/Q-TxturL/R-Corne/Q-Propcornee/R-Entmt/Q-LgElytre/R-tt/Q-Lmb/R-ui/Q-Bche/R-Rost/IMG_7968.jpg" />
+																										<legende></legende>
+																									</media>
+																									<media>
+																										<img id="media74" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-4L/Q-TxturL/R-Corne/Q-Propcornee/R-Entmt/Q-LgElytre/R-tt/Q-Lmb/R-ui/Q-Bche/R-Rost/IMG_7973.jpg" />
+																										<legende></legende>
+																									</media>
+																									<media>
+																										<img id="media75" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-4L/Q-TxturL/R-Corne/Q-Propcornee/R-Entmt/Q-LgElytre/R-tt/Q-Lmb/R-ui/Q-Bche/R-Rost/IMG_7978.jpg" />
+																										<legende></legende>
+																									</media>
+																									<media>
+																										<img id="media76" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-4L/Q-TxturL/R-Corne/Q-Propcornee/R-Entmt/Q-LgElytre/R-tt/Q-Lmb/R-ui/Q-Bche/R-Rost/IMG_7984.jpg" />
+																										<legende></legende>
+																									</media>
+																								</reponse>
+																							</question>
+																						</branche>
+																						<media>
+																							<img id="media77" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-4L/Q-TxturL/R-Corne/Q-Propcornee/R-Entmt/Q-LgElytre/R-tt/Q-Lmb/R-ui/IMG_0712aile mb arriere.jpg" />
+																							<legende></legende>
+																						</media>
+																						<media>
+																							<img id="media78" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-4L/Q-TxturL/R-Corne/Q-Propcornee/R-Entmt/Q-LgElytre/R-tt/Q-Lmb/R-ui/IMG_0716ailembarriere2.jpg" />
+																							<legende></legende>
+																						</media>
+																					</reponse>
+																				</question>
+																			</branche>
+																			<media>
+																				<img id="media79" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-4L/Q-TxturL/R-Corne/Q-Propcornee/R-Entmt/Q-LgElytre/R-tt/Bembidion quadrimaculatum2.jpg" />
+																				<legende></legende>
+																			</media>
+																			<media>
+																				<img id="media80" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-4L/Q-TxturL/R-Corne/Q-Propcornee/R-Entmt/Q-LgElytre/R-tt/Carabus auronitens - copie.jpg" />
+																				<legende></legende>
+																			</media>
+																			<media>
+																				<img id="media81" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-4L/Q-TxturL/R-Corne/Q-Propcornee/R-Entmt/Q-LgElytre/R-tt/IMG_7472.jpg" />
+																				<legende></legende>
+																			</media>
+																			<media>
+																				<img id="media82" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-4L/Q-TxturL/R-Corne/Q-Propcornee/R-Entmt/Q-LgElytre/R-tt/IMG_7830.jpg" />
+																				<legende></legende>
+																			</media>
+																			<media>
+																				<img id="media83" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-4L/Q-TxturL/R-Corne/Q-Propcornee/R-Entmt/Q-LgElytre/R-tt/IMG_7952.jpg" />
+																				<legende></legende>
+																			</media>
+																		</reponse>
+																	</question>
+																</branche>
+																<media>
+																	<img id="media84" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-4L/Q-TxturL/R-Corne/Q-Propcornee/R-Entmt/Bembidion quadrimaculatum2.jpg" />
+																	<legende></legende>
+																</media>
+																<media>
+																	<img id="media85" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-4L/Q-TxturL/R-Corne/Q-Propcornee/R-Entmt/Carabus auronitens - copie.jpg" />
+																	<legende></legende>
+																</media>
+																<media>
+																	<img id="media86" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-4L/Q-TxturL/R-Corne/Q-Propcornee/R-Entmt/IMG_7347.jpg" />
+																	<legende></legende>
+																</media>
+																<media>
+																	<img id="media87" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-4L/Q-TxturL/R-Corne/Q-Propcornee/R-Entmt/IMG_7472.jpg" />
+																	<legende></legende>
+																</media>
+																<media>
+																	<img id="media88" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-4L/Q-TxturL/R-Corne/Q-Propcornee/R-Entmt/IMG_7809.jpg" />
+																	<legende></legende>
+																</media>
+															</reponse>
+														</question>
+													</branche>
+													<media>
+														<img id="media89" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-4L/Q-TxturL/R-Corne/IMG_7347.jpg" />
+														<legende></legende>
+													</media>
+													<media>
+														<img id="media90" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-4L/Q-TxturL/R-Corne/IMG_7398.jpg" />
+														<legende></legende>
+													</media>
+													<media>
+														<img id="media91" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-4L/Q-TxturL/R-Corne/IMG_7809.jpg" />
+														<legende></legende>
+													</media>
+													<media>
+														<img id="media92" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-4L/Q-TxturL/R-Corne/IMG_8121.jpg" />
+														<legende></legende>
+													</media>
+													<media>
+														<img id="media93" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-4L/Q-TxturL/R-Corne/Légende écusson.jpg" />
+														<legende></legende>
+													</media>
+													<media>
+														<img id="media94" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-4L/Q-TxturL/R-Corne/Pterostichus melanarius - copie.jpg" />
+														<legende></legende>
+													</media>
+												</reponse>
+												<reponse id="r25" texte="Ailes antérieures avec des écailles" >
+													<resultat id="res13" >
+														<nom>MEM</nom>
+														<type></type>
+														<regimeAlimentaire>Larves phytophages, adultes pollinisateurs</regimeAlimentaire>
+														<informations></informations>
+														<media>
+															<img id="media95" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-4L/Q-TxturL/R-Ecaille/F-MEM/IMG_0193.jpg" />
+															<legende></legende>
+														</media>
+														<media>
+															<img id="media96" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-4L/Q-TxturL/R-Ecaille/F-MEM/IMG_0224.jpg" />
+															<legende></legende>
+														</media>
+														<media>
+															<img id="media97" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-4L/Q-TxturL/R-Ecaille/F-MEM/Inachis io.jpg" />
+															<legende></legende>
+														</media>
+														<media>
+															<img id="media98" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-4L/Q-TxturL/R-Ecaille/F-MEM/Macroglossum stellatarum.jpg" />
+															<legende></legende>
+														</media>
+														<media>
+															<img id="media99" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-4L/Q-TxturL/R-Ecaille/F-MEM/Pieris brassicae.jpg" />
+															<legende></legende>
+														</media>
+													</resultat>
+													<media>
+														<img id="media100" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-4L/Q-TxturL/R-Ecaille/Macroglossum stellatarum.jpg" />
+														<legende></legende>
+													</media>
+													<media>
+														<img id="media101" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-4L/Q-TxturL/R-Ecaille/Pieris brassicae.jpg" />
+														<legende></legende>
+													</media>
+												</reponse>
+												<reponse id="r26" texte="Ailes membraneuses" >
+													<branche id="b14">
+														<question id="q14" texte="Quel est la longueur des ailes postérieures ?" >
+															<reponse id="r27" texte="Ailes postérieures mesurant 2/3 des ailes antérieures au maximum" >
+																<branche id="b15">
+																	<question id="q15" texte="L'insecte présente-t-il une taille de guêpe ?" >
+																		<reponse id="r28" texte="Non, l'abdomen est en prolongement du thorax" >
+																			<branche id="b16">
+																				<question id="q16" texte="Les nervures des ailes sont-elles parallèles ?" >
+																					<reponse id="r29" texte="Non" >
+																						<resultat id="res14" >
+																							<nom>MEG</nom>
+																							<type></type>
+																							<regimeAlimentaire>Phytophage</regimeAlimentaire>
+																							<informations></informations>
+																							<media>
+																								<img id="media102" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-4L/Q-TxturL/R-Mbrne/Q-LgLpost/R-crte/Q-tailgu/R-nn/Q-nerv/R-nn/F-MEG/symphite 2.jpg" />
+																								<legende></legende>
+																							</media>
+																							<media>
+																								<img id="media103" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-4L/Q-TxturL/R-Mbrne/Q-LgLpost/R-crte/Q-tailgu/R-nn/Q-nerv/R-nn/F-MEG/symphite 3.jpg" />
+																								<legende></legende>
+																							</media>
+																							<media>
+																								<img id="media104" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-4L/Q-TxturL/R-Mbrne/Q-LgLpost/R-crte/Q-tailgu/R-nn/Q-nerv/R-nn/F-MEG/symphite.jpg" />
+																								<legende></legende>
+																							</media>
+																						</resultat>
+																						<media>
+																							<img id="media105" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-4L/Q-TxturL/R-Mbrne/Q-LgLpost/R-crte/Q-tailgu/R-nn/Q-nerv/R-nn/symphite (2).jpg" />
+																							<legende></legende>
+																						</media>
+																					</reponse>
+																					<reponse id="r30" texte="Oui" >
+																						<resultat id="res15" >
+																							<nom>MEO</nom>
+																							<type></type>
+																							<regimeAlimentaire>Phytophage</regimeAlimentaire>
+																							<informations></informations>
+																						</resultat>
+																					</reponse>
+																				</question>
+																			</branche>
+																		</reponse>
+																		<reponse id="r31" texte="Oui, on observe un important rétrécissement entre le thorax et l'abdomen" >
+																			<branche id="b17">
+																				<question id="q17" texte="Y a-t-il un dard a l'extrémité de l'abdomen ou un lobe en bas de l'aile postérieure ?" >
+																					<reponse id="r32" texte="Non, parfois une tarière est visible" >
+																						<resultat id="res16" >
+																							<nom>MED</nom>
+																							<type></type>
+																							<regimeAlimentaire>Parasitoïde</regimeAlimentaire>
+																							<informations></informations>
+																							<media>
+																								<img id="media106" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-4L/Q-TxturL/R-Mbrne/Q-LgLpost/R-crte/Q-tailgu/R-ui/Q-dar/R-nn/F-MED/IMG_7995.jpg" />
+																								<legende></legende>
+																							</media>
+																							<media>
+																								<img id="media107" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-4L/Q-TxturL/R-Mbrne/Q-LgLpost/R-crte/Q-tailgu/R-ui/Q-dar/R-nn/F-MED/IMG_7998.jpg" />
+																								<legende></legende>
+																							</media>
+																							<media>
+																								<img id="media108" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-4L/Q-TxturL/R-Mbrne/Q-LgLpost/R-crte/Q-tailgu/R-ui/Q-dar/R-nn/F-MED/IMG_8001.jpg" />
+																								<legende></legende>
+																							</media>
+																						</resultat>
+																						<media>
+																							<img id="media109" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-4L/Q-TxturL/R-Mbrne/Q-LgLpost/R-crte/Q-tailgu/R-ui/Q-dar/R-nn/Chalcididae3.jpg" />
+																							<legende></legende>
+																						</media>
+																						<media>
+																							<img id="media110" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-4L/Q-TxturL/R-Mbrne/Q-LgLpost/R-crte/Q-tailgu/R-ui/Q-dar/R-nn/Diapriidae2.jpg" />
+																							<legende></legende>
+																						</media>
+																						<media>
+																							<img id="media111" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-4L/Q-TxturL/R-Mbrne/Q-LgLpost/R-crte/Q-tailgu/R-ui/Q-dar/R-nn/Eucoila profil2.jpg" />
+																							<legende></legende>
+																						</media>
+																					</reponse>
+																					<reponse id="r33" texte="Oui" >
+																						<branche id="b18">
+																							<question id="q18" texte="Quelle est la pilosité de l'insecte et sa couleur ?" >
+																								<reponse id="r34" texte="Corps nu, rayé de jaune et noir" >
+																									<resultat id="res17" >
+																										<nom>MEE</nom>
+																										<type></type>
+																										<regimeAlimentaire>Carnivore</regimeAlimentaire>
+																										<informations></informations>
+																										<media>
+																											<img id="media112" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-4L/Q-TxturL/R-Mbrne/Q-LgLpost/R-crte/Q-tailgu/R-ui/Q-dar/R-ui/Q-pilo/R-nu/F-MEE/IMG_0151.jpg" />
+																											<legende></legende>
+																										</media>
+																										<media>
+																											<img id="media113" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-4L/Q-TxturL/R-Mbrne/Q-LgLpost/R-crte/Q-tailgu/R-ui/Q-dar/R-ui/Q-pilo/R-nu/F-MEE/IMG_0163.jpg" />
+																											<legende></legende>
+																										</media>
+																										<media>
+																											<img id="media114" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-4L/Q-TxturL/R-Mbrne/Q-LgLpost/R-crte/Q-tailgu/R-ui/Q-dar/R-ui/Q-pilo/R-nu/F-MEE/IMG_0209.jpg" />
+																											<legende></legende>
+																										</media>
+																										<media>
+																											<img id="media115" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-4L/Q-TxturL/R-Mbrne/Q-LgLpost/R-crte/Q-tailgu/R-ui/Q-dar/R-ui/Q-pilo/R-nu/F-MEE/IMG_0310.jpg" />
+																											<legende></legende>
+																										</media>
+																										<media>
+																											<img id="media116" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-4L/Q-TxturL/R-Mbrne/Q-LgLpost/R-crte/Q-tailgu/R-ui/Q-dar/R-ui/Q-pilo/R-nu/F-MEE/IMG_8132.jpg" />
+																											<legende></legende>
+																										</media>
+																										<media>
+																											<img id="media117" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-4L/Q-TxturL/R-Mbrne/Q-LgLpost/R-crte/Q-tailgu/R-ui/Q-dar/R-ui/Q-pilo/R-nu/F-MEE/Vespa crabo.jpg" />
+																											<legende></legende>
+																										</media>
+																										<media>
+																											<img id="media118" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-4L/Q-TxturL/R-Mbrne/Q-LgLpost/R-crte/Q-tailgu/R-ui/Q-dar/R-ui/Q-pilo/R-nu/F-MEE/Vespa vulgaris - copie.jpg" />
+																											<legende></legende>
+																										</media>
+																									</resultat>
+																									<media>
+																										<img id="media119" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-4L/Q-TxturL/R-Mbrne/Q-LgLpost/R-crte/Q-tailgu/R-ui/Q-dar/R-ui/Q-pilo/R-nu/IMG_0209.jpg" />
+																										<legende></legende>
+																									</media>
+																									<media>
+																										<img id="media120" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-4L/Q-TxturL/R-Mbrne/Q-LgLpost/R-crte/Q-tailgu/R-ui/Q-dar/R-ui/Q-pilo/R-nu/IMG_0310.jpg" />
+																										<legende></legende>
+																									</media>
+																									<media>
+																										<img id="media121" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-4L/Q-TxturL/R-Mbrne/Q-LgLpost/R-crte/Q-tailgu/R-ui/Q-dar/R-ui/Q-pilo/R-nu/IMG_8132.jpg" />
+																										<legende></legende>
+																									</media>
+																									<media>
+																										<img id="media122" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-4L/Q-TxturL/R-Mbrne/Q-LgLpost/R-crte/Q-tailgu/R-ui/Q-dar/R-ui/Q-pilo/R-nu/Vespa crabo.jpg" />
+																										<legende></legende>
+																									</media>
+																									<media>
+																										<img id="media123" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-4L/Q-TxturL/R-Mbrne/Q-LgLpost/R-crte/Q-tailgu/R-ui/Q-dar/R-ui/Q-pilo/R-nu/Vespa vulgaris - copie.jpg" />
+																										<legende></legende>
+																									</media>
+																								</reponse>
+																								<reponse id="r35" texte="Corps et pattes poilus,couleur brune, parfois poches à pollen sur les pattes postérieures" >
+																									<resultat id="res18" >
+																										<nom>MEF</nom>
+																										<type></type>
+																										<regimeAlimentaire>Pollinisateur</regimeAlimentaire>
+																										<informations></informations>
+																										<media>
+																											<img id="media124" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-4L/Q-TxturL/R-Mbrne/Q-LgLpost/R-crte/Q-tailgu/R-ui/Q-dar/R-ui/Q-pilo/R-pilo/F-MEF/Apis melifera - copie.jpg" />
+																											<legende></legende>
+																										</media>
+																										<media>
+																											<img id="media125" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-4L/Q-TxturL/R-Mbrne/Q-LgLpost/R-crte/Q-tailgu/R-ui/Q-dar/R-ui/Q-pilo/R-pilo/F-MEF/IMG_7497 - copie.jpg" />
+																											<legende></legende>
+																										</media>
+																										<media>
+																											<img id="media126" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-4L/Q-TxturL/R-Mbrne/Q-LgLpost/R-crte/Q-tailgu/R-ui/Q-dar/R-ui/Q-pilo/R-pilo/F-MEF/IMG_7543 - copie.jpg" />
+																											<legende></legende>
+																										</media>
+																									</resultat>
+																								</reponse>
+																							</question>
+																						</branche>
+																						<media>
+																							<img id="media127" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-4L/Q-TxturL/R-Mbrne/Q-LgLpost/R-crte/Q-tailgu/R-ui/Q-dar/R-ui/dard.jpg" />
+																							<legende></legende>
+																						</media>
+																						<media>
+																							<img id="media128" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-4L/Q-TxturL/R-Mbrne/Q-LgLpost/R-crte/Q-tailgu/R-ui/Q-dar/R-ui/LJ1.jpg" />
+																							<legende></legende>
+																						</media>
+																					</reponse>
+																				</question>
+																			</branche>
+																			<media>
+																				<img id="media129" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-4L/Q-TxturL/R-Mbrne/Q-LgLpost/R-crte/Q-tailgu/R-ui/TG1.jpg" />
+																				<legende></legende>
+																			</media>
+																			<media>
+																				<img id="media130" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-4L/Q-TxturL/R-Mbrne/Q-LgLpost/R-crte/Q-tailgu/R-ui/TG2.jpg" />
+																				<legende></legende>
+																			</media>
+																			<media>
+																				<img id="media131" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-4L/Q-TxturL/R-Mbrne/Q-LgLpost/R-crte/Q-tailgu/R-ui/u_01632.jpg" />
+																				<legende></legende>
+																			</media>
+																		</reponse>
+																	</question>
+																</branche>
+																<media>
+																	<img id="media132" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-4L/Q-TxturL/R-Mbrne/Q-LgLpost/R-crte/IMG_03101.jpg" />
+																	<legende></legende>
+																</media>
+															</reponse>
+															<reponse id="r36" texte="Ailes postérieures de même longueur que les ailes antérieures" >
+																<branche id="b19">
+																	<question id="q19" texte="Quelle est la nervation des ailes ?" >
+																		<reponse id="r37" texte="Ailes sans nervation, bordées de franges" >
+																			<branche id="b20">
+																				<question id="q20" texte="Quelle est la longueur de l'insecte ?" >
+																					<reponse id="r38" texte="Longueur inférieure ou égale à 2,5mm" >
+																						<resultat id="res19" >
+																							<nom>MET</nom>
+																							<type></type>
+																							<regimeAlimentaire>Phytophage</regimeAlimentaire>
+																							<informations></informations>
+																							<media>
+																								<img id="media133" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-4L/Q-TxturL/R-Mbrne/Q-LgLpost/R-idq/Q-nerv/R-frges/Q-tail/R-inf2,5/F-MET/met.jpg" />
+																								<legende></legende>
+																							</media>
+																						</resultat>
+																						<media>
+																							<img id="media134" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-4L/Q-TxturL/R-Mbrne/Q-LgLpost/R-idq/Q-nerv/R-frges/Q-tail/R-inf2,5/met.jpg" />
+																							<legende></legende>
+																						</media>
+																					</reponse>
+																					<reponse id="r39" texte="Longueur strictement supérieure à 2,5mm" >
+																						<resultat id="res20" >
+																							<nom>Morpho-espece non existante</nom>
+																							<type></type>
+																							<regimeAlimentaire></regimeAlimentaire>
+																							<informations></informations>
+																						</resultat>
+																					</reponse>
+																				</question>
+																			</branche>
+																			<media>
+																				<img id="media135" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-4L/Q-TxturL/R-Mbrne/Q-LgLpost/R-idq/Q-nerv/R-frges/thys1.jpg" />
+																				<legende></legende>
+																			</media>
+																		</reponse>
+																		<reponse id="r40" texte="Ailes très nervurées de façon quadrillée" >
+																			<branche id="b21">
+																				<question id="q21" texte="Quelle est la longueur du corps ?" >
+																					<reponse id="r41" texte="Longueur inférieure à 2cm" >
+																						<resultat id="res21" >
+																							<nom>MER</nom>
+																							<type></type>
+																							<regimeAlimentaire>Carnivore</regimeAlimentaire>
+																							<informations></informations>
+																							<media>
+																								<img id="media136" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-4L/Q-TxturL/R-Mbrne/Q-LgLpost/R-idq/Q-nerv/R-nerv/Q-Long/R-inf2/F-MER/Chrysoperla carnea.jpg" />
+																								<legende></legende>
+																							</media>
+																							<media>
+																								<img id="media137" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-4L/Q-TxturL/R-Mbrne/Q-LgLpost/R-idq/Q-nerv/R-nerv/Q-Long/R-inf2/F-MER/hemerobe.jpg" />
+																								<legende></legende>
+																							</media>
+																						</resultat>
+																						<media>
+																							<img id="media138" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-4L/Q-TxturL/R-Mbrne/Q-LgLpost/R-idq/Q-nerv/R-nerv/Q-Long/R-inf2/Chrysoperla carnea.jpg" />
+																							<legende></legende>
+																						</media>
+																						<media>
+																							<img id="media139" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-4L/Q-TxturL/R-Mbrne/Q-LgLpost/R-idq/Q-nerv/R-nerv/Q-Long/R-inf2/hemerobe.jpg" />
+																							<legende></legende>
+																						</media>
+																					</reponse>
+																					<reponse id="r42" texte="Longueur inférieure à 2cm" >
+																						<resultat id="res22" >
+																							<nom>MEP</nom>
+																							<type></type>
+																							<regimeAlimentaire>Carnivore</regimeAlimentaire>
+																							<informations></informations>
+																							<media>
+																								<img id="media140" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-4L/Q-TxturL/R-Mbrne/Q-LgLpost/R-idq/Q-nerv/R-nerv/Q-Long/R-sup2/F-MEP/Calopteryx splendens femelle.jpg" />
+																								<legende></legende>
+																							</media>
+																							<media>
+																								<img id="media141" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-4L/Q-TxturL/R-Mbrne/Q-LgLpost/R-idq/Q-nerv/R-nerv/Q-Long/R-sup2/F-MEP/Calopteryx splendens male.jpg" />
+																								<legende></legende>
+																							</media>
+																							<media>
+																								<img id="media142" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-4L/Q-TxturL/R-Mbrne/Q-LgLpost/R-idq/Q-nerv/R-nerv/Q-Long/R-sup2/F-MEP/IMG_0189.jpg" />
+																								<legende></legende>
+																							</media>
+																							<media>
+																								<img id="media143" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-4L/Q-TxturL/R-Mbrne/Q-LgLpost/R-idq/Q-nerv/R-nerv/Q-Long/R-sup2/F-MEP/IMG_0191.jpg" />
+																								<legende></legende>
+																							</media>
+																							<media>
+																								<img id="media144" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-4L/Q-TxturL/R-Mbrne/Q-LgLpost/R-idq/Q-nerv/R-nerv/Q-Long/R-sup2/F-MEP/IMG_78932eme.jpg" />
+																								<legende></legende>
+																							</media>
+																							<media>
+																								<img id="media145" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-4L/Q-TxturL/R-Mbrne/Q-LgLpost/R-idq/Q-nerv/R-nerv/Q-Long/R-sup2/F-MEP/Sympetrum sanguineum.jpg" />
+																								<legende></legende>
+																							</media>
+																						</resultat>
+																						<media>
+																							<img id="media146" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-4L/Q-TxturL/R-Mbrne/Q-LgLpost/R-idq/Q-nerv/R-nerv/Q-Long/R-sup2/Calopteryx splendens femelle.jpg" />
+																							<legende></legende>
+																						</media>
+																						<media>
+																							<img id="media147" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-4L/Q-TxturL/R-Mbrne/Q-LgLpost/R-idq/Q-nerv/R-nerv/Q-Long/R-sup2/Calopteryx splendens male.jpg" />
+																							<legende></legende>
+																						</media>
+																						<media>
+																							<img id="media148" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-4L/Q-TxturL/R-Mbrne/Q-LgLpost/R-idq/Q-nerv/R-nerv/Q-Long/R-sup2/IMG_0189.jpg" />
+																							<legende></legende>
+																						</media>
+																						<media>
+																							<img id="media149" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-4L/Q-TxturL/R-Mbrne/Q-LgLpost/R-idq/Q-nerv/R-nerv/Q-Long/R-sup2/IMG_0191.jpg" />
+																							<legende></legende>
+																						</media>
+																						<media>
+																							<img id="media150" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-4L/Q-TxturL/R-Mbrne/Q-LgLpost/R-idq/Q-nerv/R-nerv/Q-Long/R-sup2/IMG_78932eme.jpg" />
+																							<legende></legende>
+																						</media>
+																					</reponse>
+																				</question>
+																			</branche>
+																			<media>
+																				<img id="media151" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-4L/Q-TxturL/R-Mbrne/Q-LgLpost/R-idq/Q-nerv/R-nerv/nerv1.jpg" />
+																				<legende></legende>
+																			</media>
+																			<media>
+																				<img id="media152" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-4L/Q-TxturL/R-Mbrne/Q-LgLpost/R-idq/Q-nerv/R-nerv/nerv2.jpg" />
+																				<legende></legende>
+																			</media>
+																		</reponse>
+																	</question>
+																</branche>
+															</reponse>
+														</question>
+													</branche>
+													<media>
+														<img id="media153" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-4L/Q-TxturL/R-Mbrne/Braconidae aile.jpg" />
+														<legende></legende>
+													</media>
+													<media>
+														<img id="media154" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-4L/Q-TxturL/R-Mbrne/Chrysoperla carnea.jpg" />
+														<legende></legende>
+													</media>
+													<media>
+														<img id="media155" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-4L/Q-TxturL/R-Mbrne/IMG_0209.jpg" />
+														<legende></legende>
+													</media>
+													<media>
+														<img id="media156" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-4L/Q-TxturL/R-Mbrne/IMG_7341 - copie.jpg" />
+														<legende></legende>
+													</media>
+												</reponse>
+											</question>
+										</branche>
+										<media>
+											<img id="media157" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-4L/IMG_03101.jpg" />
+											<legende>illustre les medias de la réponse</legende>
+										</media>
+									</reponse>
+									<reponse id="r43" texte="Pas d'ailes" >
+										<branche id="b22">
+											<question id="q22" texte="L'insecte présente-t-il une taille de guêpe ?" >
+												<reponse id="r44" texte="Non, l'abdomen est en continuité avec le thorax" >
+													<branche id="b23">
+														<question id="q23" texte="Observe-t-on des cornicules au bout de l'abdomen ?" >
+															<reponse id="r45" texte="Non" >
+																<resultat id="res23" >
+																	<nom>Morpho espèce inexistante</nom>
+																	<type></type>
+																	<regimeAlimentaire></regimeAlimentaire>
+																	<informations></informations>
+																</resultat>
+															</reponse>
+															<reponse id="r46" texte="Oui" >
+																<resultat id="res24" >
+																	<nom>MEO</nom>
+																	<type></type>
+																	<regimeAlimentaire>Phytophage</regimeAlimentaire>
+																	<informations></informations>
+																</resultat>
+															</reponse>
+														</question>
+													</branche>
+												</reponse>
+												<reponse id="r47" texte="Oui, il y a un important rétrécissement entre le thorax et l'abdomen" >
+													<branche id="b24">
+														<question id="q24" texte="Combien de noeuds présente le pétiole ?" >
+															<reponse id="r48" texte="1 noeud" >
+																<branche id="b25">
+																	<question id="q25" texte="Quelle est la taille de l'insecte ?" >
+																		<reponse id="r49" texte="La longueur de l'insecte est inférieure à 6mm" >
+																			<resultat id="res25" >
+																				<nom>MEH3</nom>
+																				<type></type>
+																				<regimeAlimentaire>Prophytophage</regimeAlimentaire>
+																				<informations></informations>
+																				<media>
+																					<img id="media158" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-NoL/Q-tailguep/R-ui/Q-petio/R-1/Q-taille/R-inf6/F-MEH3/Lasius niger.jpg" />
+																					<legende></legende>
+																				</media>
+																			</resultat>
+																			<media>
+																				<img id="media159" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-NoL/Q-tailguep/R-ui/Q-petio/R-1/Q-taille/R-inf6/Lasius niger.jpg" />
+																				<legende></legende>
+																			</media>
+																		</reponse>
+																		<reponse id="r50" texte="La longueur de l'insecte est supérieure à 6mm" >
+																			<resultat id="res26" >
+																				<nom>MEH2</nom>
+																				<type></type>
+																				<regimeAlimentaire>Carnivore</regimeAlimentaire>
+																				<informations></informations>
+																				<media>
+																					<img id="media160" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-NoL/Q-tailguep/R-ui/Q-petio/R-1/Q-taille/R-sup6/F-MEH2/Formica.jpg" />
+																					<legende></legende>
+																				</media>
+																			</resultat>
+																			<media>
+																				<img id="media161" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-NoL/Q-tailguep/R-ui/Q-petio/R-1/Q-taille/R-sup6/Formica.jpg" />
+																				<legende></legende>
+																			</media>
+																		</reponse>
+																	</question>
+																</branche>
+															</reponse>
+															<reponse id="r51" texte="2 noeuds" >
+																<resultat id="res27" >
+																	<nom>MEH1</nom>
+																	<type></type>
+																	<regimeAlimentaire>Carnivore</regimeAlimentaire>
+																	<informations></informations>
+																	<media>
+																		<img id="media162" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-NoL/Q-tailguep/R-ui/Q-petio/R-2/F-MEH1/Myrmica 1.jpg" />
+																		<legende></legende>
+																	</media>
+																</resultat>
+																<media>
+																	<img id="media163" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-NoL/Q-tailguep/R-ui/Q-petio/R-2/Mirmica rubra3.jpg" />
+																	<legende></legende>
+																</media>
+																<media>
+																	<img id="media164" src="Q-Cbpatte/R-6patte/Q-pattespost/R-non/Q-cbaile/R-NoL/Q-tailguep/R-ui/Q-petio/R-2/Myrmica 2 petioles.jpg" />
+																	<legende></legende>
+																</media>
+															</reponse>
+														</question>
+													</branche>
+												</reponse>
+											</question>
+										</branche>
+									</reponse>
+								</question>
+							</branche>
+						</reponse>
+						<reponse id="r52" texte="Oui" >
+							<resultat id="res28" >
+								<nom>MEQ</nom>
+								<type>YOUHOUUUUUUU Je suis un rôle écologique !</type>
+								<regimeAlimentaire>Phytophages</regimeAlimentaire>
+								<informations></informations>
+								<media>
+									<img id="media165" src="Q-Cbpatte/R-6patte/Q-pattespost/R-oui/F-MEQ/IMG_0211.jpg" />
+									<legende></legende>
+								</media>
+								<media>
+									<img id="media166" src="Q-Cbpatte/R-6patte/Q-pattespost/R-oui/F-MEQ/IMG_7907.jpg" />
+									<legende></legende>
+								</media>
+							</resultat>
+							<media>
+								<img id="media167" src="Q-Cbpatte/R-6patte/Q-pattespost/R-oui/An1.jpg" />
+								<legende></legende>
+							</media>
+							<media>
+								<img id="media168" src="Q-Cbpatte/R-6patte/Q-pattespost/R-oui/An2.jpg" />
+								<legende></legende>
+							</media>
+							<media>
+								<img id="media169" src="Q-Cbpatte/R-6patte/Q-pattespost/R-oui/An3.jpg" />
+								<legende></legende>
+							</media>
+						</reponse>
+					</question>
+				</branche>
+			</reponse>
+			<reponse id="r53" texte="8 pattes" >
+				<branche id="b26">
+					<question id="q26" texte="Quelle longueur mesure l'arthropode ?" >
+						<reponse id="r54" texte="Taille strictement supérieur à 5mm" >
+							<resultat id="res29" >
+								<nom>MEL1</nom>
+								<type></type>
+								<regimeAlimentaire>Carnivore</regimeAlimentaire>
+								<informations></informations>
+								<media>
+									<img id="media170" src="Q-Cbpatte/R-8patte/Q-Taille/R- superieur 5mm/F-MEL1/IMG_8117.jpg" />
+									<legende>illustre les médias du résultat</legende>
+								</media>
+								<media>
+									<img id="media171" src="Q-Cbpatte/R-8patte/Q-Taille/R- superieur 5mm/F-MEL1/IMG_8119.jpg" />
+									<legende>illustre les médias du résultat</legende>
+								</media>
+								<media>
+									<img id="media172" src="Q-Cbpatte/R-8patte/Q-Taille/R- superieur 5mm/F-MEL1/IMG_8126.jpg" />
+									<legende>illustre les médias du résultat</legende>
+								</media>
+								<media>
+									<img id="media173" src="Q-Cbpatte/R-8patte/Q-Taille/R- superieur 5mm/F-MEL1/IMG_8129.jpg" />
+									<legende>illustre les médias du résultat</legende>
+								</media>
+								<media>
+									<img id="media174" src="Q-Cbpatte/R-8patte/Q-Taille/R- superieur 5mm/F-MEL1/IMG_8131.jpg" />
+									<legende>illustre les médias du résultat</legende>
+								</media>
+							</resultat>
+							<media>
+								<img id="media175" src="Q-Cbpatte/R-8patte/Q-Taille/R- superieur 5mm/IMG_8117.jpg" />
+								<legende></legende>
+							</media>
+							<media>
+								<img id="media176" src="Q-Cbpatte/R-8patte/Q-Taille/R- superieur 5mm/IMG_8119.jpg" />
+								<legende></legende>
+							</media>
+							<media>
+								<img id="media177" src="Q-Cbpatte/R-8patte/Q-Taille/R- superieur 5mm/IMG_8126.jpg" />
+								<legende></legende>
+							</media>
+							<media>
+								<img id="media178" src="Q-Cbpatte/R-8patte/Q-Taille/R- superieur 5mm/IMG_8129.jpg" />
+								<legende></legende>
+							</media>
+							<media>
+								<img id="media179" src="Q-Cbpatte/R-8patte/Q-Taille/R- superieur 5mm/IMG_8131.jpg" />
+								<legende></legende>
+							</media>
+						</reponse>
+						<reponse id="r55" texte="Taille inférieure ou égale à 5mm" >
+							<branche id="b27">
+								<question id="q27" texte="Quelle est la forme et la couleur de l'arthropode ?" >
+									<reponse id="r56" texte="Blanchâtre à marron clair, couleur pâle et pyriforme" >
+										<resultat id="res30" >
+											<nom>MEL3</nom>
+											<type></type>
+											<regimeAlimentaire>Carnivore</regimeAlimentaire>
+											<informations></informations>
+											<media>
+												<img id="media180" src="Q-Cbpatte/R-8patte/Q-Taille/R-inferieur 5mm/Q-Couleur et forme/R-Blanchatre et pyriforme/F-MEL3/MEL3 nv2.jpg" />
+												<legende>illustre les médias du résultat</legende>
+											</media>
+										</resultat>
+										<media>
+											<img id="media181" src="Q-Cbpatte/R-8patte/Q-Taille/R-inferieur 5mm/Q-Couleur et forme/R-Blanchatre et pyriforme/MEL3 nv2.jpg" />
+											<legende></legende>
+										</media>
+									</reponse>
+									<reponse id="r57" texte="Couleurs vives, vermiforme ou globuleux." >
+										<resultat id="res31" >
+											<nom>MEL2</nom>
+											<type></type>
+											<regimeAlimentaire>Phytophage</regimeAlimentaire>
+											<informations></informations>
+											<media>
+												<img id="media182" src="Q-Cbpatte/R-8patte/Q-Taille/R-inferieur 5mm/Q-Couleur et forme/R-Couleursvives et globuleux/F-MEL2/MEL2 nv 3.jpg" />
+												<legende>illustre les médias du résultat</legende>
+											</media>
+										</resultat>
+										<media>
+											<img id="media183" src="Q-Cbpatte/R-8patte/Q-Taille/R-inferieur 5mm/Q-Couleur et forme/R-Couleursvives et globuleux/MEL2 nv 3.jpg" />
+											<legende></legende>
+										</media>
+									</reponse>
+								</question>
+							</branche>
+						</reponse>
+					</question>
+				</branche>
+			</reponse>
+		</question>
+	</branche>
+</arbre>
