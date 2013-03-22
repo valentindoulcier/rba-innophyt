@@ -56,7 +56,7 @@
 	
 	define('XML_FILEPATH', $ARBRE_PATH . '/structure_xml.xml');
 	
-	//$PageType = page / login / quizz / prepareQuizz / admin
+	//$PageType = page / login / quizz / prepareQuizz / admin / mosaique
 	
 	if (!$HEADER) {
 ?>

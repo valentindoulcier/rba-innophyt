@@ -6,6 +6,8 @@
 		<title>Mosaïque</title>
 
 		<?php
+			$HEADER = false;
+			$PageType    = "mosaique";
 			$CurrentPath = "/pages";
 			include "parts/variables.php";
 	
@@ -41,11 +43,7 @@
 			<div id="bodyQuestionContent">
 				
 				<?php
-					
 					afficher();
-					
-					var_dump($mosaiqueArray);
-					
 				?>
 
 				<div class="clearer"></div>

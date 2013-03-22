@@ -6,6 +6,7 @@ include "../pages/parts/variables.php";
 
 define(MEDIA_ARBRE_PATH, $MEDIA_ARBRE_PATH);
 define(THUMBNAIL_ARBRE_PATH, $THUMBNAIL_ARBRE_PATH);
+define(IMAGE_PATH, $IMG_PATH);
 
 function parse($mosaiqueArray, $nbMedias) {
 	
@@ -95,7 +96,11 @@ function create($mosaiqueArray, $nbMedias) {
 				?>
 				<div id="<?php echo $mosaiqueArray[$numResultat][5][$numMedia][0] ?>" class="span1 mosaiqueCell" data-idRes="<?php echo $mosaiqueArray[$numResultat][0] ?>" data-nom="<?php echo $mosaiqueArray[$numResultat][1] ?>" data-type="<?php echo $mosaiqueArray[$numResultat][2] ?>" data-regimeAlimentaire="<?php echo $mosaiqueArray[$numResultat][3] ?>" data-informations="<?php echo $mosaiqueArray[$numResultat][4] ?>" data-mediaId="<?php echo $mosaiqueArray[$numResultat][5][$numMedia][0] ?>" data-mediaChemin="<?php echo $mosaiqueArray[$numResultat][5][$numMedia][1] ?>" data-mediaLegende="<?php echo $mosaiqueArray[$numResultat][5][$numMedia][2] ?>">
 					<!-- <img src="<?php echo $THUMBNAIL_ARBRE_PATH . "/thumbnail" . $count . $extension; ?>" alt="icone mosaique" class="ico-mosaique"/> -->
-					<img src="<?php echo THUMBNAIL_ARBRE_PATH . "/medias/" .$mosaiqueArray[$numResultat][5][$numMedia][1]; ?>" alt="icone mosaique" class="ico-mosaique"/>
+					<!-- <img src="<?php echo THUMBNAIL_ARBRE_PATH . "/medias/" .$mosaiqueArray[$numResultat][5][$numMedia][1]; ?>" alt="icone mosaique" class="ico-mosaique"/> -->
+					<img src="<?php echo IMAGE_PATH ?>/blank.gif" data-src="<?php echo THUMBNAIL_ARBRE_PATH . "/medias/" .$mosaiqueArray[$numResultat][5][$numMedia][1]; ?>" alt="icone mosaique" class=" lazy ico-mosaique"/>
+					<noscript>
+						<img src="<?php echo THUMBNAIL_ARBRE_PATH . "/medias/" .$mosaiqueArray[$numResultat][5][$numMedia][1]; ?>" alt="icone mosaique" class="nolazy ico-mosaique"/>
+					</noscript>
 				</div>
 				<?php
 			}
