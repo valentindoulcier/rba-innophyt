@@ -112,10 +112,13 @@ function setResultCarousel(carouselContent)
 function setResultInformations(resultInfo)
 {
 	var output = '';
+	if (sessionStorage.getItem(session_id_piege) != null) {
+		output += 
+			"<ul>" +
+				"<li><span class='resultInfoListLabel'>Nombre d'individus trouvés :</span> Valider (pop-up + retour début quizz) / Annuler (retour question précédente)</li>" +
+			"</ul>";
+	}
 	output += 
-		"<ul>" +
-			"<li><span class='resultInfoListLabel'>Nombre d'individus trouvés :</span> Valider (pop-up + retour début quizz) / Annuler (retour question précédente)</li>" +
-		"</ul>" +
 		'<ul class="resultInfo">'+
 			'<li><span class="resultInfosListLabel">Nom :</span>'+resultInfo.nom+'</li>'+
 			'<li><span class="resultInfosListLabel">Type :</span>'+resultInfo.type+'</li>'+
