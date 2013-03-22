@@ -54,3 +54,11 @@
 <?php
 	}
 ?>
+
+<?php
+	if (strcmp($PageType, "admin") == 0) {
+?>
+	<script type="text/javascript" src="<?php echo $JS_PATH; ?>/admin.js"></script>
+<?php
+	}
+?>

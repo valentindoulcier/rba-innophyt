@@ -40,7 +40,7 @@
 					<div id="questionTextDiv" class="myContainer">
 						<div id="questionTextIcon"><img src="<?php echo $IMG_PATH; ?>/home.png" alt="icone accueil"></div>
 						<div><h1>Administration<br><small>Veuillez choisir une action</small></h1></div>
-						<div id="generateThumbnailButton"><a class="btn btn-warning btn-large" title="Générer les thumbnail"><h3>Générer les thumbnails</h3></a></div>
+						<div><a id="generateThumbnailButton" class="btn btn-warning btn-large" title="Générer les thumbnail"><h3>Générer les thumbnails</h3></a></div>
 						<div class="clearer"></div>
 					</div>
 				</div>
@@ -83,6 +83,9 @@
 
 			<div class="clearer"></div>
 		</div>
+		
+		
+		
 <?php /*
 		<div id="resultRightDiv" style="display: none;">
 			<div class="window" id="resultWindow">
