@@ -18,7 +18,11 @@
 			$row = $res->fetch_assoc();
 			if (strcasecmp($row['PASSWD'], $_POST['pass']) == 0) {
 				$returnHash = md5($_POST['idKey']);
-				mysqli_query($mysqli,"UPDATE TABLE_USER SET TOKEN='" . $returnHash . "' WHERE ID=" . $row['ID']);
+				if (strcmp($row['TOKEN'], "")) {
+					$returnHash = $row['TOKEN'];
+				} else {
+					mysqli_query($mysqli,"UPDATE TABLE_USER SET TOKEN='" . $returnHash . "' WHERE ID=" . $row['ID']);
+				}
 				mysqli_close($mysqli);
 				echo $returnHash;
 			} else {

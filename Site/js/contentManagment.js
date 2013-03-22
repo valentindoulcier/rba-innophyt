@@ -115,7 +115,32 @@ function setResultInformations(resultInfo)
 	if (sessionStorage.getItem(session_save) == "true") {
 		output += 
 			"<ul>" +
-				"<li><span class='resultInfoListLabel'>Nombre d'individus trouvés :</span> Valider (pop-up + retour début quizz) / Annuler (retour question précédente)</li>" +
+				"<li>" +
+					"<form class='form-horizontal formCampagne' action='' method='post'>" + 
+						"<div>" +
+							"<input id='nom-insecte' class='nom-insecte' name='nom-insecte' type='hidden'>" +
+							"<input id='type-insecte' class='type-insecte' name='type-insecte' type='hidden'>" +
+							"<input id='regime-insecte' class='regime-insecte' name='regime-insecte' type='hidden'>" +
+							"<input id='info-insecte' class='info-insecte' name='info-insecte' type='hidden'>" +
+							"<input id='piegeId-insecte' class='piegeId-insecte' name='piegeId-insecte' type='hidden'>" +
+							"<input id='idKey-field' class='idKey-field' name='idKey-field' type='hidden'>" +
+							"<script type='text/javascript'>" +
+								"$('.piegeId-insecte').val(sessionStorage.getItem(session_id_piege));" +
+								"$('.idKey-field').val(authInfo.idKeyMd5);" +
+								"$('.nom-insecte').val('" + resultInfo.nom + "');" +
+								"$('.type-insecte').val('" + resultInfo.type + "');" +
+								"$('.regime-insecte').val('" + resultInfo.regimeAlimentaire + "');" +
+								"$('.info-insecte').val(eval(\"$('.resultInfo li:last-child span:last-child').html()\"));" +
+							"</script>" +
+						"</div>" +
+						
+						"<div>" +
+							"<label for='nombre-insecte'><h3>Nombre d'individus trouvés :</h3></label>" +
+							"<input style='margin-left: 15px; margin-top: 10px;' id='nombre-insecte' class='nombre-insecte' name='nombre-insecte' type='text' placeholder='Nombre trouvé' required autofocus>" +
+							"<a href='#' id='submit-form' class='btn btn-success' style='margin-left: 50px; margin-top: 10px;'>Enregistrer</a>" +
+						"</div>" +
+					"</form>" +
+					"<hr style='margin: 28px 0 0 0; border: 0; border-top: 1px solid #ddd; border-bottom: 1px solid #eee;'>" +
 			"</ul>";
 	}
 	output += 
@@ -123,7 +148,7 @@ function setResultInformations(resultInfo)
 			'<li><span class="resultInfosListLabel">Nom :</span>'+resultInfo.nom+'</li>'+
 			'<li><span class="resultInfosListLabel">Type :</span>'+resultInfo.type+'</li>'+
 			'<li><span class="resultInfosListLabel">Regime alimentaire :</span>'+resultInfo.regimeAlimentaire+'</li>'+
-			'<li><span class="resultInfosListLabel">Informations complementaires :</span>'+resultInfo.informations+'</li>'+
+			'<li><span class="resultInfosListLabel">Informations complementaires :</span><span>'+resultInfo.informations+'<span></li>'+
 		'</ul>';
 
 	$(RESULT_CONTENT_ID).html(output);
