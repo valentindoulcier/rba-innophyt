@@ -67,6 +67,7 @@
 	if (strcmp($PageType, "mosaique") == 0) {
 ?>
 	<script type="text/javascript" src="<?php echo $JS_PATH; ?>/jail.js"></script>
+	<script type="text/javascript" src="<?php echo $JS_PATH; ?>/mosaique.js"></script>
 	<script type="text/javascript">
 		$(function(){
 			$('img.lazy').jail();

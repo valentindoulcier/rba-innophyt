@@ -10,6 +10,7 @@ function bindItemClick() {
 		var item = document.getElementById($(this).attr('id'));
 		var urlPageSuivante = "";
 		var shadowBoxModifier = "";
+		var shadowBoxRBA = "";
 		var shadowBoxSupprimer = "shadowbox;width=400px;height=109px";
 		
 		// Mise à jour de l'item sélectionné dans la sessionStorage
@@ -35,6 +36,7 @@ function bindItemClick() {
 			urlPageSuivante = '#items-choisis';
 			
 			shadowBoxModifier = "shadowbox;width=500px;height=500px";
+			shadowBoxRBA = "shadowbox;width=500px;height=100px";
 		}
 		
 		// Chargement des champs dans la partie information
@@ -61,6 +63,9 @@ function bindItemClick() {
 		$('#choose-item').attr('href', urlPageSuivante);
 		if (pageChoix == "piege") {
 			$('#choose-item').attr('rel', 'shadowbox;width=500px;height=270px');
+			// Affichage du RBA
+			$('#rba-item').attr('href', '#rba-afficher');
+			$('#rba-item').attr('rel', shadowBoxRBA);
 		} else {
 			$('#choose-item').removeAttr('rel');
 		}
@@ -438,3 +443,22 @@ $(document).ready(function() {
 	sessionStorage.setItem('pageChoix', pageChoix);
 	listerItem(pageChoix);
 });
+
+
+/**
+ * Cette fonction affiche le RBA du piège (Graphique JQuery)
+ *
+ * @method loadInfoBeaforeQuizz
+ * @return {Void}
+ **/
+function loadRBAPiege() {
+	if ($("#fieldId").html() != "" && !(getURLParameter('statut') == "0" && getURLParameter('dataType') == "error")) {
+		setTimeout(function () {
+			$('.nom').removeAttr('disabled');
+			setPrefixePiege();
+			
+			
+		}, 1500);
+	}
+}
+

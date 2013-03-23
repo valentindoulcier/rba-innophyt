@@ -94,6 +94,10 @@
 									<div class="btn-group">
 										<a href="#selectionner-item" rel='shadowbox;width=400px;height=109px' id="choose-item" class="btn btn-large btn-success" onclick="loadInfoBeaforeQuizz();">Suivant</a>
 									</div>
+									<br/>
+									<div class="btn-group" style="margin-left: 10px;">
+										<a href="#selectionner-item" rel='shadowbox;width=400px;height=109px' id="rba-item" class="btn btn-link" onclick="loadRBAPiege();" style="width: 47px;">RBA</a>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -283,6 +287,21 @@
 								</div>
 							</div>
 						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		
+		
+		
+		<div id="rba-afficher" style="display: none;">
+			<div class="window" id="resultWindow">
+				<ul>
+					<li class="windowTitle"><h3><i class="icon-ok"></i>RBA - Piège</h3></li>
+					<li id="resultWindowContent">
+						<p>
+							Bonjour,j'aime la glace à la vanille !
+						</p>
 					</li>
 				</ul>
 			</div>
