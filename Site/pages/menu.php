@@ -87,13 +87,15 @@
 										<a href="#" id="cancel-form" class="btn" onclick="Shadowbox.close();">Annuler</a>
 										<a href="#" id="continue-form" class="btn btn-warning continue-form" onclick="sessionStorage.setItem(session_save, 'false');">Continuer</a>
 										<script>
-											setTimeout( function() {
-												if (sessionStorage.getItem('item-rba-menu') == 'quizz') {
-													$('.continue-form').attr('href', '<?php echo $QUIZZ_URL?>');
-												} else if (sessionStorage.getItem('item-rba-menu') == 'mosaique') {
-													$('.continue-form').attr('href', '<?php echo $MOSAIQUE_URL?>');
-												}
-											}, 1250);
+											$('.cell').bind('click', function() {
+												setTimeout( function() {
+													if (sessionStorage.getItem('item-rba-menu') == 'quizz') {
+														$('.continue-form').attr('href', '<?php echo $QUIZZ_URL?>');
+													} else if (sessionStorage.getItem('item-rba-menu') == 'mosaique') {
+														$('.continue-form').attr('href', '<?php echo $MOSAIQUE_URL?>');
+													}
+												}, 1500);
+											});
 										</script>
 									</div>
 								</div>

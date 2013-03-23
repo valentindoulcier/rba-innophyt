@@ -116,7 +116,7 @@ function setResultInformations(resultInfo)
 		output += 
 			"<ul>" +
 				"<li>" +
-					"<form class='form-horizontal formCampagne' action='' method='post'>" + 
+					"<form class='form-horizontal formCampagne' action='" + php_script_url + "/recolte.php' method='post'>" + 
 						"<div>" +
 							"<input id='nom-insecte' class='nom-insecte' name='nom-insecte' type='hidden'>" +
 							"<input id='type-insecte' class='type-insecte' name='type-insecte' type='hidden'>" +
@@ -137,7 +137,7 @@ function setResultInformations(resultInfo)
 						"<div>" +
 							"<label for='nombre-insecte'><h3>Nombre d'individus trouvés :</h3></label>" +
 							"<input style='margin-left: 15px; margin-top: 10px;' id='nombre-insecte' class='nombre-insecte' name='nombre-insecte' type='text' placeholder='Nombre trouvé' required autofocus>" +
-							"<a href='#' id='submit-form' class='btn btn-success' style='margin-left: 50px; margin-top: 10px;'>Enregistrer</a>" +
+							"<a href='#' id='submit-form' class='btn btn-success' style='margin-left: 50px; margin-top: 10px;' onclick='javascript:submit();'>Enregistrer</a>" +
 						"</div>" +
 					"</form>" +
 					"<hr style='margin: 28px 0 0 0; border: 0; border-top: 1px solid #ddd; border-bottom: 1px solid #eee;'>" +
