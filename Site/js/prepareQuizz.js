@@ -70,12 +70,14 @@ function bindItemClick() {
 			$('#choose-item').removeAttr('rel');
 		}
 		
-		// Mise à jour de shadowbox pour les pop-up de modification et suppression
-		Shadowbox.clearCache();
-		Shadowbox.setup();
-		
 		// Mise à jour du "fil d'arinne" de la sélection de la campagne / parcelle / piege
 		updateTitle();
+		
+		setTimeout( function() {
+			// Mise à jour de shadowbox pour les pop-up de modification et suppression
+			Shadowbox.clearCache();
+			Shadowbox.setup();
+		}, 200);
 	});
 }
 
@@ -377,7 +379,8 @@ function updateTitle() {
 	}
 	if (piege_id) {
 		var piege    = $.parseJSON(sessionStorage.getItem(session_liste_pieg + authInfo.idKeyMd5));
-		title += "<a href='" + piege_url    + "' title='Retour à la liste des campagnes'>" + piege.data[piege_id].nom + "</a>";
+		title += "<a href='" + piege_url    + "' title='Retour à la liste des campagnes'>" + piege.data[piege_id].nom + "</a> /";
+		title += " <a href='#items-choisis' rel='shadowbox;width=500px;height=270px' onclick='loadInfoBeaforeQuizz();' title='Accès direct au quizz' class='btn btn-info btn-large'>Identification</a>";
 	}
 	title += "</h2>";
 	
