@@ -646,12 +646,11 @@ input::-webkit-input-placeholder {
 
 
 .overMenuItem {
-	z-index: 1;
 	overflow: hidden;
 	position: absolute;
-	width: 162px;
+	width: 160px;
 	margin-bottom: 0;	
-	padding: .5em 1.5%;	
+	padding: 9px 20px;	
 	font-weight: normal;
 	color: white;
 	background-color: rgba(0, 0, 0, 0.42); /* psd opacity = 42%, rgba = bug ie8*/
