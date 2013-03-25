@@ -644,6 +644,22 @@ input::-webkit-input-placeholder {
 	padding-left: 25px;
 }
 
+
+.overMenuItem {
+	z-index: 1;
+	overflow: hidden;
+	position: absolute;
+	width: 160px;
+	margin-bottom: 0;	
+	padding: .5em 1.5%;	
+	font-weight: normal;
+	color: white;
+	background-color: rgba(0, 0, 0, 0.42); /* psd opacity = 42%, rgba = bug ie8*/
+	margin-top: -45px;
+	border-bottom-left-radius: 18px;
+	border-bottom-right-radius: 18px;
+}
+
 /*----------------------------
 	Mosaïque
 -----------------------------*/
@@ -782,4 +798,4 @@ input:-ms-input-placeholder { /* Internet Explorer 10+ */
 	margin-top: 16px;
 	margin-right: 16px;
 }
- */
+

@@ -47,19 +47,34 @@
 			
 			<div id="menu" class="row">
 				<div class="span3 cell">
-					<a href="<?php echo $PROTOCOLES_URL?>" title="Liste des protocoles"><img src="<?php echo $IMG_PATH ?>/vache1.png" alt="icone questionnaire" class="ico-accueil"/></a>
+					<a href="<?php echo $PROTOCOLES_URL?>" title="Liste des protocoles">
+						<img src="<?php echo $IMG_PATH ?>/vache1.png" alt="icone questionnaire" class="ico-accueil"/>
+						<h3 class="overMenuItem">Protocoles</h3>
+					</a>
 				</div>
 				<div class="span3 cell">
-					<a href="<?php echo $CAMPAGNE_URL?>" title="Accès au choix des campagnes / parcelles / pièges" onclick="sessionStorage.setItem(session_save, 'true');"><img src="<?php echo $IMG_PATH ?>/vache2.png" alt="icone questionnaire" class="ico-accueil"/></a>
+					<a href="<?php echo $CAMPAGNE_URL?>" title="Accès au choix des campagnes / parcelles / pièges" onclick="sessionStorage.setItem(session_save, 'true');">
+						<img src="<?php echo $IMG_PATH ?>/vache2.png" alt="icone questionnaire" class="ico-accueil"/>
+						<h3 class="overMenuItem">Expérimentation</h3>
+					</a>
 				</div>
 				<div class="span3 cell">
-					<a href="#selectionner-item" title="Accès à l'arbre d'identification" rel='shadowbox;width=450px;height=155px' onclick="sessionStorage.setItem('item-rba-menu', 'quizz');"><img src="<?php echo $IMG_PATH ?>/vache3.png" alt="icone questionnaire" class="ico-accueil"/></a>
+					<a href="#selectionner-item" title="Accès à l'arbre d'identification" rel='shadowbox;width=450px;height=155px' onclick="sessionStorage.setItem('item-rba-menu', 'quizz');">
+						<img src="<?php echo $IMG_PATH ?>/vache3.png" alt="icone questionnaire" class="ico-accueil"/>
+						<h3 class="overMenuItem">Identification</h3>
+					</a>
 				</div>
 				<div class="span3 cell">
-					<a href="#selectionner-item" title="Accès à la mosaïque" rel='shadowbox;width=450px;height=155px' onclick="sessionStorage.setItem('item-rba-menu', 'mosaique');"><img src="<?php echo $IMG_PATH ?>/vache4.png" alt="icone questionnaire" class="ico-accueil"/></a>
+					<a href="#selectionner-item" title="Accès à la mosaïque" rel='shadowbox;width=450px;height=155px' onclick="sessionStorage.setItem('item-rba-menu', 'mosaique');">
+						<img src="<?php echo $IMG_PATH ?>/vache4.png" alt="icone questionnaire" class="ico-accueil"/>
+						<h3 class="overMenuItem">Mosaïque</h3>
+					</a>
 				</div>
 				<div class="span3 cell">
-					<a id="exportCSV" href="<?php echo($PHP_SCRIPT_PATH)?>/exportCSV.php?idKey=" title="Export des données"><img src="<?php echo $IMG_PATH ?>/vache5.png" alt="icone questionnaire" class="ico-accueil"/></a>
+					<a id="exportCSV" href="<?php echo($PHP_SCRIPT_PATH)?>/exportCSV.php?idKey=" title="Export des données">
+						<img src="<?php echo $IMG_PATH ?>/vache5.png" alt="icone questionnaire" class="ico-accueil"/>
+						<h3 class="overMenuItem">Export</h3>
+					</a>
 				</div>
 				<div id="adminCell" class="span3 cell">
 					
