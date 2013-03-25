@@ -11,7 +11,7 @@ function bindItemClick() {
 		
 		var authInfo = '{ "idRes": "' + item.dataset.idres + '" , "nom": "' + item.dataset.nom + '" , "type": "' + item.dataset.type + '" , "regimeAlimentaire": "' + item.dataset.regimealimentaire + '" , "informations": "' + item.dataset.informations + '" , "mediaId": "' + item.dataset.mediaid + '" , "mediaChemin": "' + item.dataset.mediachemin + '" , "mediaLegende": "' + item.dataset.medialegende + '" }';
 		
-		sessionStorage.setItem('mosaiqueInfoRBA-INNOPHYT', authInfo);
+		sessionStorage.setItem(session_id_mosaique, authInfo);
 		
 		console.debug(authInfo);
 		
