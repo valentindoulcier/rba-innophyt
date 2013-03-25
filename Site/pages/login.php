@@ -59,7 +59,35 @@
 						<div class="control-group">
 							<div class="controls">
 								<label class="checkbox"><input type="checkbox" id="remember-me">Se souvenir de moi</label>
+							</div>
+						</div>
+						<div class="control-group">
+							<div class="controls">
 								<button type="submit" class="btn">Connexion</button>
+							</div>
+						</div>
+						<div class="control-group" style="position: relative; float: right;">
+							<div class="controls">
+								<label><a id="forgetPasswd" title="forget-password">Mot de passe oublié</a></label>
+							</div>
+						</div>
+					</form>
+					
+					<form class="form-horizontal" id="rba-innophyt-forgetPasswd" style="display: none;">
+						<div class="control-group">
+							<label class="control-label" for="loginEmail">Email</label>
+							<div class="controls">
+								<input type="text" id="loginEmail" placeholder="Email">
+							</div>
+						</div>
+						<div class="control-group">
+							<div class="controls">
+								<button type="submit" class="btn">Envoyer</button>
+							</div>
+						</div>
+						<div class="control-group" style="position: relative; float: right;">
+							<div class="controls">
+								<label><a id="formConnect" title="forget-password">Connexion</a></label>
 							</div>
 						</div>
 					</form>

@@ -31,8 +31,35 @@ function loadSubmitFormAction() {
 	});
 }
 
+function loadSubmitForgetPasswdForm() {
+	$('#rba-innophyt-forgetPasswd').submit(function() {
+		var email     = $("#loginEmail").val();
+		
+		;
+		
+		event.preventDefault();
+		return false;
+	});
+}
+
+function showForgetPasswdForm() {
+	$('#forgetPasswd').bind('click', function() {
+		$('#rba-innophyt-connection').hide();
+		$('#rba-innophyt-forgetPasswd').show();
+	});
+}
+
+function showConnectForm() {
+	$('#formConnect').bind('click', function() {
+		$('#rba-innophyt-connection').show();
+		$('#rba-innophyt-forgetPasswd').hide();
+	});
+}
+
 /****** DOCUMENT READY *****/
 
 $(document).ready(function() {
 	loadSubmitFormAction();
+	showForgetPasswdForm();
+	showConnectForm();
 });

@@ -640,7 +640,7 @@ input::-webkit-input-placeholder {
 	background-color: #F9F9F9;
 	width: 550px;
 }
-#rba-innophyt-connection {
+#rba-innophyt-connection, #rba-innophyt-forgetPasswd {
 	padding-left: 25px;
 }
 

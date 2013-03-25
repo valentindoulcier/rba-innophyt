@@ -31,9 +31,16 @@
 		} else {
 			echo "0 - No data in DB";
 		}
-	}
-	else 
-	{
+	} elseif (isset($_POST['login']) && isset($_POST['idKey'])) {
+		$to      = 'adrien.bataille@icloud.com';
+		$subject = 'le sujet';
+	    $message = 'Bonjour !';
+	    $headers = 'From: webmaster@example.com' . "\r\n" .
+	    'Reply-To: webmaster@example.com' . "\r\n" .
+	    'X-Mailer: PHP/' . phpversion();
+	
+	     mail($to, $subject, $message, $headers);
+	} else {
 		echo "0 - Missing request parameters";
 	}
 ?>
