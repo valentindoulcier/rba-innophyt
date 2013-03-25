@@ -11,7 +11,7 @@
 			include "parts/variables.php";
 	
 			include $PAGE_PART_PATH . "/headCssJs.php";
-			//include $PAGE_PART_PATH . "/securite.php";
+			include $PAGE_PART_PATH . "/securite.php";
 		?>
 	</head>
 	<body>
@@ -41,7 +41,7 @@
 				<div class="tabbable"> <!-- Only required for left/right tabs -->
   					<ul class="nav nav-tabs">
     					<li class="active"><a href="#tab1" data-toggle="tab">Acteurs</a></li>
-    					<li><a href="#tab2" data-toggle="tab">Version Pro</a></li>
+    					<li><a href="#tab2" data-toggle="tab">Comment faire ?</a></li>
     					<li><a href="#tab3" data-toggle="tab">Bibiographie</a></li>
   					</ul>
   					
