@@ -2,7 +2,7 @@
 
 	$HEADER = true;
 	$CurrentPath = "/php_script";
-	include "../pages/parts/variables.php";
+	require_once("../pages/parts/variables.php");
 	
 	$mysqli = new mysqli($HOST_DB, $USER_DB, $PASSWORD_DB, $SCHEMA_DB, $PORT_DB);
 	if ($mysqli->connect_errno) {

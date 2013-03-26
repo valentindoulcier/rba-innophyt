@@ -9,9 +9,9 @@ function bindItemClick() {
 		
 		var item = document.getElementById($(this).attr('id'));
 		
-		var authInfo = '{ "idreponse": "' + item.dataset.idreponse + '" , "idresultat": "' + item.dataset.idresultat + '" ,  "mediaId": "' + item.dataset.mediaid + '" , "mediaChemin": "' + item.dataset.mediachemin + '" }';
+		var mosaiqueInfo = '{ "idreponse": "' + item.dataset.idreponse + '" , "idresultat": "' + item.dataset.idresultat + '" ,  "mediaId": "' + item.dataset.mediaid + '" , "mediaChemin": "' + item.dataset.mediachemin + '" }';
 		
-		sessionStorage.setItem(session_id_mosaique, authInfo);
+		sessionStorage.setItem(session_id_mosaique, mosaiqueInfo);
 		
 		//console.debug(authInfo);
 		

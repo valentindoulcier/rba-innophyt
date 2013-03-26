@@ -114,6 +114,10 @@ function setResultCarousel(carouselContent)
 		'</div>'+
 		'<div style="clear:both;"></div>';
 
+	if(mosaiqueRes) {
+		sessionStorage.removeItem(session_id_mosaique);
+	}
+
 	$(RESULT_CAROUSEL_CONTENT_ID).html(infoContent);
 }
 /*

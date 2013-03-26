@@ -9,7 +9,7 @@
 			$HEADER = false;
 			$PageType    = "login";
 			$CurrentPath = "/pages";
-			include "parts/variables.php";
+			require_once("parts/variables.php");
 			
 			include $PAGE_PART_PATH . "/headCssJs.php";
 			// On désactive le module de sécurité sur la page de login car l'utilisateur doit s'authentifier

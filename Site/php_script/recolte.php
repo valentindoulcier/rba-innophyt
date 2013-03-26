@@ -22,7 +22,7 @@
  */
 	$HEADER = true;
 	$CurrentPath = "/php_script";
-	include "../pages/parts/variables.php";
+	require_once("../pages/parts/variables.php");
 	
 	$returnItem = "";
 	$myDate = date("Y-m-d");

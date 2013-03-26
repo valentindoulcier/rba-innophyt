@@ -2,7 +2,7 @@
 
 $HEADER = true;
 $CurrentPath = "/php_script";
-include "../pages/parts/variables.php";
+require_once("../pages/parts/variables.php");
 
 $responseId = isset($_POST['responseid']) ? $_POST['responseid'] : '';
 $questionId = isset($_POST['questionid']) ? $_POST['questionid'] : '';

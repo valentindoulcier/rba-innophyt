@@ -8,7 +8,7 @@
 		<?php
 			$HEADER = false;
 			$CurrentPath = "/pages";
-			include "parts/variables.php";
+			require_once("parts/variables.php");
 	
 			include $PAGE_PART_PATH . "/headCssJs.php";
 			include $PAGE_PART_PATH . "/securite.php";

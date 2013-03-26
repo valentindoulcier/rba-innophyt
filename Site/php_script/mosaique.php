@@ -2,7 +2,7 @@
 
 $HEADER = true;
 $CurrentPath = "/php_script";
-include "../pages/parts/variables.php";
+require_once("../pages/parts/variables.php");
 
 define(MEDIA_ARBRE_PATH, $MEDIA_ARBRE_PATH);
 define(THUMBNAIL_ARBRE_PATH, $THUMBNAIL_ARBRE_PATH);

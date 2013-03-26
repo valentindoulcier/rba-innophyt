@@ -9,7 +9,7 @@
 			$HEADER = false;
 			$PageType = "quizz";
 			$CurrentPath = "/pages";
-			include "parts/variables.php";
+			require_once("parts/variables.php");
 	
 			include $PAGE_PART_PATH . "/headCssJs.php";
 			include $PAGE_PART_PATH . "/securite.php";
@@ -39,19 +39,13 @@
 
 			<div id="bodyQuestionContent">
 
-				<div id="responsesDiv">
-					<!--[Responses]-->
-				</div>
+				<div id="responsesDiv"><!--[Responses]--></div>
 				<div id="questionInfoDiv">
 
 					<div class="window" id="informationsWindow">
 						<ul>
-							<li class="windowTitle">
-								<h3><i class="icon-info-sign"></i>Informations</h3>
-							</li>
-							<li id="questionInfoContent">
-								<!--[Informations carsousel]-->
-							</li>
+							<li class="windowTitle"><h3><i class="icon-info-sign"></i>Informations</h3></li>
+							<li id="questionInfoContent"><!--[Informations carsousel]--></li>
 						</ul>
 					</div>
 					<div class="window" id="webcamWindow">
@@ -81,24 +75,16 @@
 				<div id="resultLeftDiv">
 					<div class="window" id="resultCarouselWindow">
 						<ul>
-							<li class="windowTitle">
-								<h3><i class="icon-picture"></i>Images</h3>
-							</li>
-							<li id="resultCarouselWindowContent">
-								Blabla
-							</li>
+							<li class="windowTitle"><h3><i class="icon-picture"></i>Images</h3></li>
+							<li id="resultCarouselWindowContent"></li>
 						</ul>
 					</div>
 				</div>
 				<div id="resultRightDiv">
 					<div class="window" id="resultWindow">
 						<ul>
-							<li class="windowTitle">
-								<h3><i class="icon-ok"></i>Résultat</h3>
-							</li>
-							<li id="resultWindowContent">
-								Blabla
-							</li>
+							<li class="windowTitle"><h3><i class="icon-ok"></i>Résultat</h3></li>
+							<li id="resultWindowContent"></li>
 						</ul>
 					</div>
 				</div>

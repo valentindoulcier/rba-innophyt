@@ -2,7 +2,7 @@
 
 	$HEADER = true;
 	$CurrentPath = "/php_script";
-	include "../pages/parts/variables.php";
+	require_once("../pages/parts/variables.php");
 
 	if(isset($_POST['login']) && isset($_POST['pass']) && isset($_POST['idKey']))
 	{
