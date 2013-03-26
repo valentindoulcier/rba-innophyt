@@ -4,7 +4,16 @@ $(document).ready(function() {
 	selectFirstQuestion(firstQuestionId);
 	// Permet de lancer l'application avec la première question du fichier XML
 	//loadTestContent();
+	if(sessionStorage.getItem(session_id_mosaique)) {
+		var resultat = $.parseJSON(sessionStorage.getItem(session_id_mosaique));
+		afficheResult(resultat);
+	}
 });
+
+function afficheResult(resultat) {
+	clearBreadcrumb();
+	selectResponse(resultat.idRes, true);
+}
 
 /***** SELECT RESPONSE / QUESTION (AJAX REQUESTS) *****/
 
