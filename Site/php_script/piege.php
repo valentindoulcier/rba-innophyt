@@ -200,7 +200,7 @@
 					if (!$stmt->execute()) {
 						$returnItem = '{ "statut": "0", "dataType": "error", "data": "Echec lors de l execution: (' . $mysqli -> connect_errno . ') ' . $mysqli -> connect_error . '" }';
 					} else {
-						$returnItem = '{ "statut": "2", "dataType": "ok", "data": "Campagne supprimée" , "idKey": "' . $row['RSA_PRIVE'] . '"}';
+						$returnItem = '{ "statut": "2", "dataType": "ok", "data": "Campagne supprimée" , "idKey": "' . $row['TOKEN'] . '"}';
 					}
 					
 				} else {

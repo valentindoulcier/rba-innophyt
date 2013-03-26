@@ -84,6 +84,8 @@ function setResultCarousel(carouselContent)
 	var mosaiqueRes = sessionStorage.getItem(session_id_mosaique);
 	if(mosaiqueRes) {
 		mosaiqueRes = $.parseJSON(mosaiqueRes);
+	} else {
+		mosaiqueRes = false;
 	}
 	setResultCarouselWindowDisplay(true);
 	var infoContent = '';
@@ -94,7 +96,9 @@ function setResultCarousel(carouselContent)
 
 				for(i=0; i<carouselContent.length; i++)
 				{
-					if (mosaiqueRes.mediaId == carouselContent[i].mediaId || !mosaiqueRes) {
+					if (!mosaiqueRes) {
+						infoContent += generateCarouselItem('resultGal', carouselContent[i]);
+					} else if (mosaiqueRes.mediaId == carouselContent[i].mediaId) {
 						infoContent += generateCarouselItem('resultGal', carouselContent[i]);
 					}
 				}

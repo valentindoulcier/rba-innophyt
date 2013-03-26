@@ -71,7 +71,7 @@
 								$nomInsecte,
 								htmlentities($_POST['type-insecte']),
 								htmlentities($_POST['regime-insecte']),
-								htmlentities($_POST['info-insecte']),
+								htmlentities(minify($_POST['info-insecte'])),
 								//htmlentities($_POST['type-id-insecte']),
 								//htmlentities($_POST['debut-id-insecte']),
 								//htmlentities($_POST['fin-id-insecte']),

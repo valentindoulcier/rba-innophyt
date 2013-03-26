@@ -227,6 +227,7 @@ function deleteItem(pageChoix) {
 					// Affichage d'un message d'erreur dans le cas où l'utilisateur n'est pas reconnu
 					$('#liste_campagne').html("<div class='alert alert-error'> <button type='button' class='close' data-dismiss='alert'>&times;</button> <strong>Erreur !</strong> " + data.data + " </div>")
 				}
+				sessionStorage.removeItem(eval('session_id_' + pageChoix));
 			},
 			error : function(jqXHR, textStatus, errorThrown) {
 			// Affichage d'un message d'erreur si il y a une erreur lors de l'exécution de la requête ajax

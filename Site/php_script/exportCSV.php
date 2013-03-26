@@ -91,10 +91,10 @@
 	        	if((strcmp($clef, "RECOLTE_NOM") == 0) && $valeur != NULL) {
 	        		$Val = explode("#", $valeur);
 	        		$Val1 = $Val[0];
-					$outputCsv .= trim($Val1).';';
+					$outputCsv .= trim(html_entity_decode($Val1)).';';
 	  		    }
 				else {
-	            	$outputCsv .= trim($valeur).';';
+	            	$outputCsv .= trim(html_entity_decode($valeur)).';';
 				}
 			}
 	
@@ -111,7 +111,7 @@
 	
 	// Entêtes (headers) PHP qui vont bien pour la création d'un fichier Excel CSV
 	header("Content-disposition: attachment; filename=".$fileName);
-	header("Content-Type: application/force-download");
+	header("Content-Type: application/force-download; charset=utf-8");
 	header("Content-Transfer-Encoding: application/vnd.ms-excel\n");
 	header("Pragma: no-cache");
 	header("Cache-Control: must-revalidate, post-check=0, pre-check=0, public");

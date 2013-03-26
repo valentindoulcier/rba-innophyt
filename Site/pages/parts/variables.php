@@ -100,4 +100,23 @@
 		</script>
 <?php
 	}
+
+function minify($input) {
+	$output = "";
+	$space = false;
+	$delete = false;
+	
+	$order = array("\t", "\n", "\r", "\0", "\x0B");
+	
+	$input = str_replace($order, " ", $input);
+	
+	for($i = 0; $i < strlen($input); $i++) {
+		if(strcmp($input[$i], " ") == 0) { if(!$space) { $space = true; } elseif(!$delete) { $delete = true; } }
+		else { $space = false; $delete = false; }
+		
+		if(!$delete) { $output .= $input[$i]; }
+	}
+	
+	return trim($output);
+}
 ?>
