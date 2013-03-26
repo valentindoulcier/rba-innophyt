@@ -18,7 +18,7 @@ $(document).ready(function() {
 			if(sessionStorage.getItem(session_id_mosaique) != null) {
 				var resultat = $.parseJSON(sessionStorage.getItem(session_id_mosaique));
 				afficheResult(resultat.idreponse);
-				sessionStorage.removeItem(session_id_mosaique);
+				//sessionStorage.removeItem(session_id_mosaique);
 			} else {
 				selectFirstQuestion(firstQuestionId);
 			}
@@ -199,7 +199,6 @@ function fillQuestionContent(data) {
 
 /* To fill result content */
 function fillResultContent(data, idRep) {
-	console.debug("fillResultContent - quizz.js - #167");
 	var resutElement = $(data).find('resultat');
 
 	var resultInfo = {
@@ -210,8 +209,6 @@ function fillResultContent(data, idRep) {
 		regimeAlimentaire : resutElement.find('regimeAlimentaire').text(),
 		informations : resutElement.find('informations').text()
 	}
-	console.debug(resultInfo);
-
 	setResultInformations(resultInfo);
 
 	var resultCarousel = Array();
@@ -242,8 +239,10 @@ function getCarouselContentFromElement(element) {
 		}
 
 		var myMediaCaption = $(this).find('legende').text();
-
+		var myMediaId = $(this).find('img').attr('id');
+		
 		myCarousel.push({
+			mediaId : myMediaId,
 			mediaType : myMediaType,
 			mediaSrc : myMediaSrc,
 			mediaCaption : myMediaCaption,

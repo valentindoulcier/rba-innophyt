@@ -1,6 +1,7 @@
 /* Exemple de window response et de carousel element*/
 /*
 	var carouselElement1 = {
+		mediaId: 'med3', // id du media dans le xml
 		mediaType: 'image', // image/video/sound
 		mediaSrc: 'images/Reponse1/1.jpg',
 		mediaCaption: 'Une libelube',
@@ -80,6 +81,10 @@ function setResultCarouselWindowDisplay(value)
 */
 function setResultCarousel(carouselContent)
 {
+	var mosaiqueRes = sessionStorage.getItem(session_id_mosaique);
+	if(mosaiqueRes) {
+		mosaiqueRes = $.parseJSON(mosaiqueRes);
+	}
 	setResultCarouselWindowDisplay(true);
 	var infoContent = '';
 
@@ -89,12 +94,14 @@ function setResultCarousel(carouselContent)
 
 				for(i=0; i<carouselContent.length; i++)
 				{
-					infoContent += generateCarouselItem('resultGal', carouselContent[i]);
+					if (mosaiqueRes.mediaId == carouselContent[i].mediaId || !mosaiqueRes) {
+						infoContent += generateCarouselItem('resultGal', carouselContent[i]);
+					}
 				}
 
 	infoContent +=		           
 			'</div>';
-	if(carouselContent.length > 1){
+	if(carouselContent.length > 1 && !mosaiqueRes){
 		infoContent +=	
 			'<a class="left carousel-control" href="#carouselResult" data-slide="prev">‹</a>'+
 			'<a class="right carousel-control" href="#carouselResult" data-slide="next">›</a>';
@@ -419,6 +426,7 @@ function printDebug(value){
 function generateCarouselItem(shadowboxGallery, carouselElement)
 {
 	var mediaType = carouselElement.mediaType;
+	var mediaId = carouselElement.mediaId;
 	var thumbSrc = carouselElement.mediaThumb;
 	var mediaSrc = arbre_media_url + "/" + carouselElement.mediaSrc;
 	var caption = carouselElement.mediaCaption;
@@ -431,8 +439,10 @@ function generateCarouselItem(shadowboxGallery, carouselElement)
 
 	// Type: image
 	if(mediaType == 'image'){
-		if(!thumbSrc)
-			thumbSrc = mediaSrc;
+		if(!thumbSrc) {
+			// S'il s'agit d'une image, on va chercher sa thumbnail dans le dossier
+			thumbSrc = arbre_thumbnail_url + "/" + carouselElement.mediaSrc;
+		}
 	}
 	// Type: video
 	else if(mediaType == 'video'){
@@ -469,11 +479,15 @@ function generateCarouselItem(shadowboxGallery, carouselElement)
   		'<div class="item '+activeClass+'">';
 
   	if(mediaTypeIconClass){
-  		carouselItem +=	'<div  title="'+carouselLabel+'" class="mediaTypeIcon '+mediaTypeIconClass+'"> </div>';
+  		carouselItem +=	'<div id="' + mediaId + '" title="'+carouselLabel+'" class="mediaTypeIcon '+mediaTypeIconClass+'"> </div>';
   	}
-
+/*
   	carouselItem +=
     		'<a href="'+mediaSrc+'" target="_blank" rel="shadowbox['+shadowboxGallery+']" title="'+title+'"><img src="' + thumbSrc+'" alt=""></a>';
+    		*/
+    carouselItem += '<a href="'+mediaSrc+'" target="_blank" rel="shadowbox" title="'+title+'">';
+    carouselItem += '<img src="' + thumbSrc+'" alt="">';
+    carouselItem += '</a>';
 
     if(caption)
     {

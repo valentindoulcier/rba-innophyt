@@ -73,6 +73,7 @@
 			var base_url            = "<?php echo $BASE_URL ?>";
 			var current_url         = "<?php echo $CURRENT_URL ?>";
 			var arbre_media_url     = "<?php echo $BASE_URL ?>/arbres/medias";
+			var arbre_thumbnail_url = "<?php echo $BASE_URL ?>/arbres/thumbnail/medias";
 			var images_url          = "<?php echo $BASE_URL ?>/images";
 			var pages_url           = "<?php echo $PAGES_URL ?>";
 			var php_script_url      = "<?php echo $PHP_SCRIPT_URL ?>";
