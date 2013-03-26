@@ -24,8 +24,8 @@ function parse($mosaiqueArray) {
 			
 		if ($reader->nodeType == XMLReader::ELEMENT && $reader->name == 'resultat') {
 			$resultat = array();
-			$medias = array();
 			array_push($resultat, $reader->getAttribute('id'));
+			$medias = array();
 			
 			
 			while($reader->read()) {
@@ -58,8 +58,6 @@ function parse($mosaiqueArray) {
 				}
 			}
 		}
-
-		//if ($reader->nodeType == XMLReader::END_ELEMENT && $reader->name == 'reponse') {}
 	}
 	$reader->close();
 	
@@ -75,7 +73,7 @@ function create($mosaiqueArray) {
 		if(count($mosaiqueArray[$numResultat][1][1]) != 0) {
 			for ($numMedia = 0; $numMedia < count($mosaiqueArray[$numResultat][1][1]); $numMedia++) {
 				?>
-				<div id="<?php echo $mosaiqueArray[$numResultat][1][1][$numMedia][0] ?>" class="span1 mosaiqueCell" data-idreponse="<?php echo $mosaiqueArray[$numResultat][0] ?>" data-idresultat="<?php echo $mosaiqueArray[$numResultat][1][O] ?>" data-mediaId="<?php echo $mosaiqueArray[$numResultat][1][1][$numMedia][0] ?>" data-mediaChemin="<?php echo $mosaiqueArray[$numResultat][1][1][$numMedia][1] ?>">
+				<div id="<?php echo $mosaiqueArray[$numResultat][1][1][$numMedia][0] ?>" class="span1 mosaiqueCell" data-idreponse="<?php echo $mosaiqueArray[$numResultat][0] ?>" data-idresultat="<?php echo $mosaiqueArray[$numResultat][1][0] ?>" data-mediaId="<?php echo $mosaiqueArray[$numResultat][1][1][$numMedia][0] ?>" data-mediaChemin="<?php echo $mosaiqueArray[$numResultat][1][1][$numMedia][1] ?>">
 					<!-- <img src="<?php echo $THUMBNAIL_ARBRE_PATH . "/thumbnail" . $count . $extension; ?>" alt="icone mosaique" class="ico-mosaique"/> -->
 					<!-- <img src="<?php echo THUMBNAIL_ARBRE_PATH . "/medias/" .$mosaiqueArray[$numResultat][5][$numMedia][1]; ?>" alt="icone mosaique" class="ico-mosaique"/> -->
 					<a href="<?php echo QUIZZ_URL ?>">

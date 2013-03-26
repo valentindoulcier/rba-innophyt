@@ -9,7 +9,7 @@ function bindItemClick() {
 		
 		var item = document.getElementById($(this).attr('id'));
 		
-		var authInfo = '{ "idRes": "' + item.dataset.idres + '" , "nom": "' + item.dataset.nom + '" , "type": "' + item.dataset.type + '" , "regimeAlimentaire": "' + item.dataset.regimealimentaire + '" ,  "mediaId": "' + item.dataset.mediaid + '" , "mediaChemin": "' + item.dataset.mediachemin + '" , "mediaLegende": "' + item.dataset.medialegende + '" }';
+		var authInfo = '{ "idreponse": "' + item.dataset.idreponse + '" , "idresultat": "' + item.dataset.idresultat + '" ,  "mediaId": "' + item.dataset.mediaid + '" , "mediaChemin": "' + item.dataset.mediachemin + '" }';
 		
 		sessionStorage.setItem(session_id_mosaique, authInfo);
 		
