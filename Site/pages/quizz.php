@@ -24,8 +24,8 @@
 			<div id="questionTextDivContainer">
 				<div id="questionTextDivSubNav">
 					<div id="questionTextDiv" class="myContainer">
-						<div id="questionTextIcon"><img src="<?php echo $IMG_PATH; ?>/question-mark.png" alt="icone question">
-						</div><h1><!--[Question]--><br><small><!--[Legend]--></small></h1>
+						<!-- <div id="questionTextIcon"><img src="<?php echo $IMG_PATH; ?>/question-mark.png" alt="icone question"></div>-->
+						<h1><!--[Question]--><br><small><!--[Legend]--></small></h1>
 						<div class="clearer"></div>
 					</div>
 				</div>

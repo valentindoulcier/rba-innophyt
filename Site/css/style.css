@@ -183,8 +183,7 @@ i.permalink-icon {
 #questionTextDiv h1 {
 	float: left;
 	line-height: 1;
-	margin-top: 14px;
-	margin-left: 12px;
+	margin: 8px 12px;
 }
 #questionTextIcon {
 	float: left;
