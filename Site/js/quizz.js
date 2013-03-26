@@ -24,6 +24,10 @@ $(document).ready(function() {
 			}
 			break;
 	}
+	
+	if (sessionStorage.getItem(session_save) == "true") {
+		$('#footer .left').append(" | <a href='" + mosaique_url + "' title='Accéder à la moasaïque'>Mosaïque</a>");
+	}
 });
 
 function afficheResult(resultat, message) {

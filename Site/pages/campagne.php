@@ -79,11 +79,11 @@
 							<div class="controls">
 								<div class="btn-toolbar">
 									<div class="btn-group" style="margin-left: 10px;">
-										<a href="#selectionner-item" rel='shadowbox;width=400px;height=109px' id="modif-item" class="btn btn-link" onclick="loadInfoModif();">Modifier</a>
-										<a href="#selectionner-item" rel='shadowbox;width=400px;height=109px' id="delete-item" class="btn btn-link">Supprimer</a>
+										<a href="#selectionner-item" rel='shadowbox;width=450px;height=150px' id="modif-item" class="btn btn-link" onclick="loadInfoModif();">Modifier</a>
+										<a href="#selectionner-item" rel='shadowbox;width=450px;height=150px' id="delete-item" class="btn btn-link">Supprimer</a>
 									</div>
 									<div class="btn-group">
-										<a href="#selectionner-item" rel='shadowbox;width=400px;height=109px' id="choose-item" class="btn btn-large btn-success">Suivant</a>
+										<a href="#selectionner-item" rel='shadowbox;width=450px;height=150px' id="choose-item" class="btn btn-large btn-success">Suivant</a>
 									</div>
 								</div>
 							</div>
@@ -153,95 +153,10 @@
 					</li>
 				</ul>
 			</div>
-		</div>
+		</div>		
 		
-		
-
-		<div id="deleteForm" style="display: none;">
-			<div class="window" id="resultWindow">
-				<ul>
-					<li class="windowTitle"><h3><i class="icon-ok"></i>Suppression de la campagne</h3></li>
-					<li id="resultWindowContent">
-						<div class="control-group">
-							<div class="controls">
-								<div class="btn-toolbar">
-									<div class="btn-group" style="margin-left: 120px;">
-										<a href="#" id="cancel-form" class="btn" onclick="Shadowbox.close();">Annuler</a>
-										<a href="#" id="submit-form" class="btn btn-danger" onclick="deleteItem();">Supprimer</a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</li>
-				</ul>
-			</div>
-		</div>
-		
-		
-
-		<div id="selectionner-item" style="display: none;">
-			<div class="window" id="resultWindow">
-				<ul>
-					<li class="windowTitle"><h3><i class="icon-ok"></i>Sélectionner une campagne</h3></li>
-					<li id="resultWindowContent">
-						<div class="control-group">
-							<div class="controls">
-								<div class="btn-toolbar">
-									<div class="btn-group" style="margin-left: 150px;">
-										<a href="#" id="cancel-form" class="btn" onclick="Shadowbox.close();">Fermer</a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</li>
-				</ul>
-			</div>
-		</div>
-		
-		
-
-		<div id="items-choisis" style="display: none;">
-			<div class="window" id="resultWindow">
-				<ul>
-					<li class="windowTitle"><h3><i class="icon-ok"></i>Vous avez sélectionné</h3></li>
-					<li id="resultWindowContent">
-						<div class="form-horizontal formCampagne choose-info">
-							<div class="control-group">
-								<label class="control-label" for="dateFin">Campagne</label>
-								<div id="choose-campagne" class="controls">
-									<input id="choose-campagne-field" class="choose-campagne-field" name="choose-campagne-field" type="text" disabled>
-								</div>
-							</div>
-							
-							<div class="control-group">
-								<label class="control-label" for="dateFin">Parcelle</label>
-								<div id="choose-parcelle" class="controls">
-									<input id="choose-parcelle-field" class="choose-parcelle-field" name="choose-parcelle-field" type="text" disabled>
-								</div>
-							</div>
-							
-							<div class="control-group">
-								<label class="control-label" for="dateFin">Piège</label>
-								<div id="choose-piege" class="controls">
-									<input id="choose-piege-field" class="choose-piege-field" name="choose-piege-field" type="text" disabled>
-								</div>
-							</div>
-							
-							<div class="control-group">
-								<div class="controls">
-									<div class="btn-toolbar">
-										<a href="#" id="cancel-form" class="btn" onclick="Shadowbox.close();">Fermer</a>
-										<a href="<?php echo $QUIZZ_URL; ?>" id="cancel-form" class="btn btn-success" onclick="sessionStorage.removeItem(session_id_mosaique);">Identification</a>
-										<a href="<?php echo $MOSAIQUE_URL; ?>" id="cancel-form" class="btn btn-success" onclick="sessionStorage.removeItem(session_id_mosaique);">Mosaïque</a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</li>
-				</ul>
-			</div>
-		</div>
 		<?php
+			include $PAGE_PART_PATH . "/popupsPrepareQuizz.php";
 			include $PAGE_PART_PATH . "/footer.php";
 			include $PAGE_PART_PATH . "/script.php";
 		?>

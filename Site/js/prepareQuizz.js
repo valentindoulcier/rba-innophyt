@@ -11,7 +11,7 @@ function bindItemClick() {
 		var urlPageSuivante = "";
 		var shadowBoxModifier = "";
 		var shadowBoxRBA = "";
-		var shadowBoxSupprimer = "shadowbox;width=400px;height=109px";
+		var shadowBoxSupprimer = "shadowbox;width=450px;height=150px";
 		
 		// Mise à jour de l'item sélectionné dans la sessionStorage
 		if (pageChoix == "campagne") {
@@ -176,6 +176,12 @@ function listerItem(pageChoix) {
 					// Récupération de l'id de l'item précédement sélectionné
 					var id = sessionStorage.getItem(eval('session_id_' + pageChoix)) ? sessionStorage.getItem(eval('session_id_' + pageChoix)) : getURLParameter('id');
 					$('#' + pageChoix + id).click();
+					
+					// Mettre le texte dans la pop-up sélectionner un item
+					var pageTypeNameS = pageChoix == "piege" ? " piège" : "e " + pageChoix;
+					var pageTypeNameD = pageChoix == "piege" ? "e piège sélectionné" : "a " + pageChoix + " sélectionnée";
+					$('#txt-selectionner-item').html("Sélectionner un" + pageTypeNameS + " !");
+					$('#txt-delete-item').html("Supprimer l" + pageTypeNameD + " ?");
 					
 					// Appel de la fonction qui gère les retours d'erreurs du serveur
 					loadPopUpAfterError();
