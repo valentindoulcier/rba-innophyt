@@ -8,9 +8,10 @@ function loadSubmitFormAction() {
 			url : php_script_url + "/login.php",
 			data : { "login" : email, "pass" : password, "idKey" : idKey },
 			success : function(msg) {
-				if (msg == CryptoJS.MD5(idKey)) {
+				var data = $.parseJSON(msg);
+				if (data.state == "done") {
 					$('#login-info').html("<div class='alert alert-success'> <button type='button' class='close' data-dismiss='alert'>&times;</button> <strong>Authentification réussit !</strong> Vous allez être redirigé vers le menu </div>")
-					var authInfo = '{ "loginEmail": "' + email + '" , "pass": "' + password + '" , "idKeyMd5": "' + CryptoJS.MD5(idKey).toString() + '" }';
+					var authInfo = '{ "loginEmail": "' + email + '" , "pass": "' + password + '" , "idKeyMd5": "' + data.token + '", "auth": "' + data.auth + '" }';
 					if ($('#remember-me').attr('checked') == "checked") {
 						localStorage.setItem('loginInfoRBA-INNOPHYT', authInfo);
 					} else {
