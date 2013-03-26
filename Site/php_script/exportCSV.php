@@ -78,8 +78,25 @@
 	        }
 	
 	        // On parcours $Row et on ajout chaque valeur à cette ligne
-	        foreach($Row as $clef => $valeur)
-	            $outputCsv .= trim($valeur).';';
+	        foreach($Row as $clef => $valeur) {
+	        	//str_replace("\n", " ", $valeur);
+	        	//preg_replace("\n", " ", $valeur);
+	        	//preg_replace("/(.)?\\n/"," ",$valeur);
+	        	var_dump($valeur);
+	        	echo "<br/><br/><br/><br/><br/>";
+	        	//str_replace('  ', ' &nbsp;', $valeur);
+	        	//nl2br($valeur);
+	        	//str_replace(chr(13), "", $valeur);
+	        	
+	        	if((strcmp($clef, "RECOLTE_NOM") == 0) && $valeur != NULL) {
+	        		$Val = explode("#", $valeur);
+	        		$Val1 = $Val[0];
+					$outputCsv .= trim($Val1).';';
+	  		    }
+				else {
+	            	$outputCsv .= trim($valeur).';';
+				}
+			}
 	
 	        // Suppression du ; qui traine à la fin
 	        $outputCsv = rtrim($outputCsv, ';');
@@ -91,7 +108,7 @@
 	}
 	else
 	    exit('Aucune donnée à enregistrer.');
-	
+	/*
 	// Entêtes (headers) PHP qui vont bien pour la création d'un fichier Excel CSV
 	header("Content-disposition: attachment; filename=".$fileName);
 	header("Content-Type: application/force-download");
@@ -102,4 +119,5 @@
 	
 	echo $outputCsv;
 	exit();
+	 */
 ?>
