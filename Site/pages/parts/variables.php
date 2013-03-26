@@ -31,7 +31,12 @@
 	$THUMBNAIL_ARBRE_PATH  = $ARBRE_PATH . "/thumbnail";
 	$MEDIA_ARBRE_PATH  = $ARBRE_PATH . "/medias";
 	
-	$BASE_URL          = "http://localhost/RBA-INNOPHYT/Site";
+	if(strcmp($_SERVER['HTTP_HOST'], "localhost") == 0) {
+		$BASE_URL          = "http://localhost/RBA-INNOPHYT/Site";
+	} else {
+		$BASE_URL          = "http://rba-innophyt.no-ip.org";
+	}
+	
 	$CURRENT_URL       = $CurrentPath;
 	$PAGES_URL         = $BASE_URL  . "/pages";
 	$PHP_SCRIPT_URL    = $BASE_URL  . "/php_script";
