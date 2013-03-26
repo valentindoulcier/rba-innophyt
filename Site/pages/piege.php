@@ -97,6 +97,7 @@
 									<br/>
 									<div class="btn-group" style="margin-left: 10px; display: none;">
 										<a href="#selectionner-item" rel='shadowbox;width=450px;height=150px' id="rba-item" class="btn btn-link" onclick="loadRBAPiege();" style="width: 47px;">RBA</a>
+										<a href="#selectionner-item" rel='shadowbox;width=450px;height=150px' id="googleMap-item" class="btn btn-link">Carte</a>
 									</div>
 								</div>
 							</div>
