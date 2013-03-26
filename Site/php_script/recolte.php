@@ -28,6 +28,7 @@
 	$myDate = date("Y-m-d");
 	
 	if (isset($_POST['idKey-field']) && isset($_POST['piegeId-insecte']) && isset($_POST['nom-insecte']) && isset($_POST['nombre-insecte']) && isset($_POST['idResultat']) && isset($_POST['idReponse'])) {
+		$nombreInsecte = intval($_POST['nombre-insecte']);
 		
 		$data  = '{';
 		$data .= ' "piegeId-insecte": "'. $_POST['piegeId-insecte'] . '",';
@@ -38,7 +39,7 @@
 		//$data .= ' "type-id-insecte": "' . $_POST['type-id-insecte'] . '",';
 		//$data .= ' "debut-id-insecte": "' . $_POST['debut-id-insecte'] . '",';
 		//$data .= ' "fin-id-insecte": "' . $_POST['fin-id-insecte'] . '",';
-		$data .= ' "nombre-insecte": "' . $_POST['nombre-insecte'] . '",';
+		$data .= ' "nombre-insecte": "' . $nombreInsecte . '",';
 		$data .= ' "idResultat": "' . $_POST['idResultat'] . '",';
 		$data .= ' "idReponse": "' . $_POST['idReponse'] . '"';
 		$data .= '}';
@@ -60,29 +61,34 @@
 						//$returnItem = '{ "statut": "0", "dataType": "error", "data": "Echec de la preparation de la requete: (' . $mysqli->connect_errno . ') ' . $mysqli->connect_error . '" }';
 						header('Location: ' . $QUIZZ_URL . '?statut=0&dataType=error&data=Echec de la preparation de la requete: (' . $mysqli->connect_errno . ') ' . $mysqli->connect_error . '&field=' . $data);
 					}
-						
-					//if (!$stmt->bind_param("isssssssdsd",
-					if (!$stmt->bind_param("issssisi",
-							intval($_POST['piegeId-insecte']),
-							htmlentities($_POST['nom-insecte']),
-							htmlentities($_POST['type-insecte']),
-							htmlentities($_POST['regime-insecte']),
-							htmlentities($_POST['info-insecte']),
-							//htmlentities($_POST['type-id-insecte']),
-							//htmlentities($_POST['debut-id-insecte']),
-							//htmlentities($_POST['fin-id-insecte']),
-							intval($_POST['nombre-insecte']),
-							$myDate, intval($row['ID']))) {
-						//$returnItem = '{ "statut": "0", "dataType": "error", "data": "Echec lors du liage des paramètres: (' . $mysqli->connect_errno . ') ' . $mysqli-connect_error . '" }';
-						header('Location: ' . $QUIZZ_URL . '?statut=0&dataType=error&data=Echec lors du liage des parametres: (' . $mysqli->connect_errno . ') ' . $mysqli->connect_error . '&field=' . $data);
-					}
-						
-					if (!$stmt->execute()) {
-						//$returnItem = '{ "statut": "0", "dataType": "error", "data": "Echec lors de l execution: (' . $mysqli->connect_errno . ') ' . $mysqli->connect_error . '" }';
-						header('Location: ' . $QUIZZ_URL . '?statut=0&dataType=error&data=Saisie invalide&field=' . $data);
+					
+					if ($nombreInsecte > intval(0)) {
+						//if (!$stmt->bind_param("isssssssdsd",
+						if (!$stmt->bind_param("issssisi",
+								intval($_POST['piegeId-insecte']),
+								htmlentities($_POST['nom-insecte']),
+								htmlentities($_POST['type-insecte']),
+								htmlentities($_POST['regime-insecte']),
+								htmlentities($_POST['info-insecte']),
+								//htmlentities($_POST['type-id-insecte']),
+								//htmlentities($_POST['debut-id-insecte']),
+								//htmlentities($_POST['fin-id-insecte']),
+								$nombreInsecte,
+								$myDate,
+								intval($row['ID']))) {
+							//$returnItem = '{ "statut": "0", "dataType": "error", "data": "Echec lors du liage des paramètres: (' . $mysqli->connect_errno . ') ' . $mysqli-connect_error . '" }';
+							header('Location: ' . $QUIZZ_URL . '?statut=0&dataType=error&data=Echec lors du liage des parametres: (' . $mysqli->connect_errno . ') ' . $mysqli->connect_error . '&field=' . $data);
+						}
+							
+						if (!$stmt->execute()) {
+							//$returnItem = '{ "statut": "0", "dataType": "error", "data": "Echec lors de l execution: (' . $mysqli->connect_errno . ') ' . $mysqli->connect_error . '" }';
+							header('Location: ' . $QUIZZ_URL . '?statut=0&dataType=error&data=Saisie invalide&field=' . $data);
+						} else {
+							//$returnItem = '{ "statut": "2", "dataType": "ok", "data": "Récolte ajoutée" , "idKey": "' . $row['RSA_PRIVE'] . '"}';
+							header('Location: ' . $QUIZZ_URL . '?statut=1&dataType=ok&data=Récolte ajoutée');
+						}
 					} else {
-						//$returnItem = '{ "statut": "2", "dataType": "ok", "data": "Récolte ajoutée" , "idKey": "' . $row['RSA_PRIVE'] . '"}';
-						header('Location: ' . $QUIZZ_URL . '?statut=1&dataType=ok&data=Récolte ajoutée');
+						header('Location: ' . $QUIZZ_URL . '?statut=0&dataType=error&data=Nombre d\'insecte incorrecte&field=' . $data);
 					}
 				} else {
 					//$returnItem = '{ "statut": "0", "dataType": "error", "data": "Erreur lors de l identification de l utilisateur avec son ID" }';
@@ -99,5 +105,5 @@
 		header('Location: ' . $PIEGE_URL . '?statut=0&dataType=error&data=Missing request parameters');
 		//var_dump($_POST);
 	}
-	//echo $returnItem;
+	echo $returnItem;
 ?>

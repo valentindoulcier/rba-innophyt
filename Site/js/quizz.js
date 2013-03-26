@@ -18,7 +18,7 @@ $(document).ready(function() {
 			if(sessionStorage.getItem(session_id_mosaique) != null) {
 				var resultat = $.parseJSON(sessionStorage.getItem(session_id_mosaique));
 				afficheResult(resultat.idRes);
-			} else {alert();
+			} else {
 				selectFirstQuestion(firstQuestionId);
 			}
 			break;
