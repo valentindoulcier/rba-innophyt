@@ -59,13 +59,13 @@
 					</a>
 				</div>
 				<div class="span3 cell">
-					<a href="#selectionner-item" title="Accès à l'arbre d'identification" rel='shadowbox;width=450px;height=155px' onclick="sessionStorage.setItem('item-rba-menu', 'quizz');">
+					<a href="#selectionner-item" title="Accès à l'arbre d'identification" rel='shadowbox;width=450px;height=155px' onclick="sessionStorage.setItem('item-rba-menu', 'quizz'); directIdent();">
 						<img src="<?php echo $IMG_PATH ?>/vache3.png" alt="icone questionnaire" class="ico-accueil"/>
 						<h3 class="overMenuItem">Identification</h3>
 					</a>
 				</div>
 				<div class="span3 cell">
-					<a href="#selectionner-item" title="Accès à la mosaïque" rel='shadowbox;width=450px;height=155px' onclick="sessionStorage.setItem('item-rba-menu', 'mosaique');">
+					<a href="#selectionner-item" title="Accès à la mosaïque" rel='shadowbox;width=450px;height=155px' onclick="sessionStorage.setItem('item-rba-menu', 'mosaique'); directIdent();">
 						<img src="<?php echo $IMG_PATH ?>/vache4.png" alt="icone questionnaire" class="ico-accueil"/>
 						<h3 class="overMenuItem">Mosaïque</h3>
 					</a>
@@ -100,18 +100,7 @@
 								<div class="btn-toolbar">
 									<div class="btn-group" style="margin-left: 150px; margin-top: 10px;">
 										<a href="#" id="cancel-form" class="btn" onclick="Shadowbox.close();">Annuler</a>
-										<a href="#" id="continue-form" class="btn btn-warning" onclick="sessionStorage.setItem(session_save, 'false');">Continuer</a>
-										<script>
-											$('.cell').bind('click', function() {
-												setTimeout( function() {
-													if (sessionStorage.getItem('item-rba-menu') == 'quizz') {
-														$('.continue-form').attr('href', '<?php echo $QUIZZ_URL?>');
-													} else if (sessionStorage.getItem('item-rba-menu') == 'mosaique') {
-														$('.continue-form').attr('href', '<?php echo $MOSAIQUE_URL?>');
-													}
-												}, 1500);
-											});
-										</script>
+										<a href="#" id="continue-form" class="btn btn-warning continue-form" onclick="sessionStorage.setItem(session_save, 'false');">Continuer</a>
 									</div>
 								</div>
 							</div>

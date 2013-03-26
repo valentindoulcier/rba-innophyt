@@ -16,6 +16,16 @@ $(document).ready(function() {
 	}
 });
 
+function directIdent() {
+	setTimeout( function() {
+		if (sessionStorage.getItem('item-rba-menu') == 'quizz') {
+			$('.continue-form').attr('href', quizz_url);
+		} else if (sessionStorage.getItem('item-rba-menu') == 'mosaique') {
+			$('.continue-form').attr('href', mosaique_url);
+		}
+	}, 1500);
+}
+
 /****** LOAD PLUGINS *****/
 /*
  Charge les différents plugins

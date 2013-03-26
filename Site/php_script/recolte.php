@@ -62,11 +62,13 @@
 						header('Location: ' . $QUIZZ_URL . '?statut=0&dataType=error&data=Echec de la preparation de la requete: (' . $mysqli->connect_errno . ') ' . $mysqli->connect_error . '&field=' . $data);
 					}
 					
+					$nomInsecte = htmlentities($_POST['nom-insecte']) . "#" . date("j M Y G:i:s");
+					
 					if ($nombreInsecte > intval(0)) {
 						//if (!$stmt->bind_param("isssssssdsd",
 						if (!$stmt->bind_param("issssisi",
 								intval($_POST['piegeId-insecte']),
-								htmlentities($_POST['nom-insecte']),
+								$nomInsecte,
 								htmlentities($_POST['type-insecte']),
 								htmlentities($_POST['regime-insecte']),
 								htmlentities($_POST['info-insecte']),

@@ -16,7 +16,7 @@
 	$SCHEMA_DB         = "rba-innophyt";
 	$PORT_DB           = 3306;
 	
-	date_default_timezone_set('UTC');
+	date_default_timezone_set('europe/paris');
 	
 	$JS_PATH           = $BACK_PATH  . "/js";
 	$CSS_PATH          = $BACK_PATH  . "/css";
@@ -76,6 +76,9 @@
 			var campagne_url        = "<?php echo $CAMPAGNE_URL ?>";
 			var parcelle_url        = "<?php echo $PARCELLE_URL ?>";
 			var piege_url           = "<?php echo $PIEGE_URL ?>";
+			
+			var quizz_url           = "<?php echo $QUIZZ_URL ?>";
+			var mosaique_url        = "<?php echo $MOSAIQUE_URL ?>";
 			
 			var session_login_name  = "loginInfoRBA-INNOPHYT";
 			var action_form         = "action-rba-innophyt";

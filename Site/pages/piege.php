@@ -95,7 +95,7 @@
 										<a href="#selectionner-item" rel='shadowbox;width=400px;height=109px' id="choose-item" class="btn btn-large btn-success" onclick="loadInfoBeaforeQuizz();">Suivant</a>
 									</div>
 									<br/>
-									<div class="btn-group" style="margin-left: 10px;">
+									<div class="btn-group" style="margin-left: 10px; display: none;">
 										<a href="#selectionner-item" rel='shadowbox;width=400px;height=109px' id="rba-item" class="btn btn-link" onclick="loadRBAPiege();" style="width: 47px;">RBA</a>
 									</div>
 								</div>
