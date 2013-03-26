@@ -8,16 +8,17 @@ $(document).ready(function() {
 	switch (getURLParameter('statut')) {
 		case "1": //OK
 			$('#debugText').html("<div class='alert alert-info'> <button type='button' class='close' data-dismiss='alert'>&times;</button> <strong>Récolte enregistée !</strong> Vous pouvez enregistrer une nouvelle récolte pour ce piège.</div>");
+			selectFirstQuestion(firstQuestionId);
 			break;
 		case "0": //Erreur
 			var msgError = "<div class='alert alert-error'> <button type='button' class='close' data-dismiss='alert'>&times;</button> <strong>Erreur !</strong> " + getURLParameter('data') + ".</div>";
 			afficheResult($.parseJSON(getURLParameter('field')).idResultat, msgError)
 			break;
 		default:
-			if(sessionStorage.getItem(session_id_mosaique)) {
+			if(sessionStorage.getItem(session_id_mosaique) != null) {
 				var resultat = $.parseJSON(sessionStorage.getItem(session_id_mosaique));
 				afficheResult(resultat.idRes);
-			} else {
+			} else {alert();
 				selectFirstQuestion(firstQuestionId);
 			}
 			break;
