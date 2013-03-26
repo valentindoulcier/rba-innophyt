@@ -262,8 +262,8 @@
 								<div class="controls">
 									<div class="btn-toolbar">
 										<a href="#" id="cancel-form" class="btn" onclick="Shadowbox.close();">Fermer</a>
-										<a href="<?php echo $QUIZZ_URL; ?>" id="cancel-form" class="btn btn-success">Identification</a>
-										<a href="<?php echo $MOSAIQUE_URL; ?>" id="cancel-form" class="btn btn-success">Mosaïque</a>
+										<a href="<?php echo $QUIZZ_URL; ?>" id="cancel-form" class="btn btn-success" onclick="sessionStorage.removeItem(session_id_mosaique);">Identification</a>
+										<a href="<?php echo $MOSAIQUE_URL; ?>" id="cancel-form" class="btn btn-success" onclick="sessionStorage.removeItem(session_id_mosaique);">Mosaïque</a>
 									</div>
 								</div>
 							</div>

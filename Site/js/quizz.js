@@ -1,24 +1,32 @@
 /****** DOCUMENT READY *****/
 
 $(document).ready(function() {
-	selectFirstQuestion(firstQuestionId);
 	// Permet de lancer l'application avec la première question du fichier XML
 	//loadTestContent();
-	if(sessionStorage.getItem(session_id_mosaique)) {
-		var resultat = $.parseJSON(sessionStorage.getItem(session_id_mosaique));
-		afficheResult(resultat);
-	}
 	
 	//style='background-color: #F9F9F9; margin: 10px;'
 	switch (getURLParameter('statut')) {
-		case "1": $('#debugText').html("<div class='alert alert-info'> <button type='button' class='close' data-dismiss='alert'>&times;</button> <strong>Récolte enregistée !</strong> Vous pouvez enregistrer une nouvelle récolte pour ce piège.</div>"); break; //OK
-		case "0": $('#debugText').html("<div class='alert alert-error'> <button type='button' class='close' data-dismiss='alert'>&times;</button> <strong>Erreur !</strong> " + getURLParameter('data') + ".</div>"); break; //Erreur
+		case "1": //OK
+			$('#debugText').html("<div class='alert alert-info'> <button type='button' class='close' data-dismiss='alert'>&times;</button> <strong>Récolte enregistée !</strong> Vous pouvez enregistrer une nouvelle récolte pour ce piège.</div>");
+			break;
+		case "0": //Erreur
+			var msgError = "<div class='alert alert-error'> <button type='button' class='close' data-dismiss='alert'>&times;</button> <strong>Erreur !</strong> " + getURLParameter('data') + ".</div>";
+			afficheResult($.parseJSON(getURLParameter('field')).idResultat, msgError)
+			break;
+		default:
+			if(sessionStorage.getItem(session_id_mosaique)) {
+				var resultat = $.parseJSON(sessionStorage.getItem(session_id_mosaique));
+				afficheResult(resultat.idRes);
+			} else {
+				selectFirstQuestion(firstQuestionId);
+			}
+			break;
 	}
 });
 
-function afficheResult(resultat) {
+function afficheResult(resultat, message) {
 	clearBreadcrumb();
-	selectResponse(resultat.idRes, true);
+	selectResponse(resultat, true, message);
 }
 
 /***** SELECT RESPONSE / QUESTION (AJAX REQUESTS) *****/
@@ -96,9 +104,10 @@ function selectQuestion(questionId) {
  * @method selectResponse
  * @param {String} responseId Id de la question
  * @param {String} mode Ajoute ou non l'élément dans le breadcrumb
+ * @param {String} message Permet d'afficher un message dans la zone de debug
  * @return {Void}
  **/
-function selectResponse(responseId, mode) {
+function selectResponse(responseId, mode, message) {
 
 	var DATA = 'responseid=' + responseId;
 	$.ajax({
@@ -116,11 +125,6 @@ function selectResponse(responseId, mode) {
 			printDebug('Status code :' + xhr.status + '<br/>' + thrownError);
 		},
 		success : function(data) {
-			console.log("selectResponse - quizz.js #83");
-			console.debug(data);
-			console.debug(responseId);
-			console.debug(mode);
-			
 			var questionText = $(data).find('question').attr('texte');
 			var questionId = $(data).find('question').attr('id');
 
@@ -138,6 +142,7 @@ function selectResponse(responseId, mode) {
 				else
 					setBreadbrumbActiveElement(responseId);
 				fillResultContent(data, responseId);
+				$('#debugTextResultat').html(message);
 			}
 		}
 	});

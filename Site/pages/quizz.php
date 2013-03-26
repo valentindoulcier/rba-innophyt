@@ -73,6 +73,9 @@
 		</div>
 
 		<div id="resultFrame" class="myContainer">
+			<div id="debugTextResultat">
+				<!--[Debug text]-->
+			</div>
 			<div id="bodyResultContent">
 
 				<div id="resultLeftDiv">
