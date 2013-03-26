@@ -1,6 +1,7 @@
 <?php
 /*
 	var_dump($_POST);
+/* 
  * 
  * ["idKey-field"]=> string(32) "aa75364c8a02b9e06a31c42aa5658558"
  * ["piegeId-insecte"]=> string(1) "8"
@@ -14,7 +15,9 @@
  * ['debut-id-insecte']
  * ['fin-id-insecte']
  * 
- * ["nombre-insecte"]=> string(0) ""
+ * ["nombre-insecte"]=> string(0) "23"
+ * ["idResultat"]=> string(3) "r85"
+ * ["idReponse"]=> string(5) "res45"
  * 
  */
 	$HEADER = true;
@@ -24,18 +27,20 @@
 	$returnItem = "";
 	$myDate = date("Y-m-d");
 	
-	if (isset($_POST['idKey-field']) && isset($_POST['piegeId-insecte']) && isset($_POST['nom-insecte']) && isset($_POST['nombre-insecte'])) {
+	if (isset($_POST['idKey-field']) && isset($_POST['piegeId-insecte']) && isset($_POST['nom-insecte']) && isset($_POST['nombre-insecte']) && isset($_POST['idResultat']) && isset($_POST['idReponse'])) {
 		
 		$data  = '{';
 		$data .= ' "piegeId-insecte": "'. $_POST['piegeId-insecte'] . '",';
 		$data .= ' "nom-insecte": "' . $_POST['nom-insecte'] . '",';
-		$data .= ' "type-insecte": "' .  $_POST['type-insecte'] . '",';
-		$data .= ' "regime-insecte": "' . $_POST['regime-insecte'] . '",';
-		$data .= ' "info-insecte": "' . str_replace("\'", "&#39;", $_POST['info-insecte']) . '",';
+		//$data .= ' "type-insecte": "' .  $_POST['type-insecte'] . '",';
+		//$data .= ' "regime-insecte": "' . $_POST['regime-insecte'] . '",';
+		//$data .= ' "info-insecte": "' . str_replace("\'", "&#39;", $_POST['info-insecte']) . '",';
 		//$data .= ' "type-id-insecte": "' . $_POST['type-id-insecte'] . '",';
 		//$data .= ' "debut-id-insecte": "' . $_POST['debut-id-insecte'] . '",';
 		//$data .= ' "fin-id-insecte": "' . $_POST['fin-id-insecte'] . '",';
-		$data .= ' "nombre-insecte": "' . $_POST['nombre-insecte'] . '"';
+		$data .= ' "nombre-insecte": "' . $_POST['nombre-insecte'] . '",';
+		$data .= ' "idResultat": "' . $_POST['idResultat'] . '",';
+		$data .= ' "idReponse": "' . $_POST['idReponse'] . '"';
 		$data .= '}';
 	
 		$mysqli = new mysqli($HOST_DB, $USER_DB, $PASSWORD_DB, $SCHEMA_DB, $PORT_DB);
@@ -94,5 +99,5 @@
 		header('Location: ' . $PIEGE_URL . '?statut=0&dataType=error&data=Missing request parameters');
 		//var_dump($_POST);
 	}
-	echo $returnItem;
+	//echo $returnItem;
 ?>

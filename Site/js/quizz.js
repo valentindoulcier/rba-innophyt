@@ -8,6 +8,12 @@ $(document).ready(function() {
 		var resultat = $.parseJSON(sessionStorage.getItem(session_id_mosaique));
 		afficheResult(resultat);
 	}
+	
+	//style='background-color: #F9F9F9; margin: 10px;'
+	switch (getURLParameter('statut')) {
+		case "1": $('#debugText').html("<div class='alert alert-info'> <button type='button' class='close' data-dismiss='alert'>&times;</button> <strong>Récolte enregistée !</strong> Vous pouvez enregistrer une nouvelle récolte pour ce piège.</div>"); break; //OK
+		case "0": $('#debugText').html("<div class='alert alert-error'> <button type='button' class='close' data-dismiss='alert'>&times;</button> <strong>Erreur !</strong> " + getURLParameter('data') + ".</div>"); break; //Erreur
+	}
 });
 
 function afficheResult(resultat) {
@@ -84,11 +90,14 @@ function selectQuestion(questionId) {
 	return false;
 }
 
-/*
- Permet de séléctionner une réponse et de charge soit la prochaine question soit une réponse
- @in string questionId - Id de la question
- @in bool mode - Regardez le code!
- */
+/**
+ * Permet de séléctionner une réponse et de charger soit la prochaine question soit une réponse
+ *
+ * @method selectResponse
+ * @param {String} responseId Id de la question
+ * @param {String} mode Ajoute ou non l'élément dans le breadcrumb
+ * @return {Void}
+ **/
 function selectResponse(responseId, mode) {
 
 	var DATA = 'responseid=' + responseId;
@@ -107,6 +116,11 @@ function selectResponse(responseId, mode) {
 			printDebug('Status code :' + xhr.status + '<br/>' + thrownError);
 		},
 		success : function(data) {
+			console.log("selectResponse - quizz.js #83");
+			console.debug(data);
+			console.debug(responseId);
+			console.debug(mode);
+			
 			var questionText = $(data).find('question').attr('texte');
 			var questionId = $(data).find('question').attr('id');
 
@@ -123,7 +137,7 @@ function selectResponse(responseId, mode) {
 					addBreadcrumbElement('Résultat ', '', responseId, 1);
 				else
 					setBreadbrumbActiveElement(responseId);
-				fillResultContent(data);
+				fillResultContent(data, responseId);
 			}
 		}
 	});
@@ -173,15 +187,19 @@ function fillQuestionContent(data) {
 }
 
 /* To fill result content */
-function fillResultContent(data) {
+function fillResultContent(data, idRep) {
+	console.debug("fillResultContent - quizz.js - #167");
 	var resutElement = $(data).find('resultat');
 
 	var resultInfo = {
+		idReponse : idRep,
+		idResultat : resutElement.attr('id'),
 		nom : resutElement.find('nom').text(),
 		type : resutElement.find('type').text(),
 		regimeAlimentaire : resutElement.find('regimeAlimentaire').text(),
 		informations : resutElement.find('informations').text()
 	}
+	console.debug(resultInfo);
 
 	setResultInformations(resultInfo);
 

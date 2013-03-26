@@ -100,7 +100,7 @@
 								<div class="btn-toolbar">
 									<div class="btn-group" style="margin-left: 150px; margin-top: 10px;">
 										<a href="#" id="cancel-form" class="btn" onclick="Shadowbox.close();">Annuler</a>
-										<a href="#" id="continue-form" class="btn btn-warning continue-form" onclick="sessionStorage.setItem(session_save, 'false');">Continuer</a>
+										<a href="#" id="continue-form" class="btn btn-warning" onclick="sessionStorage.setItem(session_save, 'false');">Continuer</a>
 										<script>
 											$('.cell').bind('click', function() {
 												setTimeout( function() {
