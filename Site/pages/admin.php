@@ -46,11 +46,12 @@
 				</div>
 			</div>
 			
-<div id="Blop" class="alert alert-info" style="display: none;">
+<div id="info" class="alert alert-info" style="display: none;">
 	<div class="progress progress-striped active" style=" margin-bottom: 0px;">
-  		<div class="bar" style="width: 70%;"></div>
+  		<div class="bar" style="width: 100%;"></div>
 	</div>
 </div>
+
 			<div id="selection-2_3">
 				<div id="liste_elem">
 					<header id="title_admin">
