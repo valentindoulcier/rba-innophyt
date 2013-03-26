@@ -82,13 +82,13 @@
 							
 						if (!$stmt->execute()) {
 							//$returnItem = '{ "statut": "0", "dataType": "error", "data": "Echec lors de l execution: (' . $mysqli->connect_errno . ') ' . $mysqli->connect_error . '" }';
-							header('Location: ' . $QUIZZ_URL . '?statut=0&dataType=error&data=Saisie invalide&field=' . $data);
+							header('Location: ' . $QUIZZ_URL . '?statut=0&dataType=error&data=Récolte déjà effectuée&field=' . $data);
 						} else {
 							//$returnItem = '{ "statut": "2", "dataType": "ok", "data": "Récolte ajoutée" , "idKey": "' . $row['RSA_PRIVE'] . '"}';
 							header('Location: ' . $QUIZZ_URL . '?statut=1&dataType=ok&data=Récolte ajoutée');
 						}
 					} else {
-						header('Location: ' . $QUIZZ_URL . '?statut=0&dataType=error&data=Nombre d\'insecte incorrecte&field=' . $data);
+						header('Location: ' . $QUIZZ_URL . '?statut=0&dataType=error&data=Nombre d\'insecte incorrect&field=' . $data);
 					}
 				} else {
 					//$returnItem = '{ "statut": "0", "dataType": "error", "data": "Erreur lors de l identification de l utilisateur avec son ID" }';
