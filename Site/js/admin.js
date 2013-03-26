@@ -1,11 +1,12 @@
 function loadSubmitFormAction() {
 	$('#generateThumbnailButton').bind('click', function(e) {
-		$('#liste_admin').empty();
+		$('#Blop').fadeIn(500);
 		$.ajax({
 			type : "POST",
-			url : php_script_url + "/createThumbnail.php",
+			//url : php_script_url + "/createThumbnail.php",
 			success : function(msg) {
-				$('#liste_admin').html("OOKKKKEEEEE !!!!!!<br/>" + msg);
+				$('#Blop').fadeOut(500);
+				//$('#liste_admin').html("OOKKKKEEEEE !!!!!!<br/>" + msg);
 			},
 			error : function(jqXHR, textStatus, errorThrown) {
 				console.error("Creation fail : " + textStatus + " - " + errorThrown);

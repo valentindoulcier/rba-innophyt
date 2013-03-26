@@ -45,14 +45,45 @@
 					</div>
 				</div>
 			</div>
-
+			
+<div id="Blop" class="alert alert-info" style="display: none;">
+	<div class="progress progress-striped active" style=" margin-bottom: 0px;">
+  		<div class="bar" style="width: 70%;"></div>
+	</div>
+</div>
 			<div id="selection-2_3">
 				<div id="liste_elem">
 					<header id="title_admin">
-						<h2>Liste des utilisteurs</h2>
+						<h2>Liste des utilisateurs</h2>
 					</header>
 					<section id="liste_admin">
-						Liste des éléments
+						
+						<table class="table table-striped table-hover">
+							<thead>
+								<th>Bonjour</th>
+								<th>Bonjour</th>
+								<th>Bonjour</th>
+								<th>Bonjour</th>
+							</thead>
+							<tr class="declined">
+							    <td>1</td>
+							    <td>TB - Monthly</td>
+							    <td>01/04/2012</td>
+							    <td>Approved</td>
+							</tr>
+							<tr class="success">
+							    <td>1</td>
+							    <td>TB - Monthly</td>
+							    <td>01/04/2012</td>
+							    <td>Approved</td>
+							</tr>
+							<tr class="success">
+							    <td>1</td>
+							    <td>TB - Monthly</td>
+							    <td>01/04/2012</td>
+							    <td>Approved</td>
+							</tr>
+						</table>
 					</section>
 				</div>
 				<div id="infos_elem">
