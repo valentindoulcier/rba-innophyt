@@ -27,8 +27,47 @@
 	$returnItem = "";
 	$myDate = date("Y-m-d");
 	
-	if (isset($_POST['idKey-field']) && isset($_POST['piegeId-insecte']) && isset($_POST['nom-insecte']) && isset($_POST['nombre-insecte']) && isset($_POST['idResultat']) && isset($_POST['idReponse'])) {
+	
+	if (isset($_POST['idKey']) && strcmp($_POST['action'], 'graph') == 0 && isset($_POST['piegeId-insecte'])) {
+			
+		$mysqli = new mysqli($HOST_DB, $USER_DB, $PASSWORD_DB, $SCHEMA_DB, $PORT_DB);
+		if ($mysqli->connect_errno) {
+			$returnItem = '{ "statut": "0", "dataType": "error", "data": "Failed to connect to MySQL: (' . $mysqli->connect_errno . ') ' . $mysqli->connect_error . '" }';
+		} else {
+		
+			$query = "SELECT * FROM TABLE_USER WHERE TOKEN='" . $_POST[idKey] . "'";
+			$res = $mysqli->query($query);
+			if ($res) {
+				$row = $res->fetch_assoc();
+				if (isset($row['ID'])) {
+					$query = "SELECT REGIME_INSECTE, SUM(NOMBRE) AS NB FROM TABLE_RECOLTE WHERE PIEGE_ID='" . $_POST['piegeId-insecte'] . " GROUP BY REGIME_INSECTE'";
+					$item = $mysqli->query($query);
+	
+					if ($item) {
+						$returnItem = '{ "statut": "1", "dataType": "graph", "data": { ';
+						
+						 while ($rowC = $item->fetch_assoc()) {
+							 $returnItem .= '"' . $rowC['REGIME_INSECTE'] . '": {';
+							 $returnItem .= '"regime": "'           . html_entity_decode($rowC['REGIME_INSECTE']) . '",';
+							 $returnItem .= '"nombre": "'           . html_entity_decode($rowC['NB']) . '"';
+							 $returnItem .= '},';
+						}
+						$returnItem .= ' "":"" }, "idKey": "' . $row['TOKEN'] . '"}';
+					} else {
+						//$returnItem = '{ "statut": "0", "dataType": "error", "data": "Aucuns pièges trouves" }';
+						$returnItem = '{ "statut": "1", "dataType": "graph", "data": {}, "idKey": "' . $row['TOKEN'] . '"}';
+					}
+					
+				} else {
+					$returnItem = '{ "statut": "0", "dataType": "error", "data": "Erreur lors de l\'identification de l\'utilisateur avec son ID" }';
+				}
+			} else {
+				$returnItem = '{ "statut": "0", "dataType": "error", "data": "Erreur lors de l\'identification de l\'utilisateur" }';
+			}
+		}
+	} else if (isset($_POST['idKey-field']) && isset($_POST['piegeId-insecte']) && isset($_POST['nom-insecte']) && isset($_POST['nombre-insecte']) && isset($_POST['idResultat']) && isset($_POST['idReponse'])) {
 		$nombreInsecte = intval($_POST['nombre-insecte']);
+		
 		
 		$data  = '{';
 		$data .= ' "piegeId-insecte": "'. $_POST['piegeId-insecte'] . '",';

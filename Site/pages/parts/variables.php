@@ -30,7 +30,7 @@
 	$ARBRE_PATH        = $BACK_PATH  . "/arbres";
 	$THUMBNAIL_ARBRE_PATH  = $ARBRE_PATH . "/thumbnail";
 	$MEDIA_ARBRE_PATH  = $ARBRE_PATH . "/medias";
-	$PLUGINS_PATH      = $BACK_PATH . "/plugins";
+	$PLUGINS_PATH      = $JS_PATH . "/plugins";
 	
 	if(strcmp($_SERVER['HTTP_HOST'], "localhost") == 0) {
 		$BASE_URL          = "http://localhost/RBA-INNOPHYT/Site";

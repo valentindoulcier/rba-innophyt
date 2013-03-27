@@ -54,16 +54,16 @@
 
 	<script type="text/javascript" src="<?php echo $JS_PATH; ?>/graphique-maker.js"></script>
 	
-<script type="text/javascript" src="<?php echo $PLUGINS_PATH ?>/jqplot.pieRenderer.js"></script>
-<script type="text/javascript" src="<?php echo $PLUGINS_PATH ?>/jqplot.barRenderer.min.js"></script>
-<script type="text/javascript" src="<?php echo $PLUGINS_PATH ?>/jqplot.categoryAxisRenderer.min.js"></script>
-<script type="text/javascript" src="<?php echo $PLUGINS_PATH ?>/jqplot.highlighter.js"></script>
-<script type="text/javascript" src="<?php echo $PLUGINS_PATH ?>/jqplot.canvasAxisTickRenderer.min.js"></script>
-<script type="text/javascript" src="<?php echo $PLUGINS_PATH ?>/jqplot.canvasAxisLabelRenderer.min.js"></script>
-<script type="text/javascript" src="<?php echo $PLUGINS_PATH ?>/jqplot.canvasTextRenderer.min.js"></script>
-<script type="text/javascript" src="<?php echo $PLUGINS_PATH ?>/jqplot.enhancedLegendRenderer.min.js"></script>
-<script type="text/javascript" src="<?php echo $PLUGINS_PATH ?>/jqplot.trendline.min.js"></script>
-<link rel="stylesheet" href="<?php echo $CSS_PATH ?>/jquery.jqplot.min.css"/>
+	<script type="text/javascript" src="<?php echo $PLUGINS_PATH ?>/jqplot.pieRenderer.js"></script>
+	<script type="text/javascript" src="<?php echo $PLUGINS_PATH ?>/jqplot.barRenderer.min.js"></script>
+	<script type="text/javascript" src="<?php echo $PLUGINS_PATH ?>/jqplot.categoryAxisRenderer.min.js"></script>
+	<script type="text/javascript" src="<?php echo $PLUGINS_PATH ?>/jqplot.highlighter.js"></script>
+	<script type="text/javascript" src="<?php echo $PLUGINS_PATH ?>/jqplot.canvasAxisTickRenderer.min.js"></script>
+	<script type="text/javascript" src="<?php echo $PLUGINS_PATH ?>/jqplot.canvasAxisLabelRenderer.min.js"></script>
+	<script type="text/javascript" src="<?php echo $PLUGINS_PATH ?>/jqplot.canvasTextRenderer.min.js"></script>
+	<script type="text/javascript" src="<?php echo $PLUGINS_PATH ?>/jqplot.enhancedLegendRenderer.min.js"></script>
+	<script type="text/javascript" src="<?php echo $PLUGINS_PATH ?>/jqplot.trendline.min.js"></script>
+	<link rel="stylesheet" href="<?php echo $CSS_PATH ?>/jquery.jqplot.min.css"/>
 <?php
 	}
 ?>
