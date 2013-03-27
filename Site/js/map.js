@@ -44,9 +44,9 @@ function initialize() {
  * @para {Object} data Structure contenant les informations des points à ajouter sur le Google Map
  * @return {Void}
  */
-function setMarkers(data) {
 	var minLat, maxLat;
 	var minLon, maxLon;
+function setMarkers(data) {
 	var latitude, longitude;
 
 	$.each(data, function() {
@@ -76,15 +76,26 @@ function setMarkers(data) {
 	
 	latitude  = (minLat + maxLat) / 2;
 	longitude = (minLon + maxLon) / 2;
+	
+	var zoom = 10;
+	
+	if((maxLat - minLat) < 0.05 && (maxLon - minLon) < 0.09) {
+		zoom = 13;
+	} else if((maxLat - minLat) < 0.095 && (maxLon - minLon) < 0.18) {
+		zoom = 12;
+	} else if((maxLat - minLat) < 0.20 && (maxLon - minLon) < 0.40) {
+		zoom = 11;
+	}
+
 console.debug("lat " + minLat + " - " + maxLat);
 console.debug("lon " + minLon + " - " + maxLon);
-console.debug("sum " + (minLat + maxLat) + " + " + (minLon + maxLon));
 console.debug("avg " + latitude + " / " + longitude);
-	var latLon = new google.maps.LatLng(minLat, minLon);
+console.log(zoom);
+	var latLon = new google.maps.LatLng(latitude, longitude);
 	
 	var mapOptions = {
 		center : latLon,
-		zoom : 11,
+		zoom : zoom,
 		mapTypeId : google.maps.MapTypeId.ROADMAP
 	};
 	
@@ -163,5 +174,5 @@ function addMarker(nom, latitude, longitude, map) {
  * Execute me once when the DOM is ready
  * --------- */
 $(document).ready(function() {
-	//setGoogleMap();
+	setGoogleMap();
 })
