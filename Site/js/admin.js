@@ -178,11 +178,29 @@ function deleteItem() {
 	}
 }
 
-/*
- * Modif
- * 
- * $('.passwd').popover();
- */
+/**
+ * Modification de l'utilisateur sélectionné
+ *
+ * @method loadInfoModif
+ * @return {Void}
+ **/
+function loadInfoModif() {
+	sessionStorage.setItem(session_action, 'modifier');
+	
+	if ($("#fieldId").html() != "" && !(getURLParameter('statut') == "0" && getURLParameter('dataType') == "error")) {
+		setTimeout(function () {
+			$(".id-field").val($('#fieldId').html());
+			$(".nom").val($('#fieldName').html());
+			$(".mail").val($('#fieldMail').html());
+			if ($('#fieldAdmin').html() == "Oui") { $('.admin').attr('checked', 'checked'); }
+			else { $('.admin').removeAttr('checked'); }
+			$(".ip_min").val($('#fieldIPmin').html());
+			$('.ip_max').val($('#fieldIPmax').html());
+			
+			$('.passwd').popover();
+		}, 1500);
+	}
+}
 
 /****** DOCUMENT READY *****/
 

@@ -90,10 +90,10 @@
 							Type d'authentification<span id="fieldTypeAuth" class="fieldSpan">&nbsp;</span>
 						</div>
 						<div class="field" style="display: none;">
-							IP min<span id="fieldIPmin" class="fieldSpan">&nbsp;</span>
+							IP min<span id="fieldIPmin" class="fieldSpan"></span>
 						</div>
 						<div class="field" style="display: none;">
-							IP max<span id="fieldIPmax" class="fieldSpan">&nbsp;</span>
+							IP max<span id="fieldIPmax" class="fieldSpan"></span>
 						</div>
 						<div class="control-group">
 							<div class="controls">
@@ -145,7 +145,7 @@
 							<div class="control-group">
 								<label class="control-label" for="admin">Administrateur</label>
 								<div class="controls">
-									<input id="admin" class="admin" name="admin" type="text" placeholder="1 ou 0">
+									<input id="admin" class="admin" name="admin" type="checkbox">
 								</div>
 							</div>
 
