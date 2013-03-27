@@ -138,7 +138,7 @@
 											<p>
 												Afin d'afficher les différents graphiques de l'application, la librairie AChartEngine est utilisée. AChartEnfine
 												a pour license Apache Version 2.0.
-												Cette licence est disponible à l'adresse suivante : <a href="http://www.apache.org/licenses/LICENSE-2.0" onclick="window.open(this.href, 'apache'); return false;">Apache 2.0</a>
+												Cette licence est disponible à l'adresse suivante : <a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache 2.0</a>
 											</p>
 											<p>
 												Une application mobile qui permet à l'utilisateur, directement sur le terrain, de déterminer le type de l'insecte

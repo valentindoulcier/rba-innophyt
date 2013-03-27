@@ -10,7 +10,7 @@ function bindItemClick() {
 		var item = document.getElementById($(this).attr('id'));
 		var urlPageSuivante = "";
 		var shadowBoxModifier = "";
-		var shadowBoxRBA = "";
+		var shadowBoxRBA = "shadowbox;width=650px;height=450px";
 		var shadowBoxSupprimer = "shadowbox;width=450px;height=150px";
 		
 		// Mise à jour de l'item sélectionné dans la sessionStorage
@@ -35,8 +35,9 @@ function bindItemClick() {
 			sessionStorage.setItem(session_id_piege, item.dataset.id);
 			urlPageSuivante = '#items-choisis';
 			
-			shadowBoxModifier = "shadowbox;width=500px;height=500px";
-			shadowBoxRBA = "shadowbox;width=500px;height=100px";
+			//shadowBoxModifier = "shadowbox;width=500px;height=500px";
+			
+			//makeMyPlot();
 		}
 		
 		// Chargement des champs dans la partie information
@@ -64,8 +65,9 @@ function bindItemClick() {
 		if (pageChoix == "piege") {
 			$('#choose-item').attr('rel', 'shadowbox;width=500px;height=270px');
 			// Affichage du RBA
-			$('#rba-item').attr('href', '#rba-afficher');
-			$('#rba-item').attr('rel', shadowBoxRBA);
+			$('#rba-item').attr('href', pages_url + "/rbaPiege.php");
+			//$('#rba-item').attr('rel', shadowBoxRBA);
+			$('#rba-item').removeAttr('rel');
 		} else {
 			$('#choose-item').removeAttr('rel');
 		}
@@ -462,13 +464,6 @@ $(document).ready(function() {
  * @return {Void}
  **/
 function loadRBAPiege() {
-	if ($("#fieldId").html() != "" && !(getURLParameter('statut') == "0" && getURLParameter('dataType') == "error")) {
-		setTimeout(function () {
-			$('.nom').removeAttr('disabled');
-			setPrefixePiege();
-			
-			
-		}, 1500);
-	}
+	//makeMyPlot();
 }
 
