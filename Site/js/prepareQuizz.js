@@ -31,6 +31,10 @@ function bindItemClick() {
 			urlPageSuivante = pages_url + '/piege.php';
 			
 			shadowBoxModifier = "shadowbox;width=500px;height=453px";
+			
+			$('#googleMap-item').removeAttr('rel');
+			$('#googleMap-item').attr('href', '#');
+			$('#googleMap-item').attr('onclick', 'toogleItemGoogleMap()');
 		} if (pageChoix == "piege") {
 			sessionStorage.setItem(session_id_piege, item.dataset.id);
 			urlPageSuivante = '#items-choisis';
@@ -80,9 +84,7 @@ function bindItemClick() {
 			Shadowbox.clearCache();
 			Shadowbox.setup();
 		}, 500);
-		
-		$('#map-canvas').empty();
-		setGoogleMap();
+
 	});
 }
 
@@ -440,6 +442,28 @@ function loadInfoBeaforeQuizz() {
 		$('.choose-parcelle-field').val(parcelle.data[parcelle_id].nom);
 		$('.choose-piege-field').val(piege.data[piege_id].nom);
 	}, 1250);
+}
+
+/**
+ * Cette fonction fait le toggle entre la carte et la liste des items pour afficher la Google Map
+ * 
+ * @method toogleItemGoogleMap
+ * @return {Void}
+ */
+function toogleItemGoogleMap() {
+	//$('#googleMap-item');
+	$('#liste_parcelle').toggle(100);
+	$('#map').toggle(100);
+	$('#googleMap-item').toggleClass('active');
+	$('#googleMap-item').toggleClass('btn-info');
+	if($('#googleMap-item').attr('class').indexOf('active') >= 0) {	
+		if ($('#map-canvas')) {
+			try {
+				$('#map-canvas').empty();
+				setGoogleMap();
+			} catch (err) {}
+		}
+	}
 }
 
 /***** DOCUMENT READY *****/

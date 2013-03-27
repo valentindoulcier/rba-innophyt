@@ -755,9 +755,25 @@ input:-ms-input-placeholder { /* Internet Explorer 10+ */
 .choose-info .control-label{
 	font-size: 15px;
 }
+#map {
+	height: 565px;
+	width: 624px;
+	padding: -12px 0;
+}
 #map-canvas {
 	height: 500px;
-	width: 624px;
+	width: 600px;
+}
+#map-marker-legend {
+	margin-top: 10px;
+	padding-left: 10px;
+	padding-top: 10px;
+}
+.markerLegend {
+	width: 22px;
+	height: auto;
+	margin-left: 30px;
+	margin-right: 5px;
 }
 #graph-canvas {
 	height: 500px;

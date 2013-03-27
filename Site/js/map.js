@@ -24,7 +24,7 @@ function initialize() {
 			var data = $.parseJSON(msg);
 			if (data.idKey == authInfo.idKeyMd5 && data.dataType == "map") {
 				//console.debug(data);
-				setMarkers(data.data);
+				createGoogleMap(data.data);
 			} else {
 				// Affichage d'un message d'erreur dans le cas où l'utilisateur n'est pas reconnu
 				$('#liste_' + sessionStorage.getItem('pageChoix')).html("<div class='alert alert-error'> <button type='button' class='close' data-dismiss='alert'>&times;</button> <strong>Erreur !</strong> " + data.data + " </div>");
@@ -39,13 +39,13 @@ function initialize() {
 }
 
 /**
- * Ajoute les points à la carte
+ * Met en place la carte avec les markers et la légende
  * 
- * @method setMakers
+ * @method createGoogleMap
  * @para {Object} data Structure contenant les informations des points à ajouter sur le Google Map
  * @return {Void}
  */
-function setMarkers(data) {
+function createGoogleMap(data) {
 	var minLat, maxLat;
 	var minLon, maxLon;
 	var latitude, longitude;
@@ -82,9 +82,9 @@ function setMarkers(data) {
 	
 	if((maxLat - minLat) < 0.05 && (maxLon - minLon) < 0.09) {
 		zoom = 13;
-	} else if((maxLat - minLat) < 0.095 && (maxLon - minLon) < 0.18) {
+	} else if((maxLat - minLat) < 0.095 && (maxLon - minLon) < 0.16) {
 		zoom = 12;
-	} else if((maxLat - minLat) < 0.20 && (maxLon - minLon) < 0.40) {
+	} else if((maxLat - minLat) < 0.20 && (maxLon - minLon) < 0.38) {
 		zoom = 11;
 	}
 

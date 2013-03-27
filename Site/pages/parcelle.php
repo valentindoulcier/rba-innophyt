@@ -9,6 +9,7 @@
 			$HEADER = false;
 			$PageType    = "prepareQuizz";
 			$CurrentPath = "/pages";
+			$Component   = array("GoogleMap");
 			require_once("parts/variables.php");
 
 			include $PAGE_PART_PATH . "/headCssJs.php";
@@ -53,6 +54,18 @@
 					<section id="liste_parcelle">
 						Liste des éléments
 					</section>
+					<section id="map" style='display: none;'>
+						<div id="map-canvas">
+							<div class="clearer"></div>
+						</div>
+						<div id="map-marker-legend">
+							<img src="<?php echo $IMG_PATH ?>/googleMapsMarkerYellow.png" atl="Marqueur Jaune" class="markerLegend" /> Bol Jaune
+							<img src="<?php echo $IMG_PATH ?>/googleMapsMarkerGreen.png" atl="Marqueur Vert" class="markerLegend" /> Tente Malaise
+							<img src="<?php echo $IMG_PATH ?>/googleMapsMarkerBlue.png" atl="Marquer Bleu" class="markerLegend" /> Piège Barber
+							<img src="<?php echo $IMG_PATH ?>/googleMapsMarkerRed.png" atl="Marqueur Rouge" class="markerLegend" /> Type Inconnu
+							<div class="clearer"></div>
+						</div>
+					</section>
 				</div>
 				<div id="infos_elem">
 					<header>
@@ -94,6 +107,10 @@
 									<div class="btn-group">
 										<a href="#selectionner-item" rel='shadowbox;width=450px;height=150px' id="choose-item" class="btn btn-large btn-success">Suivant</a>
 									</div>
+									<br/>
+									<div class="btn-group" style="margin-left: 25px; margin-top: 5px;">
+										<a href="#selectionner-item" rel='shadowbox;width=450px;height=150px' id="googleMap-item" class="btn btn-link">Carte des pièges</a>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -101,11 +118,6 @@
 				</div>
 				<div class="clearer"></div>
 			</div>
-
-			<div id="map-canvas">
-				<div class="clearer"></div>
-			</div>
-			<div class="clearer"></div>
 		</div>
 
 		<div id="resultRightDiv" style="display: none;">

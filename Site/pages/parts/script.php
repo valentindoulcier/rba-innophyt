@@ -51,9 +51,7 @@
 	if (strcmp($PageType, "prepareQuizz") == 0) {
 ?>
 	<script type="text/javascript" src="<?php echo $JS_PATH; ?>/prepareQuizz.js"></script>
-	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCfZN9a70ZRFuLhcNNzDm-q_JlkLyWyW3w&sensor=true"></script>
-	<!--<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>-->
-	<script type="text/javascript" src="<?php echo $JS_PATH; ?>/map.js"></script>
+
 	<script type="text/javascript" src="<?php echo $JS_PATH; ?>/graphique-maker.js"></script>
 	
 <script type="text/javascript" src="<?php echo $PLUGINS_PATH ?>/jqplot.pieRenderer.js"></script>
@@ -89,5 +87,17 @@
 		});
 	</script>
 <?php
+	}
+?>
+
+<?php
+	if (isset($Component)) {
+		if (in_array("GoogleMap", $Component)) {
+?>
+	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCfZN9a70ZRFuLhcNNzDm-q_JlkLyWyW3w&sensor=true"></script>
+	<!--<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>-->
+	<script type="text/javascript" src="<?php echo $JS_PATH; ?>/map.js"></script>
+<?php
+		}
 	}
 ?>
