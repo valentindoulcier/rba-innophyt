@@ -106,6 +106,9 @@
 				</div>
 				<div class="clearer"></div>
 			</div>
+			<div id="graph-canvas">
+				<div class="clearer"></div>
+			</div>
 			<div class="clearer"></div>
 		</div>
 
@@ -202,21 +205,7 @@
 					</li>
 				</ul>
 			</div>
-		</div>		
-		
-		<div id="rba-afficher" style="display: none;">
-			<div class="window" id="resultWindow">
-				<ul>
-					<li class="windowTitle"><h3><i class="icon-ok"></i>RBA - Piège</h3></li>
-					<li id="resultWindowContent">
-						<p>
-							Bonjour,j'aime la glace à la vanille !
-						</p>
-					</li>
-				</ul>
-			</div>
-		</div>
-		
+		</div>	
 		
 		<?php
 			include $PAGE_PART_PATH . "/popupsPrepareQuizz.php";
