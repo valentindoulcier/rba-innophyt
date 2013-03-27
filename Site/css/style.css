@@ -794,4 +794,15 @@ input:-ms-input-placeholder { /* Internet Explorer 10+ */
 	margin-top: 16px;
 	margin-right: 16px;
 }
-
+.table tbody tr.admin > td {
+	background-color: #d9edf7;
+}
+.table tbody tr.admin:hover > td {
+	background-color: #c4e3f3;
+}
+#liste_admin .active td {
+	background-color: #d5d5d5;
+}
+#liste_admin .admin.active td {
+	background-color: #b4d3e3;
+}

@@ -46,44 +46,26 @@
 				</div>
 			</div>
 			
-<div id="info" class="alert alert-info" style="display: none;">
-	<div class="progress progress-striped active" style=" margin-bottom: 0px;">
-  		<div class="bar" style="width: 100%;"></div>
-	</div>
-</div>
+			<div id="info" class="alert alert-info" style="display: none;">
+				<div class="progress progress-striped active" style=" margin-bottom: 0px;">
+			  		<div class="bar" style="width: 100%;"></div>
+				</div>
+			</div>
 
 			<div id="selection-2_3">
 				<div id="liste_elem">
 					<header id="title_admin">
-						<h2>Liste des utilisateurs</h2>
+						<h2>Liste des utilisateurs<span style="position: relative; float: right;"><a href="#formUser" rel="shadowbox;width=500px;height=410px" title="Ajouter un utilisateur" class="btn btn-info btn-large">Ajouter un utilisateur</a></span></h2>
 					</header>
 					<section id="liste_admin">
-						
 						<table class="table table-striped table-hover">
 							<thead>
-								<th>Bonjour</th>
-								<th>Bonjour</th>
-								<th>Bonjour</th>
-								<th>Bonjour</th>
+								<th>Nom</th>
+								<th>Mail</th>
+								<th>Type d'authentification</th>
 							</thead>
-							<tr class="declined">
-							    <td>1</td>
-							    <td>TB - Monthly</td>
-							    <td>01/04/2012</td>
-							    <td>Approved</td>
-							</tr>
-							<tr class="success">
-							    <td>1</td>
-							    <td>TB - Monthly</td>
-							    <td>01/04/2012</td>
-							    <td>Approved</td>
-							</tr>
-							<tr class="success">
-							    <td>1</td>
-							    <td>TB - Monthly</td>
-							    <td>01/04/2012</td>
-							    <td>Approved</td>
-							</tr>
+							<tbody id="user_list">
+							</tbody>
 						</table>
 					</section>
 				</div>
@@ -98,12 +80,27 @@
 						<div class="field">
 							Nom<span id="fieldName" class="fieldSpan">&nbsp;</span>
 						</div>
+						<div class="field">
+							Mail<span id="fieldMail" class="fieldSpan">&nbsp;</span>
+						</div>
+						<div class="field">
+							Administrateur<span id="fieldAdmin" class="fieldSpan">&nbsp;</span>
+						</div>
+						<div class="field">
+							Type d'authentification<span id="fieldTypeAuth" class="fieldSpan">&nbsp;</span>
+						</div>
+						<div class="field" style="display: none;">
+							IP min<span id="fieldIPmin" class="fieldSpan">&nbsp;</span>
+						</div>
+						<div class="field" style="display: none;">
+							IP max<span id="fieldIPmax" class="fieldSpan">&nbsp;</span>
+						</div>
 						<div class="control-group">
 							<div class="controls">
 								<div class="btn-toolbar">
 									<div class="btn-group" style="margin-left: 10px;">
-										<a href="#selectionner-item" rel='shadowbox;width=400px;height=109px' id="modif-item" class="btn btn-link" onclick="loadInfoModif();">Modifier</a>
-										<a href="#selectionner-item" rel='shadowbox;width=400px;height=109px' id="delete-item" class="btn btn-link">Supprimer</a>
+										<a href="#selectionner-item" rel='shadowbox;width=450px;height=150px' id="modif-item" class="btn btn-link" onclick="loadInfoModif();">Modifier</a>
+										<a href="#selectionner-item" rel='shadowbox;width=450px;height=150px' id="delete-item" class="btn btn-link">Supprimer</a>
 									</div>
 								</div>
 							</div>
@@ -116,41 +113,53 @@
 			<div class="clearer"></div>
 		</div>
 		
-		
-		
-<?php /*
-		<div id="resultRightDiv" style="display: none;">
+
+		<div id="formUser" style="display: none;">
 			<div class="window" id="resultWindow">
 				<ul>
-					<li class="windowTitle"><h3><i class="icon-ok"></i>Campagne</h3></li>
+					<li class="windowTitle"><h3><i class="icon-ok"></i>Utilisateur</h3></li>
 					<li id="resultWindowContent">
 						<div class="form-info"></div>
-						<form class="form-horizontal formCampagne" action="<?php echo $PHP_SCRIPT_PATH . "/campagne.php"; ?>" method="post">
+						<form class="form-horizontal formCampagne" action="<?php echo $PHP_SCRIPT_PATH . "/admin.php"; ?>" method="post">
 							<div class="control-group">
 								<label class="control-label" for="nom">Nom</label>
 								<div class="controls">
-									<input id="nom" class="nom" name="nom" type="text" placeholder="Nom de la Campagne" required autofocus>
+									<input id="nom" class="nom" name="nom" type="text" placeholder="Nom de l'utilisateur" required autofocus>
 								</div>
 							</div>
 
 							<div class="control-group">
-								<label class="control-label" for="description">Description</label>
+								<label class="control-label" for="mail">Adresse mail</label>
 								<div class="controls">
-									<input id="description" class="description" name="description" type="text" placeholder="Description">
+									<input id="mail" class="mail" name="mail" type="text" placeholder="rba-innophyt@gmail.com" required>
 								</div>
 							</div>
 
 							<div class="control-group">
-								<label class="control-label" for="dateDeb">Date de début</label>
+								<label class="control-label" for="passwd">Mot de passe</label>
 								<div class="controls">
-									<input id="dateDeb" class="dateDeb" name="dateDeb" type="text" placeholder="2013-02-24">
+									<input id="passwd" class="passwd" name="passwd" type="password" placeholder="Mot de passe" data-toggle="popover" data-original-title="Attention !" data-content="Si vous ne modifiez pas le mot de passe, laisser ce champ vide.">
 								</div>
 							</div>
 
 							<div class="control-group">
-								<label class="control-label" for="dateFin">Date de fin</label>
+								<label class="control-label" for="admin">Administrateur</label>
 								<div class="controls">
-									<input id="dateFin" class="dateFin" name="dateFin" type="text" placeholder="2013-05-30">
+									<input id="admin" class="admin" name="admin" type="text" placeholder="1 ou 0">
+								</div>
+							</div>
+
+							<div class="control-group">
+								<label class="control-label" for="ip_min">Adresse IP Basse</label>
+								<div class="controls">
+									<input id="ip_min" class="ip_min" name="ip_min" type="text" placeholder="10.172.10.12">
+								</div>
+							</div>
+
+							<div class="control-group">
+								<label class="control-label" for="ip_max">Adresse IP Haute</label>
+								<div class="controls">
+									<input id="ip_max" class="ip_max" name="ip_max" type="text" placeholder="10.175.25.36">
 								</div>
 							</div>
 							
@@ -167,7 +176,7 @@
 										<div class="btn-group">
 											<a href="#" id="cancel-form" class="btn" onclick="Shadowbox.close();">Annuler</a>
 											<a href="#" id="reinit-form" class="btn" onclick="setEmptyForm();">Réinitialiser</a>
-											<a href="#" id="submit-form" class="btn btn-success" onclick="$('.action-field').val(sessionStorage.getItem(session_action)); javascript:submit()">Enregistrer</a>
+											<a href="#" id="submit-form" class="btn btn-success" onclick="javascript:submit()">Enregistrer</a>
 										</div>
 									</div>
 								</div>
@@ -177,51 +186,9 @@
 				</ul>
 			</div>
 		</div>
-		
-		
 
-		<div id="deleteForm" style="display: none;">
-			<div class="window" id="resultWindow">
-				<ul>
-					<li class="windowTitle"><h3><i class="icon-ok"></i>Suppression de la campagne</h3></li>
-					<li id="resultWindowContent">
-						<div class="control-group">
-							<div class="controls">
-								<div class="btn-toolbar">
-									<div class="btn-group" style="margin-left: 120px;">
-										<a href="#" id="cancel-form" class="btn" onclick="Shadowbox.close();">Annuler</a>
-										<a href="#" id="submit-form" class="btn btn-danger" onclick="deleteItem();">Supprimer</a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</li>
-				</ul>
-			</div>
-		</div>
-		
-		
-
-		<div id="selectionner-item" style="display: none;">
-			<div class="window" id="resultWindow">
-				<ul>
-					<li class="windowTitle"><h3><i class="icon-ok"></i>Sélectionner une campagne</h3></li>
-					<li id="resultWindowContent">
-						<div class="control-group">
-							<div class="controls">
-								<div class="btn-toolbar">
-									<div class="btn-group" style="margin-left: 150px;">
-										<a href="#" id="cancel-form" class="btn" onclick="Shadowbox.close();">Fermer</a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</li>
-				</ul>
-			</div>
-		</div>
-*/ ?>
 		<?php
+			include $PAGE_PART_PATH . "/popupsPrepareQuizz.php";
 			include $PAGE_PART_PATH . "/footer.php";
 			include $PAGE_PART_PATH . "/script.php";
 		?>
