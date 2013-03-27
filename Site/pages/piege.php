@@ -55,9 +55,35 @@
 						Liste des éléments
 					</section>
 					<section id="rba" style="display: none;">
+						<div id="tableauRBA">
+							<table class="table table-striped table-hover" align="center" width="auto">
+							<tr>
+								<th>Carnivore</th>
+								<th>Carnivore & Nectarivore</th>
+								<th>Herbivore</th>
+								<th>Herbivore & Nectarivore</th>
+								<th>Nectarivore</th>
+							</tr>
+							<tr class="declined" align="center">
+							    <td align="center"  width="auto" id="nb1"></td>
+							    <td align="center"  width="auto" id="nb2"></td>
+							    <td align="center"  width="auto" id="nb3"></td>
+							    <td align="center"  width="auto" id="nb4"></td>
+							    <td align="center"  width="auto" id="nb5"></td>
+							</tr>
+							<tr class="success" align="center">
+							    <td align="center" id="po1"></td>
+							    <td align="center" id="po2"></td>
+							    <td align="center" id="po3"></td>
+							    <td align="center" id="po4"></td>
+							    <td align="center" id="po5"></td>
+							</tr>
+						</table>
+						</div>
 						<div id="graph-canvas">
 							<div class="clearer"></div>
 						</div>
+						<a href="#toto" rel='shadowbox;width=630px;height=560px' class="btn btn-link" style="float: right; margin-top: -10px; margin-right: 10px;">export</a>
 					</section>
 				</div>
 				<div id="infos_elem">
@@ -208,6 +234,19 @@
 				</ul>
 			</div>
 		</div>	
+		
+		<div id="toto" style="display: none;">
+			<div class="window" id="resultWindow">
+		<ul>
+			<li class="windowTitle"><h3><i class="icon-ok"></i>Export du graphique</h3></li>
+			<li id="resultWindowContent">
+				<img id="titi" src=""/>
+			</li>
+		</ul>
+	</div>
+			
+		</div>
+		</div>
 		
 		<?php
 			include $PAGE_PART_PATH . "/popupsPrepareQuizz.php";

@@ -18,9 +18,12 @@ function initializeGraph() {
 	$.ajax({
 		type : "POST",
 		url : php_script_url + "/recolte.php",
-		data : { "idKey" : authInfo.idKeyMd5, "action": "graph", "piegeId-insecte": sessionStorage.getItem(session_id_piege) },
+		data : {
+			"idKey" : authInfo.idKeyMd5,
+			"action" : "graph",
+			"piegeId-insecte" : sessionStorage.getItem(session_id_piege)
+		},
 		success : function(msg) {
-			console.debug(msg);
 			var data = $.parseJSON(msg);
 			if (data.idKey == authInfo.idKeyMd5 && data.dataType == "graph") {
 				//console.debug(data);
@@ -38,42 +41,71 @@ function initializeGraph() {
 	});
 }
 
-
-
 function makeMyPlot(data) {
 	//console.debug(data);
-	var datas = [['Carnivore', 0],['Carnivore et Nectarivore', 0], ['Herbivore', 0], ['Herbivore et Nectarivore', 0], ['Nectarivore', 0]];
-	$c1 = 0;
+	var datas = [['Carnivore', 0], ['Carnivore et Nectarivore', 0], ['Herbivore', 0], ['Herbivore et Nectarivore', 0], ['Nectarivore', 0]];
 	$.each(data, function() {
-			if(this.regime && this.nombre) {
-				if(datas[0][0] == this.regime) { console.debug("0" + datas[0][0]); datas[0][1] += parseFloat(this.nombre);}
-				if(datas[1][0] == this.regime) { console.debug("1" + datas[1][0]); datas[1][1] += parseFloat(this.nombre);}
-				if(datas[2][0] == this.regime) { console.debug("2" + datas[2][0]); datas[2][1] += parseFloat(this.nombre);}
-				if(datas[3][0] == this.regime) { console.debug("3" + datas[3][0]); datas[3][1] += parseFloat(this.nombre);}
-				if(datas[4][0] == this.regime) { console.debug("4" + datas[4][0]); datas[4][1] += parseFloat(this.nombre);}
-			}
+		if (this.regime && this.nombre) {
+			if (datas[0][0] == this.regime)
+				datas[0][1] += parseFloat(this.nombre);
+			if (datas[1][0] == this.regime)
+				datas[1][1] += parseFloat(this.nombre);
+			if (datas[2][0] == this.regime)
+				datas[2][1] += parseFloat(this.nombre);
+			if (datas[3][0] == this.regime)
+				datas[3][1] += parseFloat(this.nombre);
+			if (datas[4][0] == this.regime)
+				datas[4][1] += parseFloat(this.nombre);
+		}
 	});
-	
-	console.debug(datas);
-	
-	//var data = [['Mouches', 12],['Vaches', 9], ['Moutons', 14], ['Brebis', 16]];
-  var plot2 = jQuery.jqplot ('graph-canvas', [datas], 
-    {
-      seriesDefaults: {
-        renderer: jQuery.jqplot.PieRenderer, 
-        rendererOptions: {
-          // Turn off filling of slices.
-          fill: false,
-          showDataLabels: true, 
-          // Add a margin to seperate the slices.
-          sliceMargin: 4, 
-          // stroke the slices with a little thicker line.
-          lineWidth: 5
-        }
-      }, 
-      legend: { show:true, location: 'e' }
-    }
-  );
+
+	var somme = (datas[0][1] + datas[1][1] + datas[2][1] + datas[3][1] + datas[4][1]) / 100;
+
+	$("#nb1").html(datas[0][1]);
+	$("#nb2").html(datas[1][1]);
+	$("#nb3").html(datas[2][1]);
+	$("#nb4").html(datas[3][1]);
+	$("#nb5").html(datas[4][1]);
+
+	if (somme == 0) {
+		$("#po1").html("0%");
+		$("#po2").html("0%");
+		$("#po3").html("0%");
+		$("#po4").html("0%");
+		$("#po5").html("0%");
+	} else {
+		$("#po1").html(Math.round(datas[0][1] / somme, 2) + "%");
+		$("#po2").html(Math.round(datas[1][1] / somme, 2) + "%");
+		$("#po3").html(Math.round(datas[2][1] / somme, 2) + "%");
+		$("#po4").html(Math.round(datas[3][1] / somme, 2) + "%");
+		$("#po5").html(Math.round(datas[4][1] / somme, 2) + "%");
+
+		var plot2 = jQuery.jqplot('graph-canvas', [datas], {
+			title : "Répartition",
+			seriesDefaults : {
+				renderer : jQuery.jqplot.PieRenderer,
+				rendererOptions : {
+					// Turn off filling of slices.
+					fill : false,
+					showDataLabels : true,
+					// Add a margin to seperate the slices.
+					sliceMargin : 4,
+					// stroke the slices with a little thicker line.
+					lineWidth : 5
+				}
+			},
+			legend : {
+				show : true,
+				location : 'e'
+			}
+		});
+		jqplotToImg();
+	}
+}
+
+function jqplotToImg() {
+	var imgData = $('#graph-canvas').jqplotToImageStr({});
+	$('#titi').attr('src',imgData);
 }
 
 
@@ -81,4 +113,4 @@ $(document).ready(function() {
 	if ($('#graph-canvas')) {
 		//setGaphique();
 	}
-});
+}); 

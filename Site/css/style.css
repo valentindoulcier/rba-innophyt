@@ -794,6 +794,7 @@ input:-ms-input-placeholder { /* Internet Explorer 10+ */
 	margin-top: 16px;
 	margin-right: 16px;
 }
+
 .table tbody tr.admin > td {
 	background-color: #d9edf7;
 }
@@ -805,4 +806,8 @@ input:-ms-input-placeholder { /* Internet Explorer 10+ */
 }
 #liste_admin .admin.active td {
 	background-color: #b4d3e3;
+}
+
+#tableauRBA .table th, #tableauRBA .table td {
+   text-align: center !important;
 }
