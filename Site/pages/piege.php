@@ -83,7 +83,7 @@
 						<div id="graph-canvas">
 							<div class="clearer"></div>
 						</div>
-						<a href="#toto" rel='shadowbox;width=630px;height=560px' class="btn btn-link" style="float: right; margin-top: -10px; margin-right: 10px;">export</a>
+						<a href="#exportImage" rel='shadowbox;width=630px;height=560px' class="btn btn-link" style="float: right; margin-top: -10px; margin-right: 10px;"><i class="icon-camera"></i> Export du résultat</a>
 					</section>
 				</div>
 				<div id="infos_elem">
@@ -235,12 +235,12 @@
 			</div>
 		</div>	
 		
-		<div id="toto" style="display: none;">
+		<div id="exportImage" style="display: none;">
 			<div class="window" id="resultWindow">
 		<ul>
 			<li class="windowTitle"><h3><i class="icon-ok"></i>Export du graphique</h3></li>
 			<li id="resultWindowContent">
-				<img id="titi" src=""/>
+				<img id="imageGraph" src=""/>
 			</li>
 		</ul>
 	</div>

@@ -105,7 +105,7 @@ function makeMyPlot(data) {
 
 function jqplotToImg() {
 	var imgData = $('#graph-canvas').jqplotToImageStr({});
-	$('#titi').attr('src',imgData);
+	$('#imageGraph').attr('src',imgData);
 }
 
 
