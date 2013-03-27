@@ -34,7 +34,7 @@
 		}
 	} else if (isset($_POST['idKey']) && isset($_POST['mail']) && strcmp($_POST['action'], 'ajouter') == 0 && isset($_POST['nom'])) {
 		$ERROR = false;
-		
+
 		$admin = 0;
 		if(strcmp($_POST['admin'], "on") == 0) { $admin = 1; }
 		
@@ -54,14 +54,15 @@
 			$ERROR = true;
 			header('Location: ' . $ADMIN_URL . '?statut=0&dataType=error&data=Le champ mail ne peut pas être vide&action=ajouter' . $field);
 		}
+		if (strcmp($_POST['passwd'], "") == 0 || !isset($_POST['passwd']) || strcmp(md5($_POST['passwd']), "d41d8cd98f00b204e9800998ecf8427e") == 0) {
+			$ERROR = true;
+			header('Location: ' . $ADMIN_URL . '?statut=0&dataType=error&data=Le mot de passe ne peut pas être vide&action=ajouter' . $field);
+		}
 		if ((isset($_POST['ip_min']) || isset($_POST['ip_max'])) && !$ERROR) {
 			if ((strcmp($_POST['ip_min'], '') == 0 || strcmp($_POST['ip_max'], '') == 0) && strcmp($_POST['passwd'], '') == 0) {
 				$ERROR = true;
 				header('Location: ' . $ADMIN_URL . '?statut=0&dataType=error&data=Renseigner les adresses IP ou le mot de passe&action=ajouter' . $field);
 			}
-		}
-		if (isset($_POST['passwd']) && strcmp($_POST['passwd'], '') == 0 && !$ERROR) {
-			header('Location: ' . $ADMIN_URL . '?statut=0&dataType=error&data=Le mot de passe ne peut pas être vide&action=ajouter' . $field);
 		}
 		
 		if (!$ERROR) {
