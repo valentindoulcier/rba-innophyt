@@ -38,7 +38,7 @@
 						$returnItem .= ' "":"" }, "idKey": "' . $row['TOKEN'] . '"}';
 					} else {
 						//$returnItem = '{ "statut": "0", "dataType": "error", "data": "Aucuns pièges trouves" }';
-						$returnItem = '{ "statut": "1", "dataType": "parcelle", "data": {}, "idKey": "' . $row['RSA_PRIVE'] . '"}';
+						$returnItem = '{ "statut": "1", "dataType": "parcelle", "data": {}, "idKey": "' . $row['TOKEN'] . '"}';
 					}
 				} else {
 					$returnItem = '{ "statut": "0", "dataType": "error", "data": "Erreur lors de l\'identification de l\'utilisateur avec son ID" }';
@@ -201,6 +201,49 @@
 						$returnItem = '{ "statut": "0", "dataType": "error", "data": "Echec lors de l execution: (' . $mysqli -> connect_errno . ') ' . $mysqli -> connect_error . '" }';
 					} else {
 						$returnItem = '{ "statut": "2", "dataType": "ok", "data": "Campagne supprimée" , "idKey": "' . $row['TOKEN'] . '"}';
+					}
+					
+				} else {
+					$returnItem = '{ "statut": "0", "dataType": "error", "data": "Erreur lors de l\'identification de l\'utilisateur avec son ID" }';
+				}
+			} else {
+				$returnItem = '{ "statut": "0", "dataType": "error", "data": "Erreur lors de l\'identification de l\'utilisateur" }';
+			}
+		}
+	} else if (isset($_POST['idKey']) && strcmp($_POST['action'], 'map') == 0 && isset($_POST['parcelleId'])) {
+			
+		$mysqli = new mysqli($HOST_DB, $USER_DB, $PASSWORD_DB, $SCHEMA_DB, $PORT_DB);
+		if ($mysqli->connect_errno) {
+			$returnItem = '{ "statut": "0", "dataType": "error", "data": "Failed to connect to MySQL: (' . $mysqli->connect_errno . ') ' . $mysqli->connect_error . '" }';
+		} else {
+		
+			$query = "SELECT * FROM TABLE_USER WHERE TOKEN='" . $_POST[idKey] . "'";
+			$res = $mysqli->query($query);
+			if ($res) {
+				$row = $res->fetch_assoc();
+				if (isset($row['ID'])) {
+					$query = "SELECT * FROM TABLE_PIEGE WHERE PARCEL_ID='" . $_POST['parcelleId'] . "'";
+					$item = $mysqli->query($query);
+	
+					if ($item) {
+						$returnItem = '{ "statut": "1", "dataType": "map", "data": { ';
+						
+						 while ($rowC = $item->fetch_assoc()) {
+							 $returnItem .= '"' . $rowC['ID'] . '": {';
+							 $returnItem .= '"id": "'           . html_entity_decode($rowC['ID']) . '",';
+							 $returnItem .= '"nom": "'          . html_entity_decode(str_replace("\'", "&#39;", $rowC['NOM'])) . '",';
+							 //$returnItem .= '"description": "'  . html_entity_decode(str_replace("\'", "&#39;", $rowC['DESCRIPTION'])) . '",';
+							 //$returnItem .= '"date_debut": "'   . html_entity_decode($rowC['DATE_DEBUT']) . '",';
+							 //$returnItem .= '"date_fin": "'     . html_entity_decode($rowC['DATE_FIN']) . '",';
+							 //$returnItem .= '"adresse": "'      . html_entity_decode($rowC['ADRESSE']) . '",';
+							 $returnItem .= '"latitude": "'     . html_entity_decode($rowC['LATITUDE']) . '",';
+							 $returnItem .= '"longitude": "'    . html_entity_decode($rowC['LONGITUDE']) . '"';
+							 $returnItem .= '},';
+						}
+						$returnItem .= ' "":"" }, "idKey": "' . $row['TOKEN'] . '"}';
+					} else {
+						//$returnItem = '{ "statut": "0", "dataType": "error", "data": "Aucuns pièges trouves" }';
+						$returnItem = '{ "statut": "1", "dataType": "map", "data": {}, "idKey": "' . $row['TOKEN'] . '"}';
 					}
 					
 				} else {

@@ -314,7 +314,7 @@ i.permalink-icon {
 #questionFrame {
 	display: none;
 	padding-top: 1px; /* To solve a placment bug */
-	margin-bottom: 35px;
+	margin-bottom: 50px;
 }
 
 /* RESULTAT */
@@ -754,6 +754,10 @@ input:-ms-input-placeholder { /* Internet Explorer 10+ */
 }
 .choose-info .control-label{
 	font-size: 15px;
+}
+#map-canvas {
+	height: 500px;
+	width: 624px;
 }
 /*----------------------------
 	A propos

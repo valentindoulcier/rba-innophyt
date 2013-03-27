@@ -3,5 +3,5 @@
 	$CurrentPath = "/pages";
 	require_once("parts/variables.php");
 	
-	header('Location: ' . $LOGIN_PAGE);
+	header('Location: ' . $LOGIN_URL);
 ?>

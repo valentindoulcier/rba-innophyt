@@ -3,5 +3,5 @@
 	$CurrentPath = "/";
 	include "pages/parts/variables.php";
 	
-	header('Location: ' . $LOGIN_PAGE);
+	header('Location: ' . $LOGIN_URL);
 ?>

@@ -106,7 +106,9 @@
 				</div>
 				<div class="clearer"></div>
 			</div>
-
+			<div id="map-canvas">
+				<div class="clearer"></div>
+			</div>
 			<div class="clearer"></div>
 		</div>
 
