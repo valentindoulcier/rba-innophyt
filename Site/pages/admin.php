@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="UTF-8" />
 
-		<title>Campagnes</title>
+		<title>Administration</title>
 
 		<?php
 			$HEADER = false;

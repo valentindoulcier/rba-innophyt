@@ -82,7 +82,7 @@
 							header('Location: ' . $ADMIN_URL . '?statut=0&dataType=error&data=Echec de la preparation de la requete: (' . $mysqli->connect_errno . ') ' . $mysqli->connect_error . '&action=ajouter&field={"nom":"' . $_POST['nom'] . '","description":"' . $_POST['description'] . '","dateDeb":"' . $_POST['dateDeb'] . '","dateFin":"' . $_POST['dateFin'] . '","adresse":"' . $_POST['adresse'] . '","latitude":"' . $_POST['latitude'] . '","longitude":"' . $_POST['longitude'] . '"}');
 						}
 						
-						if (!$stmt->bind_param("sissss", $_POST['nom'], $admin, $_POST['mail'], $_POST['passwd'], $_POST['ip_min'], $_POST['ip_max'])) {
+						if (!$stmt->bind_param("sissss", $_POST['nom'], $admin, $_POST['mail'], md5($_POST['passwd']), $_POST['ip_min'], $_POST['ip_max'])) {
 							//$returnItem = '{ "statut": "0", "dataType": "error", "data": "Echec lors du liage des paramètres: (' . $mysqli->connect_errno . ') ' . $mysqli-connect_error . '" }';
 							header('Location: ' . $ADMIN_URL . '?statut=0&dataType=error&data=Echec lors du liage des parametres: (' . $mysqli->connect_errno . ') ' . $mysqli->connect_error . '&action=ajouter&field={"nom":"' . $_POST['nom'] . '","description":"' . $_POST['description'] . '","dateDeb":"' . $_POST['dateDeb'] . '","dateFin":"' . $_POST['dateFin'] . '","adresse":"' . $_POST['adresse'] . '","latitude":"' . $_POST['latitude'] . '","longitude":"' . $_POST['longitude'] . '"}');
 						}
@@ -93,6 +93,73 @@
 						} else {
 							//$returnItem = '{ "statut": "2", "dataType": "ok", "data": "Campagne ajoutée" , "idKey": "' . $row['RSA_PRIVE'] . '"}';
 							header('Location: ' . $ADMIN_URL);
+						}
+					} else {
+						//$returnItem = '{ "statut": "0", "dataType": "error", "data": "Erreur lors de l identification de l utilisateur avec son ID" }';
+						header('Location: ' . $ADMIN_URL . '?statut=0&dataType=error&data=Erreur lors de l identification de l utilisateur avec son ID&action=ajouter&field={"nom":"' . $_POST['nom'] . '","description":"' . $_POST['description'] . '","dateDeb":"' . $_POST['dateDeb'] . '","dateFin":"' . $_POST['dateFin'] . '","adresse":"' . $_POST['adresse'] . '","latitude":"' . $_POST['latitude'] . '","longitude":"' . $_POST['longitude'] . '"}');
+					}
+				} else {
+					//$returnItem = '{ "statut": "0", "dataType": "error", "data": "Erreur lors de l identification de l utilisateur" }';
+					header('Location: ' . $ADMIN_URL . '?statut=0&dataType=error&data=Erreur lors de l identification de l utilisateur&action=ajouter&field={"nom":"' . $_POST['nom'] . '","description":"' . $_POST['description'] . '","dateDeb":"' . $_POST['dateDeb'] . '","dateFin":"' . $_POST['dateFin'] . '","adresse":"' . $_POST['adresse'] . '","latitude":"' . $_POST['latitude'] . '","longitude":"' . $_POST['longitude'] . '"}');
+				}
+			}
+		}
+	} else if (isset($_POST['idKey']) && isset($_POST['id']) && isset($_POST['mail']) && strcmp($_POST['action'], 'modifier') == 0 && isset($_POST['nom'])) {
+		$ERROR = false;
+		
+		$admin = 0;
+		if(strcmp($_POST['admin'], "on") == 0) { $admin = 1; }
+		
+		$field  = '&field={';
+		$field .= '"id":"' . $_POST['id'] . '",';
+		$field .= '"nom":"' . $_POST['nom'] . '",';
+		$field .= '"mail":"' . $_POST['mail'] . '",';
+		$field .= '"admin":"' . $admin . '",';
+		$field .= '"ip_min":"' . $_POST['ip_min'] . '",';
+		$field .= '"ip_max":"' . $_POST['ip_max'] . '"';
+		$field .= '}';
+		
+		if (strcmp($_POST['nom'], '') == 0) {
+			$ERROR = true;
+			header('Location: ' . $ADMIN_URL . '?statut=0&dataType=error&data=Le champ nom ne peut pas être vide&action=ajouter' . $field);
+		}
+		if (strcmp($_POST['mail'], '') == 0) {
+			$ERROR = true;
+			header('Location: ' . $ADMIN_URL . '?statut=0&dataType=error&data=Le champ mail ne peut pas être vide&action=ajouter' . $field);
+		}
+		
+		if (!$ERROR) {
+			$mysqli = new mysqli($HOST_DB, $USER_DB, $PASSWORD_DB, $SCHEMA_DB, $PORT_DB);
+			if ($mysqli->connect_errno) {
+				//$returnItem = '{ "statut": "0", "dataType": "error", "data": "Failed to connect to MySQL: (' . $mysqli->connect_errno . ') ' . $mysqli->connect_error . '" }';
+				header('Location: ' . $ADMIN_URL . '?statut=0&dataType=error&data=Failed to connect to MySQL: (' . $mysqli->connect_errno . ') ' . $mysqli->connect_error . '&action=ajouter&field={"nom":"' . $_POST['nom'] . '","description":"' . $_POST['description'] . '","dateDeb":"' . $_POST['dateDeb'] . '","dateFin":"' . $_POST['dateFin'] . '","adresse":"' . $_POST['adresse'] . '","latitude":"' . $_POST['latitude'] . '","longitude":"' . $_POST['longitude'] . '"}');
+			} else {
+		
+				$query = "SELECT * FROM TABLE_USER WHERE TOKEN='" . $_POST[idKey] . "'";
+				$res = $mysqli->query($query);
+				if ($res) {
+					$row = $res->fetch_assoc();
+					if (isset($row['ID'])) {
+						
+						$query = "UPDATE TABLE_USER SET ";
+						
+						if(strcmp($_POST['passwd'], "")) {
+							$query .= "PASSWD='" . md5($_POST['passwd']) . "', ";
+						}
+						
+						$query .= "NOM='" . $_POST['nom'] . "', ADMIN='" . $admin . "', EMAIL='" . $_POST['mail'] . "', IP_LB='" . $_POST['ip_min'] . "', IP_UB='" . $_POST['ip_max'] . "' WHERE ID=" . $_POST['id'];
+		
+						if (!($stmt = $mysqli->prepare($query))) {
+							//$returnItem = '{ "statut": "0", "dataType": "error", "data": "Echec de la preparation: (' . $mysqli->connect_errno . ') ' . $mysqli->connect_error . '" }';
+							header('Location: ' . $PIEGE_URL . '?statut=0&dataType=error&data=Saisie invalide (nom non unique)&action=modifier&field={"id":"' . $_POST['id'] . '","nom":"' . $_POST['nom'] . '","description":"' . $_POST['description'] . '","dateDeb":"' . $_POST['dateDeb'] . '","dateFin":"' . $_POST['dateFin'] . '","adresse":"' . $_POST['adresse'] . '","latitude":"' . $_POST['latitude'] . '","longitude":"' . $_POST['longitude'] . '"}');
+						}
+		
+						if (!$stmt->execute()) {
+							//$returnItem = '{ "statut": "0", "dataType": "error", "data": "Echec lors de l execution: (' . $mysqli->connect_errno . ') ' . $mysqli->connect_error . '" }';
+							header('Location: ' . $ADMIN_URL . '?statut=0&dataType=error&data=Echec lors de l execution&action=ajouter&field={"nom":"' . $_POST['nom'] . '","description":"' . $_POST['description'] . '","dateDeb":"' . $_POST['dateDeb'] . '","dateFin":"' . $_POST['dateFin'] . '","adresse":"' . $_POST['adresse'] . '","latitude":"' . $_POST['latitude'] . '","longitude":"' . $_POST['longitude'] . '"}');
+						} else {
+							//$returnItem = '{ "statut": "2", "dataType": "ok", "data": "Campagne ajoutée" , "idKey": "' . $row['RSA_PRIVE'] . '"}';
+							header('Location: ' . $ADMIN_URL . '?id=' . $_POST['id']);
 						}
 					} else {
 						//$returnItem = '{ "statut": "0", "dataType": "error", "data": "Erreur lors de l identification de l utilisateur avec son ID" }';

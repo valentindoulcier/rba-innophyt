@@ -70,7 +70,7 @@ function loadUserTable() {
 							dataSet += "data-typeauth='" + typeAuth + "' ";
 							dataSet += "data-mail='" + this.mail + "' ";
 							dataSet += "data-ip_min='" + this.ip_min + "' ";
-							dataSet += "data-ip_max'" + this.ip_max + "' ";
+							dataSet += "data-ip_max='" + this.ip_max + "' ";
 							
 							
 							htmlListeUser += "<tr id='u_" + this.id + "' class='" + classCss + " existingUser' " + dataSet + ">";
@@ -87,6 +87,9 @@ function loadUserTable() {
 					$('#txt-delete-item').html("Supprimer l'utilisateur ?");
 					
 					bindUserClick();
+					
+					// Récupération de l'id de l'utilisateur précédement sélectionné
+					$('#u_' + getURLParameter('id')).click();
 					
 					if(getURLParameter('dataType') == "error") {
 						$('#ajoutUser').attr('rel', 'shadowbox;width=500px;height=460px');
@@ -254,6 +257,22 @@ function normalSizeUserForm() {
 	$('.close').bind('click', function() {
 		Shadowbox.skin.dynamicResize(500, 410);
 	});
+}
+
+/**
+ * Vide les informations du formulaire de la pop-up
+ *
+ * @method setEmptyForm
+ * @return {Void}
+ **/
+function setEmptyForm() {
+	$('.form-info').empty();
+	$(".nom").val("");
+	$(".mail").val("");
+	$(".ip_min").val("");
+	$(".ip_max").val("");
+	$(".passwd").val("");
+	$('.admin').removeAttr('checked');
 }
 
 /****** DOCUMENT READY *****/
