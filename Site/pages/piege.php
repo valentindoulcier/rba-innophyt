@@ -9,6 +9,7 @@
 			$HEADER = false;
 			$PageType    = "prepareQuizz";
 			$CurrentPath = "/pages";
+			$Component   = array("graph");
 			require_once("parts/variables.php");
 
 			include $PAGE_PART_PATH . "/headCssJs.php";
@@ -53,6 +54,11 @@
 					<section id="liste_piege">
 						Liste des éléments
 					</section>
+					<section id="rba" style="display: none;">
+						<div id="graph-canvas">
+							<div class="clearer"></div>
+						</div>
+					</section>
 				</div>
 				<div id="infos_elem">
 					<header>
@@ -95,18 +101,14 @@
 										<a href="#selectionner-item" rel='shadowbox;width=450px;height=150px' id="choose-item" class="btn btn-large btn-success" onclick="loadInfoBeaforeQuizz();">Suivant</a>
 									</div>
 									<br/>
-									<div class="btn-group" style="margin-left: 10px;">
-										<a href="#selectionner-item" rel='shadowbox;width=450px;height=150px' id="rba-item" class="btn btn-link" onclick="loadRBAPiege();">RBA</a>
-										<a href="#selectionner-item" rel='shadowbox;width=450px;height=150px' id="googleMap-item" class="btn btn-link">Carte</a>
+									<div class="btn-group" style="margin-left: 40px; margin-top: 5px;">
+										<a href="#selectionner-item" rel='shadowbox;width=450px;height=150px' id="rba-item" class="btn btn-link">Calcul RBA</a>
 									</div>
 								</div>
 							</div>
 						</div>
 					</section>
 				</div>
-				<div class="clearer"></div>
-			</div>
-			<div id="graph-canvas">
 				<div class="clearer"></div>
 			</div>
 			<div class="clearer"></div>

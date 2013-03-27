@@ -40,7 +40,7 @@
 			if ($res) {
 				$row = $res->fetch_assoc();
 				if (isset($row['ID'])) {
-					$query = "SELECT REGIME_INSECTE, SUM(NOMBRE) AS NB FROM TABLE_RECOLTE WHERE PIEGE_ID='" . $_POST['piegeId-insecte'] . " GROUP BY REGIME_INSECTE'";
+					$query = "SELECT REGIME_INSECTE, SUM(NOMBRE) AS NB FROM TABLE_RECOLTE WHERE PIEGE_ID='" . $_POST['piegeId-insecte'] . "' GROUP BY REGIME_INSECTE";
 					$item = $mysqli->query($query);
 	
 					if ($item) {

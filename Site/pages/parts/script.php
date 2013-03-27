@@ -51,19 +51,6 @@
 	if (strcmp($PageType, "prepareQuizz") == 0) {
 ?>
 	<script type="text/javascript" src="<?php echo $JS_PATH; ?>/prepareQuizz.js"></script>
-
-	<script type="text/javascript" src="<?php echo $JS_PATH; ?>/graphique-maker.js"></script>
-	
-	<script type="text/javascript" src="<?php echo $PLUGINS_PATH ?>/jqplot.pieRenderer.js"></script>
-	<script type="text/javascript" src="<?php echo $PLUGINS_PATH ?>/jqplot.barRenderer.min.js"></script>
-	<script type="text/javascript" src="<?php echo $PLUGINS_PATH ?>/jqplot.categoryAxisRenderer.min.js"></script>
-	<script type="text/javascript" src="<?php echo $PLUGINS_PATH ?>/jqplot.highlighter.js"></script>
-	<script type="text/javascript" src="<?php echo $PLUGINS_PATH ?>/jqplot.canvasAxisTickRenderer.min.js"></script>
-	<script type="text/javascript" src="<?php echo $PLUGINS_PATH ?>/jqplot.canvasAxisLabelRenderer.min.js"></script>
-	<script type="text/javascript" src="<?php echo $PLUGINS_PATH ?>/jqplot.canvasTextRenderer.min.js"></script>
-	<script type="text/javascript" src="<?php echo $PLUGINS_PATH ?>/jqplot.enhancedLegendRenderer.min.js"></script>
-	<script type="text/javascript" src="<?php echo $PLUGINS_PATH ?>/jqplot.trendline.min.js"></script>
-	<link rel="stylesheet" href="<?php echo $CSS_PATH ?>/jquery.jqplot.min.css"/>
 <?php
 	}
 ?>
@@ -97,6 +84,24 @@
 	<!--<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCfZN9a70ZRFuLhcNNzDm-q_JlkLyWyW3w&sensor=true"></script>-->
 	<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
 	<script type="text/javascript" src="<?php echo $JS_PATH; ?>/map.js"></script>
+<?php
+		}
+		
+		if (in_array("graph", $Component)) {
+?>
+
+	<script type="text/javascript" src="<?php echo $JS_PATH; ?>/graphique-maker.js"></script>
+	
+	<script type="text/javascript" src="<?php echo $PLUGINS_PATH ?>/jqplot.pieRenderer.js"></script>
+	<script type="text/javascript" src="<?php echo $PLUGINS_PATH ?>/jqplot.barRenderer.min.js"></script>
+	<script type="text/javascript" src="<?php echo $PLUGINS_PATH ?>/jqplot.categoryAxisRenderer.min.js"></script>
+	<script type="text/javascript" src="<?php echo $PLUGINS_PATH ?>/jqplot.highlighter.js"></script>
+	<script type="text/javascript" src="<?php echo $PLUGINS_PATH ?>/jqplot.canvasAxisTickRenderer.min.js"></script>
+	<script type="text/javascript" src="<?php echo $PLUGINS_PATH ?>/jqplot.canvasAxisLabelRenderer.min.js"></script>
+	<script type="text/javascript" src="<?php echo $PLUGINS_PATH ?>/jqplot.canvasTextRenderer.min.js"></script>
+	<script type="text/javascript" src="<?php echo $PLUGINS_PATH ?>/jqplot.enhancedLegendRenderer.min.js"></script>
+	<script type="text/javascript" src="<?php echo $PLUGINS_PATH ?>/jqplot.trendline.min.js"></script>
+	<link rel="stylesheet" href="<?php echo $CSS_PATH ?>/jquery.jqplot.min.css"/>
 <?php
 		}
 	}

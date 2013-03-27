@@ -10,7 +10,6 @@ function bindItemClick() {
 		var item = document.getElementById($(this).attr('id'));
 		var urlPageSuivante = "";
 		var shadowBoxModifier = "";
-		var shadowBoxRBA = "shadowbox;width=650px;height=450px";
 		var shadowBoxSupprimer = "shadowbox;width=450px;height=150px";
 		
 		// Mise à jour de l'item sélectionné dans la sessionStorage
@@ -41,7 +40,9 @@ function bindItemClick() {
 			
 			shadowBoxModifier = "shadowbox;width=500px;height=500px";
 			
-			//makeMyPlot();
+			$('#rba-item').removeAttr('rel');
+			$('#rba-item').attr('href', '#');
+			$('#rba-item').attr('onclick', 'toogleItemRBA()');
 		}
 		
 		// Chargement des champs dans la partie information
@@ -68,10 +69,6 @@ function bindItemClick() {
 		$('#choose-item').attr('href', urlPageSuivante);
 		if (pageChoix == "piege") {
 			$('#choose-item').attr('rel', 'shadowbox;width=500px;height=270px');
-			// Affichage du RBA
-			$('#rba-item').attr('href', pages_url + "/rbaPiege.php");
-			//$('#rba-item').attr('rel', shadowBoxRBA);
-			$('#rba-item').removeAttr('rel');
 		} else {
 			$('#choose-item').removeAttr('rel');
 		}
@@ -466,6 +463,28 @@ function toogleItemGoogleMap() {
 	}
 }
 
+/**
+ * Cette fonction affiche le RBA du piège (Graphique JQuery)
+ *
+ * @method toogleItemRBA
+ * @return {Void}
+ **/
+function toogleItemRBA() {
+	//$('#googleMap-item');
+	$('#liste_piege').toggle(100);
+	$('#rba').toggle(100);
+	$('#rba-item').toggleClass('active');
+	$('#rba-item').toggleClass('btn-info');
+	if($('#rba-item').attr('class').indexOf('active') >= 0) {	
+		if ($('#rba')) {
+			try {
+				$('#graph-canvas').empty();
+				setGaphique();
+			} catch (err) {}
+		}
+	}
+}
+
 /***** DOCUMENT READY *****/
 
 $(document).ready(function() {
@@ -482,15 +501,4 @@ $(document).ready(function() {
 	sessionStorage.setItem('pageChoix', pageChoix);
 	listerItem(pageChoix);
 });
-
-
-/**
- * Cette fonction affiche le RBA du piège (Graphique JQuery)
- *
- * @method loadInfoBeaforeQuizz
- * @return {Void}
- **/
-function loadRBAPiege() {
-	//makeMyPlot();
-}
 

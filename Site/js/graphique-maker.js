@@ -20,9 +20,10 @@ function initializeGraph() {
 		url : php_script_url + "/recolte.php",
 		data : { "idKey" : authInfo.idKeyMd5, "action": "graph", "piegeId-insecte": sessionStorage.getItem(session_id_piege) },
 		success : function(msg) {
+			console.debug(msg);
 			var data = $.parseJSON(msg);
 			if (data.idKey == authInfo.idKeyMd5 && data.dataType == "graph") {
-				console.debug(data);
+				//console.debug(data);
 				makeMyPlot(data.data);
 			} else {
 				// Affichage d'un message d'erreur dans le cas où l'utilisateur n'est pas reconnu
@@ -40,20 +41,20 @@ function initializeGraph() {
 
 
 function makeMyPlot(data) {
-	
-	var datas = new Array();
+	//console.debug(data);
+	var datas = [['Carnivore', 0],['Carnivore et Nectarivore', 0], ['Herbivore', 0], ['Herbivore et Nectarivore', 0], ['Nectarivore', 0]];
+	$c1 = 0;
 	$.each(data, function() {
-		if (this.regime_insecte) {
 			if(this.regime && this.nombre) {
-				var tempo = new Array();
-				
-				tempo.push(this.regime);
-				tempo.push(parseFloat(this.nombre));
-				
-				datas.push(tempo);
+				if(datas[0][0] == this.regime) { console.debug("0" + datas[0][0]); datas[0][1] += parseFloat(this.nombre);}
+				if(datas[1][0] == this.regime) { console.debug("1" + datas[1][0]); datas[1][1] += parseFloat(this.nombre);}
+				if(datas[2][0] == this.regime) { console.debug("2" + datas[2][0]); datas[2][1] += parseFloat(this.nombre);}
+				if(datas[3][0] == this.regime) { console.debug("3" + datas[3][0]); datas[3][1] += parseFloat(this.nombre);}
+				if(datas[4][0] == this.regime) { console.debug("4" + datas[4][0]); datas[4][1] += parseFloat(this.nombre);}
 			}
-		}
 	});
+	
+	console.debug(datas);
 	
 	//var data = [['Mouches', 12],['Vaches', 9], ['Moutons', 14], ['Brebis', 16]];
   var plot2 = jQuery.jqplot ('graph-canvas', [datas], 
@@ -78,6 +79,6 @@ function makeMyPlot(data) {
 
 $(document).ready(function() {
 	if ($('#graph-canvas')) {
-		setGaphique();
+		//setGaphique();
 	}
 });
