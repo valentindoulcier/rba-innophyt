@@ -5,7 +5,8 @@
  * @return {Void}
  **/
 function setGoogleMap() {
-	google.maps.event.addDomListener(window, 'load', initialize);
+	//google.maps.event.addDomListener(window, 'load', initialize);
+	initialize();
 }
 
 /**
@@ -44,9 +45,9 @@ function initialize() {
  * @para {Object} data Structure contenant les informations des points à ajouter sur le Google Map
  * @return {Void}
  */
+function setMarkers(data) {
 	var minLat, maxLat;
 	var minLon, maxLon;
-function setMarkers(data) {
 	var latitude, longitude;
 
 	$.each(data, function() {
@@ -87,10 +88,6 @@ function setMarkers(data) {
 		zoom = 11;
 	}
 
-console.debug("lat " + minLat + " - " + maxLat);
-console.debug("lon " + minLon + " - " + maxLon);
-console.debug("avg " + latitude + " / " + longitude);
-console.log(zoom);
 	var latLon = new google.maps.LatLng(latitude, longitude);
 	
 	var mapOptions = {
@@ -174,5 +171,7 @@ function addMarker(nom, latitude, longitude, map) {
  * Execute me once when the DOM is ready
  * --------- */
 $(document).ready(function() {
-	setGoogleMap();
+	if ($('#map-canvas')) {
+		setGoogleMap();
+	}
 })

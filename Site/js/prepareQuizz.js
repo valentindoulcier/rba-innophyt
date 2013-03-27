@@ -80,6 +80,9 @@ function bindItemClick() {
 			Shadowbox.clearCache();
 			Shadowbox.setup();
 		}, 500);
+		
+		$('#map-canvas').empty();
+		setGoogleMap();
 	});
 }
 
