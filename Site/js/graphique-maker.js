@@ -25,5 +25,7 @@ function makeMyPlot() {
 
 
 $(document).ready(function() {
-	makeMyPlot();
+	if ($('#graph-canvas')) {
+		makeMyPlot();
+	}
 });
