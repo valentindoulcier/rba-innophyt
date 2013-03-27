@@ -83,7 +83,7 @@
 						<div id="graph-canvas">
 							<div class="clearer"></div>
 						</div>
-						<a href="#exportImage" rel='shadowbox;width=630px;height=560px' class="btn btn-link" style="float: right; margin-top: -10px; margin-right: 10px;"><i class="icon-camera"></i> Export du résultat</a>
+						<a id="tesst" href="#exportImage" rel='shadowbox;width=630px;height=560px' class="btn btn-link" style="float: right; margin-top: -10px; margin-right: 10px;"><i class="icon-camera"></i> Export du résultat</a>
 					</section>
 				</div>
 				<div id="infos_elem">

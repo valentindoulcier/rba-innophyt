@@ -73,6 +73,7 @@ function makeMyPlot(data) {
 		$("#po3").html("0%");
 		$("#po4").html("0%");
 		$("#po5").html("0%");
+		$('#tesst').attr('style',"float: right; margin-top: -10px; margin-right: 10px; display: none;");
 	} else {
 		$("#po1").html(Math.round(datas[0][1] / somme, 2) + "%");
 		$("#po2").html(Math.round(datas[1][1] / somme, 2) + "%");
@@ -99,6 +100,7 @@ function makeMyPlot(data) {
 				location : 'e'
 			}
 		});
+		$('#tesst').attr('style',"float: right; margin-top: -10px; margin-right: 10px; display: block;");
 		jqplotToImg();
 	}
 }
