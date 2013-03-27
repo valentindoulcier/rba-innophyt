@@ -299,7 +299,7 @@ function setEmptyForm() {
 		
 		setPrefixePiege();
 	}, 1500);
-};
+}
 
 /**
  * Cette fonction remet en place la pop-up avec les données dedans suite à une validation contenant une ou plusieurs erreur(s)

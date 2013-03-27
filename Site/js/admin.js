@@ -88,9 +88,15 @@ function loadUserTable() {
 					
 					bindUserClick();
 					
+					if(getURLParameter('dataType') == "error") {
+						$('#ajoutUser').attr('rel', 'shadowbox;width=500px;height=460px');
+					}
+					
 					// Mise à jour de shadowbox pour les pop-up de modification et suppression
 					Shadowbox.clearCache();
 					Shadowbox.setup();
+					
+					loadPopUpAfterError();
 				} else {
 					// Affichage d'un message d'erreur dans le cas où il y a une erreur pour la récupération des items
 					$('#liste_admin').html("<div class='alert alert-error'> <button type='button' class='close' data-dismiss='alert'>&times;</button> <strong>Erreur !</strong> Problème dans la récupération de la liste des utilisateurs </div>")
@@ -202,9 +208,58 @@ function loadInfoModif() {
 	}
 }
 
+/**
+ * Cette fonction remet en place la pop-up avec les données dedans suite à une validation contenant une ou plusieurs erreur(s)
+ *
+ * @method loadPopUpAfterError
+ * @return {Void}
+ **/
+function loadPopUpAfterError() {
+	if (getURLParameter('statut') == "0" && getURLParameter('dataType') == "error") {
+		var field = $.parseJSON(getURLParameter('field'));
+		var action = getURLParameter('action');
+		
+		$('.form-info').html("<div class='alert alert-error'> <button type='button' class='close' data-dismiss='alert'>&times;</button> <strong>Erreur !</strong> " + getURLParameter('data') + " </div>")
+		
+		setTimeout( function (){
+			// Ouverture du formulaire
+			$('#ajoutUser').click();
+			sessionStorage.setItem(session_action, action);
+			
+			setTimeout(function () {
+				
+				// Chargement des champs saisie dans le formulaire
+				$(".id-field").val(field.id);
+				$(".nom").val(field.nom);
+				$(".mail").val(field.mail);
+				$(".ip_min").val(field.ip_min);
+				$(".ip_max").val(field.ip_max);
+				
+				if (field.admin == "1") { $('.admin').attr('checked', 'checked'); }
+				else { $('.admin').removeAttr('checked'); }
+				
+				normalSizeUserForm();
+			}, 1500);
+		}, 1000);
+	}
+}
+
+/**
+ * Cette fonction permet de remettre la bonne taille de la pop-up lorsque l'utilisateur ferme le message d'erreur
+ *
+ * @method normalSizeUserForm
+ * @return {Void}
+ **/
+function normalSizeUserForm() {
+	$('.close').bind('click', function() {
+		Shadowbox.skin.dynamicResize(500, 410);
+	});
+}
+
 /****** DOCUMENT READY *****/
 
 $(document).ready(function() {
+	
 	bindActionGenerateThumbnail();
 	
 	// Charge la liste des utilisateurs

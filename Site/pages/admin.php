@@ -55,7 +55,7 @@
 			<div id="selection-2_3">
 				<div id="liste_elem">
 					<header id="title_admin">
-						<h2>Liste des utilisateurs<span style="position: relative; float: right;"><a href="#formUser" rel="shadowbox;width=500px;height=410px" title="Ajouter un utilisateur" class="btn btn-info btn-large">Ajouter un utilisateur</a></span></h2>
+						<h2>Liste des utilisateurs<span style="position: relative; float: right;"><a href="#formUser" rel="shadowbox;width=500px;height=410px" title="Ajouter un utilisateur" id="ajoutUser" class="btn btn-info btn-large" onclick="$('.admin').removeAttr('checked'); sessionStorage.setItem(session_action, 'ajouter');">Ajouter un utilisateur</a></span></h2>
 					</header>
 					<section id="liste_admin">
 						<table class="table table-striped table-hover">
@@ -176,7 +176,7 @@
 										<div class="btn-group">
 											<a href="#" id="cancel-form" class="btn" onclick="Shadowbox.close();">Annuler</a>
 											<a href="#" id="reinit-form" class="btn" onclick="setEmptyForm();">Réinitialiser</a>
-											<a href="#" id="submit-form" class="btn btn-success" onclick="javascript:submit()">Enregistrer</a>
+											<a href="#" id="submit-form" class="btn btn-success" onclick="$('.action-field').val(sessionStorage.getItem(session_action)); javascript:submit()">Enregistrer</a>
 										</div>
 									</div>
 								</div>
