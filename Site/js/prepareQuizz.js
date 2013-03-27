@@ -35,7 +35,7 @@ function bindItemClick() {
 			sessionStorage.setItem(session_id_piege, item.dataset.id);
 			urlPageSuivante = '#items-choisis';
 			
-			//shadowBoxModifier = "shadowbox;width=500px;height=500px";
+			shadowBoxModifier = "shadowbox;width=500px;height=500px";
 			
 			//makeMyPlot();
 		}
@@ -79,7 +79,7 @@ function bindItemClick() {
 			// Mise à jour de shadowbox pour les pop-up de modification et suppression
 			Shadowbox.clearCache();
 			Shadowbox.setup();
-		}, 200);
+		}, 500);
 	});
 }
 

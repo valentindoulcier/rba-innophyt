@@ -95,8 +95,8 @@
 										<a href="#selectionner-item" rel='shadowbox;width=450px;height=150px' id="choose-item" class="btn btn-large btn-success" onclick="loadInfoBeaforeQuizz();">Suivant</a>
 									</div>
 									<br/>
-									<div class="btn-group" style="margin-left: 10px; display: none;">
-										<a href="#selectionner-item" rel='shadowbox;width=450px;height=150px' id="rba-item" class="btn btn-link" onclick="loadRBAPiege();" style="width: 47px;">RBA</a>
+									<div class="btn-group" style="margin-left: 10px;">
+										<a href="#selectionner-item" rel='shadowbox;width=450px;height=150px' id="rba-item" class="btn btn-link" onclick="loadRBAPiege();">RBA</a>
 										<a href="#selectionner-item" rel='shadowbox;width=450px;height=150px' id="googleMap-item" class="btn btn-link">Carte</a>
 									</div>
 								</div>
