@@ -2,3 +2,17 @@
 **.DS_Store
 *.project
 *./Site/arbres/thumbnail/*
+
+Documents/Rapport/Modele_Rapport.aux
+
+Documents/Rapport/Modele_Rapport.lof
+
+Documents/Rapport/Modele_Rapport.log
+
+Documents/Rapport/Modele_Rapport.lot
+
+Documents/Rapport/Modele_Rapport.out
+
+Documents/Rapport/Modele_Rapport.synctex.gz
+
+Documents/Rapport/Modele_Rapport.toc
