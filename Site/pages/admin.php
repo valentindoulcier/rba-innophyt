@@ -89,11 +89,11 @@
 						<div class="field">
 							Type d'authentification<span id="fieldTypeAuth" class="fieldSpan">&nbsp;</span>
 						</div>
-						<div class="field" style="display: none;">
-							IP min<span id="fieldIPmin" class="fieldSpan"></span>
+						<div class="field">
+							Adresse IP basse<span id="fieldIPmin" class="fieldSpan">&nbsp;</span>
 						</div>
-						<div class="field" style="display: none;">
-							IP max<span id="fieldIPmax" class="fieldSpan"></span>
+						<div class="field">
+							Adresse IP haute<span id="fieldIPmax" class="fieldSpan">&nbsp;</span>
 						</div>
 						<div class="control-group">
 							<div class="controls">
