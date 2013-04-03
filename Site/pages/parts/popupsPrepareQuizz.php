@@ -77,10 +77,9 @@
 					<div class="control-group">
 						<div class="controls">
 							<div class="btn-toolbar">
-								<div class="btn-group">
-									<a href="#" id="cancel-form" class="btn" onclick="Shadowbox.close();">Fermer</a>
-									<a href="<?php echo $QUIZZ_URL; ?>" id="cancel-form" class="btn btn-success" onclick="sessionStorage.removeItem(session_id_mosaique);">Identification</a>
-								</div>
+								<a href="#" id="cancel-form" class="btn btn-large" onclick="Shadowbox.close();">Fermer</a>
+								<a href="<?php echo $QUIZZ_URL; ?>" id="cancel-form" class="btn btn-success btn-large" onclick="sessionStorage.removeItem(session_id_mosaique);">Identification</a>
+								<a href="<?php echo $MOSAIQUE_URL; ?>" id="cancel-form" class="btn btn-success" onclick="sessionStorage.removeItem(session_id_mosaique);">Mosaïque</a>
 							</div>
 						</div>
 					</div>
