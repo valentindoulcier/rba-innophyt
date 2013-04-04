@@ -130,16 +130,16 @@ function addMarker(nom, latitude, longitude, map) {
 
 	// Choix de l'icone pour le marker
 	if(nom.indexOf("BJ-") == 0) {
-		imageMarker = new google.maps.MarkerImage(images_url + "/googleMapsMarkerYellow.png");
+		imageMarker = new google.maps.MarkerImage(images_url + "/mapMarkers/googleMapsMarkerYellow.png");
 		typePiege = "Bol Jaune";
 	} else if(nom.indexOf("TM-") == 0) {
-		imageMarker = new google.maps.MarkerImage(images_url + "/googleMapsMarkerGreen.png");
+		imageMarker = new google.maps.MarkerImage(images_url + "/mapMarkers/googleMapsMarkerGreen.png");
 		typePiege = "Tente Malaise";
 	} else if(nom.indexOf("B-") == 0) {
-		imageMarker = new google.maps.MarkerImage(images_url + "/googleMapsMarkerBlue.png");
+		imageMarker = new google.maps.MarkerImage(images_url + "/mapMarkers/googleMapsMarkerBlue.png");
 		typePiege = "Piège Barber";
 	} else {
-		imageMarker = new google.maps.MarkerImage(images_url + "/googleMapsMarkerRed.png");
+		imageMarker = new google.maps.MarkerImage(images_url + "/mapMarkers/googleMapsMarkerRed.png");
 		typePiege = "Inconnu";
 	}
 	
