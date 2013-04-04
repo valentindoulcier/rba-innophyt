@@ -48,32 +48,33 @@
 			<div id="menu" class="row">
 				<div class="span3 cell">
 					<a href="<?php echo $PROTOCOLES_URL?>" title="Liste des protocoles">
-						<img src="<?php echo $IMG_PATH ?>/vache1.png" alt="icone questionnaire" class="ico-accueil"/>
+						<img src="<?php echo $IMG_PATH ?>/menu/protocoles.jpg" alt="icone protocoles" class="ico-accueil"/>
 						<h3 class="overMenuItem">Protocoles</h3>
 					</a>
 				</div>
 				<div class="span3 cell">
 					<a href="<?php echo $CAMPAGNE_URL?>" title="Accès au choix des campagnes / parcelles / pièges" onclick="sessionStorage.setItem(session_save, 'true');">
-						<img src="<?php echo $IMG_PATH ?>/vache2.png" alt="icone questionnaire" class="ico-accueil"/>
-						<h3 class="overMenuItem">Expérimentation</h3>
+						<img src="<?php echo $IMG_PATH ?>/menu/serie_experimentale.jpg" alt="icone séries expériementales" class="ico-accueil"/>
+						<h3 class="overMenuItem">Expérimentations</h3>
+						<!--<h4 class="overMenuItem">Série expérimentale</h4>-->
 					</a>
 				</div>
 				<div class="span3 cell">
 					<a href="#selectionner-item" title="Accès à l'arbre d'identification" rel='shadowbox;width=450px;height=155px' onclick="sessionStorage.setItem('item-rba-menu', 'quizz'); directIdent();">
-						<img src="<?php echo $IMG_PATH ?>/vache3.png" alt="icone questionnaire" class="ico-accueil"/>
-						<h3 class="overMenuItem">Identification</h3>
+						<img src="<?php echo $IMG_PATH ?>/menu/identification_arbre.jpg" alt="icone identifications" class="ico-accueil"/>
+						<h3 class="overMenuItem">Identifications</h3>
 					</a>
 				</div>
 				<div class="span3 cell">
 					<a href="#selectionner-item" title="Accès à la mosaïque" rel='shadowbox;width=450px;height=155px' onclick="sessionStorage.setItem('item-rba-menu', 'mosaique'); directIdent();">
-						<img src="<?php echo $IMG_PATH ?>/vache4.png" alt="icone questionnaire" class="ico-accueil"/>
+						<img src="<?php echo $IMG_PATH ?>/menu/mosaique.jpg" alt="icone mosaïque" class="ico-accueil"/>
 						<h3 class="overMenuItem">Mosaïque</h3>
 					</a>
 				</div>
 				<div class="span3 cell">
 					<a id="exportCSV" href="<?php echo($PHP_SCRIPT_PATH)?>/exportCSV.php?idKey=" title="Export des données">
-						<img src="<?php echo $IMG_PATH ?>/vache5.png" alt="icone questionnaire" class="ico-accueil"/>
-						<h3 class="overMenuItem">Export</h3>
+						<img src="<?php echo $IMG_PATH ?>/menu/resultats.jpg" alt="icone resultats" class="ico-accueil"/>
+						<h3 class="overMenuItem">Résultats</h3>
 					</a>
 				</div>
 				<div id="adminCell" class="span3 cell">

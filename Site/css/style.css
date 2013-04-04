@@ -631,6 +631,14 @@ input::-webkit-input-placeholder {
 	border-bottom-left-radius: 20px;
 	border-bottom-right-radius: 20px;
 }
+h3.overMenuItem {
+	margin-bottom: 0;	
+	padding: 9px 20px;
+}
+h4.overMenuItem {
+	margin-bottom: 0;	
+	padding: 15px 20px 12px 20px;
+}
 
 /*----------------------------
 	Mosaïque

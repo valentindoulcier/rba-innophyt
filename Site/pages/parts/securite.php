@@ -40,7 +40,7 @@
 							}
 							// Si la personne est administrateur, on ajoute l'icone
 							if (msg.admin == "1") {
-								$('#adminCell').html("<a href='<?php echo $ADMIN_URL ?>' title='Administration de l application'><img src='<?php echo $IMG_PATH ?>/vache6.png' alt='icone questionnaire' class='ico-accueil'/><h3 class='overMenuItem'>Administration</h3></a>");
+								$('#adminCell').html("<a href='<?php echo $ADMIN_URL ?>' title='Administration de l application'><img src='<?php echo $IMG_PATH ?>/menu/vache6.png' alt='icone questionnaire' class='ico-accueil'/><h3 class='overMenuItem'>Administration</h3></a>");
 							}
 						} else {
 							console.error(msg);
