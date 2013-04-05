@@ -24,4 +24,8 @@ function bindItemClick() {
 
 $(document).ready(function() {
 	bindItemClick();
+	
+	if (getURLParameter('statut') == "1") {
+		$('#debugText').html("<div class='alert alert-info'> <button type='button' class='close' data-dismiss='alert'>&times;</button> <strong>Récolte enregistée !</strong> Vous pouvez enregistrer une nouvelle récolte pour ce piège.</div>");
+	}
 });

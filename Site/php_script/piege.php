@@ -47,9 +47,9 @@
 				$returnItem = '{ "statut": "0", "dataType": "error", "data": "Erreur lors de l\'identification de l\'utilisateur" }';
 			}
 		}
-	} else if (isset($_POST['idKey']) && isset($_POST['parcelleId']) && strcmp($_POST['action'], 'ajouter') == 0 && isset($_POST['nom'])) {
+	} else if (isset($_POST['idKey']) && isset($_POST['parcelleId']) && strcmp($_POST['action'], 'ajouter') == 0 && isset($_POST['nom']) && isset($_POST['prefixepiege'])) {
 		$ERROR = false;
-		
+		//var_dump($_POST);
 		if (strcmp($_POST['nom'], '') == 0) {
 			$ERROR = true;
 			header('Location: ' . $PIEGE_URL . '?statut=0&dataType=error&data=Le champ nom ne peut pas être vide&action=ajouter&field={"nom":"' . $_POST['nom'] . '","description":"' . $_POST['description'] . '","dateDeb":"' . $_POST['dateDeb'] . '","dateFin":"' . $_POST['dateFin'] . '","adresse":"' . $_POST['adresse'] . '","latitude":"' . $_POST['latitude'] . '","longitude":"' . $_POST['longitude'] . '"}');
@@ -92,7 +92,7 @@
 							header('Location: ' . $PIEGE_URL . '?statut=0&dataType=error&data=Echec de la preparation de la requete: (' . $mysqli->connect_errno . ') ' . $mysqli->connect_error . '&action=ajouter&field={"nom":"' . $_POST['nom'] . '","description":"' . $_POST['description'] . '","dateDeb":"' . $_POST['dateDeb'] . '","dateFin":"' . $_POST['dateFin'] . '","adresse":"' . $_POST['adresse'] . '","latitude":"' . $_POST['latitude'] . '","longitude":"' . $_POST['longitude'] . '"}');
 						}
 						
-						if (!$stmt->bind_param("isssssss", $_POST['parcelleId'], htmlentities($_POST['nom']), htmlentities($_POST['dateDeb']), htmlentities($_POST['dateFin']), htmlentities($_POST['adresse']), htmlentities($_POST['latitude']), htmlentities($_POST['longitude']), htmlentities($_POST['description']))) {
+						if (!$stmt->bind_param("isssssss", $_POST['parcelleId'], htmlentities($_POST['prefixepiege'] . $_POST['nom']), htmlentities($_POST['dateDeb']), htmlentities($_POST['dateFin']), htmlentities($_POST['adresse']), htmlentities($_POST['latitude']), htmlentities($_POST['longitude']), htmlentities($_POST['description']))) {
 							//$returnItem = '{ "statut": "0", "dataType": "error", "data": "Echec lors du liage des paramètres: (' . $mysqli->connect_errno . ') ' . $mysqli-connect_error . '" }';
 							header('Location: ' . $PIEGE_URL . '?statut=0&dataType=error&data=Echec lors du liage des parametres: (' . $mysqli->connect_errno . ') ' . $mysqli->connect_error . '&action=ajouter&field={"nom":"' . $_POST['nom'] . '","description":"' . $_POST['description'] . '","dateDeb":"' . $_POST['dateDeb'] . '","dateFin":"' . $_POST['dateFin'] . '","adresse":"' . $_POST['adresse'] . '","latitude":"' . $_POST['latitude'] . '","longitude":"' . $_POST['longitude'] . '"}');
 						}
@@ -114,7 +114,7 @@
 				}
 			}
 		}
-	} else if (isset($_POST['idKey']) && isset($_POST['parcelleId']) && strcmp($_POST['action'], 'modifier') == 0 && isset($_POST['nom']) && isset($_POST['id'])) {
+	} else if (isset($_POST['idKey']) && isset($_POST['parcelleId']) && strcmp($_POST['action'], 'modifier') == 0 && isset($_POST['nom']) && isset($_POST['id']) && isset($_POST['prefixepiege'])) {
 		$ERROR = false;
 		
 		if (strcmp($_POST['nom'], '') == 0) {
@@ -154,7 +154,7 @@
 					$row = $res->fetch_assoc();
 					if (isset($row['ID'])) {
 						
-						$query = "UPDATE TABLE_PIEGE SET NOM='" . htmlentities($_POST['nom']) . "', ADRESSE='" . htmlentities($_POST['adresse']) . "', DATE_DEBUT='" . htmlentities($_POST['dateDeb']) . "', DATE_FIN='" . htmlentities($_POST['dateFin']) . "', DESCRIPTION='" . htmlentities($_POST['description']) . "', LATITUDE='" . htmlentities($_POST['latitude']) . "', LONGITUDE='" . htmlentities($_POST['longitude']) . "' WHERE ID=" . $_POST['id'];
+						$query = "UPDATE TABLE_PIEGE SET NOM='" . htmlentities($_POST['prefixepiege'] . $_POST['nom']) . "', ADRESSE='" . htmlentities($_POST['adresse']) . "', DATE_DEBUT='" . htmlentities($_POST['dateDeb']) . "', DATE_FIN='" . htmlentities($_POST['dateFin']) . "', DESCRIPTION='" . htmlentities($_POST['description']) . "', LATITUDE='" . htmlentities($_POST['latitude']) . "', LONGITUDE='" . htmlentities($_POST['longitude']) . "' WHERE ID=" . $_POST['id'];
 						
 						if (!($stmt = $mysqli->prepare($query))) {
 							//$returnItem = '{ "statut": "0", "dataType": "error", "data": "Echec de la preparation: (' . $mysqli->connect_errno . ') ' . $mysqli->connect_error . '" }';

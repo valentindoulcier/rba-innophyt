@@ -231,7 +231,17 @@ function deleteItem(pageChoix) {
 					// Affichage d'un message d'erreur dans le cas où l'utilisateur n'est pas reconnu
 					$('#liste_campagne').html("<div class='alert alert-error'> <button type='button' class='close' data-dismiss='alert'>&times;</button> <strong>Erreur !</strong> " + data.data + " </div>")
 				}
+				// Supprime l'info session id de l'item sur lequel est l'utilisateur
 				sessionStorage.removeItem(eval('session_id_' + pageChoix));
+				
+				// Suprression en cascade des autres session id en fonction de la page où l'utilisateur est
+				if (pageChoix == "campagne") {
+					sessionStorage.getItem(session_id_parcelle);
+					sessionStorage.getItem(session_id_piege);
+				}
+				if (pageChoix == "parcelle") {
+					sessionStorage.getItem(session_id_piege);
+				}
 			},
 			error : function(jqXHR, textStatus, errorThrown) {
 			// Affichage d'un message d'erreur si il y a une erreur lors de l'exécution de la requête ajax
@@ -252,28 +262,34 @@ function deleteItem(pageChoix) {
 function loadInfoModif() {
 	sessionStorage.setItem(session_action, 'modifier');
 	
-	if ($("#fieldId").html() != "" && !(getURLParameter('statut') == "0" && getURLParameter('dataType') == "error")) {
-		setTimeout(function () {
-			$('.nom').removeAttr('disabled');
-			setPrefixePiege();
-			
-			$('#sb-container .dateDeb').attr('id', 'dateDeb-field');
-			$('#sb-container .dateFin').attr('id', 'dateFin-field');
-			$('#dateDeb-field').datepicker();
-			$('#dateFin-field').datepicker();
-			$('#dateDeb-field').datepicker("option", "dateFormat", "yy-mm-dd");
-			$('#dateFin-field').datepicker("option", "dateFormat", "yy-mm-dd");
-			
-			$(".id-field").val($('#fieldId').html());
+	setTimeout(function () {console.log("info modif");
+		var pageChoix = sessionStorage.getItem('pageChoix');
+	
+		$('.nom').removeAttr('disabled');
+		setPrefixePiege();
+		
+		$('#sb-container .dateDeb').attr('id', 'dateDeb-field');
+		$('#sb-container .dateFin').attr('id', 'dateFin-field');
+		$('#dateDeb-field').datepicker();
+		$('#dateFin-field').datepicker();
+		$('#dateDeb-field').datepicker("option", "dateFormat", "yy-mm-dd");
+		$('#dateFin-field').datepicker("option", "dateFormat", "yy-mm-dd");
+		$('#sb-container .prefixe').attr('id', 'prefixe');
+		
+		$(".id-field").val($('#fieldId').html());
+		if (pageChoix != "piege") {
 			$(".nom").val($('#fieldName').html());
-			$(".description").val($('#fieldDescription').html());
-			$('.adresse').val($('#fieldAdresse').html())
-			$("#dateDeb-field").val($('#fieldDateDebut').html());
-			$("#dateFin-field").val($('#fieldDateFin').html());
-			$(".latitude").val($('#fieldLatitude').html());
-			$('.longitude').val($('#fieldLongitude').html())
-		}, 1500);
-	}
+		} else {
+			$('.' + $('#fieldName').html().substring(0, $('#fieldName').html().indexOf('-'))).click();
+			$(".nom").val($('#fieldName').html().substring($('#fieldName').html().indexOf('-') + 1));
+		}
+		$(".description").val($('#fieldDescription').html());
+		$('.adresse').val($('#fieldAdresse').html())
+		$("#dateDeb-field").val($('#fieldDateDebut').html());
+		$("#dateFin-field").val($('#fieldDateFin').html());
+		$(".latitude").val($('#fieldLatitude').html());
+		$('.longitude').val($('#fieldLongitude').html())
+	}, 1500);
 }
 
 /**
@@ -292,6 +308,7 @@ function setEmptyForm() {
 	setTimeout(function () {
 		$('#sb-container .dateDeb').attr('id', 'dateDeb-field');
 		$('#sb-container .dateFin').attr('id', 'dateFin-field');
+		$('#sb-container .prefixe').attr('id', 'prefixe');
 		$('#dateDeb-field').datepicker();
 		$('#dateFin-field').datepicker();
 		$('#dateDeb-field').datepicker("option", "dateFormat", "yy-mm-dd");
@@ -311,6 +328,7 @@ function loadPopUpAfterError() {
 	if (getURLParameter('statut') == "0" && getURLParameter('dataType') == "error") {
 		var field = $.parseJSON(getURLParameter('field'));
 		var action = getURLParameter('action');
+		var pageChoix = sessionStorage.getItem('pageChoix');
 		
 		$('.form-info').html("<div class='alert alert-error'> <button type='button' class='close' data-dismiss='alert'>&times;</button> <strong>Erreur !</strong> " + getURLParameter('data') + " </div>")
 		
@@ -327,6 +345,7 @@ function loadPopUpAfterError() {
 				
 				$('#sb-container .dateDeb').attr('id', 'dateDeb-field');
 				$('#sb-container .dateFin').attr('id', 'dateFin-field');
+				$('#sb-container .prefixe').attr('id', 'prefixe');
 
 				$('#dateDeb-field').datepicker();
 				$('#dateFin-field').datepicker();
@@ -334,7 +353,12 @@ function loadPopUpAfterError() {
 				$('#dateFin-field').datepicker("option", "dateFormat", "yy-mm-dd");
 
 				// Chargement des champs saisie dans le formulaire
-				$(".id-field").val(field.id);
+				if (pageChoix != "piege") {
+					$(".id-field").val(field.id);
+				} else {
+					$('.' + field.id.substring(0, field.id.indexOf('-'))).click();
+					$(".id-field").val(field.id.substring(field.id.indexOf('-') + 1));
+				}
 				$(".nom").val(field.nom);
 				$(".description").val(field.description);
 				$("#dateDeb-field").val(field.dateDeb);
@@ -384,11 +408,11 @@ function updateTitle() {
 		var campagne = $.parseJSON(sessionStorage.getItem(session_liste_camp + authInfo.idKeyMd5));
 		title += "<a href='" + campagne_url + "' title='Retour à la liste des campagnes'>" + campagne.data[campagne_id].nom + "</a> / ";
 	}
-	if (parcelle_id) {
+	if (campagne_id && parcelle_id) {
 		var parcelle = $.parseJSON(sessionStorage.getItem(session_liste_parc + authInfo.idKeyMd5));
 		title += "<a href='" + parcelle_url + "' title='Retour à la liste des campagnes'>" + parcelle.data[parcelle_id].nom + "</a> / ";
 	}
-	if (piege_id) {
+	if (campagne_id && parcelle_id && piege_id) {
 		var piege    = $.parseJSON(sessionStorage.getItem(session_liste_pieg + authInfo.idKeyMd5));
 		title += "<a href='" + piege_url    + "' title='Retour à la liste des campagnes'>" + piege.data[piege_id].nom + "</a> /";
 		title += " <a href='#items-choisis' rel='shadowbox;width=500px;height=265px' onclick='loadInfoBeaforeQuizz();' title='Accès direct au quizz' class='btn btn-info btn-large'>Identification</a>";
@@ -415,7 +439,9 @@ function setPrefixePiege() {
 	$('.piegeType').bind('click', function() {
 		var type    = document.getElementById($(this).attr('id'));
 		$('.nom').removeAttr('disabled');
-		$('.nom').val(type.dataset.prefix);
+		$('.prefixe').text(type.dataset.prefix);
+		$('.prefixepiege').val(type.dataset.prefix);
+		//console.log($('.prefixepiege').val());
 	});
 }
 

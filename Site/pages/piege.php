@@ -152,9 +152,9 @@
 								<div class="controls">
 									<div class="btn-toolbar" style="margin: 0 !important;">
 										<div class="btn-group">
-											<a href="#" id="type-bol_jaune" class="btn piegeType" data-prefix="BJ-">Bol Jaune</a>
-											<a href="#" id="type-tente_malaise" class="btn piegeType" data-prefix="TM-">Tente Malaise</a>
-											<a href="#" id="type-piege_barber" class="btn piegeType" data-prefix="B-">Piège Barber</a>
+											<a href="#" id="type-bol_jaune" class="btn piegeType BJ" data-prefix="BJ-">Bol Jaune</a>
+											<a href="#" id="type-tente_malaise" class="btn piegeType TM" data-prefix="TM-">Tente Malaise</a>
+											<a href="#" id="type-piege_barber" class="btn piegeType B" data-prefix="B-">Piège Barber</a>
 										</div>
 									</div>
 								</div>
@@ -163,7 +163,9 @@
 							<div class="control-group">
 								<label class="control-label" for="nom">Nom</label>
 								<div class="controls">
-									<input id="nom" class="nom" name="nom" type="text" placeholder="Nom du piège" required autofocus disabled>
+									<div class="prefixe">-</div>
+									<input id="nom" class="nom sufixe" name="nom" type="text" placeholder="Nom du piège" required autofocus disabled>
+									<input id="prefixepiege" class="prefixepiege" name="prefixepiege" type="hidden">
 								</div>
 							</div>
 

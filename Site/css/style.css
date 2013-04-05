@@ -787,6 +787,31 @@ input:-ms-input-placeholder { /* Internet Explorer 10+ */
 	height: 500px;
 	width: 600px;
 }
+.prefixe {
+	background-color: #eeeeee;
+	padding-top: 3px;
+	padding-left: 4px;
+	padding-bottom: 5px;
+	padding-right: 1px;
+	-webkit-border-radius: 3px 0 0 3px;
+	-moz-border-radius: 3px 0 0 3px;
+	border-radius: 3px 0 0 3px;
+	border: 1px solid #cccccc;
+}
+.sufixe {
+	margin-left: -5px;
+	-webkit-border-radius: 0 3px 3px 0;
+	-moz-border-radius: 0 3px 3px 0;
+	border-radius: 0 3px 3px 0;
+}
+div.prefixe {
+	width: 25px;
+	display: inline-block;
+	text-align: right;
+}
+input.sufixe {
+	width: 180px;
+}
 /*----------------------------
 	A propos
 -----------------------------*/

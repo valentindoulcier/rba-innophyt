@@ -141,6 +141,7 @@ function setResultInformations(resultInfo)
 							"<input id='idKey-field' class='idKey-field' name='idKey-field' type='hidden'>" +
 							"<input id='idResultat' class='idResultat' name='idResultat' type='hidden'>" +
 							"<input id='idReponse' class='idReponse' name='idReponse' type='hidden'>" +
+							"<input id='modeIdent' class='modeIdent' name='modeIdent' type='hidden'>" +
 							"<script type='text/javascript'>" +
 								"$('.piegeId-insecte').val(sessionStorage.getItem(session_id_piege));" +
 								"$('.idKey-field').val(authInfo.idKeyMd5);" +
@@ -150,6 +151,7 @@ function setResultInformations(resultInfo)
 								"$('.info-insecte').val(eval(\"$('.resultInfo li:last-child span:last-child').html()\"));" +
 								"$('.idResultat').val('" + resultInfo.idReponse + "');" +
 								"$('.idReponse').val('" + resultInfo.idResultat + "');" +
+								"$('.modeIdent').val(sessionStorage.getItem(session_ident_mode));" +
 							"</script>" +
 						"</div>" +
 						

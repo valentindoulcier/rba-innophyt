@@ -65,7 +65,7 @@
 				$returnItem = '{ "statut": "0", "dataType": "error", "data": "Erreur lors de l\'identification de l\'utilisateur" }';
 			}
 		}
-	} else if (isset($_POST['idKey-field']) && isset($_POST['piegeId-insecte']) && isset($_POST['nom-insecte']) && isset($_POST['nombre-insecte']) && isset($_POST['idResultat']) && isset($_POST['idReponse'])) {
+	} else if (isset($_POST['modeIdent']) && isset($_POST['idKey-field']) && isset($_POST['piegeId-insecte']) && isset($_POST['nom-insecte']) && isset($_POST['nombre-insecte']) && isset($_POST['idResultat']) && isset($_POST['idReponse'])) {
 		$nombreInsecte = intval($_POST['nombre-insecte']);
 		
 		
@@ -80,7 +80,8 @@
 		//$data .= ' "fin-id-insecte": "' . $_POST['fin-id-insecte'] . '",';
 		$data .= ' "nombre-insecte": "' . $nombreInsecte . '",';
 		$data .= ' "idResultat": "' . $_POST['idResultat'] . '",';
-		$data .= ' "idReponse": "' . $_POST['idReponse'] . '"';
+		$data .= ' "idReponse": "' . $_POST['idReponse'] . '",';
+		$data .= ' "modeIdent": "' . $_POST['modeIdent'] . '"';
 		$data .= '}';
 	
 		$mysqli = new mysqli($HOST_DB, $USER_DB, $PASSWORD_DB, $SCHEMA_DB, $PORT_DB);
@@ -125,8 +126,12 @@
 							//$returnItem = '{ "statut": "0", "dataType": "error", "data": "Echec lors de l execution: (' . $mysqli->connect_errno . ') ' . $mysqli->connect_error . '" }';
 							header('Location: ' . $QUIZZ_URL . '?statut=0&dataType=error&data=Récolte déjà effectuée&field=' . $data);
 						} else {
-							//$returnItem = '{ "statut": "2", "dataType": "ok", "data": "Récolte ajoutée" , "idKey": "' . $row['RSA_PRIVE'] . '"}';
-							header('Location: ' . $QUIZZ_URL . '?statut=1&dataType=ok&data=Récolte ajoutée');
+							if (strcmp($_POST['modeIdent'], "arbre") == 0) {
+								//$returnItem = '{ "statut": "2", "dataType": "ok", "data": "Récolte ajoutée" , "idKey": "' . $row['RSA_PRIVE'] . '"}';
+								header('Location: ' . $QUIZZ_URL . '?statut=1&dataType=ok&data=Récolte ajoutée');
+							} else {
+								header('Location: ' . $MOSAIQUE_URL . '?statut=1&dataType=ok&data=Récolte ajoutée');
+							}
 						}
 					} else {
 						header('Location: ' . $QUIZZ_URL . '?statut=0&dataType=error&data=Nombre d\'insecte incorrect&field=' . $data);
@@ -143,7 +148,7 @@
 		}
 	} else {
 		//$returnItem = '{ "statut": "0", "dataType": "error", "data": "Missing request parameters" }';
-		header('Location: ' . $PIEGE_URL . '?statut=0&dataType=error&data=Missing request parameters');
+		header('Location: ' . $QUIZZ_URL . '?statut=0&dataType=error&data=Missing request parameters');
 		//var_dump($_POST);
 	}
 	echo $returnItem;

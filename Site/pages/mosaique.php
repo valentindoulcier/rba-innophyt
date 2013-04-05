@@ -23,12 +23,6 @@
 			$extension;
 		?>
 
-		<div id="" class="myContainer">
-			<div id="debugText">
-				<!--[Debug text]-->
-			</div>
-		</div>
-
 		<div id="questionFrame" class="myContainer">
 			<div id="questionTextDivContainer">
 				<div id="questionTextDivSubNav">
@@ -39,6 +33,12 @@
 					</div>
 				</div>
 			</div>
+
+		<!--<div id="" class="myContainer">-->
+			<div id="debugText">
+				<!--[Debug text]-->
+			</div>
+		<!--</div>-->
 
 			<div id="bodyQuestionContent">
 				

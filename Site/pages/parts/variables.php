@@ -98,6 +98,7 @@
 			var session_action      = "action-rba-innophyt";
 			var session_save        = "rba-innophyt-save";
 			var session_id_mosaique = "mosaiqueInfoRBA-INNOPHYT";
+			var session_ident_mode  = "rba-innophyt-mode-identification";
 		</script>
 <?php
 	}
