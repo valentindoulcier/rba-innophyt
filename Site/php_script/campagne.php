@@ -163,7 +163,7 @@
 						
 						if (!$stmt->execute()) {
 							//$returnItem = '{ "statut": "0", "dataType": "error", "data": "Echec lors de l execution: (' . $mysqli->connect_errno . ') ' . $mysqli->connect_error . '" }';
-							header('Location: ' . $CAMPAGNE_URL . '?statut=0&dataType=error&data=Echec lors de l execution: (' . $mysqli->connect_errno . ') ' . $mysqli->connect_error . '&action=modifier&field={"id":"' . $_POST['id'] . '","nom":"' . $_POST['nom'] . '","description":"' . $_POST['description'] . '","dateDeb":"' . $_POST['dateDeb'] . '","dateFin":"' . $_POST['dateFin'] . '"}');
+							header('Location: ' . $CAMPAGNE_URL . '?statut=0&dataType=error&data=Saisie invalide (nom non unique)&action=modifier&field={"id":"' . $_POST['id'] . '","nom":"' . $_POST['nom'] . '","description":"' . $_POST['description'] . '","dateDeb":"' . $_POST['dateDeb'] . '","dateFin":"' . $_POST['dateFin'] . '"}');
 						} else {
 							//$returnItem = '{ "statut": "2", "dataType": "ok", "data": "Campagne modifiée" , "idKey": "' . $row['RSA_PRIVE'] . '"}';
 							header('Location: ' . $CAMPAGNE_URL . '?id=' . $_POST['id']);

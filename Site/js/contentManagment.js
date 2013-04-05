@@ -165,8 +165,8 @@ function setResultInformations(resultInfo)
 	output += 
 		'<ul class="resultInfo">'+
 			'<li><span class="resultInfosListLabel">Nom :</span>'+resultInfo.nom+'</li>'+
-			'<li><span class="resultInfosListLabel">Type :</span>'+resultInfo.type+'</li>'+
 			'<li><span class="resultInfosListLabel">Regime alimentaire :</span>'+resultInfo.regimeAlimentaire+'</li>'+
+			'<li><span class="resultInfosListLabel">Rôle écologique :</span>'+resultInfo.type+'</li>'+
 			'<li><span class="resultInfosListLabel">Informations complementaires :</span><span>'+resultInfo.informations+'<span></li>'+
 		'</ul>';
 
