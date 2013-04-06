@@ -304,6 +304,7 @@ function setEmptyForm() {
 	$(".description").val("");
 	$(".dateDeb").val("");
 	$(".dateFin").val("");
+	$(".adresse").val("");
 	
 	setTimeout(function () {
 		$('#sb-container .dateDeb').attr('id', 'dateDeb-field');
