@@ -59,10 +59,10 @@
 							<div class="clearer"></div>
 						</div>
 						<div id="map-marker-legend">
-							<img src="<?php echo $IMG_PATH ?>/googleMapsMarkerYellow.png" atl="Marqueur Jaune" class="markerLegend" /> Bol Jaune
-							<img src="<?php echo $IMG_PATH ?>/googleMapsMarkerGreen.png" atl="Marqueur Vert" class="markerLegend" /> Tente Malaise
-							<img src="<?php echo $IMG_PATH ?>/googleMapsMarkerBlue.png" atl="Marquer Bleu" class="markerLegend" /> Piège Barber
-							<img src="<?php echo $IMG_PATH ?>/googleMapsMarkerRed.png" atl="Marqueur Rouge" class="markerLegend" /> Type Inconnu
+							<img src="<?php echo $IMG_PATH ?>/mapMarkers/googleMapsMarkerYellow.png" atl="Marqueur Jaune" class="markerLegend" /> Bol Jaune
+							<img src="<?php echo $IMG_PATH ?>/mapMarkers/googleMapsMarkerGreen.png" atl="Marqueur Vert" class="markerLegend" /> Tente Malaise
+							<img src="<?php echo $IMG_PATH ?>/mapMarkers/googleMapsMarkerBlue.png" atl="Marquer Bleu" class="markerLegend" /> Piège Barber
+							<img src="<?php echo $IMG_PATH ?>/mapMarkers/googleMapsMarkerRed.png" atl="Marqueur Rouge" class="markerLegend" /> Type Inconnu
 							<div class="clearer"></div>
 						</div>
 					</section>
