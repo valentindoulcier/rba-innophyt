@@ -327,18 +327,20 @@ function setEmptyForm() {
  **/
 function loadPopUpAfterError() {
 	if (getURLParameter('statut') == "0" && getURLParameter('dataType') == "error") {
-		var field = $.parseJSON(getURLParameter('field'));
-		var action = getURLParameter('action');
-		var pageChoix = sessionStorage.getItem('pageChoix');
 		
 		$('.form-info').html("<div class='alert alert-error'> <button type='button' class='close' data-dismiss='alert'>&times;</button> <strong>Erreur !</strong> " + getURLParameter('data') + " </div>")
 		
 		setTimeout( function (){
+			var action = getURLParameter('action');
+		
 			// Ouverture du formulaire
 			$('#ajout-item').click();
 			sessionStorage.setItem(session_action, action);
 			
 			setTimeout(function () {
+				var pageChoix = sessionStorage.getItem('pageChoix');
+				var field = $.parseJSON(getURLParameter('field'));
+			
 				if ($('.nom').val()) {
 					$('.nom').removeAttr('disabled');
 				}
@@ -355,12 +357,12 @@ function loadPopUpAfterError() {
 
 				// Chargement des champs saisie dans le formulaire
 				if (pageChoix != "piege") {
-					$(".id-field").val(field.id);
+					$(".nom").val(field.nom);
 				} else {
-					$('.' + field.id.substring(0, field.id.indexOf('-'))).click();
-					$(".id-field").val(field.id.substring(field.id.indexOf('-') + 1));
+					$('.' + field.prefixe.substring(0, field.prefixe.indexOf("-"))).click();
+					$(".nom").val(field.nom);
 				}
-				$(".nom").val(field.nom);
+				$(".id-field").val(field.id);
 				$(".description").val(field.description);
 				$("#dateDeb-field").val(field.dateDeb);
 				$("#dateFin-field").val(field.dateFin);
