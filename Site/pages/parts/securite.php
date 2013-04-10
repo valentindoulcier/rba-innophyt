@@ -30,7 +30,9 @@
 						var msg = $.parseJSON(msg);
 						if (msg.token == authInfo.idKeyMd5) {
 							console.debug("securite ok");
-							$('#footer p.right').html('Vous êtes connecté en tant que ' + authInfo.loginEmail + '<i class="icon-ok-sign"></i> - <a href="<?php echo $MENU_URL ?>" alt="Menu">Menu<i class="icon-th"></i></a> - <a href="#" title="Déconnexion" onClick="logout();">Déconnexion<i class="icon-off"></i></a>');
+							setTimeout(function () {
+								$('#footer p.right').html('Vous êtes connecté en tant que ' + authInfo.loginEmail + '<i class="icon-ok-sign"></i> - <a href="<?php echo $MENU_URL ?>" alt="Menu">Menu<i class="icon-th"></i></a> - <a href="#" title="Déconnexion" onClick="logout();">Déconnexion<i class="icon-off"></i></a>');
+							}, 200);
 							if (location == "<?php echo $LOGIN_URL ?>") {
 								location = "<?php echo $MENU_URL ?>";
 							}
