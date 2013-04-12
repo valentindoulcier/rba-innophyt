@@ -45,7 +45,7 @@ Le client de notre projet est l'équipe INNOPHYT. Cette équipe fait partie de l
 	
 	Anciennement, l'équipe INNOPHYT utilisait un fichier Excel qui répertoriait l'ensemble des questions à se poser pour arriver à un résultat. Ces questions étaient disposées sous une forme d'une arborescence compliquée. Ce système étant quelque peu archaïque et n'étant pas vraiment ergonomique, un premier projet collectif s'est donc inscrit dans ce sens en modernisant l'outil (Développement d'une application android). Suite à cette application, décuplant les performances et les fonctionnalités, la question du site web dédié s'est posée. En réponse, un projet web s'est donc mis en place, et à répondu partiellement à l'ensemble des besoins énoncés.\\
 	
-Les futurs utilisateurs de l'application dans sa version site web sont nombreux. Ils peuvent être aussi bien des ingénieurs ou des spécialistes du domaines (biologiste de terrain, membre de l"équipe INNOPHYT...) que des utilisateurs lambda n'ayant pas de connaissances particulières (agriculteur, passionné des insectes...). A ce titre, la version web de l'application pourra s'utiliser à titre pédagogique, et pourra servir d'outils de formation et de découverte.	
+	Les futurs utilisateurs de l'application dans sa version site web sont nombreux. Ils peuvent être aussi bien des ingénieurs ou des spécialistes du domaines (biologiste de terrain, membre de l"équipe INNOPHYT...) que des utilisateurs lambda n'ayant pas de connaissances particulières (agriculteur, passionné des insectes...). A ce titre, la version web de l'application pourra s'utiliser à titre pédagogique, et pourra servir d'outils de formation et de découverte.	
 	
 	\section{Objectif}
 	
@@ -53,29 +53,29 @@ Les futurs utilisateurs de l'application dans sa version site web sont nombreux.
 	
 	L'objectif est donc de fournir une application web reproduisant les spécificités de l'application android. Principalement, le but de notre projet est, à partir de la lecture d'un fichier XML représentant un arbre de décision, de permettre à l'utilisateur  de naviguer dans cet arbre dans le but de trouver l'insecte qu'il observe.\\
 	
-Le site web calquera son interface ergonomique et convivial sur celle de la tablette. Ainsi, l'utilisateur jonglant entre les deux plateformes ne sera pas perdu en passant de l'une à l'autre. Nous implémenterons donc l'ensemble des fonctionnalités présentes sur la tablette, afin que l'utilisation ne soit en rien différente.
+	Le site web calquera son interface ergonomique et convivial sur celle de la tablette. Ainsi, l'utilisateur jonglant entre les deux plateformes ne sera pas perdu en passant de l'une à l'autre. Nous implémenterons donc l'ensemble des fonctionnalités présentes sur la tablette, afin que l'utilisation ne soit en rien différente.
 
 	\section{Contraintes technologiques}
 	
 	Dans notre cas, les termes "Contraintes Technologiques" ont pris tous leurs sens. En effet, notre projet s'inscrivant dans la suite d'un projet préalablement commencé, nous avons été obligé de réutiliser certaines librairies mises en place ainsi que certaines technologies.\\
 
-\begin{itemize}
-\item BOOTSTRAP : Dans le but de poser les bases du design, la librairie Bootstrap a été choisie. Il s'agit de la bibliothèque développée et utilisée par le célèbre Twitter. En plus des feuilles de style CSS, Bootstrap comprend un certain nombre de composants intéressants comme des boutons, des menus, une barre de chargement... Il contient aussi quelques plugins JavaScript comme le Carrousel, qui ont servi à l'affichage des galeries de médias.\\
-
-\item SHADOWBOX : Cette librairie permet de lire tous types d'objets multimédias (vidéo, son, image) dans une fenêtre modale, et ainsi de profiter de toute la largeur de l'écran. Elle est toutefois très limitée dans l'interaction dynamique avec un serveur, notamment dans le cadre de chargement de formulaire.\\
-
-\item FLASH : Pour l'affichage de la webcam, il s'agit d'un code minimaliste en Flash. En effet, cela permet de démarrer la webcam après autorisation de l'utilisateur, et d'afficher simplement à l'écran l'image filmée en temps réel.\\
-
-\item AJAX : Enfin, afin de rendre l'interface plus conviviale, nous avons décidé de mettre en place une architecture AJAX. Cela permet notamment de supprimer les rechargements de pages inutiles. Le problème rencontré est que tout le site a été passé en AJAX, ce qui ne facilite absolument pas la navigation (gestion des pages précédentes...).\\
-
-\item JQUERY : Nous avons utilisé JQuery et ses fonctions spécialisées dans l'architecture AJAX pour simplifier la gestion de notre application. Aussi, certaines fonctionnalités de Jquery (à savoir JQplot), nous ont permis de générer facilement les graphiques demandés.\\
-
-\end{itemize} 
-
-
-
+	\begin{itemize}
+		\item \textbf{Bootstrap} : Dans le but de poser les bases du design, la librairie Bootstrap a été choisie. Il s'agit de la bibliothèque développée et utilisée par le célèbre Twitter. En plus des feuilles de style CSS, Bootstrap comprend un certain nombre de composants intéressants comme des boutons, des menus, une barre de chargement... Il contient aussi quelques plugins JavaScript comme le Carrousel, qui ont servi à l'affichage des galeries de médias.\\
+		
+		\item \textbf{Shadowbox} : Cette librairie permet de lire tous types d'objets multimédias (vidéo, son, image) dans une fenêtre modale, et ainsi de profiter de toute la largeur de l'écran. Elle est toutefois très limitée dans l'interaction dynamique avec un serveur, notamment dans le cadre de chargement de formulaire.\\
+		
+		\item \textbf{Flash} : Pour l'affichage de la webcam, il s'agit d'un code minimaliste en Flash. En effet, cela permet de démarrer la webcam après autorisation de l'utilisateur, et d'afficher simplement à l'écran l'image filmée en temps réel.\\
+		
+		\item \textbf{Ajax} : Permet de rendre l'interface plus conviviale, nous avons décidé de mettre en place une architecture AJAX. Cela permet notamment de supprimer les rechargements de pages inutiles. Le problème rencontré est que tout le site a été passé en AJAX, ce qui ne facilite absolument pas la navigation (gestion des pages précédentes...).\\
+		
+		\item \textbf{jQuery} : Nous avons utilisé JQuery et ses fonctions spécialisées dans l'architecture AJAX pour simplifier la gestion de notre application. Aussi, certaines fonctionnalités de Jquery (à savoir JQplot), nous ont permis de générer facilement les graphiques demandés.\\
+	\end{itemize}
+	
+	Différents problèmes ont été rencontré avec ces contraintes, ils sont respectivement détaillés dans la parties concernant les librairies \ref{lib}.
 
 \chapter{Architecture}
+
+Dans cette partie, nous allons détailler les différents points sur lesquelles nous avons travaillé ainsi que les problèmes rencontrés. De plus, nous verrons toutes les librairies utilisées au sein de ce projet ainsi que des explications plus complètes sur les problèmes et avantages de celles-ci.
 
 	\section{Arborescence}
 	
@@ -86,6 +86,15 @@ Le site web calquera son interface ergonomique et convivial sur celle de la tabl
 		Détailler éléments par éléments ...
 	
 	\section{Librairies}
+	\label{lib}
+
+		
+%		\item \textbf{jQuery UI} : Nous utilisons cette librairie afin d'afficher le datepicker dans les formulaires d'ajout et de modification des campagnes, parcelles et récoltes.\\
+		
+%		\item \textbf{jQplot} : Cette librairie permet d'afficher les graphiques montrant la répartition des différents régimes alimentaires des récoltes d'un piège.\\
+		
+%		\item \textbf{API Google Map} : Permet d'afficher une carte Google sur laquelle sont affichés les différents pièges d'une parcelle grâce à différents marqueurs.	
+	
 		
 		\subsection{Google Map}
 		
