@@ -3,6 +3,8 @@
 
 \usepackage[utf8]{inputenc}
 
+\usepackage{hyperref}
+
 \thedocument{Projet d'option web}{Évolution d'un classifieur multimédia, interactif et en ligne}{Projet d'option web - Évolution d'un classifieur multimédia, interactif et en ligne}
 
 \grade{Département Informatique\\ 5\ieme{} année\\ 2012 - 2013}
@@ -68,7 +70,7 @@ Le client de notre projet est l'équipe INNOPHYT. Cette équipe fait partie de l
 		
 		\item \textbf{Ajax} : Permet de rendre l'interface plus conviviale, nous avons décidé de mettre en place une architecture AJAX. Cela permet notamment de supprimer les rechargements de pages inutiles. Le problème rencontré est que tout le site a été passé en AJAX, ce qui ne facilite absolument pas la navigation (gestion des pages précédentes...).\\
 		
-		\item \textbf{jQuery} : Nous avons utilisé JQuery et ses fonctions spécialisées dans l'architecture AJAX pour simplifier la gestion de notre application. Aussi, certaines fonctionnalités de Jquery (à savoir JQplot), nous ont permis de générer facilement les graphiques demandés.\\
+		\item \textbf{jQuery} : Nous avons utilisé JQuery et ses fonctions spécialisées dans l'architecture AJAX pour simplifier la gestion de notre application. Aussi, certaines fonctionnalités de Jquery (à savoir Jqplot), nous ont permis de générer facilement les graphiques demandés.\\
 	\end{itemize}
 	
 	Différents problèmes ont été rencontré avec ces contraintes, ils sont respectivement détaillés dans la parties concernant les librairies \ref{lib}.
@@ -79,6 +81,19 @@ Le client de notre projet est l'équipe INNOPHYT. Cette équipe fait partie de l
 
 Dans cette partie, nous allons détailler les différents points sur lesquelles nous avons travaillé ainsi que les problèmes rencontrés. De plus, nous verrons toutes les librairies utilisées au sein de ce projet ainsi que des explications plus complètes sur les problèmes et avantages de celles-ci.
 
+	\section{Le site rba-innophyt}
+	
+		\subsection{Login}
+			\subsubsection{Sécurité}
+			\subsubsection{Footer}
+		\subsection{Menu}
+		\subsection{Campagne / Parcelle / Pièges}
+		\subsection{Arbre de décision}
+		\subsection{Mosaïque}
+		\subsection{Export}
+		\subsection{Administration}
+		\subsection{À propos}
+
 	\section{Arborescence}
 	Dès la prise en main du projet, nous avons choisis de modifier de A à Z l'arborescence de base de ce projet. En effet, celle-ci ne permettait pas d'avoir une solution propre et viable sur le terme. De ce fait nous avons regroupé les fichiers CSS et JavaScript respectivement dans les dossiers \emph{css} et \emph{js}. Toutes les images, hormis celles utilisées pour l'arbre de décision et la mosaïque sont dans le dossier \emph{images}. Enfin, les librairies qui avait chacune leur dossier ont été divisées entre plusieurs dossiers. En effet, leurs fichiers CSS et JavaScript ont été mis dans les dossiers correspondant, et les fichiers spécifiques ont été déplacé dans un dossier \emph{lib}.\\
 
@@ -88,7 +103,7 @@ Dans cette partie, nous allons détailler les différents points sur lesquelles 
 		Ce dossier contient à sa racine le fichier \emph{arbre.dtd} permettant de contrôler la structure des xml contenant les arbres de décision. Il y a aussi la présence d'un dossier \emph{medias} contenant toute les images originales de l'arbre. Quant à lui, \emph{thumbnail} contient toutes les miniatures générées et utilisées pour l'affichage de la mosaïque ou des photos galeries dans l'arbre de décision.
 		
 		\subsection{css}
-		Ce dossier contient tous les fichiers css utilisés pour le style du site. Aussi bien pour les librairies (\emph{Bootstrap} \ref{lib:bootstrap}, \emph{jQplot} \ref{lib:jqplot}, \emph{jQuery UI} \ref{lib:jqueryui} et \emph{Shadowbox} \ref{lib:shadowbox}) que le fichier \emph{syle.css} où est le style personnalisé du site.
+		Ce dossier contient tous les fichiers css utilisés pour le style du site. Aussi bien pour les librairies (\emph{Bootstrap} \ref{lib:bootstrap}, \emph{jqPlot} \ref{lib:jqplot}, \emph{jQuery UI} \ref{lib:jqueryui} et \emph{Shadowbox} \ref{lib:shadowbox}) que le fichier \emph{syle.css} où est le style personnalisé du site.
 		
 		\subsection{documents}
 		Ce dossier contient tous les fichiers annexes utilisés sur le site tel que la liste des protocoles ou le guide utilisateur de la plate-forme web.
@@ -97,7 +112,7 @@ Dans cette partie, nous allons détailler les différents points sur lesquelles 
 		Ce dossier contient toutes les petites images et icônes utilisées sur le site comme par exemple pour le menu, les marqueurs Google Map \ldots
 		
 		\subsection{js}
-		Ce dossier contient tous les fichiers JavaScript utilisés dans le site. Aussi bien pour les librairies (\emph{Bootstrap} \ref{lib:bootstrap}, \emph{jQuery} \ref{lib:jquery}, \emph{jQplot} \ref{lib:jqplot}, \emph{jQuery UI} \ref{lib:jqueryui} et \emph{Shadowbox} \ref{lib:shadowbox}) que les fichiers propres à chacune des parties du site.
+		Ce dossier contient tous les fichiers JavaScript utilisés dans le site. Aussi bien pour les librairies (\emph{Bootstrap} \ref{lib:bootstrap}, \emph{jQuery} \ref{lib:jquery}, \emph{jqPlot} \ref{lib:jqplot}, \emph{jQuery UI} \ref{lib:jqueryui} et \emph{Shadowbox} \ref{lib:shadowbox}) que les fichiers propres à chacune des parties du site.
 		
 		\subsection{lib}
 		Ce dossier contient les fichiers propres aux différentes librairies utilisés dans le site comme pour la webcam et le player pour les fichiers multimédias de la pop-up shadowbox.
@@ -113,26 +128,22 @@ Dans cette partie, nous allons détailler les différents points sur lesquelles 
 	
 	\section{Librairies}
 	\label{lib}
-
 		
-%		\item \textbf{jQuery UI} : Nous utilisons cette librairie afin d'afficher le datepicker dans les formulaires d'ajout et de modification des campagnes, parcelles et récoltes.\\
-		
-%		\item \textbf{jQplot} : Cette librairie permet d'afficher les graphiques montrant la répartition des différents régimes alimentaires des récoltes d'un piège.\\
-		
-%		\item \textbf{API Google Map} : Permet d'afficher une carte Google sur laquelle sont affichés les différents pièges d'une parcelle grâce à différents marqueurs.	
-	
-		
-		\subsection{Google Map}
+		\subsection{API Google Map}
 		\label{lib:map}
+		Nous avons utilisé l'API Google Map afin d'afficher sur une carte les différent pièges d'une parcelle grâce à différents marqueurs. Cette API pour fonctionner nécessite une clé, mais nous avons réussis à l'utiliser sans. Au lieu d'inclure le script sous la forme \url{https://maps.googleapis.com/maps/api/js?key=GOOGLE_MAP_API_KEY&sensor=false}, nous utilisons \url{http://maps.google.com/maps/api/js?sensor=false}
 		
 		\subsection{jQuery}
 		\label{lib:jquery}
+		jQuery est une librairie JavaScript qui permet de manipuler le DOM (Document Object Model), gérer les événements, créer des effets visuels mais aussi d'effectuer des requêtes Ajax.
 		
 		\subsection{jQuery UI}
 		\label{lib:jqueryui}
+		jQuery UI est un ensemble de plugins qui permet d'avoir un certain nombre de composant graphique. Nous l'avons utilisé pour mettre en place le datepicker dans les formulaires d'ajout et de modification des campagnes, parcelles et récoltes.
 	
 		\subsection{jqPlot}
 		\label{lib:jqplot}
+		jqPlot est un plugin de traçage et de la cartographie pour jQuery. jqPlot produit des graphiques en lignes, bars et camemberts avec de nombreuses fonctionnalités. Cette librairie nous permet d'afficher les graphiques montrant la répartition des différents régimes alimentaires des récoltes d'un piège.
 		
 		\subsection{Bootstrap}
 		\label{lib:bootstrap}
@@ -142,11 +153,26 @@ Dans cette partie, nous allons détailler les différents points sur lesquelles 
 		
 		\subsection{Shadowbox}
 		\label{lib:shadowbox}
-		ShadowBox permet de lire tous type d'objets multimédias (vidéo, son, image) dans une fenêtre modale, et ainsi profiter de toute la largeur de l'écran.
+		ShadowBox permet de lire tous type d'objets multimédias (vidéo, son, image) et afficher du HTML dans une fenêtre modale, et aussi profiter de toute la largeur de l'écran.
 		
 		\subsection{Webcam}
 		\label{lib:webcam}
-		Un code minimaliste en Flash est inclut dans le site, il nous permet de démarrer la webcam après autorisation de l'utilisateur, et d'afficher à l'écran l'image filmée.
+		Un code minimaliste en Flash est inclut dans le site, il nous permet de démarrer la webcam après autorisation de l'utilisateur, et d'afficher à l'écran l'image filmée.
+	
+	\section{Technologies}
+	\label{tec}
+	
+		\subsection{Ajax}
+		\label{tec:ajax}
+		Ajax (Asynchronous JavaScript and XML) est utilisé pour récupérer et échanger de façon asynchrone au chargement de la page du contenu sur le serveur. Cette technologie est utilisée pour l'arbre d'identification avec le chargement des questions.
+		
+		\subsection{Web Storage}
+		\label{tec:storage}
+		Web Storage est une solution adaptée aux besoins actuels de stockage de données variées, dans le navigateur. C'est aussi une technique plus puissante que les cookies, qui sont limités en taille (quelques Ko contre plusieurs Mo pour Web Storage) et qui engendrent un trafic HTTP supplémentaire pour chaque requête.\\
+		
+		Web Storage met à disposition deux interfaces nommées \emph{sessionStorage} et \emph{localStorage} dont la seule différence concerne la persistance des données. Ces dernières ne sont plus véhiculées sur le réseau HTTP et elles sont facilement accessibles (lecture, modifications et suppression) pour la programmation en JavaScript.\\
+		
+		Nous utilisons le Web Storage pour stocker aussi bien l'authentification de l'utilisateur que des données diverses et variées pour le fonctionnement du site. Par exemple, lors d'une identification, la campagne, la parcelle et le piège choisis sont stocker dans le localStorage. Les différentes clés utilisées pour stocker ces informations sont dans le fichier \emph{variable.php}
 
 \chapter{Analyse Critique}
 
