@@ -131,7 +131,13 @@ Dans cette partie, nous allons détailler les différents points sur lesquelles 
 		
 		\subsection{API Google Map}
 		\label{lib:map}
-		Nous avons utilisé l'API Google Map afin d'afficher sur une carte les différent pièges d'une parcelle grâce à différents marqueurs. Cette API pour fonctionner nécessite une clé, mais nous avons réussis à l'utiliser sans. Au lieu d'inclure le script sous la forme \url{https://maps.googleapis.com/maps/api/js?key=GOOGLE_MAP_API_KEY&sensor=false}, nous utilisons \url{http://maps.google.com/maps/api/js?sensor=false}
+		Nous avons utilisé l'API Google Map afin d'afficher sur une carte les différent pièges d'une parcelle grâce à différents marqueurs. Cette API pour fonctionner nécessite une clé, mais nous avons réussis à l'utiliser sans. Au lieu d'inclure le script sous la forme \url{https://maps.googleapis.com/maps/api/js?key=GOOGLE_MAP_API_KEY&sensor=false}, nous utilisons \url{http://maps.google.com/maps/api/js?sensor=false}.
+		
+		\begin{figure}[hbtp]
+			\centering
+			\includegraphics[scale=0.5]{images/lib-API_GoogleMap.png}
+			\caption{Carte Google Map des emplacements des pièges}
+		\end{figure}
 		
 		\subsection{jQuery}
 		\label{lib:jquery}
@@ -140,10 +146,23 @@ Dans cette partie, nous allons détailler les différents points sur lesquelles 
 		\subsection{jQuery UI}
 		\label{lib:jqueryui}
 		jQuery UI est un ensemble de plugins qui permet d'avoir un certain nombre de composant graphique. Nous l'avons utilisé pour mettre en place le datepicker dans les formulaires d'ajout et de modification des campagnes, parcelles et récoltes.
+		
+		\begin{figure}[hbtp]
+			\centering
+			\includegraphics[scale=0.5]{images/lib-jquery_datePicker.png}
+			\caption{Le date picker de jQuery UI}
+		\end{figure}
 	
 		\subsection{jqPlot}
 		\label{lib:jqplot}
 		jqPlot est un plugin de traçage et de la cartographie pour jQuery. jqPlot produit des graphiques en lignes, bars et camemberts avec de nombreuses fonctionnalités. Cette librairie nous permet d'afficher les graphiques montrant la répartition des différents régimes alimentaires des récoltes d'un piège.
+		
+		\begin{figure}[hbtp]
+			\centering
+			\includegraphics[scale=0.5]{images/lib-jqplot.png}
+			\caption{Camenbert de répartition des insectes}
+		\end{figure}
+		
 		
 		\subsection{Bootstrap}
 		\label{lib:bootstrap}
@@ -155,9 +174,21 @@ Dans cette partie, nous allons détailler les différents points sur lesquelles 
 		\label{lib:shadowbox}
 		ShadowBox permet de lire tous type d'objets multimédias (vidéo, son, image) et afficher du HTML dans une fenêtre modale, et aussi profiter de toute la largeur de l'écran.
 		
+		\begin{figure}[hbtp]
+			\centering
+			\includegraphics[scale=0.5]{images/lib-shadowbox.png}
+			\caption{Utilisation de Shadowbox}
+		\end{figure}
+		
 		\subsection{Webcam}
 		\label{lib:webcam}
 		Un code minimaliste en Flash est inclut dans le site, il nous permet de démarrer la webcam après autorisation de l'utilisateur, et d'afficher à l'écran l'image filmée.
+		
+		\begin{figure}[hbtp]
+			\centering
+			\includegraphics[scale=0.5]{images/lib-webcam.png}
+			\caption{Utilisation de la Webcam}
+		\end{figure}
 	
 	\section{Technologies}
 	\label{tec}
