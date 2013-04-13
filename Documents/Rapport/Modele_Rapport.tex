@@ -73,17 +73,43 @@ Le client de notre projet est l'équipe INNOPHYT. Cette équipe fait partie de l
 	
 	Différents problèmes ont été rencontré avec ces contraintes, ils sont respectivement détaillés dans la parties concernant les librairies \ref{lib}.
 
+
+
 \chapter{Architecture}
 
 Dans cette partie, nous allons détailler les différents points sur lesquelles nous avons travaillé ainsi que les problèmes rencontrés. De plus, nous verrons toutes les librairies utilisées au sein de ce projet ainsi que des explications plus complètes sur les problèmes et avantages de celles-ci.
 
 	\section{Arborescence}
-	
-	Modification de la base fournie
-	
-		\subsection{•}
+	Dès la prise en main du projet, nous avons choisis de modifier de A à Z l'arborescence de base de ce projet. En effet, celle-ci ne permettait pas d'avoir une solution propre et viable sur le terme. De ce fait nous avons regroupé les fichiers CSS et JavaScript respectivement dans les dossiers \emph{css} et \emph{js}. Toutes les images, hormis celles utilisées pour l'arbre de décision et la mosaïque sont dans le dossier \emph{images}. Enfin, les librairies qui avait chacune leur dossier ont été divisées entre plusieurs dossiers. En effet, leurs fichiers CSS et JavaScript ont été mis dans les dossiers correspondant, et les fichiers spécifiques ont été déplacé dans un dossier \emph{lib}.\\
+
+	Ces modifications permettent une meilleure évolution du site et facilite l'ajout de module et partie. Voici plus en détail le contenu des différents dossiers.
+
+		\subsection{arbres}
+		Ce dossier contient à sa racine le fichier \emph{arbre.dtd} permettant de contrôler la structure des xml contenant les arbres de décision. Il y a aussi la présence d'un dossier \emph{medias} contenant toute les images originales de l'arbre. Quant à lui, \emph{thumbnail} contient toutes les miniatures générées et utilisées pour l'affichage de la mosaïque ou des photos galeries dans l'arbre de décision.
 		
-		Détailler éléments par éléments ...
+		\subsection{css}
+		Ce dossier contient tous les fichiers css utilisés pour le style du site. Aussi bien pour les librairies (\emph{Bootstrap} \ref{lib:bootstrap}, \emph{jQplot} \ref{lib:jqplot}, \emph{jQuery UI} \ref{lib:jqueryui} et \emph{Shadowbox} \ref{lib:shadowbox}) que le fichier \emph{syle.css} où est le style personnalisé du site.
+		
+		\subsection{documents}
+		Ce dossier contient tous les fichiers annexes utilisés sur le site tel que la liste des protocoles ou le guide utilisateur de la plate-forme web.
+		
+		\subsection{images}
+		Ce dossier contient toutes les petites images et icônes utilisées sur le site comme par exemple pour le menu, les marqueurs Google Map \ldots
+		
+		\subsection{js}
+		Ce dossier contient tous les fichiers JavaScript utilisés dans le site. Aussi bien pour les librairies (\emph{Bootstrap} \ref{lib:bootstrap}, \emph{jQuery} \ref{lib:jquery}, \emph{jQplot} \ref{lib:jqplot}, \emph{jQuery UI} \ref{lib:jqueryui} et \emph{Shadowbox} \ref{lib:shadowbox}) que les fichiers propres à chacune des parties du site.
+		
+		\subsection{lib}
+		Ce dossier contient les fichiers propres aux différentes librairies utilisés dans le site comme pour la webcam et le player pour les fichiers multimédias de la pop-up shadowbox.
+		
+		\subsection{pages}
+		Ce dossier contient les fichiers php qui correspondent respectivement aux différentes pages du sites.
+		
+			\subsubsection{part}
+			Ce sous-dossier contient toutes les différentes sous-parties qui se retrouve dans toutes les pages comme par exemple le \emph{header}, le \emph{footer} \ldots
+		
+		\subsection{php\_script}
+		Ce dossier contient tous les fichiers php qui sont utilisés côté serveur pour faire toutes les actions avec la base de données comme par exemple lister les campagnes ou ajouter un utilisateur.
 	
 	\section{Librairies}
 	\label{lib}
@@ -97,16 +123,30 @@ Dans cette partie, nous allons détailler les différents points sur lesquelles 
 	
 		
 		\subsection{Google Map}
+		\label{lib:map}
 		
 		\subsection{jQuery}
+		\label{lib:jquery}
 		
 		\subsection{jQuery UI}
+		\label{lib:jqueryui}
 	
 		\subsection{jqPlot}
+		\label{lib:jqplot}
 		
 		\subsection{Bootstrap}
+		\label{lib:bootstrap}
+		Bootstrap est une bibliothèque développée et utilisée par Twitter. En plus des feuilles de style CSS, Bootstrap comprend un certain nombre de composants intéressants comme des boutons, des menus, une barre de chargement... Il contient aussi quelques composant JavaScript comme le Carrousel, ce dernier est utilisé pour  afficher les galeries de médias.\\
+		
+		Le problème majeur que nous avons rencontré avec cette librairie et que la version utilisée à plus d'un an. Nous avons donc essayé de la mettre à jour, notamment les fichier CSS afin d'avoir les derniers effets qui nous n'avons pas. Or, le groupe qui a fait la première version de l'arbre de décision que nous avons intégré à notre projet à tout simplement modifié directement les fichiers CSS de Bootstrap. De ce fait, il nous est impossible de les remplacer par les nouveaux sans casser tout le style actuel du site.
 		
 		\subsection{Shadowbox}
+		\label{lib:shadowbox}
+		ShadowBox permet de lire tous type d'objets multimédias (vidéo, son, image) dans une fenêtre modale, et ainsi profiter de toute la largeur de l'écran.
+		
+		\subsection{Webcam}
+		\label{lib:webcam}
+		Un code minimaliste en Flash est inclut dans le site, il nous permet de démarrer la webcam après autorisation de l'utilisateur, et d'afficher à l'écran l'image filmée.
 
 \chapter{Analyse Critique}
 
