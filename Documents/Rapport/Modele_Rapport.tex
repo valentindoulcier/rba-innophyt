@@ -134,7 +134,7 @@ Dans cette partie, nous allons détailler les différents points sur lesquelles 
 		
 		\subsection{Arbre de décision}
 		
-		L'implémentation de l'affichage de l'arbre de décision étant le principal intérêt du précédent projet web, nous n'avons que très peu modifier cette partie là. Nous nous sommes contentés de rajouter quelques détails, notamment sur l'écran résultat. Celui-ci dispose maintenant des champs nécessaires à la saisie du nombre d'insecte trouvé, et nous avons renommé les libellés à la demande des clients.
+		L'implémentation de l'affichage de l'arbre de décision étant le principal intérêt du précédent projet web, nous n'avons que très peu modifier cette partie là. Nous nous sommes contentés de rajouter quelques détails, notamment sur l'écran résultat. Celui-ci dispose maintenant des champs nécessaires à la saisie du nombre d'insecte trouvé, et nous avons renommé les libellés à la demande des clients. Aussi, nous utilisons désormais les images miniatures générées via le menu Administrateur. Le contenu des pages est alors moins lourd.
 		
 		\subsection{Mosaïque}
 
@@ -152,23 +152,39 @@ Dans cette partie, nous allons détailler les différents points sur lesquelles 
 	
 	Le fonctionnement est assez simple, il s'agit d'exécuter une requête sql permettant de récupérer, dans l'ordre désiré, les différents champs à inscrire dans le fichier csv. On y place dans un premier temps l'en-tête des colonnes, puis les données, bien séparées par le symbole ";".\\
 	
-	Nous avons toutefois rencontré une petite difficultés, puisque certaines notes contenant des retours à la ligne, le programme générant le csv l'interprétait comme un changement de champ. Ainsi, chaque fois qu'un retour à la ligne était détecté, on se retrouvait avec un décalage d'une case, l'export perdant ainsi tout son sens. Nous avons résolu le problème en modifiant l'interpréteur des données récupérées par la requête. Ainsi, grâce notamment à des fonctions de trim, les données se mettent désormais toujours à leur place, permettant une lecture de données intègre dans l'export csv.\\
+	Nous avons toutefois rencontré une petite difficulté, puisque certaines notes contenant des retours à la ligne, le programme générant le csv l'interprétait comme un changement de champ. Ainsi, chaque fois qu'un retour à la ligne était détecté, on se retrouvait avec un décalage d'une case, l'export perdant ainsi tout son sens. Nous avons résolu le problème en modifiant l'interpréteur des données récupérées par la requête. Ainsi, grâce notamment à des fonctions de trim, les données se mettent désormais toujours à leur place, permettant une lecture de données intègre dans l'export csv.\\
 	
 	Par ailleurs, un autre "soucis" persiste au niveau de l'encode. En effet, la base de données et le fichier généré sont en UTF-8, or Excel ne permet d'ouvrir de façon native un fichier avec ce format. De ce fait, des caractères étranges apparaisse à la place des lettre accentuées. Pour ne pas rencontrer ce problème, il faut utiliser le système d'import de donnée qui permet de lire un fichier UTF-8 correctement, ou  lire le fichier avec un autre logiciel qui prend en charge ce format.
 		
 		\subsection{Administration}
 		
+	Le module d'administration est un bloc disponible uniquement dans la version site web de l'application. Ce bloc n'est accessible qu'aux personnes présentant les droits requis pour y accéder.\\
+	
+	Une des fonctionnalités de ce module est de pouvoir générer les thumbnails. Ce sont les images miniatures, permettant d'afficher de façons plus légère le contenu média de l'arbre et de la mosaïque.\\
+	
+	La seconde fonction principale de ce module est la gestion des utilisateurs. Chaque utilisateur est donc répertorié dans un tableau, et l'on peut alors pour chacun d'eux modifier les caractéristiques (Administrateur, login, mot de passe, plage d'adresses IP ...).
+		
 		\subsection{À propos}
 		
 	La section à propos, que l'on retrouve dans le footer, est un module que l'on retrouve également sur l'application android. Celle-ci permets de retrouver le nom des collaborateurs au projet (financeurs, auteurs, partenaires) ainsi qu'un onglet comment faire, et bibliographie. Le contenu n'a volontairement pas été ajouté, il conviendra aux administrateurs de modifier ces textes afin de mettre la description qui leur convient.\\
 	
-	En ce qui concerne le premier onglet, on applique toujours la même ergonomie en ce qui concerne l'affichage des informations. Chaque logo est placé dans un carré de taille similaires aux autres. L'objectif est ici de garder une cohérence à travers tout le site.	
+	En ce qui concerne le premier onglet, on applique toujours la même ergonomie en ce qui concerne l'affichage des informations. Chaque logo est placé dans un carré de taille similaires aux autres. L'objectif est ici de garder une cohérence à travers tout le site.
+	
+	\subsection{Aide}
+		
+	Pour accéder à l'aide, nous avons créé un lien dans le footer. Lorsque l'on clique dessus, une pop-up s'affiche, et demande à l'utilisateur s'il souhaite envoyer un mail ou bien consulter l'aide en ligne (fichier pdf). Si le choix de l'utilisateur se porte sur le mail, le client mail par défaut s'ouvre, et on observe les champs pré-remplis. Le fichier PDF n'est quant à lui pas rédigé, il appartiendra à l'administrateur du site de rédiger une aide en ligne et de faire le lien avec la demande utilisateur.
 		
 
 	\section{Arborescence}
 	Dès la prise en main du projet, nous avons choisis de modifier de A à Z l'arborescence de base de ce projet. En effet, celle-ci ne permettait pas d'avoir une solution propre et viable sur le terme. De ce fait nous avons regroupé les fichiers CSS et JavaScript respectivement dans les dossiers \emph{css} et \emph{js}. Toutes les images, hormis celles utilisées pour l'arbre de décision et la mosaïque sont dans le dossier \emph{images}. Enfin, les librairies qui avait chacune leur dossier ont été divisées entre plusieurs dossiers. En effet, leurs fichiers CSS et JavaScript ont été mis dans les dossiers correspondant, et les fichiers spécifiques ont été déplacé dans un dossier \emph{lib}.\\
 
 	Ces modifications permettent une meilleure évolution du site et facilite l'ajout de module et partie. Voici plus en détail le contenu des différents dossiers.
+	
+	\begin{figure}[hbtp]
+			\centering
+		\includegraphics[scale=0.6]{images/arborescence.png}
+			\caption{Schéma succin de l'arborescence}
+		\end{figure}
 
 		\subsection{arbres}
 		Ce dossier contient à sa racine le fichier \emph{arbre.dtd} permettant de contrôler la structure des xml contenant les arbres de décision. Il y a aussi la présence d'un dossier \emph{medias} contenant toute les images originales de l'arbre. Quant à lui, \emph{thumbnail} contient toutes les miniatures générées et utilisées pour l'affichage de la mosaïque ou des photos galeries dans l'arbre de décision.
@@ -290,6 +306,10 @@ Dans cette partie, nous allons détailler les différents points sur lesquelles 
 	Donner les points à améliorer pour les prochains projets
 
 \chapter{Conclusion}
+
+Ce projet s'inscrivant dans la continuité d'un projet précédent, une des premières choses que nous avons faite a été de chercher à comprendre le fonctionnement de la version que nous avons reprise. C'est une tâche plus ardue qu'il n'y parait, dans le sens où la logique développeur peut être propre à chacun de nous. L'inconvénient principal que nous avons noté est bien sur les technologies que nous avons du reprendre, et qui selon nous n'ont pas toujours été bien choisies.\\
+
+Toutefois, ce projet s'est avérer être très intéressant. Il nous a donné l'occasion une fois de plus de mettre en pratique nos connaissance. Le sujet du site web nous a également plu, ce qui nous a motivé pour développé un produit propre, facile à maintenir et parfaitement fonctionnel.
 
 \annexes
 
