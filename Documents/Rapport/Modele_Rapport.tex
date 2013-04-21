@@ -86,18 +86,22 @@ Dans cette partie, nous allons détailler les différents points sur lesquelles 
 	
 		\subsection{Login}
 		
-\begin{figure}[hbtp]
+		\begin{figure}[hbtp]
 			\centering
 			\includegraphics[scale=0.5]{images/login.png}
 			\caption{Schéma de login}
 		\end{figure}			
 		
-		
 			\subsubsection{Sécurité}
+			Ce module permet de récupérer les informations stockées dans le Web Storage \ref{tec:storage} puis de contacter le serveur afin de savoir si oui ou non l'utilisateur est autorisé ou non à afficher cette page. C'est un contrôle effectué sur toute les pages du site.	
+			
 			\subsubsection{Footer}
+			Cet éléments du site affiché sur toute les pages donne un accès rapide à la rubrique \emph{À propos} et à l'\emph{Aide} dans sa partie gauche. À droite, il y a un accès rapide vers le menu, un lien de déconnexion ainsi qu'une information permettant de savoir quel est l'utilisateur connecté.			
+			
 		\subsection{Menu}
 		
-			L'organisation du menu nous est apparu assez évidente lorsque nous avons étudié l'application tablette. En effet, nous avons choisi de reprendre la même ergonomie afin de ne pas perdre l'utilisateur lorsqu'il change de plateforme. A ce titre, nous nous sommes inspirés du menu iCloud, disposant sur 2 rangées un ensemble de blocs, chacun correspondant à une fonctionnalité élémentaire de l'application.\\
+			L'organisation du menu nous est apparu assez évidente lorsque nous avons ét
+			udié l'application tablette. En effet, nous avons choisi de reprendre la même ergonomie afin de ne pas perdre l'utilisateur lorsqu'il change de plateforme. A ce titre, nous nous sommes inspirés du menu iCloud, disposant sur 2 rangées un ensemble de blocs, chacun correspondant à une fonctionnalité élémentaire de l'application.\\
 			
 			\begin{figure}[hbtp]
 			\centering
@@ -107,9 +111,26 @@ Dans cette partie, nous allons détailler les différents points sur lesquelles 
 		
 		\subsection{Campagne / Parcelle / Piège}
 		
-	S'inspirant du fonctionnement déjà mis en place sur la tablette, nous avons implémenté les divers écrans permettant à l'utilisateur de sélectionner sa campagne, sa parcelle ainsi que son piège.\\
-	
-	Nous avons toutefois choisi d'ajouter de nouvelles fonctionnalités, comme le fait de pouvoir visualiser la localisation des pièges sur une google map (classés par type), ainsi que des statistiques sur les espèces répertoriées dans les pièges. L'affichage des statistiques se fait grâce à l'utilisation de graphiques (import des librairies correspondantes, voir partie 2.3).
+		S'inspirant du fonctionnement déjà mis en place sur la tablette, nous avons implémenté les divers écrans permettant à l'utilisateur de sélectionner sa campagne, sa parcelle ainsi que son piège.\\
+		
+		L'ajout et la modification des données s'effectuent via un pop-up généré avec \emph{Shadownbox}, les information sont ensuite envoyées au serveur qui renvoi le statu correspondant à la requête via les request parameter. Par exemple, si une erreur arrive, l'URL au la forme suivante : \url{http://rba-innophyt.org/pags/campagne.php?statut=0&dataType=error&data=Saisie\%20invalide}. De cette façon, le navigateur récupère directement toutes les informations nécessaires pour le traiter les erreurs.\\
+		
+		Nous avons aussi mis en place un fil d'ariane pour connaitre le suivi de la sélection des éléments pour faire une identification. Ainsi, lorsque tous les éléments sont sélectionnés, un bouton d'accès rapide apparait. Celui-ci ouvre une pop-up permettant de choisir le mode d'identification (Arbre de décision ou la Mosaïque) - \textsc{Figure} \ref{img:popup-ident}.\\
+		
+		\begin{figure}[hbtp]
+			\centering
+			\includegraphics[scale=0.5]{images/seclection-cpp.png}
+			\caption{Fil d'ariane de sélection}
+		\end{figure}
+		
+		\begin{figure}[hbtp]
+			\centering
+			\includegraphics[scale=0.5]{images/popup-identification.png}
+			\caption{Pop-up avant identification}
+			\label{img:popup-ident}
+		\end{figure}
+		
+		Nous avons toutefois choisi d'ajouter de nouvelles fonctionnalités, comme le fait de pouvoir visualiser la localisation des pièges sur une google map (classés par type), ainsi que des statistiques sur les espèces répertoriées dans les pièges. L'affichage des statistiques se fait grâce à l'utilisation de graphiques (import des librairies correspondantes, voir partie \ref{lib}).
 		
 		\subsection{Arbre de décision}
 		
@@ -229,6 +250,9 @@ Dans cette partie, nous allons détailler les différents points sur lesquelles 
 			\caption{Camenbert de répartition des insectes}
 		\end{figure}
 		
+		\subsection{JAIL}
+		\label{lib:jail}
+		JAIL (Jquery Asynchronous Image Loader) est un plugin pour jQuery permettant de charger de façon asynchrone de la page des images. Ceci est utilisé principalement pour la mosaïque où une grande quantité d'image doit être chargé. Ainsi, les images sont chargées quand elle devienne visible à l'intérieur du navigateur. Pour plus d'informations sur le fonctionnement de cette librairie, voici la page du projet \url{https://github.com/sebarmeli/JAIL}.
 		
 		\subsection{Bootstrap}
 		\label{lib:bootstrap}
