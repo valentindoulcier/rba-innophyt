@@ -60,6 +60,7 @@ Le client de notre projet est l'équipe INNOPHYT. Cette équipe fait partie de l
 	\section{Contraintes technologiques}
 	
 	Dans notre cas, les termes "Contraintes Technologiques" ont pris tous leurs sens. En effet, notre projet s'inscrivant dans la suite d'un projet préalablement commencé, nous avons été obligé de réutiliser certaines librairies mises en place ainsi que certaines technologies.\\
+	
 
 	\begin{itemize}
 		\item \textbf{Bootstrap} : Dans le but de poser les bases du design, la librairie Bootstrap a été choisie. Il s'agit de la bibliothèque développée et utilisée par le célèbre Twitter. En plus des feuilles de style CSS, Bootstrap comprend un certain nombre de composants intéressants comme des boutons, des menus, une barre de chargement... Il contient aussi quelques plugins JavaScript comme le Carrousel, qui ont servi à l'affichage des galeries de médias.\\
@@ -87,12 +88,46 @@ Dans cette partie, nous allons détailler les différents points sur lesquelles 
 			\subsubsection{Sécurité}
 			\subsubsection{Footer}
 		\subsection{Menu}
-		\subsection{Campagne / Parcelle / Pièges}
+		
+			L'organisation du menu nous est apparu assez évidente lorsque nous avons étudié l'application tablette. En effet, nous avons choisi de reprendre la même ergonomie afin de ne pas perdre l'utilisateur lorsqu'il change de plateforme. A ce titre, nous nous sommes inspiré du menu iCloud, disposant sur 2 rangées un ensemble de blocs, chacun correspondant à une fonctionnalité élémentaire de l'application.		
+		
+		\subsection{Campagne / Parcelle / Piège}
+		
+	S'inspirant du fonctionnement déjà mis en place sur la tablette, nous avons implémenté les divers écrans permettant à l'utilisateur de sélectionner sa campagne, sa parcelle ainsi que son piège.\\
+	
+	Nous avons toutefois choisi d'ajouter de nouvelles fonctionnalités, comme le fait de pouvoir visualiser la localisation des pièges sur une google map (classés par type), ainsi que des statistiques sur les espèces répertoriées dans les pièges. L'affichage des statistiques se fait grâce à l'utilisation de graphiques (import des librairies correspondantes, voir partie 2.3).
+		
 		\subsection{Arbre de décision}
+		
+		L'implémentation de l'affichage de l'arbre de décision étant le principal intérêt du précédent projet web, nous n'avons que très peu modifier cette partie là. Nous nous sommes contentés de rajouter quelques détails, notamment sur l'écran résultat. Celui-ci dispose maintenant des champs nécessaires à la saisie du nombre d'insecte trouvé, et nous avons renommé les libellés à la demande des clients.
+		
 		\subsection{Mosaïque}
+
+	Toujours dans l'esprit d'implémenter les mêmes fonctionnalités sur la tablette que sur le site internet, nous avons développé le module mosaïque. Ce module parse l'ensemble du fichier xml de l'arbre de question, et répertorie l'ensemble des fichiers images résultats. Une fois ces images répertoriées, nous effectuons un tri afin d'éliminer les doublons. Pour finir, nous affichons dans des carrés de taille identique les images redimensionnées, sur lesquels l'utilisateur avertis pourra cliqué afin de saisir directement une récolte.\\
+	
+	Les images affichées sur l'écran mosaïque sont des images retouchées quant à leurs dimensions initiales. En effet, dans un soucis de détail, les images parcourues dans le dossier média initial pèsent approximativement entre 3 et 6 Mo, ce qui est très lourd pour des images en 400x400. A ce titre, notez bien que les miniatures doivent être disponible afin d'afficher la mosaïque. Pour se faire, un administrateur doit se rendre sur l'écran d'administration, et cliquer sur générer les thumbnails. Cette opération n'est à effectuer qu'une seule fois, ainsi qu'à chaque modification du dossier média (ajout de résultats ou de branches dans l'arbre).\\
+	
+	L'arbre que nous avons testé contient environ 100 résultats images. Nous sommes partis du principe que l'utilisateur ne disposait pas forcément d'une connexion ultra rapide. A ce titre, nous avons utilisé une méthode qui permets de charger progressivement les résultats à l'écran. Ainsi, les images sont chargées au fur et à mesure que l'utilisateur scroll sur la page mosaïque, ce qui permets un affichage nettement plus fluide ainsi qu'une meilleur expérience utilisateur (temps de chargement quasi invisible).
+
 		\subsection{Export}
+		
+	Similaire au comportement que l'on retrouve sur la tablette, nous avons implémenté une fonction d'export des données saisies par l'utilisateur. Ainsi, l'export permets de récupérer au format csv (lisible par excel par exemple) l'ensemble des données, bien formatées, que l'utilisateur a pu enregistrer au cours de ses récoltes.\\
+	
+	Les champs répertoriés sont identiques à ceux récupérés sur l'application tablette.\\
+	
+	Le fonctionnement est assez simple, il s'agit d'exécuter une requête sql permettant de récupérer, dans l'ordre désiré, les différents champs à inscrire dans le fichier csv. On y place dans un premier temps l'en-tête des colonnes, puis les données, bien séparées par le symbole ";".\\
+	
+	Nous avons toutefois rencontré une petite difficultés, puisque certaines notes contenant des retours à la ligne, le programme générant le csv l'interprétait comme un changement de champ. Ainsi, chaque fois qu'un retour à la ligne était détecté, on se retrouvait avec un décalage d'une case, l'export perdant ainsi tout son sens. Nous avons résolu le problème en modifiant l'interpréteur des données récupérées par la requête. Ainsi, grâce notamment à des fonctions de trim, les données se mettent désormais toujours à leur place, permettant une lecture de données intègre dans l'export csv.	
+		
+		
 		\subsection{Administration}
+		
 		\subsection{À propos}
+		
+	La section à propos, que l'on retrouve dans le footer, est un module que l'on retrouve également sur l'application android. Celle-ci permets de retrouver le nom des collaborateurs au projet (financeurs, auteurs, partenaires) ainsi qu'un onglet comment faire, et bibliographie. Le contenu n'a volontairement pas été ajouté, il conviendra aux administrateurs de modifier ces textes afin de mettre la description qui leur convient.\\
+	
+	En ce qui concerne le premier onglet, on applique toujours la même ergonomie en ce qui concerne l'affichage des informations. Chaque logo est placé dans un carré de taille similaires aux autres. L'objectif est ici de garder une cohérence à travers tout le site.	
+		
 
 	\section{Arborescence}
 	Dès la prise en main du projet, nous avons choisis de modifier de A à Z l'arborescence de base de ce projet. En effet, celle-ci ne permettait pas d'avoir une solution propre et viable sur le terme. De ce fait nous avons regroupé les fichiers CSS et JavaScript respectivement dans les dossiers \emph{css} et \emph{js}. Toutes les images, hormis celles utilisées pour l'arbre de décision et la mosaïque sont dans le dossier \emph{images}. Enfin, les librairies qui avait chacune leur dossier ont été divisées entre plusieurs dossiers. En effet, leurs fichiers CSS et JavaScript ont été mis dans les dossiers correspondant, et les fichiers spécifiques ont été déplacé dans un dossier \emph{lib}.\\
