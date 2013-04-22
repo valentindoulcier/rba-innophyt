@@ -301,7 +301,7 @@ Dans cette partie, nous allons détailler les différents points sur lesquelles 
 	
 	Ce projet nous a permis de nous entrainer sur des technologies que nous n'avons pas énormément (voire pas du tout) pratiquées au sein de notre cursus d'ingénieur, en dernière année au département informatique de Polytech Tours. Sur le bilan technique, ce projet nous a donc été très profitable.\\
 	
-	Toutefois, reprendre un projet n'est jamais chose facile. Il nous faut comprendre la logique des précédents programmeurs, et pour peu que ceux-ci n'était pas expert dans les technologies utilisées, les choix des librairies auraient pu  un vrai handicap pour la poursuite du projet.\\
+	Toutefois, reprendre un projet n'est jamais chose facile. Il nous faut comprendre la logique des précédents programmeurs, et pour peu que ceux-ci n'était pas expert dans les technologies utilisées, les choix des librairies est un vrai handicap pour la poursuite du projet.\\
 	
 	C'est en partie ce qui s'est passé pour ce projet. Le choix des librairies n'étant pas forcément adéquats, l'utilisation d'AJAX dans tous les sens pénalise la navigation. Aussi, le fait de modifier directement les propriétés css des librairies au lieux de mettre en place une sur-couche modifiable empêche désormais toute possibilité de mise à jour des librairies, ce qui est très dommage.
 	
@@ -313,7 +313,9 @@ Dans cette partie, nous allons détailler les différents points sur lesquelles 
 	
 	Un second point à mettre en place est la gestion du mot de passe oublier. Notre serveur ne disposant pas de client mail, il convient d'implémenter cette fonction et de la tester sur un serveur équipé. Nous avons pensé à envoyer par mail à l'utilisateur un lien périssable qui lui permettrait de réinitialiser son mot de passe.\\
 	
-	On pourrait également imaginer retrouver la google mal au niveau des campagnes, pour visualiser graphiquement l'emplacement des parcelles, ainsi que les graphiques pour les statistiques au niveau des parcelles.\\
+	On pourrait également imaginer retrouver la Google Map au niveau des campagnes, pour visualiser graphiquement l'emplacement des parcelles, ainsi que les graphiques pour les statistiques au niveau des parcelles.\\
+	
+	Un autre élément à modifier est la génération des thumbnails afin de créer des images des tailles 440x440 px où l'image gardera ses proportion et sera entouré de blanc afin d'obtenir une image carré. En effet, il est important de conserver une image carré pour que la mosaïque garde la même forme, et pour que les miniature des galeries photos ne soient déformées.\\
 	
 	Enfin, on pourrait imaginer charger les données d'un utilisateur à l'authentification de celui-ci. Imaginons que la base de données entre l'application tablette et site web puisse être synchroniser, un utilisateur aurait alors ses mêmes données sur n'importe laquelle des plateformes.
 
