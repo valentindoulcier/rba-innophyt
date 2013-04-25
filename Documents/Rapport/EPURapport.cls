@@ -265,7 +265,7 @@
 	
 		\authorsAndSupervisorsDisplay
 		
-		\ifthenelse{\boolean{BFinal}}{}{~\newline {\small Version du \today}}
+		\ifthenelse{\boolean{BFinal}}{}{~\newline {\small Version du 22 avril 2013}}
 
 	\end{center}
 	
