@@ -93,15 +93,22 @@ Dans cette partie, nous allons détailler les différents points sur lesquelles 
 		\end{figure}			
 		
 			\subsubsection{Sécurité}
+			\label{mod:secu}
 			Ce module permet de récupérer les informations stockées dans le Web Storage \ref{tec:storage} puis de contacter le serveur afin de savoir si oui ou non l'utilisateur est autorisé ou non à afficher cette page. C'est un contrôle effectué sur toute les pages du site.	
 			
 			\subsubsection{Footer}
-			Cet éléments du site affiché sur toute les pages donne un accès rapide à la rubrique \emph{À propos} et à l'\emph{Aide} dans sa partie gauche. À droite, il y a un accès rapide vers le menu, un lien de déconnexion ainsi qu'une information permettant de savoir quel est l'utilisateur connecté.			
+			Cet éléments du site affiché sur toute les pages donne un accès rapide à la rubrique \emph{À propos} et à l'\emph{Aide} dans sa partie gauche. À droite, il y a un accès rapide vers le menu, un lien de déconnexion ainsi qu'une information permettant de savoir quel est l'utilisateur connecté.
+			
+			\subsubsection{Adresse IP}
+			Au niveau de l'authentification, il nous a été demandé de prévoir un système pour identifier l'utilisateur avec son adresse IP. Cette fonctionnalité n'a pas été développé, mais nous avons pris des dispositions afin d'en simplifier l'implémentation.\\
+			
+			Aussi, nous avons déjà intégrer dans la base de données les champs \emph{IP\_LB} et \emph{IP\_UB}, respectivement pour l'adresse IP base et la haute. De plus, la modification de ces champs dans l'interface d'administration a été géré. Dans tous les cas, il est nécessaire de mettre un mot de passe pour créer un utilisateur et l'adresse IP est en option.\\
+			
+			Ainsi, pour gérer ce mode d'authentification, il faut modifier la fonction de login. De cette façon, dans le cas où il n'y a pas de mot de passe fournis par l'utilisateur, le serveur se base sur l'adresse IP récupérer via la variable PHP \emph{\$\_SERVER} pour vérifier l'utilisateur. Ce système permet par ailleurs d'avoir plusieurs utilisateur sur une même plage d'adresses IP.
 			
 		\subsection{Menu}
 		
-			L'organisation du menu nous est apparu assez évidente lorsque nous avons ét
-			udié l'application tablette. En effet, nous avons choisi de reprendre la même ergonomie afin de ne pas perdre l'utilisateur lorsqu'il change de plateforme. A ce titre, nous nous sommes inspirés du menu iCloud, disposant sur 2 rangées un ensemble de blocs, chacun correspondant à une fonctionnalité élémentaire de l'application.\\
+			L'organisation du menu nous est apparu assez évidente lorsque nous avons étudié l'application tablette. En effet, nous avons choisi de reprendre la même ergonomie afin de ne pas perdre l'utilisateur lorsqu'il change de plateforme. A ce titre, nous nous sommes inspirés du menu iCloud, disposant sur 2 rangées un ensemble de blocs, chacun correspondant à une fonctionnalité élémentaire de l'application.\\
 			
 			\begin{figure}[hbtp]
 			\centering
@@ -234,7 +241,7 @@ Dans cette partie, nous allons détailler les différents points sur lesquelles 
 		\label{lib:jqueryui}
 		jQuery UI est un ensemble de plugins qui permet d'avoir un certain nombre de composant graphique. Nous l'avons utilisé pour mettre en place le datepicker dans les formulaires d'ajout et de modification des campagnes, parcelles et récoltes.
 		
-		\begin{figure}[hbtp]
+		\begin{figure}[h!]
 			\centering
 			\includegraphics[scale=0.5]{images/lib-jquery_datePicker.png}
 			\caption{Le date picker de jQuery UI}
@@ -244,7 +251,7 @@ Dans cette partie, nous allons détailler les différents points sur lesquelles 
 		\label{lib:jqplot}
 		jqPlot est un plugin de traçage et de la cartographie pour jQuery. jqPlot produit des graphiques en lignes, bars et camemberts avec de nombreuses fonctionnalités. Cette librairie nous permet d'afficher les graphiques montrant la répartition des différents régimes alimentaires des récoltes d'un piège.
 		
-		\begin{figure}[hbtp]
+		\begin{figure}[h!]
 			\centering
 			\includegraphics[scale=0.5]{images/lib-jqplot.png}
 			\caption{Camenbert de répartition des insectes}
