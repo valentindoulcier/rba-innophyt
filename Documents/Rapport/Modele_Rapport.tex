@@ -43,11 +43,11 @@ Le client de notre projet est l'équipe INNOPHYT. Cette équipe fait partie de l
 
 	\section{Contexte}
 	
-	L'enjeu global du projet est mettre à disposition de l'équipe INNOPHYT un outil performant d'aide à la décision de reconnaissance d'insecte, et plus précisément, de savoir si une espèce est nuisible ou non.\\
+	L'enjeu global du projet est de mettre à disposition de l'équipe INNOPHYT un outil performant d'aide à la décision de reconnaissance d'insecte, et plus précisément, de savoir si une espèce est nuisible ou non.\\
 	
 	Anciennement, l'équipe INNOPHYT utilisait un fichier Excel qui répertoriait l'ensemble des questions à se poser pour arriver à un résultat. Ces questions étaient disposées sous une forme d'une arborescence compliquée. Ce système étant quelque peu archaïque et n'étant pas vraiment ergonomique, un premier projet collectif s'est donc inscrit dans ce sens en modernisant l'outil (Développement d'une application android). Suite à cette application, décuplant les performances et les fonctionnalités, la question du site web dédié s'est posée. En réponse, un projet web s'est donc mis en place, et à répondu partiellement à l'ensemble des besoins énoncés.\\
 	
-	Les futurs utilisateurs de l'application dans sa version site web sont nombreux. Ils peuvent être aussi bien des ingénieurs ou des spécialistes du domaines (biologiste de terrain, membre de l"équipe INNOPHYT...) que des utilisateurs lambda n'ayant pas de connaissances particulières (agriculteur, passionné des insectes...). A ce titre, la version web de l'application pourra s'utiliser à titre pédagogique, et pourra servir d'outils de formation et de découverte.	
+	Les futurs utilisateurs de l'application dans sa version site web sont nombreux. Ils peuvent être aussi bien des ingénieurs ou des spécialistes du domaine (biologiste de terrain, membre de l"équipe INNOPHYT...) que des utilisateurs lambda n'ayant pas de connaissances particulières (agriculteur, passionné des insectes...). A ce titre, la version web de l'application pourra s'utiliser à titre pédagogique, et pourra servir d'outils de formation et de découverte.	
 	
 	\section{Objectif}
 	
@@ -55,7 +55,7 @@ Le client de notre projet est l'équipe INNOPHYT. Cette équipe fait partie de l
 	
 	L'objectif est donc de fournir une application web reproduisant les spécificités de l'application android. Principalement, le but de notre projet est, à partir de la lecture d'un fichier XML représentant un arbre de décision, de permettre à l'utilisateur  de naviguer dans cet arbre dans le but de trouver l'insecte qu'il observe.\\
 	
-	Le site web calquera son interface ergonomique et convivial sur celle de la tablette. Ainsi, l'utilisateur jonglant entre les deux plateformes ne sera pas perdu en passant de l'une à l'autre. Nous implémenterons donc l'ensemble des fonctionnalités présentes sur la tablette, afin que l'utilisation ne soit en rien différente.
+	Le site web calquera son interface ergonomique et conviviale sur celle de la tablette. Ainsi, l'utilisateur jonglant entre les deux plateformes ne sera pas perdu en passant de l'une à l'autre. Nous implémenterons donc l'ensemble des fonctionnalités présentes sur la tablette, afin que l'utilisation ne soit en rien différente.
 
 	\section{Contraintes technologiques}
 	
@@ -74,7 +74,7 @@ Le client de notre projet est l'équipe INNOPHYT. Cette équipe fait partie de l
 		\item \textbf{jQuery} : Nous avons utilisé JQuery et ses fonctions spécialisées dans l'architecture AJAX pour simplifier la gestion de notre application. Aussi, certaines fonctionnalités de Jquery (à savoir Jqplot), nous ont permis de générer facilement les graphiques demandés.\\
 	\end{itemize}
 	
-	Différents problèmes ont été rencontré avec ces contraintes, ils sont respectivement détaillés dans la parties concernant les librairies \ref{lib}.
+	Différents problèmes ont été rencontrés avec ces contraintes, ils sont respectivement détaillés dans la partie concernant les librairies \ref{lib}.
 
 
 
@@ -97,18 +97,18 @@ Dans cette partie, nous allons détailler les différents points sur lesquelles 
 			Ce module permet de récupérer les informations stockées dans le Web Storage \ref{tec:storage} puis de contacter le serveur afin de savoir si oui ou non l'utilisateur est autorisé ou non à afficher cette page. C'est un contrôle effectué sur toute les pages du site.	
 			
 			\subsubsection{Footer}
-			Cet éléments du site affiché sur toute les pages donne un accès rapide à la rubrique \emph{À propos} et à l'\emph{Aide} dans sa partie gauche. À droite, il y a un accès rapide vers le menu, un lien de déconnexion ainsi qu'une information permettant de savoir quel est l'utilisateur connecté.
+			Cet élément du site affiché sur toutes les pages donne un accès rapide à la rubrique \emph{À propos} et à l'\emph{Aide} dans sa partie gauche. À droite, il y a un accès rapide vers le menu, un lien de déconnexion ainsi qu'une information permettant de savoir quel est l'utilisateur connecté.
 			
 			\subsubsection{Adresse IP}
-			Au niveau de l'authentification, il nous a été demandé de prévoir un système pour identifier l'utilisateur avec son adresse IP. Cette fonctionnalité n'a pas été développé, mais nous avons pris des dispositions afin d'en simplifier l'implémentation.\\
+			Au niveau de l'authentification, il nous a été demandé de prévoir un système pour identifier l'utilisateur avec son adresse IP. Cette fonctionnalité n'a pas été développée, mais nous avons pris des dispositions afin d'en simplifier l'implémentation.\\
 			
-			Aussi, nous avons déjà intégrer dans la base de données les champs \emph{IP\_LB} et \emph{IP\_UB}, respectivement pour l'adresse IP base et la haute. De plus, la modification de ces champs dans l'interface d'administration a été géré. Dans tous les cas, il est nécessaire de mettre un mot de passe pour créer un utilisateur et l'adresse IP est en option.\\
+			Aussi, nous avons déjà intégré dans la base de données les champs \emph{IP\_LB} et \emph{IP\_UB}, respectivement pour l'adresse IP basse et la haute. De plus, la modification de ces champs dans l'interface d'administration a été gérée. Dans tous les cas, il est nécessaire de mettre un mot de passe pour créer un utilisateur, l'adresse IP est en option.\\
 			
-			Ainsi, pour gérer ce mode d'authentification, il faut modifier la fonction de login. De cette façon, dans le cas où il n'y a pas de mot de passe fournis par l'utilisateur, le serveur se base sur l'adresse IP récupérer via la variable PHP \emph{\$\_SERVER} pour vérifier l'utilisateur. Ce système permet par ailleurs d'avoir plusieurs utilisateur sur une même plage d'adresses IP.
+			Ainsi, pour gérer ce mode d'authentification, il faut modifier la fonction de login. De cette façon, dans le cas où il n'y a pas de mot de passe fournis par l'utilisateur, le serveur se base sur l'adresse IP récupérer via la variable PHP \emph{\$\_SERVER} pour vérifier l'utilisateur. Ce système permet par ailleurs d'avoir plusieurs utilisateurs sur une même plage d'adresses IP.
 			
 		\subsection{Menu}
 		
-			L'organisation du menu nous est apparu assez évidente lorsque nous avons étudié l'application tablette. En effet, nous avons choisi de reprendre la même ergonomie afin de ne pas perdre l'utilisateur lorsqu'il change de plateforme. A ce titre, nous nous sommes inspirés du menu iCloud, disposant sur 2 rangées un ensemble de blocs, chacun correspondant à une fonctionnalité élémentaire de l'application.\\
+			L'organisation du menu nous est apparue assez évidente lorsque nous avons étudié l'application tablette. En effet, nous avons choisi de reprendre la même ergonomie afin de ne pas perdre l'utilisateur lorsqu'il change de plateforme. A ce titre, nous nous sommes inspirés du menu iCloud, disposant sur 2 rangées un ensemble de blocs, chacun correspondant à une fonctionnalité élémentaire de l'application.\\
 			
 			\begin{figure}[hbtp]
 			\centering
@@ -120,7 +120,7 @@ Dans cette partie, nous allons détailler les différents points sur lesquelles 
 		
 		S'inspirant du fonctionnement déjà mis en place sur la tablette, nous avons implémenté les divers écrans permettant à l'utilisateur de sélectionner sa campagne, sa parcelle ainsi que son piège.\\
 		
-		L'ajout et la modification des données s'effectuent via un pop-up généré avec \emph{Shadownbox}, les information sont ensuite envoyées au serveur qui renvoi le statu correspondant à la requête via les request parameter. Par exemple, si une erreur arrive, l'URL au la forme suivante : \url{http://rba-innophyt.org/pags/campagne.php?statut=0&dataType=error&data=Saisie\%20invalide}. De cette façon, le navigateur récupère directement toutes les informations nécessaires pour le traiter les erreurs.\\
+		L'ajout et la modification des données s'effectuent via une pop-up générée avec \emph{Shadownbox}, les informations sont ensuite envoyées au serveur qui renvoie le statu correspondant à la requête via les request parameter. Par exemple, si une erreur arrive, l'URL au la forme suivante : \url{http://rba-innophyt.org/pags/campagne.php?statut=0&dataType=error&data=Saisie\%20invalide}. De cette façon, le navigateur récupère directement toutes les informations nécessaires pour le traiter les erreurs.\\
 		
 		Nous avons aussi mis en place un fil d'ariane pour connaitre le suivi de la sélection des éléments pour faire une identification. Ainsi, lorsque tous les éléments sont sélectionnés, un bouton d'accès rapide apparait. Celui-ci ouvre une pop-up permettant de choisir le mode d'identification (Arbre de décision ou la Mosaïque) - \textsc{Figure} \ref{img:popup-ident}.\\
 		
@@ -141,11 +141,11 @@ Dans cette partie, nous allons détailler les différents points sur lesquelles 
 		
 		\subsection{Arbre de décision}
 		
-		L'implémentation de l'affichage de l'arbre de décision étant le principal intérêt du précédent projet web, nous n'avons que très peu modifier cette partie là. Nous nous sommes contentés de rajouter quelques détails, notamment sur l'écran résultat. Celui-ci dispose maintenant des champs nécessaires à la saisie du nombre d'insecte trouvé, et nous avons renommé les libellés à la demande des clients. Aussi, nous utilisons désormais les images miniatures générées via le menu Administrateur. Le contenu des pages est alors moins lourd.
+		L'implémentation de l'affichage de l'arbre de décision étant le principal intérêt du précédent projet web, nous n'avons que très peu modifié cette partie là. Nous nous sommes contentés de rajouter quelques détails, notamment sur l'écran résultat. Celui-ci dispose maintenant des champs nécessaires à la saisie du nombre d'insecte trouvé, et nous avons renommé les libellés à la demande des clients. Aussi, nous utilisons désormais les images miniatures générées via le menu Administrateur. Le contenu des pages est alors moins lourd.
 		
 		\subsection{Mosaïque}
 
-	Toujours dans l'esprit d'implémenter les mêmes fonctionnalités sur la tablette que sur le site internet, nous avons développé le module mosaïque. Ce module parse l'ensemble du fichier xml de l'arbre de question, et répertorie l'ensemble des fichiers images résultats. Une fois ces images répertoriées, nous effectuons un tri afin d'éliminer les doublons. Pour finir, nous affichons dans des carrés de taille identique les images redimensionnées, sur lesquels l'utilisateur avertis pourra cliqué afin de saisir directement une récolte.\\
+	Toujours dans l'esprit d'implémenter les mêmes fonctionnalités sur la tablette que sur le site internet, nous avons développé le module mosaïque. Ce module parse l'ensemble du fichier xml de l'arbre de question, et répertorie l'ensemble des fichiers images résultats. Une fois ces images répertoriées, nous effectuons un tri afin d'éliminer les doublons. Pour finir, nous affichons dans des carrés de taille identique les images redimensionnées, sur lesquels l'utilisateur avertis pourra cliquer afin de saisir directement une récolte.\\
 	
 	Les images affichées sur l'écran mosaïque sont des images retouchées quant à leurs dimensions initiales. En effet, dans un soucis de détail, les images parcourues dans le dossier média initial pèsent approximativement entre 3 et 6 Mo, ce qui est très lourd pour des images en 400x400. A ce titre, notez bien que les miniatures doivent être disponible afin d'afficher la mosaïque. Pour se faire, un administrateur doit se rendre sur l'écran d'administration, et cliquer sur générer les thumbnails. Cette opération n'est à effectuer qu'une seule fois, ainsi qu'à chaque modification du dossier média (ajout de résultats ou de branches dans l'arbre).\\
 	
@@ -194,7 +194,7 @@ Dans cette partie, nous allons détailler les différents points sur lesquelles 
 		\end{figure}
 
 		\subsection{arbres}
-		Ce dossier contient à sa racine le fichier \emph{arbre.dtd} permettant de contrôler la structure des xml contenant les arbres de décision. Il y a aussi la présence d'un dossier \emph{medias} contenant toute les images originales de l'arbre. Quant à lui, \emph{thumbnail} contient toutes les miniatures générées et utilisées pour l'affichage de la mosaïque ou des photos galeries dans l'arbre de décision.
+		Ce dossier contient à sa racine le fichier \emph{arbre.dtd} permettant de contrôler la structure des xml contenant les arbres de décision. Il y a aussi la présence d'un dossier \emph{medias} contenant toutes les images originales de l'arbre. Quant à lui, \emph{thumbnail} contient toutes les miniatures générées et utilisées pour l'affichage de la mosaïque ou des photos galeries dans l'arbre de décision.
 		
 		\subsection{css}
 		Ce dossier contient tous les fichiers css utilisés pour le style du site. Aussi bien pour les librairies (\emph{Bootstrap} \ref{lib:bootstrap}, \emph{jqPlot} \ref{lib:jqplot}, \emph{jQuery UI} \ref{lib:jqueryui} et \emph{Shadowbox} \ref{lib:shadowbox}) que le fichier \emph{syle.css} où est le style personnalisé du site.
@@ -318,7 +318,7 @@ Dans cette partie, nous allons détailler les différents points sur lesquelles 
 	
 	Tout d'abord, il s'agit d'implémenter la fonctionnalité de login par adresses IP. En effet, nous n'avons géré uniquement la connexion par mot de passe. Les champs sont toutefois en base de données, il ne reste donc qu'à modifier l'écran de login pour l'adapter aux besoins.\\
 	
-	Un second point à mettre en place est la gestion du mot de passe oublier. Notre serveur ne disposant pas de client mail, il convient d'implémenter cette fonction et de la tester sur un serveur équipé. Nous avons pensé à envoyer par mail à l'utilisateur un lien périssable qui lui permettrait de réinitialiser son mot de passe.\\
+	Un second point à mettre en place est la gestion du mot de passe oublié. Notre serveur ne disposant pas de client mail, il convient d'implémenter cette fonction et de la tester sur un serveur équipé. Nous avons pensé à envoyer par mail à l'utilisateur un lien périssable qui lui permettrait de réinitialiser son mot de passe.\\
 	
 	On pourrait également imaginer retrouver la Google Map au niveau des campagnes, pour visualiser graphiquement l'emplacement des parcelles, ainsi que les graphiques pour les statistiques au niveau des parcelles.\\
 	
