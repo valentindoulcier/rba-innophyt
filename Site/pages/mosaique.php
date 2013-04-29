@@ -28,7 +28,7 @@
 				<div id="questionTextDivSubNav">
 					<div id="questionTextDiv" class="myContainer">
 						<div id="questionTextIcon"><img src="<?php echo $IMG_PATH; ?>/question-mark.png" alt="icone question">
-						</div><h1>Mosaïque<br><small>Présentation des bestioles</small></h1>
+						</div><h1>Mosaïque<br><small>Sélectionnez votre insecte</small></h1>
 						<div class="clearer"></div>
 					</div>
 				</div>
